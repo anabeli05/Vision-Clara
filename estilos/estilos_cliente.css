@@ -1,0 +1,259 @@
+/* ============================= */
+/* 🔹 FUENTES 🔹 */
+/* ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+/* ============================= */
+/* 🔹 RESET Y ESTILOS GENERALES 🔹 */
+/* ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: #f8f9fb;
+    color: #333;
+}
+
+/* ============================= */
+/* 🔹 HEADER 🔹 */
+/* ============================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #515c85;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 10;
+}
+
+header img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ============================= */
+/* 🔹 TITULO PRINCIPAL 🔹 */
+/* ============================= */
+.interfaz1 h1 {
+    margin-top: 120px;
+    color: #06132a;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font */
+    font-weight: 700;
+    margin-left: 5%;
+}
+
+/* ============================= */
+/* 🔹 BOTONES INTERFACES 🔹 */
+/* ============================= */
+.botones_interfaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 5%;
+    padding: 20px;
+    justify-content: center;
+}
+
+.botones {
+    background: #fff7b0;
+    padding: 20px;
+    border-radius: 15px;
+    width: 180px;
+    min-height: 120px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones:hover {
+    transform: translateY(-5px);
+    background: #d1ce78;
+    box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+}
+
+/* ============================= */
+/* 🔹 SECCIÓN INICIO 🔹 */
+/* ============================= */
+.inicio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.inicio img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.inicio img:hover {
+    transform: scale(1.05);
+}
+
+.inicio p {
+    flex: 1 1 300px;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    color: #555;
+    line-height: 1.8;
+    font-family: 'Merriweather', serif;
+}
+
+/* Apartado 2 */
+.apartado2 img{
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 350 / 270;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    display: block;
+}
+
+/* ============================= */
+/* 🔹 FOOTER 🔹 */
+/* ============================= */
+.container-footer {
+    width: 100%;
+    padding: 40px 5%;
+    background: #020f45;
+    margin-top: 40px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container-footer footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.container-footer .logo-footer {
+    flex: 1 1 200px;
+}
+
+.container-footer .logo-footer img {
+    width: 60%;
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+.container-footer .footer-info p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 14px;
+    text-align: center;
+}
+
+.container-footer .footer-contact {
+    flex: 1 1 200px;
+}
+
+.container-footer .footer-contact h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container-footer .footer-contact p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* ============================= */
+/* 🔹 MEDIA QUERIES 🔹 */
+/* ============================= */
+@media (max-width: 1024px) { /* Tablets */
+    .interfaz1 h1 {
+        margin-left: 3%;
+    }
+    .botones_interfaces {
+        margin-left: 3%;
+    }
+}
+
+@media (max-width: 768px) { /* Tablets y móviles grandes */
+    header {
+        padding: 0 3%;
+    }
+
+    .interfaz1 h1 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .botones_interfaces {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .inicio {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .inicio p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) { /* Móviles pequeños */
+    header {
+        height: 70px;
+    }
+
+    .interfaz1 h1 {
+        font-size: 1.8rem;
+        margin-top: 100px;
+        padding: 10px;
+    }
+
+    .botones {
+        width: 140px;
+        padding: 15px;
+    }
+
+    .apartado2 img {
+        max-width: 90%;
+        margin-left: 0;
+    }
+
+    .container-footer footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

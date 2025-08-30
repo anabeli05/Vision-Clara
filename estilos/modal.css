@@ -1,0 +1,77 @@
+/* Fondo del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: #fff7f0;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Botón de cerrar */
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Tabs Cliente / Visitante */
+.tabs {
+  margin: 15px 0;
+}
+.tabs .tab {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #f9d885;
+}
+.tabs .active {
+  background: #ffd56b;
+  font-weight: bold;
+}
+
+/* Inputs estilo cuadros */
+.input-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+.input-boxes input {
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid #f7c97d;
+  border-radius: 6px;
+  background: #ffe8b6;
+}
+
+/* Botón obtener */
+.btn-obtener {
+  background: #7ddff7;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-obtener:hover {
+  background: #56c7e2;
+}
