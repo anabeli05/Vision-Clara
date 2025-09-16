@@ -1,0 +1,855 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /*font-size: 18px;*/
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background: white;
+    overflow-y: auto;
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+    position: fixed; /*fija el menu en la pantalla*/
+    top: 0;
+    right: 0; /* sale al lado derecho */
+    width: 30vw; /*ancho del dashboard*/
+    max-width: 100%;/*en telefono nunca pasara de ese porcentaje de la pantalla*/
+    height: 100vh; /*ocupa el alto de la pantalla*/
+    background: rgb(227, 195, 157, 1); /*color de fondo*/
+    box-shadow: -5px 0 10px rgba(36, 122, 129, 0.2); /*fondo lateral*/
+    transform: translateX(100%); /* OCULTA fuera del lado derecho */
+    transition: transform 0.3s ease; /*animacion de entrada y salida*/
+    z-index: 999; /*se pone encima de todo*/
+    font-size: 9vw; /*tamaño del boton de cierre 'x' */
+    overflow-y: auto; /*activa el scroll cuando e necesario*/
+  }
+  
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+  
+  #overlay.hidden {
+    display: none;
+  }
+  
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 998;
+  }
+  
+  #close-btn {
+    text-align: left;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px; /* Aumenta el tamaño del ícono */
+    color: #000000;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: row-reverse;/*coloca uno a la derecha y otro a la izquierda*/
+    justify-content: space-between;
+    height: 70px;
+  }
+
+#close-btn:hover{
+    color: red;
+}
+.close-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+    vertical-align: middle;
+    text-align: right;
+}
+  
+
+  .sidebar .logo-details {
+      height: 60px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 10px;
+  }
+  /*Se supone que asi esta centrado el logo en la barra*/
+  .sidebar .logo-details .logo-img {
+      height: 120px;
+      min-width: 45px;
+      margin: 32px;
+  }
+  
+  .sidebar .logo-details .logo_name {
+      font-size: 20px;
+      color: #333;
+      font-weight: 600;
+  }
+  
+  .sidebar .nav-links {
+      margin: 1vw;
+      padding: 0;
+      list-style: none; /*quita viñetas*/
+      height: 100%; /*ocupa todo el alto*/
+      display: flex;
+      flex-direction: column;
+      
+  }
+  
+  .sidebar .nav-links li {
+      position: relative;
+      margin: 8px 0;
+  }
+  
+  .sidebar .nav-links li a {
+      display: flex; /*icono mas texto en la fila*/
+      align-items: center;
+      text-decoration: none; /*quita el subrayado*/
+      padding: .5vw 50px; /*espacio entre cada opcion*/
+      color: #000; /*color del texto*/
+      flex-direction: row-reverse; /*icomo a la izquieda y texto a la derecha*/
+      justify-content: flex-start;
+      gap: 30px; /*espacio entre icono y texto*/
+      text-align: right;
+  }
+  
+.sidebar .nav-links li a.active,
+.sidebar .nav-links li a:hover {
+    background: #A68868;
+    color: white;   
+}
+
+  .sidebar .nav-links li a.active i,
+  .sidebar .nav-links li a:hover i{
+      color: white;
+  }
+  
+  .sidebar .nav-links li i {
+      min-width: 30px;
+      text-align: center;
+      font-size: 30px; /*tamaño del icono*/
+      color: #000;
+  }
+  
+  .sidebar .nav-links li .link_name {
+      font-size: clamp(14px, 2vw, 20px); /*tamaño de texto*/
+      font-weight: bold;
+      color: #333;
+      margin-left: 10px;
+  }
+
+.sidebar .nav-links li a.active .link_name,
+.sidebar .nav-links li a:hover .link_name {
+    color: white;
+}
+
+  /* Estilos para los detalles del perfil en el sidebar */
+  .sidebar .profile-details {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sidebar .profile-details .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 2px solid rgb(227, 195, 157, 12);
+      padding: 2px;
+      background: white;
+      /* Ensure the default image also looks good */
+      flex-shrink: 0;
+  }
+
+  .sidebar .profile-details .name-job {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 0;
+    flex-grow: 1;
+  }
+
+  .sidebar .profile-details .profile_name{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    word-break: break-word;
+  }
+
+  .sidebar .profile-details .job{
+    font-size: 12px;
+    color: #666;
+
+    /*remover backround color*/
+
+    padding: 0;
+    border-radius: 0;
+    display: inline-block;
+  }
+  
+  /*Ajute del contenido principal*/
+
+  .contenedor-principal {
+    margin-right: 280px !important;
+    margin-left: 0 !important;
+    padding: 20px !important;
+    transition: all 0.3s ease;
+  }
+
+  /*Estilo del header*/
+header{
+    width: 100%; /*ocupa todo el ancho*/
+    background: rgba(7, 23, 57, 1); /*color del fondo del header*/
+    display: flex; /*coloca loss elementoss en la fila*/
+    justify-content: space-between; /*espacio entre el logo y controless*/
+    align-items: center; /*alinea verticalmente*/
+    padding: 50px 20px; /*margenes internos*/
+    height: 0.001vw; /*mantiene fijo el tamaño*/
+    overflow: hidden; /*evita que el logo sobresalga del header*/
+    
+}
+
+
+.header_2 {
+    width: 100%;
+    height: 40px; /*altura*/
+    display: flex; /*coloca logo y congtroles en fila*/
+    align-items: center; /*centrado vertical*/
+    justify-content: space-between; /*deja espacio entre los elementos*/
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.vision-clara {
+    max-height: 4vw; /*el logo nunca pasa de 60px de alto */
+    height: auto; /*ajusta la proporcion*/
+    width: auto; /*evita deformaciones*/
+    object-fit: contain;
+}
+
+/*control de sa*/
+.sa-controls {
+    display: flex; /*icono e imagen juntos en la fila*/
+    align-items: center; 
+    gap: 15px; /*espacio entre los iconos y texto*/
+    margin-left: auto;  /*margenes*/
+    margin-right: 30px;
+}
+
+.sa-boton{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background 0.2s;
+    font-size: 16px;
+}
+
+
+/*barra oculta dashboard*/
+.sa-sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: rgba(227, 195, 157);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /*elemento de la columna*/  
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 10px 0;
+}
+
+/*fijpo hasta la parte inferior*/
+.sidebar-footer{
+    margin-top: auto;
+    padding: 20px 0;
+    border-top: 1px solid white;
+}
+
+/*muestra elementos*/
+.hidden {
+    display: none;
+}
+
+.active{
+    transform: translateX(0); /*muestra el dasboard*/
+}
+
+.sidebar-menu a{
+    display: flex;
+    justify-content: flex-start; /*alinea icono a al izquierda*/
+    align-items: center;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: backround 0.2s;
+    font-weight: bold;
+}
+
+.sidebar-menu a:hover{
+    background: #ffffff;
+}
+
+.sidebar-menu svg {
+    margin-left: 15px; /*espacio entre texto e icono*/
+    margin-right: 0; /*elimina el margen derecho*/
+}
+
+/*estilo para el encabezado de sa*/
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.sidebar-header img{
+    height: 20px;
+    width: 20px;
+}
+
+/*imagen de usuario como close */
+.close-sidebar{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/*estilo par el overlay*/
+.sidebar-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh; /*cubre toda la pantalla*/
+    background: rgba(0, 0, 0, 0.5); /* fondo semitransparente para la pantalla y el dashboard */
+    z-index: 998; /*debe de estar debajo del dashboard */
+}
+
+.sidebar-overlay.hidden{
+    display: none; /*oculto cuando no esta en uso*/
+}
+
+.sidebar-overlay.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+/*estilo para el boton de cerrar sesion*/
+.sidebar .nav-links li.logout-btn{
+    margin-top: 2vw;/*lo amda al final*/
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 50px; /*distancia del boton al margen del boton*/
+}
+
+.sidebar .nav-links li.logout-btn a{
+    background-color: #A68868;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 60px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: 1px solid black; 
+}
+
+.sidebar .nav-links li.logout-btn a:hover{
+    background: #9D6F3E;
+    border-color: white;
+    
+  
+}
+
+.sidebar .nav-links li.logout-btn a:hover i,
+.sidebar .nav-links li.logout-btn a:hover .link_name {
+    color: #ffffff;
+}
+
+
+/* ==============================
+   BOTÓN MENÚ HAMBURGUESA
+============================== */
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    margin-left: auto;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.menu-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle i {
+    font-size: 24px;
+}
+
+/* ==============================
+   RESPONSIVE MEDIA QUERIES
+============================== */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .sidebar {
+        width: 90vw;
+        padding: 15px;
+    }
+    
+    .vision-clara {
+        max-height: 85px;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 15px 20px;
+        gap: 20px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 22px;
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 15px;
+    }
+    
+    .close-avatar {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .menu-toggle {
+        font-size: 22px;
+        padding: 10px;
+    }
+    
+    .menu-toggle i {
+        font-size: 22px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .sidebar {
+        width: 70vw;
+        max-width: 400px;
+        padding: 20px;
+    }
+    
+    .header_2 {
+        padding: 15px 20px;
+        flex-wrap: nowrap;
+    }
+    
+    .vision-clara {
+        max-height: 70px;
+    }
+    
+    .sa-boton {
+        font-size: 15px;
+        padding: 10px 15px;
+        gap: 12px;
+    }
+    
+    .sa-controls {
+        gap: 12px;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 15px 25px;
+        gap: 25px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 24px;
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 16px;
+    }
+    
+    .sidebar .profile-details .profile-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .sidebar .profile-details .profile_name {
+        font-size: 15px;
+    }
+    
+    .contenedor-principal {
+        padding: 20px;
+    }
+    
+    .menu-toggle {
+        font-size: 26px;
+        padding: 12px;
+    }
+    
+    .menu-toggle i {
+        font-size: 26px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .sidebar {
+        width: 50vw;
+        max-width: 450px;
+        padding: 25px;
+    }
+    
+    .vision-clara {
+        max-height: 75px;
+    }
+    
+    .sa-controls {
+        gap: 15px;
+    }
+    
+    .sa-boton {
+        font-size: 16px;
+        gap: 15px;
+    }
+    
+    .sidebar .logo-details .logo-img {
+        height: 100px;
+    }
+    
+    .sidebar .logo-details .logo_name {
+        font-size: 20px;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 18px 30px;
+        gap: 30px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 26px;
+        min-width: 30px;
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 17px;
+    }
+    
+    .contenedor-principal {
+        padding: 25px;
+        margin-right: 0;
+    }
+    
+    #close-btn {
+        font-size: 21px;
+        padding: 20px;
+    }
+    
+    .close-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .sidebar .nav-links li.logout-btn a {
+        padding: 15px 30px;
+        font-size: 15px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .sidebar {
+        width: 35vw;
+        max-width: 500px;
+        padding: 30px;
+    }
+    
+    .contenedor-principal {
+        margin-right: 0;
+        padding: 30px;
+    }
+    
+    .header_2 {
+        padding: 20px 30px;
+    }
+    
+    .vision-clara {
+        max-height: 80px;
+    }
+    
+    .sidebar .logo-details .logo-img {
+        height: 120px;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 20px 35px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 28px;
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 18px;
+    }
+    
+    .sidebar .nav-links li.logout-btn a {
+        padding: 16px 35px;
+        font-size: 16px;
+    }
+    
+    .sa-boton {
+        font-size: 17px;
+    }
+}
+
+/* Ultra wide screens (1400px and up) */
+@media (min-width: 1400px) {
+    .sidebar {
+        width: 25vw;
+        max-width: 450px;
+    }
+    
+    .contenedor-principal {
+        padding: 40px;
+    }
+    
+    .header_2 {
+        padding: 25px 40px;
+    }
+    
+    .vision-clara {
+        max-height: 65px;
+    }
+}
+
+/* ==============================
+   RESPONSIVE PARA ALTURA
+============================== */
+
+/* Landscape orientation on mobile devices */
+@media (max-height: 500px) {
+    .sidebar {
+        height: 100vh;
+        overflow-y: auto;
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .sidebar .nav-links {
+        margin: 10px 0;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 10px 15px;
+        gap: 15px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 18px;
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 14px;
+    }
+    
+    .sidebar .nav-links li.logout-btn {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+    
+    .sidebar .nav-links li.logout-btn a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .sidebar .logo-details .logo-img {
+        height: 60px;
+    }
+    
+    #close-btn {
+        min-height: 50px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .close-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .header_2 {
+        min-height: 40px;
+        padding: 8px 15px;
+    }
+    
+    .vision-clara {
+        max-height: 50px;
+    }
+    
+    .contenedor-principal {
+        padding: 10px;
+    }
+}
+
+/* ==============================
+   RESPONSIVE ESPECÍFICO MÓVIL
+============================== */
+
+/* Extra small devices (phones in portrait, up to 575px) */
+@media (max-width: 575px) {
+    .sidebar {
+        width: 100vw;
+        padding: 10px;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 12px 15px;
+        gap: 15px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 20px;
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 14px;
+    }
+    
+    .close-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .vision-clara {
+        max-height: 60px;
+    }
+    
+    .header_2 {
+        flex-direction: row; /* Mantener en fila, no columna */
+        align-items: center;
+        justify-content: space-between; /* Logo izquierda, controles derecha */
+        gap: 10px;
+        padding: 10px 15px;
+        flex-wrap: nowrap; /* Evita que se envuelvan */
+    }
+    
+    .sa-controls {
+        margin-left: auto; /* Empuja los controles a la derecha */
+        margin-right: 0;
+        margin-top: 0;
+        flex-shrink: 0; /* Evita que se compriman */
+    }
+    
+    .sa-boton {
+        font-size: 14px;
+        padding: 8px 12px;
+        white-space: nowrap; /* Evita que el texto se rompa */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 375px) {
+    .sidebar {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 13px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 18px;
+    }
+    
+    .sidebar .nav-links li.logout-btn a {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .header_2 {
+        padding: 8px 10px;
+        flex-direction: row; /* Mantener en fila */
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .sa-controls {
+        margin-left: auto;
+        margin-top: 0;
+    }
+    
+    .sa-boton {
+        font-size: 12px;
+        padding: 6px 8px;
+        gap: 6px;
+    }
+    
+    .close-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #close-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .vision-clara {
+        max-height: 50px; /* Logo más pequeño en pantallas muy pequeñas */
+    }
+}
