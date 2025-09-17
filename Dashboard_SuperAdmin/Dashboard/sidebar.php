@@ -37,14 +37,14 @@
         </li> 
         
         <li data-no-translate="true"> 
-            <a href="../inicio/Gestion-Clientes.php" data-no-translate> 
+            <a href="../Cliente/Gestion-Cliente.php" data-no-translate> 
                 <i class="fas fa-users" data-no-translate></i> 
                 <span class="link_name">Gestion de Clientes</span> 
             </a> 
         </li> 
             
         <li data-no-translate="true"> 
-            <a href="../inicio/Gestion-Turnos.php" data-no-translate> 
+            <a href="../Turno/Gestion-Turnos.php" data-no-translate> 
                 <i class="fas fa-ticket-alt" data-no-translate></i> 
                 <span class="link_name">Gestion de Turnos</span> 
             </a> 
