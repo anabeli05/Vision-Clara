@@ -21,22 +21,24 @@
             display: flex;
             align-items: center;
             margin-bottom: 30px;
+            gap: 12px; /*epacio entre icono y texto*/
         }
         
         .header-icon {
-            width: 32px;
-            height: 32px;
-            margin-right: 12px;
-            background-size: contain;
-            color: #666;
+            font-size: 30px; /*tamaño del icono*/
+            color: black;
+            transform: translateY(10px); /*baja el icono para alinearlo*/
         }
         
         .header h1 {
             font-size: 24px;
             font-weight: 600;
+            height: 2.50vw;
+            margin: 0;
             color: #333;
+            font-family:  'Oculi Display Regular Italic';
         }
-        
+      
         .main-panel {
             background: #FFF6E1;
             border-radius: 15px;

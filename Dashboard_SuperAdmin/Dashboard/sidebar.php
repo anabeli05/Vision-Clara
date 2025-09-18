@@ -51,35 +51,35 @@
         </li> 
         
         <li data-no-translate="true"> 
-            <a href="../inicio/Productos.php" data-no-translate> 
+            <a href="../Producto/producto.php" data-no-translate> 
                 <i class="fas fa-glasses" data-no-translate></i> 
                 <span class="link_name">Productos</span> 
             </a> 
         </li> 
         
         <li data-no-translate="true"> 
-            <a href="../inicio/Registro-Clientes.php" data-no-translate> 
+            <a href="../Registro-Cliente/Registro-Cliente.php" data-no-translate> 
                 <i class="fas fa-user-plus" data-no-translate></i> 
                 <span class="link_name">Registro de Clientes</span> 
             </a> 
         </li> 
         
         <li data-no-translate="true"> 
-            <a href="../inicio/Gestion-Usuarios.php" data-no-translate> 
+            <a href="../Usuario/Gestion-Usuarios.php" data-no-translate> 
                 <i class="fas fa-user-cog" data-no-translate></i> 
                 <span class="link_name">Gestion de Usuarios</span> 
             </a> 
         </li> 
         
         <li data-no-translate="true"> 
-            <a href="../inicio/Registro-Usuario.php" data-no-translate> 
+            <a href="../Registro-Usuario/Registro-Usuario.php" data-no-translate> 
                 <i class="fas fa-user-edit" data-no-translate></i> 
                 <span class="link_name">Registro de Usuarios</span> 
             </a> 
         </li> 
         
         <li data-no-translate="true"> 
-            <a href="../inicio/Estadisticas.php" data-no-translate> 
+            <a href="../Estadisticas/Estadisticas.php" data-no-translate> 
                 <i class="fas fa-chart-bar" data-no-translate></i> 
                 <span class="link_name">Estadisticas</span> 
             </a> 

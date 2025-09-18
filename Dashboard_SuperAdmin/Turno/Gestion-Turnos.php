@@ -8,15 +8,15 @@
     <title>Gestión de Turnos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href='Gestion-Turnos.css'>
-    <link rel="stylesheet" href="../Dashboard/sidebar.css">
+    <link rel="stylesheet" href='../Dashboard/sidebar.css'>
 </head>
 <body>
+
     <?php include '../Dashboard/sidebar.php'; ?>
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div class="header-icon"></div>
-            <i class="fas fa-ticket-alt" data-no-translate></i> 
+            <i class="fas fa-ticket-alt header-icon" data-no-translate></i> 
             <h1>Gestión de Turnos</h1>
         </div>
 
