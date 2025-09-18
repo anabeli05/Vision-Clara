@@ -16,8 +16,8 @@ html, body {
     position: fixed; /*fija el menu en la pantalla*/
     top: 0;
     right: 0; /* sale al lado derecho */
-    width: 30vw; /*ancho del dashboard*/
-    max-width: 100%;/*en telefono nunca pasara de ese porcentaje de la pantalla*/
+    width: 10vw; /*ancho del dashboard*/
+    max-width: 70%;/*en telefono nunca pasara de ese porcentaje de la pantalla*/
     height: 100vh; /*ocupa el alto de la pantalla*/
     background: rgb(227, 195, 157, 1); /*color de fondo*/
     box-shadow: -5px 0 10px rgba(36, 122, 129, 0.2); /*fondo lateral*/
