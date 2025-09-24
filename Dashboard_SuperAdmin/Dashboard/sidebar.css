@@ -232,7 +232,8 @@ header{
     display: flex; /*coloca logo y congtroles en fila*/
     align-items: center; /*centrado vertical*/
     justify-content: space-between; /*deja espacio entre los elementos*/
-    border-bottom: 2px solid rgb(0, 0, 0);
+    /*border-bottom: 2px solid rgb(0, 0, 0);*/
+    color: white;
 }
 
 .vision-clara {
@@ -373,7 +374,7 @@ header{
 
 /*estilo para el boton de cerrar sesion*/
 .sidebar .nav-links li.logout-btn{
-    margin-top: 2vw;/*lo amda al final*/
+    margin-top: 2vw;/*lo manda al final*/
     display: flex;
     justify-content: center;
     border-top: 1px solid rgba(0, 0, 0, 0.1);

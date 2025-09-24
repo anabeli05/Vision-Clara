@@ -195,16 +195,21 @@ html, body{
     flex-shrink: 0;
 }
 
-.Doctora{
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    z-index: 10;
+/*Imagen decorativa inferior */
+.illustration {
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    width: 200px;
+    height: 250px;
+    z-index: 100;
 }
 
-.Doctora Doctora-img{
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
+.character {
+    width: 250px;/*Tamaños de la imagen*/
+    height: 300px;/*Tamaños de la imagen*/
+    background-image: url('../../Imagenes/doctora_inicio.png'); /*imagen*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-

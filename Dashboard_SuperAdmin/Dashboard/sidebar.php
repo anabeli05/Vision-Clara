@@ -9,10 +9,7 @@
     <img class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> 
         <div class="principal"></div> 
     </div> 
-</header> 
 
-<!--logo del header--> 
-<section class="logo"> 
     <div class="header_2"> 
         <div class="sa-controls"> 
             <div class="sa-boton" id="sidebarToggle"> 
@@ -21,7 +18,8 @@
                 <img class="close-avatar" src='../../Imagenes/boton_dashboard.png' alt="avatar"> 
             </div> 
         </div> 
-</section> 
+</header> 
+
 
 <div class="sidebar" id="sidebar" aria-hidden="true"> 
     <div id="close-btn" style="text-align: left; padding: 30px; cursor: pointer;">

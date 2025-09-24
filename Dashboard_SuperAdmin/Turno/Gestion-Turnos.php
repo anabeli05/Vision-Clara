@@ -15,9 +15,8 @@
     <?php include '../Dashboard/sidebar.php'; ?>
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <i class="fas fa-ticket-alt header-icon" data-no-translate></i> 
-            <h1>Gestión de Turnos</h1>
+        <div class="header_1">
+            <h1><i class="fas fa-ticket-alt" data-no-translate></i> Gestión de Turnos</h1>
         </div>
 
         <!-- Panel Principal -->

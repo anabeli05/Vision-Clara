@@ -184,3 +184,14 @@ header img {
     margin: 5px 0;
     font-size: 14px;
 }
+
+.footer-info a {
+    color: white; /* Texto en blanco */
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 16px; /* Tamaño del texto */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+    color: #ddd; /* Color al pasar el mouse */
+}

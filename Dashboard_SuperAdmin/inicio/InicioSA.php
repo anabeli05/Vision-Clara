@@ -40,7 +40,7 @@
         </div>
     </div>
      <!-- Imagen decorativa inferior -->
-     <div class=Doctora">
-        <img src="../../Imagenes/doctora_inicio.png" alt="Doctora-img" style="max-height:120px;">
+    <div class="illustration">
+        <div class="character"></div>
     </div>
 </body>    
