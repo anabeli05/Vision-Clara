@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    box-sizing: border-box;
+    font-family: 'Oculi Display Regular Italic';
+    background: white;
+}
+
+.contenedor-principal{
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    font-family: 'Oculi Display Regular Italic';
+    min-height: 80vh;
+}
+
+.recuadro-sa{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFF6E1;
+    border-radius: 40px;
+    margin: 0 auto;
+}
+
+
+.formato-txt{
+    flex: 1;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.formato-txt h2{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    color: black;
+    line-height: 1.2;
+}
+
+.formato-txt p{
+    font-size: 16px;
+    color:black;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.sadmin-img{
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sadmin-img img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/*saludo sa*/
+@media (min-width: 700px) {
+
+   /* .recuadro-sa{
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 250px;
+        padding: 30px;
+        display: flex;
+        flex-wrap: wrap; /*permite el ajuste en pantalla pequeñas*/
+     /*   justify-content: center;
+        align-items: flex-start;
+        background: #FFF6E1;
+        border-radius: 40px;
+        margin: 0 auto;
+    }
+    .formato-txt{
+        flex: 1; /*ocupa el espacio disponible*/
+       /* min-width: 300px; /*ancho minimo ante del wrap*/
+       /* padding: 20px;
+        margin: 0; /*elimina margen negativo*/
+    /*}
+
+    .formato-txt h2{
+        font-size: clamp(28px, 3vw, 40px); /*texto responivo*/
+    /*    margin: 0 0 15px 0;
+    }
+
+    .formato-txt p{
+        font-size: clamp(13px, 1.5vw, 15px);
+        margin-bottom: 20px;
+    }
+
+    .sadmin-img{
+        width: 35%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .sadmin-img img{
+        max-height: 200px; /*altura maxima*/
+      /*  height: 280px;
+        width: auto;
+        object-fit: contain;
+    }*/
+
+    .recuadro-sa{
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .formato-txt{
+        padding-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .formato-txt h2{
+        font-size: 24px;
+    }
+    
+    .contenedor-turno{
+        padding: 20px;
+        gap: 20px;
+        margin-right: 0;
+        align-self: center;
+    }
+    
+    .Doctora{
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 20px;
+        align-self: center;
+    }
+}
+
+
+
+.contenedor-turno{
+    display: flex;
+    align-items: center;
+    background: #FFF6E1;
+    border-radius: 20px;
+    padding: 25px 35px;
+    max-width: 350px;
+    width: 100%;
+    gap: 30px;
+    margin-right: auto; /* Alinea a la izquierda */
+}
+
+.columna{
+    text-align: center;
+    flex: 1;
+}
+
+.columna h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    font-family:'Oculi Display Regular Italic' ;
+    color: black;
+}
+
+.columna p{
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    margin: 0;
+}
+
+.separador{
+    width: 2px;
+    height: 60px;
+    background: #ccc;
+    flex-shrink: 0;
+}
+
+/*Imagen decorativa inferior */
+.illustration {
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    width: 200px;
+    height: 250px;
+    z-index: 100;
+}
+
+.character {
+    width: 250px;/*Tamaños de la imagen*/
+    height: 300px;/*Tamaños de la imagen*/
+    background-image: url('../../Imagenes/doctora_inicio.png'); /*imagen*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
