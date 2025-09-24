@@ -301,22 +301,19 @@ html, body {
 .illustration {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 70px;
     width: 200px;
-    height: 200px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    height: 250px;
     z-index: 100;
-    animation: float 6s ease-in-out infinite;
 }
 
 .character {
-    font-size: 120px;
-    animation: bounce 2s infinite;
+    width: 250px;/*Tamaños de la imagen*/
+    height: 300px;/*Tamaños de la imagen*/
+    background-image: url('../../Imagenes/chica_producto.png'); /*imagen*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @keyframes float {

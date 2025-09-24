@@ -98,9 +98,9 @@
         </div>
     </div>
 
-    <!-- Character Illustration -->
+     <!-- Imagen decorativa inferior -->
     <div class="illustration">
-        <div class="character">🤓</div>
+        <div class="character"></div>
     </div>
 
     <script>

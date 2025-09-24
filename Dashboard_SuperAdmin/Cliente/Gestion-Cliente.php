@@ -25,7 +25,7 @@
         <?php endif; ?>
         
         <div class="btn-container">
-            <a href="agregar-cliente.php" class="btn-add">
+            <a href="../Registro-Cliente/Registro-Cliente.php" class="btn-add">
                 <i class="fas fa-plus"></i> Añadir Cliente
             </a>
         </div>
