@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <header>
-        <div class="logo">MiSistema</div>
+        <div class="logo"></div>
     </header>
     
     <div class="main-container">

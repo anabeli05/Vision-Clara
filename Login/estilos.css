@@ -73,7 +73,7 @@ header {
 }
 
 .image-section.vision-bg {
-    background: url('imagenes/vision.png') no-repeat center center;
+    background: url('../Imagenes/login.png') no-repeat center center;
     background-size: cover;
 }
 
