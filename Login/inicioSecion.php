@@ -1,5 +1,11 @@
 <?php
+include_once 'log_utils.php';
+
+writeLog("Iniciando proceso de login");
+
 session_start();
+include '../Base de datos/conexion.php';
+
 
 // Procesar el formulario de login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
