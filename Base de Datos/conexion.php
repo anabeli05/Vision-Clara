@@ -82,5 +82,38 @@
 			return $this->conexion ? $this->conexion->insert_id : null;
 		}
 	}
+
+	// Crear instancia global de mysqli para compatibilidad con login_var.php
+	try {
+		$host = 'gondola.proxy.rlwy.net';
+		$port = 38159;
+		$usuario = 'root';
+		$db_password = 'UhyGRvmIBqWGvhBJZRhwBojCBVxvInyQ';
+		$base = 'railway';
+		
+		$conexion = new mysqli($host, $usuario, $db_password, $base, $port);
+		
+		if ($conexion->connect_error) {
+			error_log("Error de conexión mysqli: " . $conexion->connect_error);
+			die("Error de conexión: " . $conexion->connect_error);
+		}
+		
+		$conexion->set_charset("utf8");
+		error_log("Conexión mysqli global establecida correctamente");
+	} catch (Exception $e) {
+		error_log("Error al crear conexión mysqli global: " . $e->getMessage());
+		die("Error de conexión a la base de datos");
+	}
+
+	// Crear instancia PDO para compatibilidad con otros archivos
+	try {
+		$dsn = "mysql:host=$host;port=$port;dbname=$base;charset=utf8mb4";
+		$conn = new PDO($dsn, $usuario, $db_password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+		error_log("Conexión PDO global establecida correctamente");
+	} catch(PDOException $e) {
+		error_log("Error al crear conexión PDO: " . $e->getMessage());
+		die("Error de conexión a la base de datos");
+	}
 ?>
- 

@@ -28,7 +28,7 @@
     </div> 
     <ul class="nav-links"> 
         <li data-no-translate="true"> 
-            <a href="../inicio/inicioSA.php" data-no-translate> 
+            <a href="../inicio/InicioSA.php" data-no-translate> 
                 <i class="fas fa-home" data-no-translate></i> 
                 <span class="link_name">Inicio</span> 
             </a> 
@@ -69,7 +69,7 @@
             </a> 
         </li> 
         <li class="logout-btn">
-      <a href="../../inicio_sesion/logout.php" data-no-translate>
+      <a href="../../Login/logout.php" data-no-translate>
          <i class="fas fa-sign-out-alt" data-no-translate></i>
          <span class="link_name">Cerrar Sesión</span>
       </a>

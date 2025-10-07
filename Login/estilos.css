@@ -54,7 +54,7 @@ header {
     min-height: 600px;
 }
 
-/* ===== SECCIÓN DE IMAGEN ===== */
+/* ===== SECCIÓN DE IMAGEN ===== no mover*/
 .image-section {
     flex: 1.2;
     background: linear-gradient(135deg, #a68868 0%, #64350f 100%);

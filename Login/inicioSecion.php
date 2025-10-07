@@ -1,31 +1,34 @@
 <?php
-include_once 'log_utils.php';
-
-writeLog("Iniciando proceso de login");
-
 session_start();
-include '../Base de datos/conexion.php';
+include_once '../Base de Datos/log_utils.php';
 
+//verificar si recordo el usuario
+include_once 'check_remember.php';
 
-// Procesar el formulario de login
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
-    $remember = isset($_POST['remember']);
-    
-    // Aquí iría la validación con la base de datos
-    // Por ahora solo simulamos un login exitoso
-    if (!empty($email) && !empty($password)) {
-        $_SESSION['user_email'] = $email;
-        $_SESSION['logged_in'] = true;
-        
-        // Redireccionar al dashboard
-        header('Location: dashboard.php');
-        exit;
-    } else {
-        $error = "Por favor, complete todos los campos";
+//revisar si ya está logueado, redirigir según su rol
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    // Redirigir a dashboard específico según rol
+    if(isset($_SESSION['user_rol'])) {
+        if($_SESSION['user_rol'] === 'Super Admin') {
+            header('Location: ../Dashboard_SuperAdmin/inicio/InicioSA.php');
+        } else {
+            header('Location: ../Dashboard_Admin/inicio/InicioSA.php');
+        }
     }
+    exit;
 }
+
+// Obtener mensajes de error/éxito desde sesión
+// Estos se guardan en login_var.php cuando hay errores
+$error = $_SESSION['login_error'] ?? null;
+$success = $_SESSION['login_success'] ?? null;
+unset($_SESSION['login_error'], $_SESSION['login_success']);
+
+// Recuperar valores del formulario si hubo error
+// Esto permite que el usuario no tenga que volver a escribir
+$email_value = $_SESSION['temp_email'] ?? '';
+$remember_checked = $_SESSION['temp_remember'] ?? false;
+unset($_SESSION['temp_email'], $_SESSION['temp_remember']);
 ?>
 
 <!DOCTYPE html>
@@ -52,14 +55,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h1>INGRESAR USUARIO</h1>
                 </div>
                 
-                <?php if (isset($error)): ?>
-                    <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
+                <?php if ($error): ?>
+                    <div class="error-message" role="alert">
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($success): ?>
+                    <div class="success-message" role="alert">
+                        <?php echo htmlspecialchars($success); ?>
+                    </div>
                 <?php endif; ?>
                 
-                <form method="POST" action="">
+                <form method="POST" action="login_var.php" autocomplete="on">
                     <div class="form-group">
                         <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="Correo electrónico" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+                        <input type="email" id="email" name="email" required placeholder="Correo electrónico" value="<?php echo htmlspecialchars($email_value); ?>" autocomplete="email">
                     </div>
                     
                     <div class="form-group">
@@ -72,13 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                     <div class="remember-forgot">
                         <div class="remember">
-                            <input type="checkbox" id="remember" name="remember" <?php echo isset($_POST['remember']) ? 'checked' : ''; ?>>
+                            <input type="checkbox" id="remember" name="remember"  <?php echo $remember_checked ? 'checked' : ''; ?>>
                             <label for="remember">RECUERDAME</label>
                         </div>
                         <a href="recuperarContra.php" class="forgot-password">¿OLVIDASTE TU CONTRASEÑA?</a>
                     </div>
                     
-                    <button type="submit" class="btn login-button">Ingresar</button>
+                    <button type="submit" name="btn_login" class="btn login-button">Ingresar</button>
                 </form>
                 
                 <div class="divider"></div>
