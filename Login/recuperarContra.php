@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </form>
                 
                 <div class="remember-login">
-                    ¿Recordaste tu contraseña? <a href="inicioSesion.php">Inicia sesión aquí</a>
+                    ¿Recordaste tu contraseña? <a href="inicioSecion.php">Inicia sesión aquí</a>
                 </div>
                 
                 <div class="divider"></div>

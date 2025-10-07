@@ -1,4 +1,28 @@
-<?php 
+<?php
+// Protección de sesión - Solo usuarios autenticados pueden acceder
+require_once '../../Login/check_session.php';
+
+// Verificar que sea Super Admin
+if ($user_rol !== 'Super Admin') {
+    header('Location: ../../Login/inicioSecion.php');
+    exit;
+}
+
+// Conexión a la base de datos
+require_once '../../Base de Datos/conexion.php';
+
+// Inicializar variables
+$usuarios = [];
+$error = '';
+
+try {
+    // Obtener solo usuarios con rol 'Usuario' (no Super Admin)
+    $stmt = $conn->prepare("SELECT Usuario_ID as ID_Empleado, Nombre, Correo, Rol FROM usuarios WHERE Rol = 'Usuario' ORDER BY Nombre ASC");
+    $stmt->execute();
+    $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    $error = "Error al cargar los usuarios: " . $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,28 +62,27 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Correo</th>
-                        <th>Teléfono</th>
+                        <th>Rol</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (empty($clientes)): ?>
+                    <?php if (empty($usuarios)): ?>
                         <tr>
-                            <td colspan="5" class="no-data">No hay usuarios registrados</td>
+                            <td colspan="4" class="no-data">No hay usuarios registrados</td>
                         </tr>
                     <?php else: ?>
-                        <?php foreach ($clientes as $cliente): ?>  
+                        <?php foreach ($usuarios as $usuario): ?>  
                             <tr>
-                                <td><?php echo htmlspecialchars($cliente['Nombre']); ?></td>
-                                <td><?php echo htmlspecialchars($cliente['No_Afiliado']); ?></td>
-                                <td><?php echo htmlspecialchars($cliente['Correo']); ?></td>
-                                <td><?php echo htmlspecialchars($cliente['Telefono']); ?></td>
+                                <td><?php echo htmlspecialchars($usuario['Nombre']); ?></td>
+                                <td><?php echo htmlspecialchars($usuario['Correo']); ?></td>
+                                <td><?php echo htmlspecialchars($usuario['Rol']); ?></td>
                                 <td class="actions">
-                                    <a href="editar-cliente.php?id=<?php echo urlencode($cliente['No_Afiliado']); ?>"
+                                    <a href="editar-usuario.php?id=<?php echo urlencode($usuario['ID_Empleado']); ?>"
                                        class="btn-edit" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <button onclick="confirmarEliminacion('<?php echo htmlspecialchars($cliente['No_Afiliado'], ENT_QUOTES); ?>')"
+                                    <button onclick="confirmarEliminacion('<?php echo htmlspecialchars($usuario['ID_Empleado'], ENT_QUOTES); ?>')"
                                             class="btn-delete" title="Eliminar">
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -74,11 +97,11 @@
     
     <script>
         function confirmarEliminacion(id) {
-            if(confirm('¿Estás seguro de que deseas eliminar este cliente?')) {
+            if(confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
                 <?php if(isset($_SESSION['csrf_token'])): ?>
-                    window.location.href = `eliminar-cliente.php?id=${encodeURIComponent(id)}&csrf_token=<?php echo $_SESSION['csrf_token']; ?>`;
+                    window.location.href = `eliminar-usuario.php?id=${encodeURIComponent(id)}&csrf_token=<?php echo $_SESSION['csrf_token']; ?>`;
                 <?php else: ?>
-                    window.location.href = `eliminar-cliente.php?id=${encodeURIComponent(id)}`;
+                    window.location.href = `eliminar-usuario.php?id=${encodeURIComponent(id)}`;
                 <?php endif; ?>
             }
         }

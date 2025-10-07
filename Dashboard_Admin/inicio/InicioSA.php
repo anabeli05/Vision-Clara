@@ -1,6 +1,12 @@
 <?php
+// Protección de sesión - Solo usuarios autenticados pueden acceder
+require_once '../../Login/check_session.php';
 
-
+// Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
+if ($user_rol === 'Super Admin') {
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,7 +26,7 @@
 <section class="contenedor-principal">
     <div class="recuadro-sa">
         <div class="formato-txt">
-        <h2>Vision Clara le da la bienvenida <?php //echo htmlspecialchars(admin_nombre); ?></h2>    
+        <h2>Vision Clara le da la bienvenida <?php echo htmlspecialchars($user_nombre); ?></h2>    
         <p>Nuestro deber es apoyar al cliente a ver el mundo de una forma asombrosa!!<p>
         </div>
         <div class="sadmin-img">    

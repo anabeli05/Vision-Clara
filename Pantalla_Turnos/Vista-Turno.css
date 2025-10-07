@@ -18,7 +18,7 @@ body {
     position: relative;
     min-height: 100vh;
     padding: 20px;
-    background: transparent url('../../Imagenes/lente.png') center/cover no-repeat fixed;
+    background: transparent url('../Imagenes/lente.png') center/cover no-repeat fixed;
 }
 
 /* Patrón de puntos de fondo */

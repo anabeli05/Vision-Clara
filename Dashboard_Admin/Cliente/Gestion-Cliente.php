@@ -1,4 +1,28 @@
 <?php
+// Protección de sesión - Solo usuarios autenticados pueden acceder
+require_once '../../Login/check_session.php';
+
+// Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
+if ($user_rol === 'Super Admin') {
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    exit;
+}
+
+// Conexión a la base de datos
+require_once '../../Base de Datos/conexion.php';
+
+// Inicializar variables
+$clientes = [];
+$error = '';
+
+try {
+    // Obtener todos los clientes
+    $stmt = $conn->prepare("SELECT No_Afiliado, Nombre, Correo, Telefono FROM clientes ORDER BY Nombre ASC");
+    $stmt->execute();
+    $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    $error = "Error al cargar los clientes: " . $e->getMessage();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

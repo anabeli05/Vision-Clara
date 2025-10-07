@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Redireccionar al login
         $_SESSION['success_message'] = "Contraseña cambiada exitosamente";
-        header('Location: inicioSesion.php');
+        header('Location: inicioSecion.php');
         exit;
     }
 }

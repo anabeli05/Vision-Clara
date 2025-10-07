@@ -1,4 +1,41 @@
 <?php 
+// Protección de sesión - Solo usuarios autenticados pueden acceder
+require_once '../../Login/check_session.php';
+
+// Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
+if ($user_rol === 'Super Admin') {
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    exit;
+}
+
+// Conexión a la base de datos
+require_once '../../Base de Datos/conexion.php';
+
+// Inicializar variables para estadísticas
+$total_clientes = 0;
+$total_turnos = 0;
+$turnos_hoy = 0;
+$error = '';
+
+try {
+    // Obtener total de clientes
+    $stmt = $conn->prepare("SELECT COUNT(*) as total FROM clientes");
+    $stmt->execute();
+    $total_clientes = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    
+    // Obtener total de turnos
+    $stmt = $conn->prepare("SELECT COUNT(*) as total FROM turnos");
+    $stmt->execute();
+    $total_turnos = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    
+    // Obtener turnos de hoy
+    $stmt = $conn->prepare("SELECT COUNT(*) as total FROM turnos WHERE DATE(Fecha_Hora) = CURDATE()");
+    $stmt->execute();
+    $turnos_hoy = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    
+} catch(PDOException $e) {
+    $error = "Error al cargar estadísticas: " . $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -113,4 +150,3 @@
         </div>
     </div>
 </body>
-</html>
