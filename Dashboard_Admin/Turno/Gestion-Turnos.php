@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-<?php 
-=======
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
 require_once '../../Login/check_session.php';
@@ -33,7 +30,6 @@ try {
 } catch(PDOException $e) {
     $error = "Error al cargar los turnos: " . $e->getMessage();
 }
->>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 <html lang="es">

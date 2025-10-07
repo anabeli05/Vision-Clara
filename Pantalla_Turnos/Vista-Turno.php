@@ -1,8 +1,7 @@
 <?php
-require_once '../../Base de Datos/conexion.php';
+require_once '../Base de Datos/conexion.php';
 
-// Crear instancia de conexión
-$conexion = new Conexion();
+// La variable $conexion (mysqli) ya está disponible globalmente desde conexion.php
 
 // Función para obtener turnos en espera
 function obtenerTurnosEnEspera($conexion) {
@@ -56,7 +55,7 @@ try {
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include '../Dashboard/sidebar.php'; ?>
+    <?php// include '../Dashboard_Admin/Dasboard/sidebar.php'; ?>
     
     <div class="main-container">
         <!-- Header con patrón de puntos -->
@@ -64,7 +63,7 @@ try {
             <div class="dots-pattern"></div>
             <div class="header-content">
                 <div class="logo-section">
-                    <img src="../../Imagenes/logo_white.png" alt="Visión Clara" class="logo-image">
+                    <img src='../Imagenes/logo_white.png' alt="Visión Clara" class="logo-image">
                 </div>
             </div>
         </div>
