@@ -16,7 +16,7 @@
 <body>
 <header>
     <div class="logo"></div>
-    <a href="./index.php"><img src="Imagenes/logo.png" alt="Logo"></a>
+    <a href="./index.php"><img src='Imagenes/logo/logo-white.png' alt="Logo"></a>
 </header>
 
 <div class="All_contenido">
@@ -109,7 +109,7 @@
     <footer>
         <!-- Logo -->
         <div class="logo-footer"> 
-            <img src="Imagenes/logo.png" alt="Logo Vision Clara">
+            <img src='Imagenes/logo/logo-white.png' alt="Logo Vision Clara">
         </div>
 
         <!-- Enlaces legales -->
