@@ -6,7 +6,7 @@
 
 <header> 
     <div class="header-contenedor"> 
-    <img class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> 
+    <a href='../inicio/InicioSA.php'><img  class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> </a> 
         <div class="principal"></div> 
     </div> 
 

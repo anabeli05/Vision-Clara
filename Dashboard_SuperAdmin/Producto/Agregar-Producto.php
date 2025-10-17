@@ -84,7 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar'])) {
     <title>Agregar Producto - Vision-Clara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="Agregar-Producto.css">
-    <link rel="stylesheet" href="../Dashboard/sidebar.css">
+    <link rel="stylesheet" href='../Dashboard/sidebar.css'> 
+
 </head>
 <body>
 

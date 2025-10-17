@@ -81,7 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
     <title>Registro de Clientes - Vision-Clara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="Registro-Cliente.css">
-    <link rel="stylesheet" href="../Dashboard/sidebar.css">
+    <link rel="stylesheet" href='../Dashboard/sidebar.css'> 
+
 </head>
 <body>
 
