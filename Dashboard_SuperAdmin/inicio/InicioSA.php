@@ -16,7 +16,8 @@ if ($user_rol !== 'Super Admin') {
     <title>Vision-Clara superAdmin </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href='InicioSA.css'>
-    <link rel="stylesheet" href="../Dashboard/sidebar.css">
+    <link rel="stylesheet" href='../Dashboard/sidebar.css'> 
+
 </head>
 <body>
 
