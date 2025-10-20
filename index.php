@@ -62,22 +62,24 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Obten tu turno</h2>
-        
             <div class="tabs">
                 <button class="tab active">Cliente</button>
                 <button class="tab">Visitante</button>
             </div>
-    
             <h3>Ingresa tu número de afiliado</h3>
-            <div class="input-boxes">
-                <input type="text" maxlength="1">
-                <input type="text" maxlength="1">
-                <input type="text" maxlength="1">
-                <input type="text" maxlength="1">
-                <input type="text" maxlength="1">
-                <input type="text" maxlength="1">
-            </div>
-            <button class="btn-obtener">Obtener</button>
+            <form id="formTurnoCliente" autocomplete="off">
+                <div class="input-boxes">
+                    <input type="text" maxlength="1" class="afiliado-digit" required>
+                    <input type="text" maxlength="1" class="afiliado-digit" required>
+                    <input type="text" maxlength="1" class="afiliado-digit" required>
+                    <input type="text" maxlength="1" class="afiliado-digit" required>
+                    <input type="text" maxlength="1" class="afiliado-digit" required>
+                    <input type="text" maxlength="1" class="afiliado-digit" required>
+                    <input type="hidden" name="afiliado" id="afiliadoHidden">
+                </div>
+                <button type="submit" class="btn-obtener">Obtener</button>
+            </form>
+            <div id="turnoClienteMsg" style="margin-top:10px;color:green;display:none;"></div>
         </div>
     </div>
 
@@ -138,5 +140,77 @@
 <!-- Tus scripts -->
 <script src="js/modal.js"></script>
 <script src="js/visitante.js"></script>
+<script>
+// Recolectar número de afiliado y enviar por AJAX
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('formTurnoCliente');
+    if (form) {
+        const digits = form.querySelectorAll('.afiliado-digit');
+        const hidden = document.getElementById('afiliadoHidden');
+        const msg = document.getElementById('turnoClienteMsg');
+        const ticket = document.getElementById('ticket');
+        const ticketTurno = document.getElementById('ticketTurno');
+
+        // Mover foco automáticamente
+        digits.forEach((input, idx) => {
+            input.addEventListener('input', function() {
+                if (this.value.length === 1 && idx < digits.length - 1) {
+                    digits[idx + 1].focus();
+                }
+            });
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Concatenar los dígitos
+            let afiliado = '';
+            digits.forEach(input => afiliado += input.value);
+            if (afiliado.length !== 6 || !/^\d{6}$/.test(afiliado)) {
+                msg.style.display = 'block';
+                msg.style.color = 'red';
+                msg.textContent = 'Número de afiliado inválido';
+                return;
+            }
+            hidden.value = afiliado;
+            msg.style.display = 'none';
+
+            // Enviar por AJAX
+            fetch('Pantalla_Turnos/api-turnos.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'afiliado=' + encodeURIComponent(afiliado) + '&tipo=Cliente'
+            })
+            .then(r => r.json())
+            .then(data => {
+                console.log('API response (cliente):', data);
+                if (data.success) {
+                    msg.style.display = 'block';
+                    msg.style.color = 'green';
+                    msg.textContent = '¡Turno asignado: ' + data.turno + '!';
+                    if (ticket && ticketTurno) {
+                        // Formatear para mostrar con guion si viene en 4 caracteres (C001 -> C - 001)
+                        let display = data.turno;
+                        if (typeof display === 'string' && display.length === 4) {
+                            display = display.charAt(0) + ' - ' + display.slice(1);
+                        }
+                        ticketTurno.textContent = display;
+                        ticket.style.display = 'block';
+                    }
+                } else {
+                    msg.style.display = 'block';
+                    msg.style.color = 'red';
+                    msg.textContent = data.error || 'Error al asignar turno';
+                }
+            })
+            .catch(err => {
+                console.error('Fetch error (cliente):', err);
+                msg.style.display = 'block';
+                msg.style.color = 'red';
+                msg.textContent = 'Error de conexión con el servidor';
+            });
+        });
+    }
+});
+</script>
 </body>
 </html>

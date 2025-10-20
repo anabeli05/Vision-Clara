@@ -2,16 +2,33 @@
 const modalVisitante = document.getElementById("modalVisitante");
 const btnVisitante = document.getElementById("btnVisitante");
 const turnoAleatorio = document.getElementById("turnoAleatorio");
+const ticket = document.getElementById('ticket');
+const ticketTurno = document.getElementById('ticketTurno');
 
-// Contador de turnos en secuencia
-let contadorTurnos = 1;
-
-// Abrir modal visitante
+// Abrir modal visitante y solicitar turno al servidor
 btnVisitante.onclick = () => {
   modalVisitante.style.display = "flex";
-  // Asignar turno en secuencia
-  turnoAleatorio.textContent = "N(" + contadorTurnos + ")";
-  contadorTurnos++;
+  // Solicitar turno visitante al backend
+  fetch('Pantalla_Turnos/api-turnos.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: 'tipo=Visitante'
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success && data.turno) {
+      turnoAleatorio.textContent = data.turno;
+      if (ticket && ticketTurno) {
+        ticketTurno.textContent = data.turno;
+        ticket.style.display = 'block';
+      }
+    } else {
+      turnoAleatorio.textContent = 'Error';
+    }
+  })
+  .catch(() => {
+    turnoAleatorio.textContent = 'Error de conexión';
+  });
 };
 
 // Cerrar modal visitante con la X
