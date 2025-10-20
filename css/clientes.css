@@ -1,0 +1,300 @@
+/* ------------- Gestión de Clientes - Estilos Mejorados ------------- */
+.main-content {
+    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.main-content h1 {
+    color: #004080;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.main-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3e8bef, #2b6cb0, #0073e6);
+    border-radius: 2px;
+}
+
+.main-content h2 {
+    color: #004080;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e6f0ff;
+}
+
+/* ------------- Formulario Agregar Cliente ------------- */
+.form-agregar {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 115, 230, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-agregar input {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #004080;
+    font-weight: 500;
+}
+
+.form-agregar input:focus {
+    border-color: #0073e6;
+    box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.1);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.form-agregar input::placeholder {
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+.form-agregar button {
+    grid-column: 1 / -1;
+    padding: 16px 30px;
+    background: linear-gradient(135deg, #0073e6, #0059b3);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0, 115, 230, 0.3);
+}
+
+.form-agregar button:hover {
+    background: linear-gradient(135deg, #0059b3, #004080);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 115, 230, 0.4);
+}
+
+.form-agregar button:active {
+    transform: translateY(0);
+}
+
+/* ------------- Mensajes de Error ------------- */
+.error {
+    color: #dc2626;
+    font-size: 0.85em;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ------------- Tabla de Clientes ------------- */
+table {
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 115, 230, 0.1);
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(135deg, #0073e6, #0059b3);
+}
+
+thead th {
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tbody tr:hover {
+    background: linear-gradient(135deg, #f0f7ff, #e6f0ff);
+    transform: translateX(5px);
+}
+
+tbody td {
+    padding: 16px 15px;
+    color: #004080;
+    font-weight: 500;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+/* ------------- Acciones ------------- */
+td a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 0 2px;
+}
+
+td a:hover {
+    background: #0073e6;
+    color: white;
+    transform: translateY(-1px);
+}
+
+td a:first-child {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+td a:first-child:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+td a:last-child {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+td a:last-child:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+/* ------------- Sidebar Mejorado ------------- */
+.sidebar {
+    background: linear-gradient(135deg, #1e4e8c 0%, #004080 100%);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar ul li a {
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.sidebar ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* ------------- Responsive ------------- */
+@media (max-width: 1024px) {
+    .form-agregar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .sidebar ul {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+    }
+    
+    .sidebar ul li {
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    .sidebar ul li a {
+        white-space: nowrap;
+    }
+    
+    .main-content {
+        padding: 25px 20px;
+    }
+    
+    .main-content h1 {
+        font-size: 2em;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    thead th, tbody td {
+        padding: 12px 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 20px 15px;
+    }
+    
+    .form-agregar {
+        padding: 20px;
+    }
+    
+    .main-content h1 {
+        font-size: 1.7em;
+    }
+    
+    .main-content h2 {
+        font-size: 1.4em;
+    }
+    
+    td a {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+}
