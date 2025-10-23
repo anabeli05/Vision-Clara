@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oculi Display Regular Italic';
+    background-color: #E3F2FD;
+    color: #01579B;
+    line-height: 1.6;
+}
+
+.contenedor-principal {
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.header_1 {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.header_1 h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #01579B;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    margin-left: 10%;
+}
+
+.header_1 h1 i {
+    color: #0277BD;
+}
+
+/* Button */
+.btn-container {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-right: 20%;
+}
+
+.btn-add {
+    margin-left: 20%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0277BD;
+    color: white;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.btn-add:hover {
+    background: #01579B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px #B3E5FC;
+}
+
+/* Alert */
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    border: 1px solid #f5c6cb;
+    color: #c62828;
+}
+
+/* Table Container */
+.usuario-tabla {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(2, 119, 189, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    display: table;
+}
+
+/* Table */
+.usuario-tabla table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Header */
+.usuario-tabla thead th {
+    background: linear-gradient(135deg, #0277BD, #01579B);
+    color: white;
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Table Body */
+.usuario-tabla tbody td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #E3F2FD;
+    font-weight: 400;
+    color: #01579B;
+}
+
+.usuario-tabla tbody tr {
+    transition: all 0.3s ease;
+}
+
+.usuario-tabla tbody tr:hover {
+    background-color: #B3E5FC;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(2, 119, 189, 0.1);
+}
+
+.usuario-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* No data message */
+.usuario-tabla td.no-data {
+    text-align: center;
+    font-style: italic;
+    color: #4FC3F7;
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    background-color: #E3F2FD;
+}
+
+/* Actions Column */
+.usuario-tabla .actions {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.usuario-tabla .actions a,
+.usuario-tabla .actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 36px;
+    height: 36px;
+}
+
+.usuario-tabla .actions .btn-edit {
+    background-color: #0277BD;
+    color: white;
+}
+
+.usuario-tabla .actions .btn-edit:hover {
+    background-color: #01579B;
+    transform: scale(1.05);
+}
+
+.usuario-tabla .actions .btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.usuario-tabla .actions .btn-delete:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contenedor-principal {
+        padding: 20px 15px;
+    }
+
+    .header_1 h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .usuario-tabla {
+        overflow-x: auto;
+    }
+
+    .usuario-tabla table {
+        min-width: 600px;
+    }
+
+    .usuario-tabla thead th,
+    .usuario-tabla tbody td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+
+    .usuario-tabla .actions a,
+    .usuario-tabla .actions button {
+        margin: 2px;
+        padding: 6px 8px;
+        min-width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header_1 h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-add {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

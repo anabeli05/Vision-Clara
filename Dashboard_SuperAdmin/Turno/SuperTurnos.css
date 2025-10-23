@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #E3F2FD 0%, #FFFFFF 50%, #B3E5FC 100%);
+    background-attachment: fixed;
+    padding: 20px;
+    color: #01579B;
+}
+
+.container {
+    width: 100%;
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_1 {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.header_1 h1 i {
+    color: #0277BD;
+}
+
+.header_1 h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #01579B;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    margin-left: 10%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+  
+.main-panel {
+    background: linear-gradient(135deg, #E3F2FD 0%, #B3E5FC 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px rgba(2, 119, 189, 0.15);
+    border: 2px solid #4FC3F7;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4FC3F7, #0277BD, #01579B);
+    border-radius: 20px 20px 0 0;
+}
+
+.current-turn {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #B3E5FC;
+    box-shadow: 0 4px 15px rgba(2, 119, 189, 0.1);
+}
+
+.turn-info {
+    flex: 1;
+}
+
+.turn-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #01579B;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.turn-number {
+    font-size: 42px;
+    font-weight: bold;
+    color: #0277BD;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.turn-status {
+    font-size: 14px;
+    color: #4FC3F7;
+    font-weight: 500;
+    background: rgba(79, 195, 247, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.attendance-info {
+    text-align: right;
+    background: rgba(179, 229, 252, 0.5);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #4FC3F7;
+}
+
+.attendance-label {
+    font-size: 14px;
+    color: #01579B;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.attendance-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0277BD;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+        
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #4FC3F7, transparent);
+    margin: 25px 0;
+}
+        
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+}
+        
+.queue-section {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #B3E5FC;
+    box-shadow: 0 4px 15px rgba(2, 119, 189, 0.1);
+}
+        
+.queue-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+        
+.queue-header {
+    background: linear-gradient(135deg, #4FC3F7 0%, #0277BD 100%);
+    border-radius: 10px;
+}
+        
+.queue-header th {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+        
+.queue-row {
+    border-bottom: 1px solid #E3F2FD;
+    transition: all 0.3s ease;
+}
+
+.queue-row:hover {
+    background: rgba(179, 229, 252, 0.3);
+    transform: translateX(5px);
+}
+        
+.queue-row td {
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    font-weight: 500;
+}
+        
+.turn-code {
+    font-weight: 700;
+    color: #01579B;
+    font-size: 16px;
+}
+        
+.client-type {
+    color: #0277BD;
+}
+        
+.affiliate-number {
+    color: #01579B;
+    font-weight: 600;
+}
+        
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+        
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+        
+.btn-primary {
+    background: linear-gradient(135deg, #0277BD 0%, #01579B 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #01579B 0%, #0277BD 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(2, 119, 189, 0.3);
+}
+        
+.btn-secondary {
+    background: linear-gradient(135deg, #4FC3F7 0%, #0277BD 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #0277BD 0%, #4FC3F7 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.3);
+}
+        
+.btn-danger {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.3);
+}
+        
+.windows-section {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    height: fit-content;
+    border: 1px solid #B3E5FC;
+    box-shadow: 0 4px 15px rgba(2, 119, 189, 0.1);
+}
+        
+.windows-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+        
+.windows-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #01579B;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+        
+.windows-count {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0277BD;
+}
+        
+.windows-list {
+    border-top: 3px solid #4FC3F7;
+    padding-top: 20px;
+}
+        
+.window-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #E3F2FD;
+    transition: all 0.3s ease;
+}
+
+.window-item:hover {
+    background: rgba(179, 229, 252, 0.3);
+    border-radius: 8px;
+    padding: 12px 10px;
+    transform: translateX(5px);
+}
+        
+.window-item:last-child {
+    border-bottom: none;
+}
+        
+.window-number {
+    font-size: 15px;
+    color: #01579B;
+    font-weight: 600;
+}
+        
+.window-status {
+    font-size: 14px;
+    color: #28a745;
+    font-weight: 600;
+    background: rgba(40, 167, 69, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #28a745;
+}
+        
+.window-status.occupied {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-panel {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.current-turn {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.queue-section {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.windows-section {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+/* Efectos de notificación */
+.turn-number {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+        
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .windows-section {
+        width: 100%;
+    }
+    
+    .current-turn {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .attendance-info {
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .header_1 h1 {
+        font-size: 2em;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .main-panel {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    .header_1 h1 {
+        font-size: 1.8em;
+    }
+
+    .turn-number {
+        font-size: 32px;
+    }
+
+    .attendance-number {
+        font-size: 28px;
+    }
+
+    .queue-section {
+        padding: 15px;
+    }
+
+    .windows-section {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,859 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Oculi Display Regular Italic';
+    background: white;
+    overflow-y: auto;
+}
+
+/* Estilos de la barra lateral */
+.super-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10vw;
+    max-width: 70%;
+    height: 100vh;
+    background: linear-gradient(135deg, #4FC3F7 0%, #B3E5FC 100%); /* Gradiente azul */
+    box-shadow: -5px 0 10px rgba(2, 119, 189, 0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    font-size: 9vw;
+    overflow-y: auto;
+}
+  
+.super-sidebar.visible {
+    transform: translateX(0);
+}
+  
+#overlay.hidden {
+    display: none;
+}
+  
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 998;
+}
+  
+#close-btn {
+    text-align: left;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #01579B; /* Azul oscuro */
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 70px;
+    background: rgba(227, 242, 253, 0.3); /* Azul muy claro con transparencia */
+}
+
+#close-btn:hover{
+    color: #0277BD; /* Azul medio */
+    background: rgba(227, 242, 253, 0.6);
+}
+.close-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+    vertical-align: middle;
+    text-align: right;
+    border: 2px solid #0277BD; /* Azul medio */
+}
+  
+
+.super-sidebar .logo-details {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.super-sidebar .logo-details .logo-img {
+    height: 120px;
+    min-width: 45px;
+    margin: 32px;
+}
+  
+.super-sidebar .logo-details .logo_name {
+    font-size: 20px;
+    color: #01579B; /* Azul oscuro */
+    font-weight: 600;
+}
+  
+.super-sidebar .nav-links {
+    margin: 1vw;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+  
+.super-sidebar .nav-links li {
+    position: relative;
+    margin: 8px 0;
+}
+  
+.super-sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: .5vw 50px;
+    color: #01579B; /* Azul oscuro */
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 30px;
+    text-align: right;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+  
+.super-sidebar .nav-links li a.active,
+.super-sidebar .nav-links li a:hover {
+    background: #0277BD; /* Azul medio */
+    color: #E3F2FD; /* Azul muy claro */
+    transform: translateX(-5px);
+}
+
+.super-sidebar .nav-links li a.active i,
+.super-sidebar .nav-links li a:hover i{
+    color: #E3F2FD; /* Azul muy claro */
+}
+  
+.super-sidebar .nav-links li i {
+    min-width: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: #0277BD; /* Azul medio */
+}
+  
+.super-sidebar .nav-links li .link_name {
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: bold;
+    color: #01579B; /* Azul oscuro */
+    margin-left: 10px;
+}
+
+.super-sidebar .nav-links li a.active .link_name,
+.super-sidebar .nav-links li a:hover .link_name {
+    color: #E3F2FD; /* Azul muy claro */
+}
+
+/* Estilos para los detalles del perfil en el sidebar */
+.super-sidebar .profile-details {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: rgba(227, 242, 253, 0.5); /* Azul muy claro con transparencia */
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(2, 119, 189, 0.1);
+    border: 1px solid #B3E5FC; /* Azul claro */
+}
+  
+.super-sidebar .profile-details .profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #4FC3F7; /* Azul claro principal */
+    padding: 2px;
+    background: white;
+    flex-shrink: 0;
+}
+
+.super-sidebar .profile-details .name-job {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 0;
+    flex-grow: 1;
+}
+
+.super-sidebar .profile-details .profile_name{
+    font-size: 16px;
+    font-weight: 600;
+    color: #01579B; /* Azul oscuro */
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.super-sidebar .profile-details .job{
+    font-size: 12px;
+    color: #0277BD; /* Azul medio */
+    padding: 0;
+    border-radius: 0;
+    display: inline-block;
+}
+  
+/*Ajute del contenido principal*/
+
+.contenedor-principal {
+    margin-right: 280px !important;
+    margin-left: 0 !important;
+    padding: 20px !important;
+    transition: all 0.3s ease;
+}
+
+/*Estilo del header*/
+header{
+    width: 100%;
+    background: linear-gradient(135deg, #01579B 0%, #0277BD 100%); /* Gradiente azul */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    height: 0.001vw;
+    overflow: hidden;
+}
+
+.header_2 {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #E3F2FD; /* Azul muy claro */
+}
+
+.vision-clara {
+    max-height: 4vw;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+/*control de sa*/
+.sa-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.sa-boton{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background 0.2s;
+    font-size: 16px;
+    color: #E3F2FD; /* Azul muy claro */
+    background: rgba(227, 242, 253, 0.2);
+}
+
+.sa-boton:hover{
+    background: rgba(227, 242, 253, 0.4);
+}
+
+/*barra oculta dashboard*/
+.sa-sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, #4FC3F7 0%, #B3E5FC 100%);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 10px 0;
+}
+
+/*fijpo hasta la parte inferior*/
+.sidebar-footer{
+    margin-top: auto;
+    padding: 20px 0;
+    border-top: 1px solid #0277BD; /* Azul medio */
+}
+
+/*muestra elementos*/
+.hidden {
+    display: none;
+}
+
+.active{
+    transform: translateX(0);
+}
+
+.sidebar-menu a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 20px;
+    color: #01579B; /* Azul oscuro */
+    text-decoration: none;
+    transition: background 0.2s;
+    font-weight: bold;
+}
+
+.sidebar-menu a:hover{
+    background: #E3F2FD; /* Azul muy claro */
+}
+
+.sidebar-menu svg {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+/*estilo para el encabezado de sa*/
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #B3E5FC; /* Azul claro */
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #01579B; /* Azul oscuro */
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.sidebar-header img{
+    height: 20px;
+    width: 20px;
+}
+
+/*imagen de usuario como close */
+.close-sidebar{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #0277BD; /* Azul medio */
+}
+
+/*estilo par el overlay*/
+.sidebar-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    background: rgba(1, 87, 155, 0.3); /* Azul oscuro con transparencia */
+    z-index: 998;
+}
+
+.sidebar-overlay.hidden{
+    display: none;
+}
+
+.sidebar-overlay.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+/*estilo para el boton de cerrar sesion*/
+.super-sidebar .nav-links li.logout-btn{
+    margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(2, 119, 189, 0.3); /* Azul medio con transparencia */
+    padding-top: 50px;
+}
+
+.super-sidebar .nav-links li.logout-btn a{
+    background: linear-gradient(135deg, #0277BD 0%, #01579B 100%); /* Gradiente azul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E3F2FD; /* Azul muy claro */
+    font-weight: bold;
+    border-radius: 60px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid #01579B; /* Azul oscuro */
+}
+
+.super-sidebar .nav-links li.logout-btn a:hover{
+    background: linear-gradient(135deg, #01579B 0%, #0277BD 100%);
+    border-color: #E3F2FD; /* Azul muy claro */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(2, 119, 189, 0.3);
+}
+
+.super-sidebar .nav-links li.logout-btn a:hover i,
+.super-sidebar .nav-links li.logout-btn a:hover .link_name {
+    color: #E3F2FD; /* Azul muy claro */
+}
+
+/* ==============================
+   BOTÓN MENÚ HAMBURGUESA
+============================== */
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    color: #01579B; /* Azul oscuro */
+    font-size: 24px;
+    margin-left: auto;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.menu-toggle:hover {
+    background: rgba(79, 195, 247, 0.2); /* Azul claro principal con transparencia */
+}
+
+.menu-toggle i {
+    font-size: 24px;
+}
+
+/* ==============================
+   RESPONSIVE MEDIA QUERIES
+============================== */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .super-sidebar {
+        width: 90vw;
+        padding: 15px;
+    }
+    
+    .vision-clara {
+        max-height: 85px;
+    }
+    
+    .super-sidebar .nav-links li a {
+        padding: 15px 20px;
+        gap: 20px;
+    }
+    
+    .super-sidebar .nav-links li i {
+        font-size: 22px;
+    }
+    
+    .super-sidebar .nav-links li .link_name {
+        font-size: 15px;
+    }
+    
+    .close-avatar {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .menu-toggle {
+        font-size: 22px;
+        padding: 10px;
+    }
+    
+    .menu-toggle i {
+        font-size: 22px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .super-sidebar {
+        width: 70vw;
+        max-width: 400px;
+        padding: 20px;
+    }
+    
+    .header_2 {
+        padding: 15px 20px;
+        flex-wrap: nowrap;
+    }
+    
+    .vision-clara {
+        max-height: 70px;
+    }
+    
+    .sa-boton {
+        font-size: 15px;
+        padding: 10px 15px;
+        gap: 12px;
+    }
+    
+    .sa-controls {
+        gap: 12px;
+    }
+    
+    .super-sidebar .nav-links li a {
+        padding: 15px 25px;
+        gap: 25px;
+    }
+    
+    .super-sidebar .nav-links li i {
+        font-size: 24px;
+    }
+    
+    .super-sidebar .nav-links li .link_name {
+        font-size: 16px;
+    }
+    
+    .super-sidebar .profile-details .profile-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .super-sidebar .profile-details .profile_name {
+        font-size: 15px;
+    }
+    
+    .contenedor-principal {
+        padding: 20px;
+    }
+    
+    .menu-toggle {
+        font-size: 26px;
+        padding: 12px;
+    }
+    
+    .menu-toggle i {
+        font-size: 26px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .super-sidebar {
+        width: 50vw;
+        max-width: 450px;
+        padding: 25px;
+    }
+    
+    .vision-clara {
+        max-height: 75px;
+    }
+    
+    .sa-controls {
+        gap: 15px;
+    }
+    
+    .sa-boton {
+        font-size: 16px;
+        gap: 15px;
+    }
+    
+    .super-sidebar .logo-details .logo-img {
+        height: 100px;
+    }
+    
+    .super-sidebar .logo-details .logo_name {
+        font-size: 20px;
+    }
+    
+    .super-sidebar .nav-links li a {
+        padding: 18px 30px;
+        gap: 30px;
+    }
+    
+    .super-sidebar .nav-links li i {
+        font-size: 26px;
+        min-width: 30px;
+    }
+    
+    .super-sidebar .nav-links li .link_name {
+        font-size: 17px;
+    }
+    
+    .contenedor-principal {
+        padding: 25px;
+        margin-right: 0;
+    }
+    
+    #close-btn {
+        font-size: 21px;
+        padding: 20px;
+    }
+    
+    .close-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .super-sidebar .nav-links li.logout-btn a {
+        padding: 15px 30px;
+        font-size: 15px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .super-sidebar {
+        width: 35vw;
+        max-width: 500px;
+        padding: 30px;
+    }
+    
+    .contenedor-principal {
+        margin-right: 0;
+        padding: 30px;
+    }
+    
+    .header_2 {
+        padding: 20px 30px;
+    }
+    
+    .vision-clara {
+        max-height: 80px;
+    }
+    
+    .super-sidebar .logo-details .logo-img {
+        height: 120px;
+    }
+    
+    .super-sidebar .nav-links li a {
+        padding: 20px 35px;
+    }
+    
+    .super-sidebar .nav-links li i {
+        font-size: 28px;
+    }
+    
+    .super-sidebar .nav-links li .link_name {
+        font-size: 18px;
+    }
+    
+    .super-sidebar .nav-links li.logout-btn a {
+        padding: 16px 35px;
+        font-size: 16px;
+    }
+    
+    .sa-boton {
+        font-size: 17px;
+    }
+}
+
+/* Ultra wide screens (1400px and up) */
+@media (min-width: 1400px) {
+    .super-sidebar {
+        width: 25vw;
+        max-width: 450px;
+    }
+    
+    .contenedor-principal {
+        padding: 40px;
+    }
+    
+    .header_2 {
+        padding: 25px 40px;
+    }
+    
+    .vision-clara {
+        max-height: 65px;
+    }
+}
+
+/* ==============================
+   RESPONSIVE PARA ALTURA
+============================== */
+
+/* Landscape orientation on mobile devices */
+@media (max-height: 500px) {
+    .super-sidebar {
+        height: 100vh;
+        overflow-y: auto;
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .super-sidebar .nav-links {
+        margin: 10px 0;
+    }
+    
+    .super-sidebar .nav-links li a {
+        padding: 10px 15px;
+        gap: 15px;
+    }
+    
+    .super-sidebar .nav-links li i {
+        font-size: 18px;
+    }
+    
+    .super-sidebar .nav-links li .link_name {
+        font-size: 14px;
+    }
+    
+    .super-sidebar .nav-links li.logout-btn {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+    
+    .super-sidebar .nav-links li.logout-btn a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .super-sidebar .logo-details .logo-img {
+        height: 60px;
+    }
+    
+    #close-btn {
+        min-height: 50px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .close-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .header_2 {
+        min-height: 40px;
+        padding: 8px 15px;
+    }
+    
+    .vision-clara {
+        max-height: 50px;
+    }
+    
+    .contenedor-principal {
+        padding: 10px;
+    }
+}
+
+/* ==============================
+   RESPONSIVE ESPECÍFICO MÓVIL
+============================== */
+
+/* Extra small devices (phones in portrait, up to 575px) */
+@media (max-width: 575px) {
+    .super-sidebar {
+        width: 100vw;
+        padding: 10px;
+    }
+    
+    .super-sidebar .nav-links li a {
+        padding: 12px 15px;
+        gap: 15px;
+    }
+    
+    .super-sidebar .nav-links li i {
+        font-size: 20px;
+    }
+    
+    .super-sidebar .nav-links li .link_name {
+        font-size: 14px;
+    }
+    
+    .close-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .vision-clara {
+        max-height: 60px;
+    }
+    
+    .header_2 {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 15px;
+        flex-wrap: nowrap;
+    }
+    
+    .sa-controls {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+    
+    .sa-boton {
+        font-size: 14px;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 375px) {
+    .super-sidebar {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .super-sidebar .nav-links li a {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .super-sidebar .nav-links li .link_name {
+        font-size: 13px;
+    }
+    
+    .super-sidebar .nav-links li i {
+        font-size: 18px;
+    }
+    
+    .super-sidebar .nav-links li.logout-btn a {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .header_2 {
+        padding: 8px 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .sa-controls {
+        margin-left: auto;
+        margin-top: 0;
+    }
+    
+    .sa-boton {
+        font-size: 12px;
+        padding: 6px 8px;
+        gap: 6px;
+    }
+    
+    .close-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #close-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .vision-clara {
+        max-height: 50px;
+    }
+}
