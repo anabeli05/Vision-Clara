@@ -1,17 +1,12 @@
 <?php
+include("conexion.php");
 ?>
-
-<!DOCTYPE html> 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visión Clara</title>
-
-    <!-- Estilos externos -->
-    <link rel="stylesheet" href="estilos/estilos_cliente.css">
-    <link rel="stylesheet" href="estilos/modal.css">
-    <link rel="stylesheet" href="estilos/modal_visitante.css">
+    <title>Generar Turno - Óptica Vision Clara</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 <header>
@@ -19,6 +14,7 @@
     <a href="./index.php"><img src='Imagenes/logo/logo-white.png' alt="Logo"></a>
 </header>
 
+<<<<<<< HEAD
 <div class="All_contenido">
     <div class="interfaz1">
         <h1>Obtén tu turno para tu cita</h1>
@@ -93,20 +89,75 @@
                 <span class="turno-num" id="turnoAleatorio">C - 000</span>
             </div>
         </div>
+=======
+<!-- SECCIÓN PRINCIPAL DE TURNO -->
+<div class="seccion-turno">
+    <h1 class="titulo-principal">Obten tu turno para tu cita</h1>
+    <div class="botones-tipo">
+        <button id="abrir-cliente">Cliente</button>
+        <button id="abrir-visitante">Visitante</button>
+>>>>>>> f9f521d105b24a79aa40b2a098a06a746dcb4010
     </div>
 </div>
 
-<!-- Ticket oculto -->
-<div id="ticket">
-    <div class="ticket-content">
-        <h2>Visión clara</h2>
-        <h3>Turno</h3>
-        <h1 id="ticketTurno">C - 000</h1>
-        <p>Agradecemos su Preferencia</p>
+<!-- SECCIÓN INFORMACIÓN -->
+<div class="seccion-informacion">
+    <div class="inicio">
+        <img src="Imagenes/lentes_intro.png" alt="Lentes de calidad">
+        <p>En Visión clara nos especializamos en el cuidado integral de tus ojos, combinando 
+        la más alta tecnología con un trato humano y cercano. 
+        Nuestro compromiso es ofrecerte una experiencia única en salud visual, garantizando 
+        calidad, confianza y comodidad.</p>
     </div>
-</div>
 
+    <div class="apartado2">
+        <h1>Cuidamos tu visión y la de tu familia, para que disfruten cada momento con claridad.</h1>
+        <img src="Imagenes/mujer_rizada.png" alt="Mujer con lentes">
+        <img src="Imagenes/mujer_blanca.png" alt="Mujer sonriendo">
+        <img src="Imagenes/familia_lentes.png" alt="Familia con lentes">
+    </div> 
     
+    <div class="apartado2">
+        <h1>También puedes adquirir parte de nuestros productos (solamente en tienda física)</h1>
+        <img src="Imagenes/1_lente.png" alt="Lente individual">
+        <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
+        <img src="Imagenes/2_lentes.png" alt="Par de lentes">
+    </div>                   
+</div>
+
+<!-- Modal Cliente -->
+<div id="modal-cliente" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" id="cerrar-cliente">&times;</span>
+        <h2>Turno Cliente</h2>
+        <form id="form-cliente">
+            <label>Número de Afiliado (6 dígitos):</label>
+            <div class="afiliado-inputs">
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+            </div>
+            <button type="submit">Obtener Turno</button>
+        </form>
+        <div id="resultado-cliente"></div>
+    </div>
+</div>
+
+<!-- Modal Visitante -->
+<div id="modal-visitante" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" id="cerrar-visitante">&times;</span>
+        <h2>Turno Visitante</h2>
+        <form id="form-visitante">
+            <button type="submit">Obtener Turno</button>
+        </form>
+        <div id="resultado-visitante"></div>
+    </div>
+</div>
+
 <div class="container-footer">
     <footer>
         <!-- Logo -->
@@ -128,89 +179,16 @@
             <h4>Contáctanos:</h4>
             <p>Tel. 314 139 7633</p>
             <h4>Correo:</h4>
-            <p> Vision.Clara@gmail.com</p>
+            <p>Vision.Clara@gmail.com</p>
         </div>
     </footer>
+    
+    <!-- Línea de derechos reservados -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Óptica Visión Clara. Todos los derechos reservados.</p>
+    </div>
 </div>
 
-<!-- Librerías para exportar -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<!-- Tus scripts -->
-<script src="js/modal.js"></script>
-<script src="js/visitante.js"></script>
-<script>
-// Recolectar número de afiliado y enviar por AJAX
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('formTurnoCliente');
-    if (form) {
-        const digits = form.querySelectorAll('.afiliado-digit');
-        const hidden = document.getElementById('afiliadoHidden');
-        const msg = document.getElementById('turnoClienteMsg');
-        const ticket = document.getElementById('ticket');
-        const ticketTurno = document.getElementById('ticketTurno');
-
-        // Mover foco automáticamente
-        digits.forEach((input, idx) => {
-            input.addEventListener('input', function() {
-                if (this.value.length === 1 && idx < digits.length - 1) {
-                    digits[idx + 1].focus();
-                }
-            });
-        });
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Concatenar los dígitos
-            let afiliado = '';
-            digits.forEach(input => afiliado += input.value);
-            if (afiliado.length !== 6 || !/^\d{6}$/.test(afiliado)) {
-                msg.style.display = 'block';
-                msg.style.color = 'red';
-                msg.textContent = 'Número de afiliado inválido';
-                return;
-            }
-            hidden.value = afiliado;
-            msg.style.display = 'none';
-
-            // Enviar por AJAX
-            fetch('Pantalla_Turnos/api-turnos.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'afiliado=' + encodeURIComponent(afiliado) + '&tipo=Cliente'
-            })
-            .then(r => r.json())
-            .then(data => {
-                console.log('API response (cliente):', data);
-                if (data.success) {
-                    msg.style.display = 'block';
-                    msg.style.color = 'green';
-                    msg.textContent = '¡Turno asignado: ' + data.turno + '!';
-                    if (ticket && ticketTurno) {
-                        // Formatear para mostrar con guion si viene en 4 caracteres (C001 -> C - 001)
-                        let display = data.turno;
-                        if (typeof display === 'string' && display.length === 4) {
-                            display = display.charAt(0) + ' - ' + display.slice(1);
-                        }
-                        ticketTurno.textContent = display;
-                        ticket.style.display = 'block';
-                    }
-                } else {
-                    msg.style.display = 'block';
-                    msg.style.color = 'red';
-                    msg.textContent = data.error || 'Error al asignar turno';
-                }
-            })
-            .catch(err => {
-                console.error('Fetch error (cliente):', err);
-                msg.style.display = 'block';
-                msg.style.color = 'red';
-                msg.textContent = 'Error de conexión con el servidor';
-            });
-        });
-    }
-});
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
