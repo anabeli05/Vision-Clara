@@ -1,17 +1,17 @@
 <?php
-//include("../conexion.php");
-//session_start();
+include('../../conexion.php');
+session_start();
 
 // Verificar que el usuario esté logueado y sea admin
-//if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 'admin') {
-//    header("Location: login.php");
-//    exit;
-//}
+if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 'admin') {
+    header("Location: login.php");
+    exit;
+}
 
 // Crear conexión
-//$conexion_obj = new Conexion();
-//$conexion_obj->abrir_conexion();
-//$conexion = $conexion_obj->conexion;
+$conexion_obj = new Conexion();
+$conexion_obj->abrir_conexion();
+$conexion = $conexion_obj->conexion;
 
 // Inicializar variables con valores por defecto
 $total_clientes = 0;
@@ -20,19 +20,19 @@ $total_productos = 0;
 $hoy = date('Y-m-d');
 
 // Total de clientes
-//try {
-//    $query_clientes = "SELECT COUNT(*) AS total_clientes FROM clientes";
-//    $result_clientes = mysqli_query($conexion, $query_clientes);
-//    if ($result_clientes && mysqli_num_rows($result_clientes) > 0) {
-//        $row_clientes = mysqli_fetch_assoc($result_clientes);
-//        $total_clientes = $row_clientes['total_clientes'] ?? 0;
-//    }
-//} catch (Exception $e) {
-//    $total_clientes = 0;
-//}
+try {
+    $query_clientes = "SELECT COUNT(*) AS total_clientes FROM clientes";
+    $result_clientes = mysqli_query($conexion, $query_clientes);
+    if ($result_clientes && mysqli_num_rows($result_clientes) > 0) {
+        $row_clientes = mysqli_fetch_assoc($result_clientes);
+        $total_clientes = $row_clientes['total_clientes'] ?? 0;
+    }
+} catch (Exception $e) {
+    $total_clientes = 0;
+}
 
 // Total de turnos hoy
-/*
+
 try {
     $query_turnos = "SELECT COUNT(*) AS total_turnos FROM turnos WHERE DATE(fecha) = ?";
     $stmt_turnos = $conexion->prepare($query_turnos);
@@ -58,7 +58,7 @@ try {
 } catch (Exception $e) {
     $total_productos = 0;
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -74,7 +74,6 @@ try {
     <?php include '../Dashboard/SuperSidebar.php'; ?>
     <div class="contenedor-principal">
         <div class="header_1">
-            <i class="fas fa-chart-bar" data-no-translate></i> 
             <h1>📊 Estadísticas Generales</h1>
         </div>
 

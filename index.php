@@ -1,12 +1,12 @@
 <?php
-include("conexion.php");
+include('./Base de Datos/conexion.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Generar Turno - Óptica Vision Clara</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href='./estilos/estilos.css'>
 </head>
 <body>
 <header>
@@ -108,7 +108,7 @@ include("conexion.php");
     
     <!-- Línea de derechos reservados -->
     <div class="footer-bottom">
-        <p>&copy; 2024 Óptica Visión Clara. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Óptica Visión Clara. Todos los derechos reservados.</p>
     </div>
 </div>
 
