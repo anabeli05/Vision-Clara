@@ -76,11 +76,11 @@
                         switch ($_SESSION['Rol']) {
                             case 'Super Admin':
                                 echo "<br>DEBUG: Redirigiendo a Super Admin<br>";
-                                header("location: ../Dashboard_SuperAdmin/inicio/inicioSA.php");
+                                header("location: ../Dashboard_SuperAdmin/inicio/SuperInicio.php");
                                 break;
                             case 'Usuario':
                                 echo "<br>DEBUG: Redirigiendo a Usuario>";
-                                header("location: ../Dashboard_Admin/inicio/inicioSA.php");
+                                header("location: ../Dashboard_Admin/inicio/inicioAdmin.php");
                                 break;
                             default:
                                 echo "<br>DEBUG: Rol desconocido<br>";

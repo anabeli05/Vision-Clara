@@ -176,9 +176,9 @@ include_once '../Base de Datos/log_utils.php';
 
                 //redireccion segun el rol
                 if($usuario['Rol'] === 'Super Admin') {
-                    header('Location: ../Dashboard_SuperAdmin/inicio/InicioSA.php');
+                    header("location: ../Dashboard_SuperAdmin/inicio/SuperInicio.php");
                 } else {
-                    header('Location: ../Dashboard_Admin/inicio/InicioSA.php');
+                    header("location: ../Dashboard_Admin/inicio/inicioAdmin.php");
                 }
                 exit;
             } else {
