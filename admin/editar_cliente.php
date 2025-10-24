@@ -2,6 +2,7 @@
 include("../conexion.php");
 session_start();
 
+// 🔐 Verificar que el usuario esté logueado y sea admin
 if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 'admin') {
     header("Location: login.php");
     exit;
@@ -11,14 +12,15 @@ $conexion_obj = new Conexion();
 $conexion_obj->abrir_conexion();
 $conexion = $conexion_obj->conexion;
 
-if (!isset($_GET['id'])) {
+// 🚫 Verificar que se reciba el número de afiliado
+if (!isset($_GET['numero_afiliado'])) {
     header("Location: clientes.php");
     exit;
 }
 
-$id_cliente = intval($_GET['id']);
-$stmt = $conexion->prepare("SELECT * FROM clientes WHERE id=?");
-$stmt->bind_param("i", $id_cliente);
+$numero_afiliado = intval($_GET['numero_afiliado']);
+$stmt = $conexion->prepare("SELECT * FROM clientes WHERE numero_afiliado=?");
+$stmt->bind_param("i", $numero_afiliado);
 $stmt->execute();
 $result = $stmt->get_result();
 if($result->num_rows != 1) {
@@ -35,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefono = trim($_POST['telefono']);
     $email = trim($_POST['email']);
 
-    // Validaciones
+    // ✅ Validaciones
     if(empty($nombre)) $errores['nombre'] = "El nombre es obligatorio.";
     if(empty($apellido)) $errores['apellido'] = "El apellido es obligatorio.";
     if(empty($telefono)) $errores['telefono'] = "El teléfono es obligatorio.";
@@ -43,18 +45,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($email)) $errores['email'] = "El email es obligatorio.";
     elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)) $errores['email'] = "Email inválido.";
 
-    // Verificar duplicado
+    // 🔍 Verificar duplicado de email en otro cliente
     if(empty($errores['email'])){
-        $stmt_check = $conexion->prepare("SELECT id FROM clientes WHERE email=? AND id!=?");
-        $stmt_check->bind_param("si", $email, $id_cliente);
+        $stmt_check = $conexion->prepare("SELECT numero_afiliado FROM clientes WHERE email=? AND numero_afiliado!=?");
+        $stmt_check->bind_param("si", $email, $numero_afiliado);
         $stmt_check->execute();
         $res_check = $stmt_check->get_result();
         if($res_check->num_rows>0) $errores['email'] = "El email ya está registrado en otro cliente.";
     }
 
+    // ✅ Actualizar si no hay errores
     if(empty($errores)){
-        $stmt_update = $conexion->prepare("UPDATE clientes SET nombre=?, apellido=?, telefono=?, email=? WHERE id=?");
-        $stmt_update->bind_param("ssssi",$nombre,$apellido,$telefono,$email,$id_cliente);
+        $stmt_update = $conexion->prepare("UPDATE clientes SET nombre=?, apellido=?, telefono=?, email=? WHERE numero_afiliado=?");
+        $stmt_update->bind_param("ssssi",$nombre,$apellido,$telefono,$email,$numero_afiliado);
         $stmt_update->execute();
         $actualizado = true;
     }
@@ -86,21 +89,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Editar Cliente</h1>
         <form method="POST">
             <div class="form-group">
+                <label>Número de Afiliado</label>
+                <input type="text" value="<?php echo $cliente['numero_afiliado']; ?>" disabled>
+            </div>
+
+            <div class="form-group">
                 <input type="text" name="nombre" value="<?php echo htmlspecialchars($_POST['nombre'] ?? $cliente['nombre']); ?>">
                 <?php if(isset($errores['nombre'])) echo "<p class='error'>{$errores['nombre']}</p>"; ?>
             </div>
+
             <div class="form-group">
                 <input type="text" name="apellido" value="<?php echo htmlspecialchars($_POST['apellido'] ?? $cliente['apellido']); ?>">
                 <?php if(isset($errores['apellido'])) echo "<p class='error'>{$errores['apellido']}</p>"; ?>
             </div>
+
             <div class="form-group">
                 <input type="text" name="telefono" value="<?php echo htmlspecialchars($_POST['telefono'] ?? $cliente['telefono']); ?>">
                 <?php if(isset($errores['telefono'])) echo "<p class='error'>{$errores['telefono']}</p>"; ?>
             </div>
+
             <div class="form-group">
                 <input type="email" name="email" value="<?php echo htmlspecialchars($_POST['email'] ?? $cliente['email']); ?>">
                 <?php if(isset($errores['email'])) echo "<p class='error'>{$errores['email']}</p>"; ?>
             </div>
+
             <button type="submit">Guardar Cambios</button>
         </form>
 

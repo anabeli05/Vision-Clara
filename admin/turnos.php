@@ -62,35 +62,49 @@ $inicio = ($pagina - 1) * $por_pagina;
 try {
     // Contar total de turnos
     $count_query = "SELECT COUNT(*) AS total FROM turnos $where_sql";
+    
     if ($where_sql) {
         $stmt_count = $conexion->prepare($count_query);
-        if ($types) $stmt_count->bind_param($types, ...$params);
+        if ($types) {
+            $stmt_count->bind_param($types, ...$params);
+        }
         $stmt_count->execute();
         $result_total = $stmt_count->get_result();
     } else {
-        $result_total = mysqli_query($conexion, $count_query);
+        $result_total = $conexion->query($count_query);
     }
     
     if ($result_total) {
-        $total_data = mysqli_fetch_assoc($result_total);
+        $total_data = $result_total->fetch_assoc();
         $total_turnos = $total_data['total'] ?? 0;
         $total_paginas = ceil($total_turnos / $por_pagina);
     }
 
     // Obtener turnos paginados
     $query_turnos = "SELECT * FROM turnos $where_sql ORDER BY fecha DESC LIMIT ?, ?";
-    $params[] = $inicio;
-    $params[] = $por_pagina;
-    $types .= 'ii';
     
     $stmt_turnos = $conexion->prepare($query_turnos);
-    if ($types) $stmt_turnos->bind_param($types, ...$params);
+    
+    if ($where_sql) {
+        // Si hay filtros, bind de todos los parámetros
+        $params_turnos = array_merge($params, [$inicio, $por_pagina]);
+        $types_turnos = $types . 'ii';
+        $stmt_turnos->bind_param($types_turnos, ...$params_turnos);
+    } else {
+        // Si no hay filtros, solo bind de parámetros de paginación
+        $stmt_turnos->bind_param('ii', $inicio, $por_pagina);
+    }
+    
     $stmt_turnos->execute();
     $result_turnos = $stmt_turnos->get_result();
     
 } catch (Exception $e) {
     $error = "Error en la consulta: " . $e->getMessage();
     $result_turnos = null;
+    
+    // Debug: Mostrar información del error
+    error_log("Error en turnos.php: " . $e->getMessage());
+    error_log("Query: " . $query_turnos);
 }
 ?>
 
@@ -123,6 +137,7 @@ try {
             <?php if(isset($error)): ?>
                 <div style="background: #fef2f2; color: #dc2626; padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #fecaca;">
                     ⚠️ <?php echo $error; ?>
+                    <br><small>Si el problema persiste, verifica la conexión a la base de datos.</small>
                 </div>
             <?php endif; ?>
 
@@ -146,11 +161,34 @@ try {
                 <a href="turnos.php">🔄 Restablecer</a>
             </form>
 
+            <!-- Información de resultados -->
+            <?php if($result_turnos && $result_turnos->num_rows > 0): ?>
+                <div style="margin-bottom: 15px; color: #666; font-size: 0.9em;">
+                    Mostrando <?php echo $result_turnos->num_rows; ?> de <?php echo $total_turnos; ?> turnos
+                    <?php if(!empty($tipo_filtro) && $tipo_filtro != 'Todos'): ?>
+                        - Filtrado por: <?php echo $tipo_filtro; ?>
+                    <?php endif; ?>
+                    <?php if(!empty($fecha_filtro)): ?>
+                        - Fecha: <?php echo $fecha_filtro; ?>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
             <!-- Tabla de turnos -->
             <?php if(!$result_turnos): ?>
                 <p>❌ Error al cargar los turnos. Por favor, intente nuevamente.</p>
+                <p style="color: #666; font-size: 0.9em;">
+                    <strong>Solución:</strong> Verifica que la tabla 'turnos' exista y tenga datos.
+                </p>
             <?php elseif($result_turnos->num_rows == 0): ?>
                 <p>📭 No hay turnos que coincidan con los filtros seleccionados.</p>
+                <?php if(!empty($tipo_filtro) || !empty($fecha_filtro)): ?>
+                    <p style="text-align: center;">
+                        <a href="turnos.php" style="color: #0073e6; text-decoration: none; font-weight: 600;">
+                            🔄 Ver todos los turnos
+                        </a>
+                    </p>
+                <?php endif; ?>
             <?php else: ?>
                 <table>
                     <thead>
@@ -160,6 +198,7 @@ try {
                             <th>Número</th>
                             <th>Fecha y Hora</th>
                             <th>Estado</th>
+                            <th>N° Afiliado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -180,6 +219,9 @@ try {
                                 <?php else: ?>
                                     <span style="color: #dc2626;">⏳ Pendiente</span>
                                 <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php echo !empty($turno['numero_afiliado']) ? $turno['numero_afiliado'] : '—'; ?>
                             </td>
                             <td>
                                 <?php if(!$turno['atendido']): ?>
