@@ -21,7 +21,7 @@
 
 <div class="All_contenido">
     <div class="interfaz1">
-        <h1>Opten tu turno para tu cita</h1>
+        <h1>Obtén tu turno para tu cita</h1>
 
         <div class="botones_interfaces">
             <div class="botones">

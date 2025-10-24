@@ -18,7 +18,11 @@ body {
     position: relative;
     min-height: 100vh;
     padding: 20px;
-    background: transparent url('../Imagenes/lente.png') center/cover no-repeat fixed;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.6),  /* capa blanca semitransparente */
+        lightblue  /* color de fondo sólido */
+    ),
+    url('../Imagenes/lente.png') center/cover no-repeat fixed;
 }
 
 /* Patrón de puntos de fondo */
@@ -78,10 +82,10 @@ body {
 /* Sección Atendiendo */
 .attending-section {
     flex: 1;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgb(243, 243, 243);
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgb(82, 157, 255);
     backdrop-filter: blur(10px);
 }
 
@@ -89,19 +93,19 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #000000;
     margin-bottom: 25px;
     text-align: center;
 }
 
 .windows-table {
-    background: #f8f9fa;
+    background: #7ebaf7;
     border-radius: 12px;
     overflow: hidden;
 }
 
 .table-header {
-    background: #f3f4f6;
+    background:  #7ebaf7;
     padding: 15px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -121,7 +125,7 @@ body {
     gap: 20px;
     padding: 15px 20px;
     border-bottom: 1px solid #f3f4f6;
-    background: #fefce8;
+    background:  #a2c9ee94;
     transition: background-color 0.3s ease;
 }
 
@@ -157,27 +161,27 @@ body {
 
 .current-turn {
     font-weight: 600;
-    color: #dc2626;
+    color: #dd4343;
 }
 
 /* Sección En espera */
 .waiting-section {
     flex: 1;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgb(243, 243, 243);
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgb(82, 157, 255);
     backdrop-filter: blur(10px);
 }
 
 .waiting-list {
-    background: #f8f9fa;
+    background: #b5d9fd;
     border-radius: 12px;
     overflow: hidden;
 }
 
 .list-header {
-    background: #f3f4f6;
+    background:  #7ebaf7;
     padding: 15px 20px;
     font-weight: 600;
     color: #374151;
@@ -192,7 +196,7 @@ body {
 .waiting-item {
     padding: 15px 20px;
     border-bottom: 1px solid #f3f4f6;
-    background: #fefce8;
+    background: #a2c9ee94;
     transition: background-color 0.3s ease;
 }
 
@@ -207,10 +211,11 @@ body {
 .turn-number {
     font-weight: 700;
     font-size: 1.2rem;
-    color: #dc2626;
+    color: #e44444;
     display: block;
     text-align: center;
 }
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -291,3 +296,6 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
+
+
+

@@ -168,3 +168,51 @@ DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
 DEBUG: DEBUG: Comparación (===): COINCIDE
 --- Nuevo Log de Sesión: 2025-10-17 16:25:30 ---
 DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-10-24 04:25:36 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-10-24 04:25:36 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 04:25:36 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-10-24 04:25:36 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 04:25:37 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 04:25:37 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 04:25:37 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-10-24 04:25:37 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-10-24 04:25:41 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-10-24 04:25:41 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 04:25:41 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-10-24 04:25:41 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 04:25:42 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 04:25:42 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 04:25:42 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-10-24 04:25:42 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-10-24 04:28:08 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-10-24 04:28:08 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 04:28:08 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-10-24 04:28:08 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 04:28:09 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 04:28:09 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 04:28:09 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-10-24 04:28:09 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1

@@ -99,7 +99,7 @@ try {
             <div class="dots-pattern"></div>
             <div class="header-content">
                 <div class="logo-section">
-                    <img src='../Imagenes/logo_white.png' alt="Visión Clara" class="logo-image">
+                    <img src='../Imagenes/logo_black.png' alt="Visión Clara" class="logo-image">
                 </div>
             </div>
         </div>
