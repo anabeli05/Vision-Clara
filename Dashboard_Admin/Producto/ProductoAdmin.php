@@ -1,15 +1,15 @@
 <?php 
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
-//if ($user_rol === 'Super Admin') {
-//    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
-//    exit;
-//}
+if ($user_rol === 'Super Admin') {
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    exit;
+}
 
 // Conexión a la base de datos
-//require_once '../../Base de Datos/conexion.php';
+require_once '../../Base de Datos/conexion.php';
 
 // Inicializar variables
 $productos = [];
@@ -26,15 +26,15 @@ function formatearPrecio($precio) {
     return '$' . number_format($precio, 2);
 }
 
-//try {
+try {
     // Obtener todos los productos
-//    $stmt = $conn->prepare("SELECT ID_Producto, Nombre, Descripcion, Precio, Stock, Imagen_URL FROM productos WHERE Activo = 1 ORDER BY Nombre ASC");
-//    $stmt->execute();
-//    $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//} catch(PDOException $e) {
-//    $error = "Error al cargar productos";
-//    $error_message = $e->getMessage();
-//}
+    $stmt = $conn->prepare("SELECT ID_Producto, Nombre, Descripcion, Precio, Stock, Imagen_URL FROM productos WHERE Activo = 1 ORDER BY Nombre ASC");
+    $stmt->execute();
+    $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    $error = "Error al cargar productos";
+    $error_message = $e->getMessage();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -85,10 +85,20 @@ function formatearPrecio($precio) {
                          data-product-id="<?= htmlspecialchars($producto['ID_Producto']) ?>">
                         
                         <div class="product-image-container">
-                            <img src="<?= htmlspecialchars($producto['Imagen_URL'] ?: '/images/default-glasses.jpg') ?>" 
-                                 alt="<?= htmlspecialchars($producto['Nombre']) ?>" 
-                                 class="product-image"
-                                 onerror="this.src='/images/default-glasses.jpg'">
+                            <?php 
+                                // Debug temporal - quita esto después de probar
+                                $rutaImagen = !empty($producto['Imagen_URL']) ? '../../' . $producto['Imagen_URL'] : '../../uploads/productos/default-glasses.jpg';
+                            ?>
+    
+                                <!-- Muestra la ruta para debug -->
+                            <small style="display:block; font-size:10px; color:#666;">
+                                Ruta: <?= htmlspecialchars($rutaImagen) ?>
+                            </small>
+    
+                            <img src="<?= htmlspecialchars($rutaImagen) ?>" 
+                                alt="<?= htmlspecialchars($producto['Nombre']) ?>" 
+                                class="product-image"
+                                onerror="this.src='../../uploads/productos/default-glasses.jpg'; console.error('Error cargando imagen');">
                         </div>
                         
                         <div class="product-content">
@@ -108,7 +118,7 @@ function formatearPrecio($precio) {
                             
                             <?php if ($producto['Stock'] > 0): ?>
                                 <button class="add-to-cart-btn" onclick="addToCart(<?= $producto['ID_Producto'] ?>)">
-                                    Agregar al Carrito
+                                    Vender
                                 </button>
                             <?php else: ?>
                                 <button class="add-to-cart-btn" disabled style="opacity: 0.5; cursor: not-allowed;">
