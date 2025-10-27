@@ -4,7 +4,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
 
-
 <header> 
     <div class="header-contenedor"> 
     <img class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> 
@@ -13,13 +12,23 @@
     </div> 
 
     <div class="header_2"> 
-        <div class="sa-controls"> 
-            <div class="sa-boton" id="sidebarToggle"> 
-                <span>Administrador</span> 
-                <i class="fas fa-chevron-down"></i> 
-                <img class="close-avatar" src='../../Imagenes/boton_dashboard.png' alt="avatar"> 
-            </div> 
-        </div> 
+        <div class="theme-controls">
+            <!-- Botón Cambio de Tema -->
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <span>Modo Oscuro</span>
+            </button>
+            
+            <!-- Botón Administrador (existente) -->
+            <div class="sa-controls"> 
+                <div class="sa-boton" id="sidebarToggle"> 
+                    <span>Administrador</span> 
+                    <i class="fas fa-chevron-down"></i> 
+                    <img class="close-avatar" src='../../Imagenes/boton_dashboard.png' alt="avatar"> 
+                </div> 
+            </div>
+        </div>
+    </div> 
 </header> 
 
 
@@ -82,55 +91,89 @@
 <div class="sidebar-overlay hidden" id="overlay"></div> 
 
 <script> 
-
 document.addEventListener('DOMContentLoaded', ()=> { 
+    // Código existente del sidebar...
 
-//<!--funciones para cerrar, abrir, y oscurecer el resto menos el dashboard en js---> 
+    // ==============================
+    // FUNCIONALIDAD CAMBIO DE TEMA
+    // ==============================
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
 
-const sidebar = document.getElementById('sidebar'); 
-const toggleBtn = document.getElementById('sidebarToggle'); 
-const closeBtn = document.getElementById('close-btn'); 
-const overlay = document.getElementById('overlay'); 
+    // Verificar preferencia guardada
+    const savedTheme = localStorage.getItem('adminTheme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        updateThemeIcon('dark');
+    }
 
-function openSidebar(){
-    sidebar.classList.add('active'); 
-    overlay.classList.remove('hidden'); 
-    sidebar.setAttribute('aria-hidden', 'false') 
-} 
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        
+        if (body.classList.contains('dark-theme')) {
+            localStorage.setItem('adminTheme', 'dark');
+            updateThemeIcon('dark');
+        } else {
+            localStorage.setItem('adminTheme', 'light');
+            updateThemeIcon('light');
+        }
+    });
 
-function closeSidebar(){
-    sidebar.classList.remove('active'); 
-    overlay.classList.add('hidden'); 
-    sidebar.setAttribute('aria-hidden', 'true'); 
-} 
+    function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        const text = themeToggle.querySelector('span');
+        
+        if (theme === 'dark') {
+            icon.className = 'fas fa-sun';
+            text.textContent = 'Modo Claro';
+        } else {
+            icon.className = 'fas fa-moon';
+            text.textContent = 'Modo Oscuro';
+        }
+    }
 
-toggleBtn.addEventListener('click', (e) => { 
-    e.stopPropagation();
-    if(sidebar.classList.contains('active')){ 
-        closeSidebar();
-    }else{ 
-        openSidebar();
-        } 
-}); 
+    // Código existente del sidebar...
+    const sidebar = document.getElementById('sidebar'); 
+    const toggleBtn = document.getElementById('sidebarToggle'); 
+    const closeBtn = document.getElementById('close-btn'); 
+    const overlay = document.getElementById('overlay'); 
 
-closeBtn.addEventListener('click', (e) => { 
-    e.stopPropagation(); 
-    closeSidebar(); 
-}); 
+    function openSidebar(){
+        sidebar.classList.add('active'); 
+        overlay.classList.remove('hidden'); 
+        sidebar.setAttribute('aria-hidden', 'false') 
+    } 
 
-overlay.addEventListener('click', (e) => {
-     closeSidebar(); 
-}); 
+    function closeSidebar(){
+        sidebar.classList.remove('active'); 
+        overlay.classList.add('hidden'); 
+        sidebar.setAttribute('aria-hidden', 'true'); 
+    } 
 
-
-// cerrar el dashboard dando cliack fuera de este 
-
-document.addEventListener('click', (event) => { 
-    if(sidebar.classList.contains('active') && 
-    !sidebar.contains(event.target) && 
-    !toggleBtn.contains(event.target)){
-         closeSidebar(); 
-        } 
+    toggleBtn.addEventListener('click', (e) => { 
+        e.stopPropagation();
+        if(sidebar.classList.contains('active')){ 
+            closeSidebar();
+        }else{ 
+            openSidebar();
+            } 
     }); 
+
+    closeBtn.addEventListener('click', (e) => { 
+        e.stopPropagation(); 
+        closeSidebar(); 
+    }); 
+
+    overlay.addEventListener('click', (e) => {
+         closeSidebar(); 
+    }); 
+
+    document.addEventListener('click', (event) => { 
+        if(sidebar.classList.contains('active') && 
+        !sidebar.contains(event.target) && 
+        !toggleBtn.contains(event.target)){
+             closeSidebar(); 
+            } 
+        }); 
 }); 
 </script>

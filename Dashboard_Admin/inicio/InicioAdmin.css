@@ -171,3 +171,48 @@ html, body{
     background-repeat: no-repeat;
     background-position: center;
 }
+/* ==============================
+   TEMA OSCURO - CONTENIDO INICIO
+============================== */
+
+body.dark-theme .contenedor-principal {
+    background: #0f172a;
+}
+
+body.dark-theme .recuadro-sa {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid #475569;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .formato-txt h2 {
+    color: #e2e8f0;
+}
+
+body.dark-theme .formato-txt p {
+    color: #cbd5e1;
+}
+
+body.dark-theme .contenedor-turno {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid #475569;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .columna h3 {
+    color: #e2e8f0;
+}
+
+body.dark-theme .columna p {
+    color: #cbd5e1;
+}
+
+body.dark-theme .separador {
+    background: #475569;
+}
+
+/* Asegurar que las imágenes mantengan su visibilidad en tema oscuro */
+body.dark-theme .sadmin-img img,
+body.dark-theme .character {
+    filter: brightness(0.9); /* Ligero ajuste para mejor contraste */
+}

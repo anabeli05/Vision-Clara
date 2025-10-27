@@ -1,4 +1,5 @@
 <?php
+/*
 include('../../conexion.php');
 session_start();
 
@@ -58,7 +59,7 @@ try {
 } catch (Exception $e) {
     $total_productos = 0;
 }
-
+*/
 ?>
 <!DOCTYPE html>
 <html lang="es">

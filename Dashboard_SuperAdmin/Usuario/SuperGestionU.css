@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+:root {
+    /* Colores modo claro */
+    --bg-color: #E3F2FD;
+    --text-color: #01579B;
+    --container-bg: #ffffff;
+    --header-bg: #0277BD;
+    --header-text: white;
+    --table-header-bg: linear-gradient(135deg, #0277BD, #01579B);
+    --table-border: #E3F2FD;
+    --table-hover: #B3E5FC;
+    --button-bg: #0277BD;
+    --button-hover: #01579B;
+    --shadow-color: rgba(2, 119, 189, 0.1);
+    --alert-bg: #ffebee;
+    --alert-border: #f5c6cb;
+    --alert-text: #c62828;
+    --no-data-bg: #E3F2FD;
+    --no-data-text: #4FC3F7;
+}
+
+body.dark-theme {
+    /* Colores modo oscuro */
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --container-bg: #2d2d2d;
+    --header-bg: #01579B;
+    --header-text: #e0e0e0;
+    --table-header-bg: linear-gradient(135deg, #01579B, #013a63);
+    --table-border: #404040;
+    --table-hover: #01579B;
+    --button-bg: #0277BD;
+    --button-hover: #4FC3F7;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --alert-bg: #5c2a2a;
+    --alert-border: #8b3a3a;
+    --alert-text: #ff8a8a;
+    --no-data-bg: #404040;
+    --no-data-text: #81d4fa;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +48,21 @@
 
 body {
     font-family: 'Oculi Display Regular Italic';
-    background-color: #E3F2FD;
-    color: #01579B;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contenedor-principal {
     width: 100%;
     padding: 20px 20px;
-    background-color: #ffffff;
+    background-color: var(--container-bg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 /* Header */
@@ -33,16 +75,17 @@ body {
 .header_1 h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #01579B;
+    color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: left;
     gap: 15px;
     margin-left: 10%;
+    transition: color 0.3s ease;
 }
 
 .header_1 h1 i {
-    color: #0277BD;
+    color: var(--header-bg);
 }
 
 /* Button */
@@ -60,7 +103,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #0277BD;
+    background: var(--button-bg);
     color: white;
     padding: 12px 10px;
     border-radius: 8px;
@@ -73,9 +116,9 @@ body {
 }
 
 .btn-add:hover {
-    background: #01579B;
+    background: var(--button-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px #B3E5FC;
+    box-shadow: 0 6px 20px var(--shadow-color);
 }
 
 /* Alert */
@@ -85,24 +128,26 @@ body {
     margin-bottom: 25px;
     width: 100%;
     max-width: 1000px;
+    transition: all 0.3s ease;
 }
 
 .alert-danger {
-    background-color: #ffebee;
-    border: 1px solid #f5c6cb;
-    color: #c62828;
+    background-color: var(--alert-bg);
+    border: 1px solid var(--alert-border);
+    color: var(--alert-text);
 }
 
 /* Table Container */
 .usuario-tabla {
-    background: white;
+    background: var(--container-bg);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(2, 119, 189, 0.1);
+    box-shadow: 0 4px 20px var(--shadow-color);
     overflow: hidden;
     margin: 0 auto;
     max-width: 1000px;
     width: 100%;
     display: table;
+    transition: all 0.3s ease;
 }
 
 /* Table */
@@ -114,8 +159,8 @@ body {
 
 /* Table Header */
 .usuario-tabla thead th {
-    background: linear-gradient(135deg, #0277BD, #01579B);
-    color: white;
+    background: var(--table-header-bg);
+    color: var(--header-text);
     padding: 20px 15px;
     text-align: left;
     font-weight: 600;
@@ -127,9 +172,10 @@ body {
 /* Table Body */
 .usuario-tabla tbody td {
     padding: 18px 15px;
-    border-bottom: 1px solid #E3F2FD;
+    border-bottom: 1px solid var(--table-border);
     font-weight: 400;
-    color: #01579B;
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
 .usuario-tabla tbody tr {
@@ -137,9 +183,9 @@ body {
 }
 
 .usuario-tabla tbody tr:hover {
-    background-color: #B3E5FC;
+    background-color: var(--table-hover);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(2, 119, 189, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .usuario-tabla tbody tr:last-child td {
@@ -150,10 +196,10 @@ body {
 .usuario-tabla td.no-data {
     text-align: center;
     font-style: italic;
-    color: #4FC3F7;
+    color: var(--no-data-text);
     padding: 60px 20px;
     font-size: 1.1rem;
-    background-color: #E3F2FD;
+    background-color: var(--no-data-bg);
 }
 
 /* Actions Column */
@@ -180,12 +226,12 @@ body {
 }
 
 .usuario-tabla .actions .btn-edit {
-    background-color: #0277BD;
+    background-color: var(--button-bg);
     color: white;
 }
 
 .usuario-tabla .actions .btn-edit:hover {
-    background-color: #01579B;
+    background-color: var(--button-hover);
     transform: scale(1.05);
 }
 

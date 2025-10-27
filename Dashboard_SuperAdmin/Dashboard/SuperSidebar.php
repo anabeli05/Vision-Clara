@@ -11,6 +11,12 @@
 
     <div class="header_2"> 
         <div class="sa-controls"> 
+            <!-- Botón para cambiar tema en el header -->
+            <div class="theme-toggle-header" id="themeToggleHeader">
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">Modo Oscuro</span>
+            </div>
+            
             <div class="sa-boton" id="sidebarToggle"> 
                 <span>Super Administrador</span> 
                 <i class="fas fa-chevron-down"></i> 
@@ -81,6 +87,7 @@
                 <span class="link_name">Estadisticas</span> 
             </a> 
         </li> 
+        
         <li class="logout-btn">
       <a href="../../Login/logout.php" data-no-translate>
          <i class="fas fa-sign-out-alt" data-no-translate></i>
@@ -133,9 +140,7 @@ overlay.addEventListener('click', (e) => {
      closeSidebar(); 
 }); 
 
-
 // cerrar el dashboard dando cliack fuera de este 
-
 document.addEventListener('click', (event) => { 
     if(sidebar.classList.contains('active') && 
     !sidebar.contains(event.target) && 
@@ -143,5 +148,40 @@ document.addEventListener('click', (event) => {
          closeSidebar(); 
         } 
     }); 
+
+// Función para cambiar entre modo claro y oscuro
+const themeToggleHeader = document.getElementById('themeToggleHeader');
+const themeIcon = themeToggleHeader.querySelector('i');
+const themeText = themeToggleHeader.querySelector('.theme-text');
+
+// Verificar si hay una preferencia guardada
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+// Aplicar el tema guardado al cargar la página
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+    themeText.textContent = 'Modo Claro';
+}
+
+// Alternar entre modos
+themeToggleHeader.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    document.body.classList.toggle('dark-theme');
+    
+    if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeText.textContent = 'Modo Claro';
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeText.textContent = 'Modo Oscuro';
+    }
+});
 }); 
 </script>

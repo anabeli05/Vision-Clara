@@ -215,3 +215,94 @@ html, body {
         margin-left: 0;
     }
 }
+/* ==============================
+   TEMA OSCURO - REGISTRO ADMIN
+============================== */
+
+body.dark-theme {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-theme .contenedor-principal {
+    background: #0f172a;
+}
+
+body.dark-theme .header_1 h1 {
+    color: #e2e8f0;
+}
+
+body.dark-theme .header_1 h1 i {
+    color: #4FC3F7;
+}
+
+body.dark-theme .formulario-registro {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid #475569;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .formulario label {
+    color: #e2e8f0;
+}
+
+body.dark-theme .formulario input {
+    background: #1e293b;
+    border: 2px solid #475569;
+    color: #e2e8f0;
+}
+
+body.dark-theme .formulario input:focus {
+    border-color: #4FC3F7;
+    background: #334155;
+    box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+}
+
+body.dark-theme .btn-submit {
+    background: linear-gradient(135deg, #475569, #374151) !important;
+    color: #e2e8f0 !important;
+}
+
+body.dark-theme .btn-submit:hover {
+    background: linear-gradient(135deg, #374151, #1f2937) !important;
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.3);
+}
+
+body.dark-theme .btn-cancel {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b) !important;
+    color: #fecaca !important;
+}
+
+body.dark-theme .btn-cancel:hover {
+    background: linear-gradient(135deg, #991b1b, #7f1d1d) !important;
+    box-shadow: 0 6px 20px rgba(153, 27, 27, 0.4);
+}
+
+body.dark-theme .info-message {
+    background: #334155;
+    color: #cbd5e1;
+    border-left: 4px solid #4FC3F7;
+}
+
+body.dark-theme .info-message i {
+    color: #4FC3F7;
+}
+
+body.dark-theme .alert-danger {
+    background-color: #7f1d1d;
+    border: 1px solid #991b1b;
+    color: #fecaca;
+}
+
+body.dark-theme .alert-success {
+    background-color: #14532d;
+    border: 1px solid #15803d;
+    color: #bbf7d0;
+}
+
+/* Responsive para tema oscuro */
+@media (max-width: 768px) {
+    body.dark-theme .formulario-registro {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+}

@@ -1,12 +1,30 @@
+/* ------------- Variables de Tema ------------- */
+:root {
+    --bg-primary: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+    --text-primary: #004080;
+    --card-bg: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    --shadow-color: rgba(0, 115, 230, 0.15);
+    --border-color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] {
+    --bg-primary: linear-gradient(135deg, #0a1929 0%, #1a237e 100%);
+    --text-primary: #E3F2FD;
+    --card-bg: linear-gradient(135deg, #1e3a5f 0%, #1565c0 100%);
+    --shadow-color: rgba(13, 71, 161, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
 /* ------------- Estadísticas - Estilos Mejorados ------------- */
 .main-content {
-    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+    background: var(--bg-primary);
     min-height: 100vh;
     padding: 40px;
+    transition: all 0.3s ease;
 }
 
 .main-content h1 {
-    color: #004080;
+    color: var(--text-primary);
     font-size: 2.5em;
     font-weight: 700;
     margin-bottom: 40px;
@@ -26,6 +44,10 @@
     border-radius: 2px;
 }
 
+[data-theme="dark"] .main-content h1::after {
+    background: linear-gradient(90deg, #1976D2, #1565C0, #0D47A1);
+}
+
 /* ------------- Grid de Estadísticas ------------- */
 .estadisticas-grid {
     display: grid;
@@ -36,13 +58,13 @@
 
 /* ------------- Cards de Estadísticas ------------- */
 .estadistica-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    background: var(--card-bg);
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 115, 230, 0.15);
+    box-shadow: 0 10px 30px var(--shadow-color);
     text-align: center;
     transition: all 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -59,11 +81,11 @@
 
 .estadistica-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 115, 230, 0.25);
+    box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 .estadistica-card h2 {
-    color: #004080;
+    color: var(--text-primary);
     font-size: 1.3em;
     font-weight: 600;
     margin-bottom: 20px;
@@ -72,6 +94,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+[data-theme="dark"] .estadistica-card h2 {
+    color: #E3F2FD;
 }
 
 .estadistica-card p {
@@ -104,6 +130,24 @@
     --card-color-3: #b45309;
 }
 
+[data-theme="dark"] .estadistica-card:nth-child(1) {
+    --card-color-1: #64b5f6;
+    --card-color-2: #1976d2;
+    --card-color-3: #0d47a1;
+}
+
+[data-theme="dark"] .estadistica-card:nth-child(2) {
+    --card-color-1: #4caf50;
+    --card-color-2: #2e7d32;
+    --card-color-3: #1b5e20;
+}
+
+[data-theme="dark"] .estadistica-card:nth-child(3) {
+    --card-color-1: #ffb74d;
+    --card-color-2: #f57c00;
+    --card-color-3: #e65100;
+}
+
 /* ------------- Iconos Decorativos ------------- */
 .estadistica-card::after {
     content: '';
@@ -127,63 +171,110 @@
 }
 
 .estadistica-card:nth-child(3)::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'%3E%3Cpath d='M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.24 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z'/%3E%3C/svg%3E");
 }
 
 .estadistica-card:hover::after {
+    transform: scale(1.2);
     opacity: 0.2;
-    transform: scale(1.2) rotate(5deg);
 }
 
 /* ------------- Responsive ------------- */
-@media (max-width: 1024px) {
-    .estadisticas-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-
 @media (max-width: 768px) {
     .main-content {
-        padding: 30px 20px;
+        padding: 20px;
     }
-    
+
     .main-content h1 {
         font-size: 2em;
+        margin-bottom: 30px;
     }
-    
+
     .estadisticas-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
     }
-    
+
     .estadistica-card {
-        padding: 35px 25px;
+        padding: 30px 20px;
     }
-    
+
     .estadistica-card h2 {
         font-size: 1.2em;
         min-height: auto;
     }
-    
+
     .estadistica-card p {
-        font-size: 3.5em;
+        font-size: 3em;
     }
 }
 
 @media (max-width: 480px) {
     .main-content {
-        padding: 25px 15px;
+        padding: 15px;
     }
-    
+
     .main-content h1 {
         font-size: 1.8em;
     }
-    
+
     .estadistica-card {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
-    
+
+    .estadistica-card h2 {
+        font-size: 1.1em;
+    }
+
     .estadistica-card p {
-        font-size: 3em;
+        font-size: 2.5em;
     }
+}
+
+/* ------------- Animaciones ------------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.estadistica-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.estadistica-card:nth-child(1) { animation-delay: 0.1s; }
+.estadistica-card:nth-child(2) { animation-delay: 0.2s; }
+.estadistica-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* ------------- Toggle de Tema ------------- */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    font-size: 1.2em;
+    color: var(--text-primary);
 }

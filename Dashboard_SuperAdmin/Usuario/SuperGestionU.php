@@ -30,11 +30,20 @@ $error = '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Clientes - Vision-Clara</title>
+    <title>Gestión de Usuarios - Vision-Clara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="SuperGestionU.css">
-    <link rel="stylesheet" href='../Dashboard/SuperSidebar.css'> 
-
+    <link rel="stylesheet" href='../Dashboard/SuperSidebar.css'>
+    
+    <script>
+        // Aplicar tema inmediatamente al cargar la página
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
 </head>
 <body>
 
@@ -106,6 +115,32 @@ $error = '';
                 <?php endif; ?>
             }
         }
+
+        // Escuchar cambios de tema en tiempo real
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'theme') {
+                if (e.newValue === 'dark') {
+                    document.body.classList.add('dark-theme');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                }
+            }
+        });
+
+        // También observar cambios directos en el body
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'class') {
+                    const isDark = document.body.classList.contains('dark-theme');
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                }
+            });
+        });
+
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
     </script>
 </body>
 </html>

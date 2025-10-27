@@ -200,7 +200,97 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* ==============================
+   TEMA OSCURO - GESTIÓN ADMIN
+============================== */
+
+body.dark-theme {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-theme .contenedor-principal {
+    background: #0f172a;
+}
+
+body.dark-theme .header_1 h1 {
+    color: #e2e8f0;
+}
+
+body.dark-theme .header_1 h1 i {
+    color: #4FC3F7;
+}
+
+body.dark-theme .btn-add {
+    background: linear-gradient(135deg, #475569, #374151);
+    color: #e2e8f0;
+    border: 1px solid #4b5563;
+}
+
+body.dark-theme .btn-add:hover {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.2);
+}
+
+body.dark-theme .alert-danger {
+    background-color: #7f1d1d;
+    border: 1px solid #991b1b;
+    color: #fecaca;
+}
+
+body.dark-theme .cliente-tabla {
+    background: #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .cliente-tabla thead th {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: #e2e8f0;
+    border-bottom: 2px solid #475569;
+}
+
+body.dark-theme .cliente-tabla tbody td {
+    border-bottom: 1px solid #334155;
+    color: #cbd5e1;
+}
+
+body.dark-theme .cliente-tabla tbody tr {
+    background: #1e293b;
+}
+
+body.dark-theme .cliente-tabla tbody tr:hover {
+    background: #334155;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(79, 195, 247, 0.2);
+}
+
+body.dark-theme .cliente-tabla td.no-data {
+    color: #94a3b8;
+    background: #1e293b;
+}
+
+body.dark-theme .cliente-tabla .actions .btn-edit {
+    background: linear-gradient(135deg, #475569, #374151);
+    color: #e2e8f0;
+}
+
+body.dark-theme .cliente-tabla .actions .btn-edit:hover {
+    background: linear-gradient(135deg, #374151, #1f2937);
+}
+
+body.dark-theme .cliente-tabla .actions .btn-delete {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    color: #fecaca;
+}
+
+body.dark-theme .cliente-tabla .actions .btn-delete:hover {
+    background: linear-gradient(135deg, #991b1b, #7f1d1d);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
 @media screen and (max-width: 768px) {
     .contenedor-principal {
         padding: 20px 15px;
@@ -243,5 +333,13 @@ body {
     .btn-add {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+}
+
+/* Responsive para tema oscuro */
+@media screen and (max-width: 768px) {
+    body.dark-theme .cliente-tabla tbody tr:hover {
+        background: #334155;
+        box-shadow: 0 2px 8px rgba(79, 195, 247, 0.15);
     }
 }

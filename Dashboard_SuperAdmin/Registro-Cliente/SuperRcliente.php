@@ -7,7 +7,6 @@
 //    header('Location: ../../Login/inicioSecion.php');
 //    exit;
 //}
-
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';
 
@@ -33,6 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
         // Validaciones básicas
         if (empty($nombre) || empty($correo) || empty($telefono)) {
             $error = "Todos los campos son obligatorios";
+        } elseif (!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/', $nombre)) {
+            $error = "El nombre solo puede contener letras y espacios";
+        } elseif (!preg_match('/^\d{10}$/', $telefono)) {
+            $error = "El número de teléfono debe tener exactamente 10 dígitos";
         } else {
             try {
                 // Generar número de afiliado único de 6 caracteres
@@ -61,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
                     $stmt = $conn->prepare("INSERT INTO clientes (No_Afiliado, Nombre, Correo, Telefono) VALUES (?, ?, ?, ?)");
                     $stmt->execute([$no_afiliado, $nombre, $correo, $telefono]);
                     
-                    $success = "Cliente registrado exitosamente";
+                    $success = "Cliente registrado exitosamente. Número de afiliado: " . $no_afiliado;
                     // Limpiar el formulario
                     $_POST = [];
                 }
@@ -71,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -105,26 +109,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
         <?php endif; ?>
 
         <!-- Formulario de registro -->
-        <form method="POST" class="formulario-registro">
+        <form method="POST" class="formulario-registro" id="registroForm">
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <input type="hidden" name="registro" value="1">
 
             <div class="formulario">
                 <label for="Nombre">Nombre Completo:</label>
-                <input type="text" id="Nombre" name="Nombre" required
-                        value="<?php echo htmlspecialchars($_POST['Nombre']?? ''); ?>">
+                <input type="text" id="Nombre" name="Nombre" required 
+                       pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" 
+                       title="Solo se permiten letras y espacios"
+                       value="<?php echo htmlspecialchars($_POST['Nombre']?? ''); ?>">
+                <small>Solo letras y espacios</small>
             </div>
 
             <div class="formulario">
                 <label for="Correo">Correo:</label>
                 <input type="email" id="Correo" name="Correo" required
-                        value="<?php echo htmlspecialchars($_POST['Correo']?? ''); ?>">
+                       value="<?php echo htmlspecialchars($_POST['Correo']?? ''); ?>">
             </div>
 
             <div class="formulario">
-                <label for="Numero">Numero de Telefono:</label>
-                <input type="number" id="Numero" name="Numero" required
-                        minlength="12">
+                <label for="Numero">Número de Teléfono:</label>
+                <input type="tel" id="Numero" name="Numero" required
+                       pattern="\d{10}"
+                       title="Debe tener exactamente 10 dígitos"
+                       maxlength="10"
+                       placeholder="10 dígitos"
+                       value="<?php echo htmlspecialchars($_POST['Numero']?? ''); ?>">
+                <small>Exactamente 10 dígitos</small>
             </div>
 
             <p class="info-message">
@@ -135,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
             <div class="form-actions">
                 <button type="submit" class="btn-submit">
                     <i class="fas fa-user-plus"></i> Registrar 
-             </button>
+                </button>
                 <a href='../Cliente/Gestion-Cliente.php' class="btn-cancel">
                     <i class="fas fa-times"></i> Cancelar
                 </a>
@@ -143,5 +155,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
         </form>
     </div>
 </section>
+
+<script>
+// Validación del teléfono en tiempo real
+document.getElementById('Numero').addEventListener('input', function(e) {
+    // Remover cualquier caracter que no sea número
+    this.value = this.value.replace(/[^0-9]/g, '');
+    
+    // Limitar a 10 dígitos
+    if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10);
+    }
+});
+
+// Validación del nombre en tiempo real
+document.getElementById('Nombre').addEventListener('input', function(e) {
+    // Solo permitir letras, espacios y caracteres especiales en español
+    this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
+});
+
+// Validación antes de enviar el formulario
+document.getElementById('registroForm').addEventListener('submit', function(e) {
+    const nombre = document.getElementById('Nombre').value;
+    const telefono = document.getElementById('Numero').value;
+    
+    // Validar que el nombre solo contenga letras y espacios
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
+        e.preventDefault();
+        alert('El nombre solo puede contener letras y espacios');
+        return false;
+    }
+    
+    // Validar que el teléfono tenga exactamente 10 dígitos
+    if (!/^\d{10}$/.test(telefono)) {
+        e.preventDefault();
+        alert('El número de teléfono debe tener exactamente 10 dígitos');
+        return false;
+    }
+    
+    return true;
+});
+</script>
+
 </body>
 </html>

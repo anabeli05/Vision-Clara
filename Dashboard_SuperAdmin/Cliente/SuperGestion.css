@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+:root {
+  /* Colores modo claro */
+  --primary-color: #0277BD;
+  --primary-dark: #01579B;
+  --primary-light: #4FC3F7;
+  --background-light: #E3F2FD;
+  --background-lighter: #B3E5FC;
+  --text-light: #01579B;
+  --text-lighter: #0277BD;
+  --white: #FFFFFF;
+  --shadow-color: rgba(2, 119, 189, 0.3);
+  
+  /* Colores modo oscuro */
+  --dark-primary: #0A1929;
+  --dark-secondary: #132F4C;
+  --dark-accent: #1E4976;
+  --dark-text: #E3F2FD;
+  --dark-text-secondary: #B3E5FC;
+  --dark-shadow: rgba(0, 0, 0, 0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +32,7 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contenedor-principal {
@@ -21,6 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 /* Header */
@@ -33,16 +56,18 @@ body {
 .header_1 h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #0277BD;
+    color: var(--primary-dark);
     display: flex;
     align-items: center;
     justify-content: left;
     gap: 15px;
     margin-left: 10%;
+    transition: color 0.3s ease;
 }
 
 .header_1 h1 i {
-    color: #0277BD;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 /* Button */
@@ -59,7 +84,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #4FC3F7 0%, #0277BD 100%);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
     color: white;
     padding: 12px 10px;
     border-radius: 8px;
@@ -72,7 +97,7 @@ body {
 }
 
 .btn-add:hover {
-    background: linear-gradient(135deg, #0277BD 0%, #01579B 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
 }
@@ -84,6 +109,7 @@ body {
     margin-bottom: 25px;
     width: 100%;
     max-width: 1000px;
+    transition: all 0.3s ease;
 }
 
 .alert-danger {
@@ -96,13 +122,14 @@ body {
 .cliente-tabla {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(2, 119, 189, 0.1);
+    box-shadow: 0 4px 20px var(--shadow-color);
     overflow: hidden;
     margin: 0 auto;
     max-width: 1000px;
     width: 100%;
     display: table;
-    border: 1px solid #E3F2FD;
+    border: 1px solid var(--background-light);
+    transition: all 0.3s ease;
 }
 
 /* Table */
@@ -114,7 +141,7 @@ body {
 
 /* Table Header */
 .cliente-tabla thead th {
-    background: linear-gradient(135deg, #0277BD, #01579B);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     padding: 20px 15px;
     text-align: left;
@@ -127,8 +154,9 @@ body {
 /* Table Body */
 .cliente-tabla tbody td {
     padding: 18px 15px;
-    border-bottom: 1px solid #E3F2FD;
+    border-bottom: 1px solid var(--background-light);
     font-weight: 400;
+    transition: all 0.3s ease;
 }
 
 .cliente-tabla tbody tr {
@@ -136,9 +164,9 @@ body {
 }
 
 .cliente-tabla tbody tr:hover {
-    background-color: #E3F2FD;
+    background-color: var(--background-light);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(2, 119, 189, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .cliente-tabla tbody tr:last-child td {
@@ -152,7 +180,7 @@ body {
     color: #78909C;
     padding: 60px 20px;
     font-size: 1.1rem;
-    background-color: #E3F2FD;
+    background-color: var(--background-light);
 }
 
 /* Actions Column */
@@ -179,12 +207,12 @@ body {
 }
 
 .cliente-tabla .actions .btn-edit {
-    background: linear-gradient(135deg, #4FC3F7 0%, #0277BD 100%);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
     color: white;
 }
 
 .cliente-tabla .actions .btn-edit:hover {
-    background: linear-gradient(135deg, #0277BD 0%, #01579B 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     transform: scale(1.05);
 }
 
@@ -196,6 +224,57 @@ body {
 .cliente-tabla .actions .btn-delete:hover {
     background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
     transform: scale(1.05);
+}
+
+/* ==============================
+   MODO OSCURO
+============================== */
+body.dark-theme {
+    background: var(--dark-primary);
+    color: var(--dark-text);
+}
+
+body.dark-theme .contenedor-principal {
+    background: var(--dark-primary);
+}
+
+body.dark-theme .header_1 h1 {
+    color: var(--dark-text);
+}
+
+body.dark-theme .header_1 h1 i {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-theme .cliente-tabla {
+    background: var(--dark-secondary);
+    border: 1px solid var(--dark-accent);
+    box-shadow: 0 4px 20px var(--dark-shadow);
+}
+
+body.dark-theme .cliente-tabla thead th {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-secondary));
+}
+
+body.dark-theme .cliente-tabla tbody td {
+    color: var(--dark-text);
+    border-bottom: 1px solid var(--dark-accent);
+}
+
+body.dark-theme .cliente-tabla tbody tr:hover {
+    background-color: var(--dark-accent);
+    box-shadow: 0 2px 8px var(--dark-shadow);
+}
+
+body.dark-theme .cliente-tabla td.no-data {
+    background-color: var(--dark-accent);
+    color: var(--dark-text-secondary);
+}
+
+body.dark-theme .alert-danger {
+    background: linear-gradient(135deg, #2d0000 0%, #4a0000 100%);
+    border: 1px solid #ff4444;
+    color: #ff8888;
 }
 
 /* Responsive Design */

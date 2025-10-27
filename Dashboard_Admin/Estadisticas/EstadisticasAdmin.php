@@ -74,8 +74,7 @@ try {
     <?php include '../Dashboard/SidebarAdmin.php'; ?>
     <div class="contenedor-principal">
         <div class="header_1">
-            <i class="fas fa-chart-bar" data-no-translate></i> 
-            <h1>📊 Estadísticas Generales</h1>
+            <h1> Estadísticas Generales</h1>
         </div>
 
         <div class="estadisticas-grid">
