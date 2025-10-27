@@ -1,12 +1,12 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
-// Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
-//if ($user_rol === 'Super Admin') {
-//    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
-//    exit;
-//}
+ //Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
+if ($user_rol === 'Super Admin') {
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

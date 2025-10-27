@@ -1,12 +1,12 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
-//if ($user_rol === 'Super Admin') {
-//    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
-//    exit;
-//}
+if ($user_rol === 'Super Admin') {
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    exit;
+}
 
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';
@@ -89,9 +89,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
 
     <section>
     <div class="contenedor-principal">
-        <!--<div class="header_1">
+        <div class="header_1">
             <h1><i class="fas fa-user-plus" data-no-translate></i> Registro de Clientes</h1>
-        </div>-->
+        </div>
     
 
         <!-- mensaje de error de la base de datos -->

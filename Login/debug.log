@@ -20,3 +20,51 @@ DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
 DEBUG: DEBUG: Comparación (===): COINCIDE
 --- Nuevo Log de Sesión: 2025-10-24 05:32:26 ---
 DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-10-24 16:31:51 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-10-24 16:31:51 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 16:31:51 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-10-24 16:31:51 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-24 16:31:53 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 16:31:53 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-24 16:31:53 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-10-24 16:31:53 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-10-27 14:36:01 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-10-27 14:36:01 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-27 14:36:01 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-10-27 14:36:01 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-27 14:36:03 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-27 14:36:03 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-27 14:36:03 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-10-27 14:36:03 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-10-27 16:37:26 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-10-27 16:37:26 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-27 16:37:26 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-10-27 16:37:26 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-10-27 16:37:28 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-27 16:37:28 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-10-27 16:37:28 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-10-27 16:37:28 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
