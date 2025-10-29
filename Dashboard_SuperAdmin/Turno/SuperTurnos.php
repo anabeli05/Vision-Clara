@@ -1,12 +1,12 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que sea Super Admin
-//if ($user_rol !== 'Super Admin') {
-//    header('Location: ../../Login/inicioSecion.php');
-//    exit;
-//}
+if ($user_rol !== 'Super Admin') {
+    header('Location: ../../Login/inicioSecion.php');
+    exit;
+}
 
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';
@@ -15,21 +15,21 @@ require_once '../../Base de Datos/conexion.php';
 $turnos = [];
 $error = '';
 
-//try {
+try {
     // Obtener todos los turnos pendientes
-//    $stmt = $conn->prepare("
-//        SELECT t.ID_Turno, t.Numero_Turno, t.Estado, t.Fecha_Hora,
-//               c.Nombre as Nombre_Cliente, c.No_Afiliado
-//        FROM turnos t
-//        LEFT JOIN clientes c ON t.ID_Cliente = c.No_Afiliado
-//        WHERE t.Estado IN ('Pendiente', 'En Proceso')
-//        ORDER BY t.Fecha_Hora ASC
-//    ");
-//    $stmt->execute();
-//    $turnos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//} catch(PDOException $e) {
-//    $error = "Error al cargar los turnos: " . $e->getMessage();
-//}
+    $stmt = $conn->prepare("
+        SELECT t.ID_Turno, t.Numero_Turno, t.Estado, t.Fecha_Hora,
+               c.Nombre as Nombre_Cliente, c.No_Afiliado
+        FROM turnos t
+        LEFT JOIN clientes c ON t.ID_Cliente = c.No_Afiliado
+        WHERE t.Estado IN ('Pendiente', 'En Proceso')
+        ORDER BY t.Fecha_Hora ASC
+    ");
+    $stmt->execute();
+    $turnos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    $error = "Error al cargar los turnos: " . $e->getMessage();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

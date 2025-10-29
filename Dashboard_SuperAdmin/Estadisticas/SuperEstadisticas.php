@@ -1,13 +1,17 @@
 <?php
-/*
-include('../../conexion.php');
-session_start();
 
-// Verificar que el usuario esté logueado y sea admin
-if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 'admin') {
-    header("Location: login.php");
+// Protección de sesión - Solo usuarios autenticados pueden acceder
+require_once '../../Login/check_session.php';
+
+// Verificar que sea Super Admin
+if ($user_rol !== 'Super Admin') {
+    header('Location: ../../Login/inicioSecion.php');
     exit;
 }
+
+// Conexión a la base de datos
+require_once '../../Base de Datos/conexion.php';
+
 
 // Crear conexión
 $conexion_obj = new Conexion();
@@ -59,7 +63,7 @@ try {
 } catch (Exception $e) {
     $total_productos = 0;
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

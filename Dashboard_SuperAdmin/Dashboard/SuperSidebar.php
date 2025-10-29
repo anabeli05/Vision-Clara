@@ -5,7 +5,7 @@
 
 <header> 
     <div class="header-contenedor"> 
-    <a href='../inicio/InicioSA.php'><img  class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> </a> 
+    <a href='../inicio/SuperInicio.php'><img  class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> </a> 
         <div class="principal"></div> 
     </div> 
 
@@ -33,7 +33,7 @@
     </div> 
     <ul class="nav-links"> 
         <li data-no-translate="true"> 
-            <a href="../inicio/SuperInicio.php" data-no-translate> 
+            <a href='../inicio/SuperInicio.php' data-no-translate> 
                 <i class="fas fa-home" data-no-translate></i> 
                 <span class="link_name">Inicio</span> 
             </a> 
@@ -82,7 +82,7 @@
         </li> 
         
         <li data-no-translate="true"> 
-            <a href="../Estadisticas/Superestadisticas.php" data-no-translate> 
+            <a href='../Estadisticas/SuperEstadisticas.php' data-no-translate> 
                 <i class="fas fa-chart-bar" data-no-translate></i> 
                 <span class="link_name">Estadisticas</span> 
             </a> 
