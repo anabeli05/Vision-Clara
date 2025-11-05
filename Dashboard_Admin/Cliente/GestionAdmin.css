@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oculi Display Regular Italic';
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.contenedor-principal {
+    width: 100%;
+    /*margin: 0 auto; */
+    padding: 40px 20px;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.header_1 {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.header_1 h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0277BD;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    margin-left: 10%;
+}
+
+.header_1 h1 i {
+    color: #0277BD;
+}
+
+/* Button */
+.btn-container {
+    text-align: right;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-right: 20%;
+}
+
+.btn-add {
+    margin-left: 40%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #4FC3F7, #0277BD);
+    color: white;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background: linear-gradient(135deg, #0277BD, #01579B);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
+}
+
+/* Alert */
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #c62828;
+}
+
+/* Table Container */
+.cliente-tabla {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    display: table;
+}
+
+/* Table */
+.cliente-tabla table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Header */
+.cliente-tabla thead th {
+    background: linear-gradient(135deg, #0277BD, #01579B);
+    color: white;
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Table Body */
+.cliente-tabla tbody td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #E3F2FD;
+    font-weight: 400;
+}
+
+.cliente-tabla tbody tr {
+    transition: all 0.3s ease;
+}
+
+.cliente-tabla tbody tr:hover {
+    background-color: #E3F2FD;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(2, 119, 189, 0.1);
+}
+
+.cliente-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* No data message */
+.cliente-tabla td.no-data {
+    text-align: center;
+    font-style: italic;
+    color: #78909C;
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    background-color: #E3F2FD;
+}
+
+/* Actions Column */
+.cliente-tabla .actions {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.cliente-tabla .actions a,
+.cliente-tabla .actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 36px;
+    height: 36px;
+}
+
+.cliente-tabla .actions .btn-edit {
+    background: linear-gradient(135deg, #4FC3F7, #0277BD);
+    color: white;
+}
+
+.cliente-tabla .actions .btn-edit:hover {
+    background: linear-gradient(135deg, #0277BD, #01579B);
+    transform: scale(1.05);
+}
+
+.cliente-tabla .actions .btn-delete {
+    background: linear-gradient(135deg, #ef5350, #d32f2f);
+    color: white;
+}
+
+.cliente-tabla .actions .btn-delete:hover {
+    background: linear-gradient(135deg, #d32f2f, #c62828);
+    transform: scale(1.05);
+}
+
+/* ==============================
+   TEMA OSCURO - GESTIÓN ADMIN
+============================== */
+
+body.dark-theme {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-theme .contenedor-principal {
+    background: #0f172a;
+}
+
+body.dark-theme .header_1 h1 {
+    color: #e2e8f0;
+}
+
+body.dark-theme .header_1 h1 i {
+    color: #4FC3F7;
+}
+
+body.dark-theme .btn-add {
+    background: linear-gradient(135deg, #475569, #374151);
+    color: #e2e8f0;
+    border: 1px solid #4b5563;
+}
+
+body.dark-theme .btn-add:hover {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.2);
+}
+
+body.dark-theme .alert-danger {
+    background-color: #7f1d1d;
+    border: 1px solid #991b1b;
+    color: #fecaca;
+}
+
+body.dark-theme .cliente-tabla {
+    background: #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .cliente-tabla thead th {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: #e2e8f0;
+    border-bottom: 2px solid #475569;
+}
+
+body.dark-theme .cliente-tabla tbody td {
+    border-bottom: 1px solid #334155;
+    color: #cbd5e1;
+}
+
+body.dark-theme .cliente-tabla tbody tr {
+    background: #1e293b;
+}
+
+body.dark-theme .cliente-tabla tbody tr:hover {
+    background: #334155;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(79, 195, 247, 0.2);
+}
+
+body.dark-theme .cliente-tabla td.no-data {
+    color: #94a3b8;
+    background: #1e293b;
+}
+
+body.dark-theme .cliente-tabla .actions .btn-edit {
+    background: linear-gradient(135deg, #475569, #374151);
+    color: #e2e8f0;
+}
+
+body.dark-theme .cliente-tabla .actions .btn-edit:hover {
+    background: linear-gradient(135deg, #374151, #1f2937);
+}
+
+body.dark-theme .cliente-tabla .actions .btn-delete {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    color: #fecaca;
+}
+
+body.dark-theme .cliente-tabla .actions .btn-delete:hover {
+    background: linear-gradient(135deg, #991b1b, #7f1d1d);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media screen and (max-width: 768px) {
+    .contenedor-principal {
+        padding: 20px 15px;
+    }
+
+    .header_1 h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cliente-tabla {
+        overflow-x: auto;
+    }
+
+    .cliente-tabla table {
+        min-width: 600px;
+    }
+
+    .cliente-tabla thead th,
+    .cliente-tabla tbody td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+
+    .cliente-tabla .actions a,
+    .cliente-tabla .actions button {
+        margin: 2px;
+        padding: 6px 8px;
+        min-width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header_1 h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-add {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive para tema oscuro */
+@media screen and (max-width: 768px) {
+    body.dark-theme .cliente-tabla tbody tr:hover {
+        background: #334155;
+        box-shadow: 0 2px 8px rgba(79, 195, 247, 0.15);
+    }
+}

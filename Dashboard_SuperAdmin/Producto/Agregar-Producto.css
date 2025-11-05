@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oculi Display Regular Italic';
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.contenedor-principal {
+    width: 100%;
+    /*margin: 0 auto; */
+    padding: 20px 20px;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.header_1 {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.header_1 h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    margin-left: 10%;
+}
+
+.header_1 h1 i {
+    color: black;
+}
+
+/* Button */
+.btn-container {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-right: 20%;
+}
+
+.fas.fa-plus{/*agregar el '.' sin espacio, significa una union para que detecte cuando la clase tiene espacio*/
+    font-size: 20px;
+}
+
+.product-form {
+    background-color: #FFF6E1;
+    border: 2px solid #fff4da;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    padding-top: 80px;
+}
+
+.form-section {
+    margin-bottom: 25px;
+}
+
+.form-section:last-of-type {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.image-upload-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.image-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-upload {
+    background-color: #A68868;
+    color: white;
+}
+
+.btn-upload:hover {
+    background-color: #E3C39D;
+}
+
+.btn-remove {
+    background-color: #A68868;
+    color: white;
+}
+
+.btn-remove:hover {
+    background-color: #E3C39D;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E3C39D;
+    border-radius: 8px;
+    background-color: #efc18a;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.form-input:focus {
+    border-color: #d09e68;
+    background-color: #e8d5b7;
+}
+
+.form-input::placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.price-input {
+    width: 300px;
+    padding: 12px 15px;
+    border: 2px solid #E3C39D;
+    border-radius: 8px;
+    background-color: #efc18a;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.price-input:focus {
+    border-color: #a68868;
+    background-color: #e8d5b7;
+}
+
+.btn-add-product {
+    width: 300px;
+    padding: 15px;
+    background-color: #1a365d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-add-product:hover {
+    background-color: #2c5282;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .product-form {
+        padding: 20px;
+    }
+
+    .image-upload-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .price-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .price-input,
+    .btn-add-product {
+        width: 100%;
+    }
+
+    .image-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 20px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .image-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .image-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

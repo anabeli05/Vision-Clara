@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+:root {
+    /* Colores modo claro */
+    --bg-color: #E3F2FD;
+    --text-color: #01579B;
+    --container-bg: #ffffff;
+    --header-bg: #0277BD;
+    --header-text: white;
+    --table-header-bg: linear-gradient(135deg, #0277BD, #01579B);
+    --table-border: #E3F2FD;
+    --table-hover: #B3E5FC;
+    --button-bg: #0277BD;
+    --button-hover: #01579B;
+    --shadow-color: rgba(2, 119, 189, 0.1);
+    --alert-bg: #ffebee;
+    --alert-border: #f5c6cb;
+    --alert-text: #c62828;
+    --no-data-bg: #E3F2FD;
+    --no-data-text: #4FC3F7;
+}
+
+body.dark-theme {
+    /* Colores modo oscuro */
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --container-bg: #2d2d2d;
+    --header-bg: #01579B;
+    --header-text: #e0e0e0;
+    --table-header-bg: linear-gradient(135deg, #01579B, #013a63);
+    --table-border: #404040;
+    --table-hover: #01579B;
+    --button-bg: #0277BD;
+    --button-hover: #4FC3F7;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --alert-bg: #5c2a2a;
+    --alert-border: #8b3a3a;
+    --alert-text: #ff8a8a;
+    --no-data-bg: #404040;
+    --no-data-text: #81d4fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oculi Display Regular Italic';
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contenedor-principal {
+    width: 100%;
+    padding: 20px 20px;
+    background-color: var(--container-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Header */
+.header_1 {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.header_1 h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    margin-left: 10%;
+    transition: color 0.3s ease;
+}
+
+.header_1 h1 i {
+    color: var(--header-bg);
+}
+
+/* Button */
+.btn-container {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-right: 20%;
+}
+
+.btn-add {
+    margin-left: 20%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--button-bg);
+    color: white;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.btn-add:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+/* Alert */
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 1000px;
+    transition: all 0.3s ease;
+}
+
+.alert-danger {
+    background-color: var(--alert-bg);
+    border: 1px solid var(--alert-border);
+    color: var(--alert-text);
+}
+
+/* Table Container */
+.usuario-tabla {
+    background: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    display: table;
+    transition: all 0.3s ease;
+}
+
+/* Table */
+.usuario-tabla table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Header */
+.usuario-tabla thead th {
+    background: var(--table-header-bg);
+    color: var(--header-text);
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Table Body */
+.usuario-tabla tbody td {
+    padding: 18px 15px;
+    border-bottom: 1px solid var(--table-border);
+    font-weight: 400;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.usuario-tabla tbody tr {
+    transition: all 0.3s ease;
+}
+
+.usuario-tabla tbody tr:hover {
+    background-color: var(--table-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.usuario-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* No data message */
+.usuario-tabla td.no-data {
+    text-align: center;
+    font-style: italic;
+    color: var(--no-data-text);
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    background-color: var(--no-data-bg);
+}
+
+/* Actions Column */
+.usuario-tabla .actions {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.usuario-tabla .actions a,
+.usuario-tabla .actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 36px;
+    height: 36px;
+}
+
+.usuario-tabla .actions .btn-edit {
+    background-color: var(--button-bg);
+    color: white;
+}
+
+.usuario-tabla .actions .btn-edit:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+.usuario-tabla .actions .btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.usuario-tabla .actions .btn-delete:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contenedor-principal {
+        padding: 20px 15px;
+    }
+
+    .header_1 h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .usuario-tabla {
+        overflow-x: auto;
+    }
+
+    .usuario-tabla table {
+        min-width: 600px;
+    }
+
+    .usuario-tabla thead th,
+    .usuario-tabla tbody td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+
+    .usuario-tabla .actions a,
+    .usuario-tabla .actions button {
+        margin: 2px;
+        padding: 6px 8px;
+        min-width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header_1 h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-add {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
