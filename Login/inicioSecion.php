@@ -38,10 +38,14 @@ unset($_SESSION['temp_email'], $_SESSION['temp_remember']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresar Usuario</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../estilos/translator.css">
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="../js/translator.js"></script>
 </head>
 <body>
     <header>
         <div class="logo"></div>
+        <div id="google_translate_element"></div>
     </header>
     
     <div class="main-container">
