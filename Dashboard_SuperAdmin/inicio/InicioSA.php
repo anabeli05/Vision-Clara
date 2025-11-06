@@ -17,7 +17,9 @@ if ($user_rol !== 'Super Admin') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href='InicioSA.css'>
     <link rel="stylesheet" href='../Dashboard/sidebar.css'> 
-
+    <link rel="stylesheet" href='../../estilos/translator.css'>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="../../js/translator.js"></script>
 </head>
 <body>
 
@@ -38,12 +40,12 @@ if ($user_rol !== 'Super Admin') {
     <div class="contenedor-turno">
         <div class="columna">
             <h3>Turno</h3>
-            <p><?php// echo $turno; ?></p>
+            <p>
         </div>
         <div class="separador"></div>
         <div class="columna">
             <h3>Siguiente</h3>
-            <p><?php// echo $siguiente; ?></p>
+            <p>
         </div>
     </div>
      <!-- Imagen decorativa inferior -->

@@ -7,7 +7,8 @@
 <header> 
     <div class="header-contenedor"> 
     <a href='../inicio/InicioSA.php'><img  class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> </a> 
-        <div class="principal"></div> 
+        <div class="principal"></div>
+        <div id="google_translate_element"></div> 
     </div> 
 
     <div class="header_2"> 
