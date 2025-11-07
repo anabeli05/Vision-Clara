@@ -201,81 +201,83 @@ body {
 }
 
 /* ==============================
-   TEMA OSCURO - GESTIÓN ADMIN
+   TEMA OSCURO - GESTIÓN ADMIN (TONOS AZUL OSCURO)
 ============================== */
 
 body.dark-theme {
-    background: #0f172a;
-    color: #e2e8f0;
+    background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-secondary) 50%, var(--dark-accent) 100%);
+    color: var(--dark-text);
 }
 
 body.dark-theme .contenedor-principal {
-    background: #0f172a;
+    background: transparent;
 }
 
 body.dark-theme .header_1 h1 {
-    color: #e2e8f0;
+    color: var(--dark-text);
 }
 
 body.dark-theme .header_1 h1 i {
-    color: #4FC3F7;
+    color: var(--dark-text-secondary);
 }
 
 body.dark-theme .btn-add {
-    background: linear-gradient(135deg, #475569, #374151);
-    color: #e2e8f0;
-    border: 1px solid #4b5563;
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-secondary));
+    color: var(--dark-text);
+    border: 1px solid var(--dark-accent);
 }
 
 body.dark-theme .btn-add:hover {
-    background: linear-gradient(135deg, #374151, #1f2937);
-    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.2);
+    background: linear-gradient(135deg, var(--dark-secondary), var(--dark-primary));
+    box-shadow: 0 6px 20px var(--dark-shadow);
+    transform: translateY(-2px);
 }
 
 body.dark-theme .alert-danger {
-    background-color: #7f1d1d;
-    border: 1px solid #991b1b;
-    color: #fecaca;
+    background-color: rgba(239, 83, 80, 0.2);
+    border: 1px solid #ef5350;
+    color: #ffcdd2;
 }
 
 body.dark-theme .cliente-tabla {
-    background: #1e293b;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: var(--dark-secondary);
+    box-shadow: 0 4px 20px var(--dark-shadow);
+    border: 1px solid var(--dark-accent);
 }
 
 body.dark-theme .cliente-tabla thead th {
-    background: linear-gradient(135deg, #1e293b, #334155);
-    color: #e2e8f0;
-    border-bottom: 2px solid #475569;
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-secondary));
+    color: var(--dark-text);
+    border-bottom: 2px solid var(--dark-primary);
 }
 
 body.dark-theme .cliente-tabla tbody td {
-    border-bottom: 1px solid #334155;
-    color: #cbd5e1;
+    border-bottom: 1px solid var(--dark-accent);
+    color: var(--dark-text-secondary);
 }
 
 body.dark-theme .cliente-tabla tbody tr {
-    background: #1e293b;
+    background: var(--dark-secondary);
 }
 
 body.dark-theme .cliente-tabla tbody tr:hover {
-    background: #334155;
+    background: var(--dark-accent);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(79, 195, 247, 0.2);
+    box-shadow: 0 2px 8px var(--dark-shadow);
 }
 
 body.dark-theme .cliente-tabla td.no-data {
-    color: #94a3b8;
-    background: #1e293b;
+    color: var(--dark-text-secondary);
+    background: var(--dark-secondary);
 }
 
 body.dark-theme .cliente-tabla .actions .btn-edit {
-    background: linear-gradient(135deg, #475569, #374151);
-    color: #e2e8f0;
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-secondary));
+    color: var(--dark-text);
 }
 
 body.dark-theme .cliente-tabla .actions .btn-edit:hover {
-    background: linear-gradient(135deg, #374151, #1f2937);
+    background: linear-gradient(135deg, var(--dark-secondary), var(--dark-primary));
 }
 
 body.dark-theme .cliente-tabla .actions .btn-delete {
@@ -333,13 +335,5 @@ body.dark-theme .cliente-tabla .actions .btn-delete:hover {
     .btn-add {
         padding: 10px 20px;
         font-size: 0.9rem;
-    }
-}
-
-/* Responsive para tema oscuro */
-@media screen and (max-width: 768px) {
-    body.dark-theme .cliente-tabla tbody tr:hover {
-        background: #334155;
-        box-shadow: 0 2px 8px rgba(79, 195, 247, 0.15);
     }
 }

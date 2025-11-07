@@ -374,21 +374,22 @@ html, body {
         display: none;
     }
 }
+
 /* ==============================
    TEMA OSCURO - PRODUCTOS ADMIN
 ============================== */
 
 body.dark-theme {
-    background: #0f172a;
-    color: #e2e8f0;
+    background: #0A1929;
+    color: #E3F2FD;
 }
 
 body.dark-theme .contenedor-principal {
-    background: #0f172a;
+    background: #0A1929;
 }
 
 body.dark-theme .header_1 h1 {
-    color: #e2e8f0;
+    color: #E3F2FD;
 }
 
 body.dark-theme .header_1 h1 i {
@@ -396,20 +397,20 @@ body.dark-theme .header_1 h1 i {
 }
 
 body.dark-theme .btn-add {
-    background: linear-gradient(135deg, #475569, #374151);
-    color: #e2e8f0;
-    border: 1px solid #4b5563;
+    background: linear-gradient(135deg, #1E4976 0%, #132F4C 100%);
+    color: #E3F2FD;
+    border: 1px solid #1E4976;
 }
 
 body.dark-theme .btn-add:hover {
-    background: linear-gradient(135deg, #374151, #1f2937);
-    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.2);
+    background: linear-gradient(135deg, #132F4C 0%, #0A1929 100%);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.3);
 }
 
 body.dark-theme .products-count {
-    background: #1e293b;
-    color: #cbd5e1;
-    border: 1px solid #475569;
+    background: #132F4C;
+    color: #B3E5FC;
+    border: 1px solid #1E4976;
 }
 
 body.dark-theme .alert-danger {
@@ -424,33 +425,33 @@ body.dark-theme .error-message {
 }
 
 body.dark-theme .product-card {
-    background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
-    border: 1px solid #475569;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #132F4C 0%, #1E4976 100%);
+    border: 1px solid #1E4976;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 body.dark-theme .product-card::before {
-    background: linear-gradient(90deg, #475569, #4FC3F7, #374151);
+    background: linear-gradient(90deg, #1E4976, #4FC3F7, #132F4C);
 }
 
 body.dark-theme .product-card:hover {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 body.dark-theme .product-image-container {
-    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    background: linear-gradient(135deg, #132F4C 0%, #1E4976 100%);
 }
 
 body.dark-theme .product-title {
-    color: #e2e8f0;
+    color: #E3F2FD;
 }
 
 body.dark-theme .product-description {
-    color: #94a3b8;
+    color: #B3E5FC;
 }
 
 body.dark-theme .product-footer {
-    border-top: 1px solid #475569;
+    border-top: 1px solid #1E4976;
 }
 
 body.dark-theme .product-price {
@@ -458,29 +459,29 @@ body.dark-theme .product-price {
 }
 
 body.dark-theme .product-stock {
-    background: #334155;
-    color: #cbd5e1;
+    background: #132F4C;
+    color: #B3E5FC;
 }
 
 body.dark-theme .add-to-cart-btn {
-    background: linear-gradient(135deg, #475569, #374151);
-    color: #e2e8f0;
+    background: linear-gradient(135deg, #1E4976 0%, #132F4C 100%);
+    color: #E3F2FD;
 }
 
 body.dark-theme .add-to-cart-btn:hover {
-    background: linear-gradient(135deg, #374151, #1f2937);
-    box-shadow: 0 8px 25px rgba(79, 195, 247, 0.3);
+    background: linear-gradient(135deg, #132F4C 0%, #0A1929 100%);
+    box-shadow: 0 8px 25px rgba(79, 195, 247, 0.4);
 }
 
 body.dark-theme .add-to-cart-btn:disabled {
-    background: #475569;
+    background: #1E4976;
     color: #94a3b8;
 }
 
 body.dark-theme .no-products {
-    background: #1e293b;
-    color: #cbd5e1;
-    border: 2px dashed #475569;
+    background: #132F4C;
+    color: #B3E5FC;
+    border: 2px dashed #1E4976;
 }
 
 body.dark-theme .out-of-stock::after {
@@ -490,13 +491,13 @@ body.dark-theme .out-of-stock::after {
 
 /* Skeleton loading para tema oscuro */
 body.dark-theme .skeleton {
-    background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
+    background: linear-gradient(90deg, #132F4C 25%, #1E4976 50%, #132F4C 75%);
 }
 
 /* Responsive para tema oscuro */
 @media (max-width: 768px) {
     body.dark-theme .product-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
     }
 }

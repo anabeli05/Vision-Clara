@@ -1,43 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colores modo claro */
+  --primary-color: #0277BD;
+  --primary-dark: #01579B;
+  --primary-light: #4FC3F7;
+  --background-light: #E3F2FD;
+  --background-lighter: #B3E5FC;
+  --text-light: #01579B;
+  --text-lighter: #0277BD;
+  --white: #FFFFFF;
+  --shadow-color: rgba(2, 119, 189, 0.3);
+  
+  /* Colores modo oscuro */
+  --dark-primary: #0A1929;
+  --dark-secondary: #132F4C;
+  --dark-accent: #1E4976;
+  --dark-text: #E3F2FD;
+  --dark-text-secondary: #B3E5FC;
+  --dark-shadow: rgba(0, 0, 0, 0.5);
+}
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /*font-size: 18px;*/
     box-sizing: border-box;
-    font-family:  'Oculi Display Regular Italic';;
+    font-family: 'Poppins', sans-serif;
     background: white;
     overflow-y: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Estilos de la barra lateral */
+/* Estilos de la barra lateral - REDUCIDO */
 .sidebar {
-    position: fixed; /*fija el menu en la pantalla*/
+    position: fixed;
     top: 0;
-    right: 0; /* sale al lado derecho */
-    width: 10vw; /*ancho del dashboard*/
-    max-width: 70%;/*en telefono nunca pasara de ese porcentaje de la pantalla*/
-    height: 100vh; /*ocupa el alto de la pantalla*/
-    color: #4FC3F7;
-    box-shadow: -5px 0 10px rgba(79, 195, 247, 0.2); /*fondo lateral - AZUL CLARO*/
-    transform: translateX(100%); /* OCULTA fuera del lado derecho */
-    transition: transform 0.3s ease; /*animacion de entrada y salida*/
-    z-index: 999; /*se pone encima de todo*/
-    font-size: 9vw; /*tamaño del boton de cierre 'x' */
-    overflow-y: auto; /*activa el scroll cuando e necesario*/
-    background: linear-gradient(135deg, #E3F2FD, #B3E5FC); /* Fondo azul claro */
-  }
-  
-  .sidebar.visible {
+    right: 0;
+    width: 100vw;
+    max-width: 350px; /* Reducido de 450px a 350px */
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--background-lighter) 100%);
+    box-shadow: -5px 0 10px var(--shadow-color);
+    transform: translateX(100%);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    padding: 15px; /* Reducido padding */
+}
+
+.sidebar.active {
     transform: translateX(0);
-  }
-  
-  #overlay.hidden {
+}
+
+#overlay.hidden {
     display: none;
-  }
-  
-  #overlay {
+}
+
+#overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -45,218 +65,136 @@ html, body {
     height: 100%;
     background-color: rgba(0,0,0,0.4);
     z-index: 998;
-  }
-  
-  #close-btn {
+}
+
+#close-btn {
     text-align: left;
-    padding: 20px;
+    padding: 15px; /* Reducido padding */
     cursor: pointer;
-    font-size: 20px; /* Aumenta el tamaño del ícono */
-    color: #0277BD;
+    font-size: 18px; /* Reducido tamaño de fuente */
+    color: var(--primary-dark);
     transition: transform 0.2s;
     display: flex;
-    flex-direction: row-reverse;/*coloca uno a la derecha y otro a la izquierda*/
+    flex-direction: row-reverse;
     justify-content: space-between;
-    height: 70px;
-  }
+    height: 60px; /* Reducido altura */
+    background: rgba(227, 242, 253, 0.3);
+}
 
 #close-btn:hover{
-    color: #01579B; /* AZUL OSCURO */
+    color: var(--primary-color);
+    background: rgba(227, 242, 253, 0.6);
 }
+
 .close-avatar {
-    width: 50px;
-    height: 50px;
+    width: 40px; /* Reducido tamaño */
+    height: 40px; /* Reducido tamaño */
     border-radius: 50%;
     object-fit: cover;
     margin: 0;
     vertical-align: middle;
     text-align: right;
+    border: 2px solid var(--primary-color);
 }
-  
 
-  .sidebar .logo-details {
-      height: 60px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      padding: 0 10px;
-  }
-  /*Se supone que asi esta centrado el logo en la barra*/
-  .sidebar .logo-details .logo-img {
-      height: 120px;
-      min-width: 45px;
-      margin: 32px;
-  }
-  
-  .sidebar .logo-details .logo_name {
-      font-size: 20px;
-      color: #0277BD;
-      font-weight: 600;
-  }
-  
-  .sidebar .nav-links {
-      margin: 1vw;
-      padding: 0;
-      list-style: none; /*quita viñetas*/
-      height: 100%; /*ocupa todo el alto*/
-      display: flex;
-      flex-direction: column;
-      
-  }
-  
-  .sidebar .nav-links li {
-      position: relative;
-      margin: 8px 0;
-  }
-  
-  .sidebar .nav-links li a {
-      display: flex; /*icono mas texto en la fila*/
-      align-items: center;
-      text-decoration: none; /*quita el subrayado*/
-      padding: .5vw 50px; /*espacio entre cada opcion*/
-      color: #01579B; /*color del texto - AZUL OSCURO*/
-      flex-direction: row-reverse; /*icomo a la izquieda y texto a la derecha*/
-      justify-content: flex-start;
-      gap: 30px; /*espacio entre icono y texto*/
-      text-align: right;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-  }
-  
+.sidebar .nav-links {
+    margin: 0.5vw; /* Reducido margen */
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    margin: 6px 0; /* Reducido margen */
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 12px 20px; /* Reducido padding */
+    color: var(--primary-dark);
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 20px; /* Reducido gap */
+    text-align: right;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
 .sidebar .nav-links li a.active,
 .sidebar .nav-links li a:hover {
-    background: #4FC3F7; /* AZUL CLARO */
-    color: white;   
+    background: var(--primary-color);
+    color: var(--background-light);
     transform: translateX(-5px);
 }
 
-  .sidebar .nav-links li a.active i,
-  .sidebar .nav-links li a:hover i{
-      color: white;
-  }
-  
-  .sidebar .nav-links li i {
-      min-width: 30px;
-      text-align: center;
-      font-size: 30px; /*tamaño del icono*/
-      color: #0277BD;
-  }
-  
-  .sidebar .nav-links li .link_name {
-      font-size: clamp(14px, 2vw, 20px); /*tamaño de texto*/
-      font-weight: bold;
-      color: #0277BD;
-      margin-left: 10px;
-  }
+.sidebar .nav-links li a.active i,
+.sidebar .nav-links li a:hover i{
+    color: var(--background-light);
+}
+
+.sidebar .nav-links li i {
+    min-width: 25px; /* Reducido ancho mínimo */
+    text-align: center;
+    font-size: 20px; /* Reducido tamaño de icono */
+    color: var(--primary-color);
+}
+
+.sidebar .nav-links li .link_name {
+    font-size: 14px; /* Reducido tamaño de fuente */
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-left: 8px; /* Reducido margen */
+}
 
 .sidebar .nav-links li a.active .link_name,
 .sidebar .nav-links li a:hover .link_name {
-    color: white;
+    color: var(--background-light);
 }
 
-  /* Estilos para los detalles del perfil en el sidebar */
-  .sidebar .profile-details {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      margin-bottom: 30px;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .sidebar .profile-details .profile-img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 15px;
-      border: 2px solid #4FC3F7; /* AZUL CLARO */
-      padding: 2px;
-      background: white;
-      /* Ensure the default image also looks good */
-      flex-shrink: 0;
-  }
-
-  .sidebar .profile-details .name-job {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-    margin-left: 0;
-    flex-grow: 1;
-  }
-
-  .sidebar .profile-details .profile_name{
-    font-size: 16px;
-    font-weight: 600;
-    color: #0277BD;
-    margin-bottom: 4px;
-    word-break: break-word;
-  }
-
-  .sidebar .profile-details .job{
-    font-size: 12px;
-    color: #0288D1;
-
-    /*remover backround color*/
-
-    padding: 0;
-    border-radius: 0;
-    display: inline-block;
-  }
-  
-  /*Ajute del contenido principal*/
-
-  .contenedor-principal {
-    margin-right: 280px !important;
-    margin-left: 0 !important;
-    padding: 20px !important;
-    transition: all 0.3s ease;
-  }
-
-  /*Estilo del header*/
+/*Estilo del header*/
 header{
-    width: 100%; /*ocupa todo el ancho*/
-    background: linear-gradient(135deg, #0277BD, #01579B); /* Degradado azul */
-    display: flex; /*coloca loss elementoss en la fila*/
-    justify-content: space-between; /*espacio entre el logo y controless*/
-    align-items: center; /*alinea verticalmente*/
-    padding: 50px 20px; /*margenes internos*/
-    height: 0.001vw; /*mantiene fijo el tamaño*/
-    overflow: hidden; /*evita que el logo sobresalga del header*/
-    
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    height: 0.001vw;
+    overflow: hidden;
+    transition: background 0.3s ease;
 }
-
 
 .header_2 {
     width: 100%;
-    height: 40px; /*altura*/
-    display: flex; /*coloca logo y congtroles en fila*/
-    align-items: center; /*centrado vertical*/
-    justify-content: space-between; /*deja espacio entre los elementos*/
-    /*border-bottom: 2px solid rgb(0, 0, 0);*/
-    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--background-light);
 }
 
 .vision-clara {
-    max-height: 4vw; /*el logo nunca pasa de 60px de alto */
-    height: auto; /*ajusta la proporcion*/
-    width: auto; /*evita deformaciones*/
+    max-height: 4vw;
+    height: auto;
+    width: auto;
     object-fit: contain;
 }
 
-/*control de sa*/
-.sa-controls {
-    display: flex; /*icono e imagen juntos en la fila*/
-    align-items: center; 
-    gap: 15px; /*espacio entre los iconos y texto*/
-    margin-left: auto;  /*margenes*/
+/*control de admin*/
+.admin-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
     margin-right: 30px;
 }
 
-.sa-boton{
+.admin-boton{
     display: flex;
     align-items: center;
     gap: 30px;
@@ -265,808 +203,306 @@ header{
     border-radius: 20px;
     transition: background 0.2s;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    color: var(--background-light);
+    background: rgba(227, 242, 253, 0.2);
 }
 
-.sa-boton:hover {
-    background: rgba(255, 255, 255, 0.3);
+.admin-boton:hover{
+    background: rgba(227, 242, 253, 0.4);
 }
 
-/*barra oculta dashboard*/
-.sa-sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100vh;
-    background: #B3E5FC; 
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    padding: 20px;
+/* Botón para cambiar tema en el header */
+.theme-toggle-header {
     display: flex;
-    flex-direction: column; /*elemento de la columna*/  
-}
-
-.sidebar-menu {
-    flex: 1;
-    padding: 10px 0;
-}
-
-/*fijpo hasta la parte inferior*/
-.sidebar-footer{
-    margin-top: auto;
-    padding: 20px 0;
-    border-top: 1px solid white;
-}
-
-/*muestra elementos*/
-.hidden {
-    display: none;
-}
-
-.active{
-    transform: translateX(0); /*muestra el dasboard*/
-}
-
-.sidebar-menu a{
-    display: flex;
-    justify-content: flex-start; /*alinea icono a al izquierda*/
     align-items: center;
-    padding: 12px 20px;
-    color: #0277BD;
-    text-decoration: none;
-    transition: backround 0.2s;
-    font-weight: bold;
-}
-
-.sidebar-menu a:hover{
-    background: #81D4FA; /* AZUL CLARO MÁS INTENSO */
-}
-
-.sidebar-menu svg {
-    margin-left: 15px; /*espacio entre texto e icono*/
-    margin-right: 0; /*elimina el margen derecho*/
-}
-
-/*estilo para el encabezado de sa*/
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.sidebar-header h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #0277BD;
-    width: 100%;
-    text-align: right;
-    padding-right: 10px;
-}
-
-.sidebar-header img{
-    height: 20px;
-    width: 20px;
-}
-
-/*imagen de usuario como close */
-.close-sidebar{
-    background: none;
-    border: none;
+    gap: 8px;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: var(--background-light);
+    background: rgba(227, 242, 253, 0.2);
+    font-weight: 500;
 }
 
-/*estilo par el overlay*/
-.sidebar-overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120vh; /*cubre toda la pantalla*/
-    background: rgba(0, 0, 0, 0.5); /* fondo semitransparente para la pantalla y el dashboard */
-    z-index: 998; /*debe de estar debajo del dashboard */
+.theme-toggle-header:hover {
+    background: rgba(227, 242, 253, 0.4);
+    transform: translateY(-1px);
 }
 
-.sidebar-overlay.hidden{
-    display: none; /*oculto cuando no esta en uso*/
+.theme-toggle-header i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
 }
 
-.sidebar-overlay.active{
-    visibility: visible;
-    opacity: 1;
+.theme-toggle-header:hover i {
+    transform: rotate(15deg);
+}
+
+.theme-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 /*estilo para el boton de cerrar sesion*/
 .sidebar .nav-links li.logout-btn{
-    margin-top: 2vw;/*lo manda al final*/
+    margin-top: 1.5vw; /* Reducido margen */
     display: flex;
     justify-content: center;
-    color: #ffffff;
-    padding-top: 50px; /*distancia del boton al margen del boton*/
+    border-top: 1px solid rgba(2, 119, 189, 0.3);
+    padding-top: 30px; /* Reducido padding */
 }
 
 .sidebar .nav-links li.logout-btn a{
-    background: linear-gradient(135deg, #0288D1, #0277BD); /* Degradado azul */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff; /* Color blanco para el texto */
+    color: var(--background-light);
     font-weight: bold;
     border-radius: 60px;
-    padding: 10px 20px;
+    padding: 8px 16px; /* Reducido padding */
     text-decoration: none;
-    transition: all 0.3s;
-    border: 1px solid #01579B; 
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary-dark);
+    font-size: 14px; /* Reducido tamaño de fuente */
 }
 
 .sidebar .nav-links li.logout-btn a:hover{
-    background: linear-gradient(135deg, #0277BD, #01579B); /* Degradado azul más oscuro */
-    border-color: #4FC3F7;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-color: var(--background-light);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(2, 119, 189, 0.3);
-}
-
-/* Asegurar que el texto del botón de cerrar sesión sea blanco */
-.sidebar .nav-links li.logout-btn a .link_name {
-    color: #ffffff !important; /* Color blanco para el texto */
-}
-
-.sidebar .nav-links li.logout-btn a i {
-    color: #ffffff !important; /* Color blanco para el ícono */
-}
-
-.sidebar .nav-links li.logout-btn a:hover i,
-.sidebar .nav-links li.logout-btn a:hover .link_name {
-    color: #ffffff !important; /* Mantener blanco en hover */
-}
-
-
-/* ==============================
-   BOTÓN MENÚ HAMBURGUESA
-============================== */
-
-.menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 8px;
-    background: transparent;
-    border: none;
-    color: #0277BD;
-    font-size: 24px;
-    margin-left: auto;
-    border-radius: 4px;
-    transition: background 0.2s;
-}
-
-.menu-toggle:hover {
-    background: rgba(2, 119, 189, 0.1);
-}
-
-.menu-toggle i {
-    font-size: 24px;
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 /* ==============================
-   RESPONSIVE MEDIA QUERIES
+   MODO OSCURO
 ============================== */
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    .sidebar {
-        width: 90vw;
-        padding: 15px;
-    }
-    
-    .vision-clara {
-        max-height: 85px;
-    }
-    
-    .sidebar .nav-links li a {
-        padding: 15px 20px;
-        gap: 20px;
-    }
-    
-    .sidebar .nav-links li i {
-        font-size: 22px;
-    }
-    
-    .sidebar .nav-links li .link_name {
-        font-size: 15px;
-    }
-    
-    .close-avatar {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .menu-toggle {
-        font-size: 22px;
-        padding: 10px;
-    }
-    
-    .menu-toggle i {
-        font-size: 22px;
-    }
+body.dark-theme {
+    background: var(--dark-primary);
+    color: var(--dark-text);
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .sidebar {
-        width: 70vw;
-        max-width: 400px;
-        padding: 20px;
-    }
-    
-    .header_2 {
-        padding: 15px 20px;
-        flex-wrap: nowrap;
-    }
-    
-    .vision-clara {
-        max-height: 70px;
-    }
-    
-    .sa-boton {
-        font-size: 15px;
-        padding: 10px 15px;
-        gap: 12px;
-    }
-    
-    .sa-controls {
-        gap: 12px;
-    }
-    
-    .sidebar .nav-links li a {
-        padding: 15px 25px;
-        gap: 25px;
-    }
-    
-    .sidebar .nav-links li i {
-        font-size: 24px;
-    }
-    
-    .sidebar .nav-links li .link_name {
-        font-size: 16px;
-    }
-    
-    .sidebar .profile-details .profile-img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .sidebar .profile-details .profile_name {
-        font-size: 15px;
-    }
-    
-    .contenedor-principal {
-        padding: 20px;
-    }
-    
-    .menu-toggle {
-        font-size: 26px;
-        padding: 12px;
-    }
-    
-    .menu-toggle i {
-        font-size: 26px;
-    }
+body.dark-theme header {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-secondary));
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    .sidebar {
-        width: 50vw;
-        max-width: 450px;
-        padding: 25px;
-    }
-    
-    .vision-clara {
-        max-height: 75px;
-    }
-    
-    .sa-controls {
-        gap: 15px;
-    }
-    
-    .sa-boton {
-        font-size: 16px;
-        gap: 15px;
-    }
-    
-    .sidebar .logo-details .logo-img {
-        height: 100px;
-    }
-    
-    .sidebar .logo-details .logo_name {
-        font-size: 20px;
-    }
-    
-    .sidebar .nav-links li a {
-        padding: 18px 30px;
-        gap: 30px;
-    }
-    
-    .sidebar .nav-links li i {
-        font-size: 26px;
-        min-width: 30px;
-    }
-    
-    .sidebar .nav-links li .link_name {
-        font-size: 17px;
-    }
-    
-    .contenedor-principal {
-        padding: 25px;
-        margin-right: 0;
-    }
-    
-    #close-btn {
-        font-size: 21px;
-        padding: 20px;
-    }
-    
-    .close-avatar {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .sidebar .nav-links li.logout-btn a {
-        padding: 15px 30px;
-        font-size: 15px;
-    }
+body.dark-theme .sidebar {
+    background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-primary) 100%);
+    box-shadow: -5px 0 10px var(--dark-shadow);
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .sidebar {
-        width: 35vw;
-        max-width: 500px;
-        padding: 30px;
-    }
-    
-    .contenedor-principal {
-        margin-right: 0;
-        padding: 30px;
-    }
-    
-    .header_2 {
-        padding: 20px 30px;
-    }
-    
-    .vision-clara {
-        max-height: 80px;
-    }
-    
-    .sidebar .logo-details .logo-img {
-        height: 120px;
-    }
-    
-    .sidebar .nav-links li a {
-        padding: 20px 35px;
-    }
-    
-    .sidebar .nav-links li i {
-        font-size: 28px;
-    }
-    
-    .sidebar .nav-links li .link_name {
-        font-size: 18px;
-    }
-    
-    .sidebar .nav-links li.logout-btn a {
-        padding: 16px 35px;
-        font-size: 16px;
-    }
-    
-    .sa-boton {
-        font-size: 17px;
-    }
+body.dark-theme .sidebar .nav-links li a {
+    color: var(--dark-text-secondary);
 }
 
-/* Ultra wide screens (1400px and up) */
-@media (min-width: 1400px) {
-    .sidebar {
-        width: 25vw;
-        max-width: 450px;
-    }
-    
-    .contenedor-principal {
-        padding: 40px;
-    }
-    
-    .header_2 {
-        padding: 25px 40px;
-    }
-    
-    .vision-clara {
-        max-height: 65px;
-    }
+body.dark-theme .sidebar .nav-links li a.active,
+body.dark-theme .sidebar .nav-links li a:hover {
+    background: var(--dark-accent);
+    color: var(--dark-text);
+}
+
+body.dark-theme .sidebar .nav-links li i {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-theme .sidebar .nav-links li a.active i,
+body.dark-theme .sidebar .nav-links li a:hover i {
+    color: var(--dark-text);
+}
+
+body.dark-theme .sidebar .nav-links li .link_name {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-theme .sidebar .nav-links li a.active .link_name,
+body.dark-theme .sidebar .nav-links li a:hover .link_name {
+    color: var(--dark-text);
+}
+
+body.dark-theme #close-btn {
+    color: var(--dark-text);
+    background: rgba(30, 73, 118, 0.3);
+}
+
+body.dark-theme #close-btn:hover {
+    color: var(--dark-text-secondary);
+    background: rgba(30, 73, 118, 0.6);
+}
+
+body.dark-theme .close-avatar {
+    border-color: var(--dark-text-secondary);
+}
+
+body.dark-theme .admin-boton {
+    color: var(--dark-text);
+    background: rgba(30, 73, 118, 0.3);
+}
+
+body.dark-theme .admin-boton:hover {
+    background: rgba(30, 73, 118, 0.5);
+}
+
+body.dark-theme .theme-toggle-header {
+    background: rgba(30, 73, 118, 0.3);
+    color: var(--dark-text);
+}
+
+body.dark-theme .theme-toggle-header:hover {
+    background: rgba(30, 73, 118, 0.5);
+}
+
+body.dark-theme .theme-text {
+    color: var(--dark-text);
+}
+
+body.dark-theme .sidebar .nav-links li.logout-btn {
+    border-top-color: rgba(227, 242, 253, 0.2);
+}
+
+body.dark-theme .sidebar .nav-links li.logout-btn a {
+    background: linear-gradient(135deg, var(--dark-accent) 0%, var(--dark-secondary) 100%);
+    border-color: var(--dark-accent);
+}
+
+body.dark-theme .sidebar .nav-links li.logout-btn a:hover {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-secondary));
+    border-color: var(--dark-text);
 }
 
 /* ==============================
-   RESPONSIVE PARA ALTURA
+   RESPONSIVE ESENCIAL
 ============================== */
 
-/* Landscape orientation on mobile devices */
-@media (max-height: 500px) {
-    .sidebar {
-        height: 100vh;
-        overflow-y: auto;
-        font-size: 14px;
-        padding: 10px;
-    }
-    
-    .sidebar .nav-links {
-        margin: 10px 0;
-    }
-    
-    .sidebar .nav-links li a {
-        padding: 10px 15px;
-        gap: 15px;
-    }
-    
-    .sidebar .nav-links li i {
-        font-size: 18px;
-    }
-    
-    .sidebar .nav-links li .link_name {
-        font-size: 14px;
-    }
-    
-    .sidebar .nav-links li.logout-btn {
-        margin-top: 20px;
-        padding-top: 20px;
-    }
-    
-    .sidebar .nav-links li.logout-btn a {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    .sidebar .logo-details .logo-img {
-        height: 60px;
-    }
-    
-    #close-btn {
-        min-height: 50px;
-        padding: 10px;
-        font-size: 16px;
-    }
-    
-    .close-avatar {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .header_2 {
-        min-height: 40px;
-        padding: 8px 15px;
-    }
-    
-    .vision-clara {
-        max-height: 50px;
-    }
-    
-    .contenedor-principal {
-        padding: 10px;
-    }
-}
-
-/* ==============================
-   RESPONSIVE ESPECÍFICO MÓVIL
-============================== */
-
-/* Extra small devices (phones in portrait, up to 575px) */
-@media (max-width: 575px) {
+/* Tablets y móviles */
+@media (max-width: 768px) {
     .sidebar {
         width: 100vw;
-        padding: 10px;
-    }
-    
-    .sidebar .nav-links li a {
-        padding: 12px 15px;
-        gap: 15px;
-    }
-    
-    .sidebar .nav-links li i {
-        font-size: 20px;
-    }
-    
-    .sidebar .nav-links li .link_name {
-        font-size: 14px;
-    }
-    
-    .close-avatar {
-        width: 40px;
-        height: 40px;
+        max-width: 320px; /* Ajustado para móviles */
+        padding: 12px;
     }
     
     .vision-clara {
         max-height: 60px;
     }
     
-    .header_2 {
-        flex-direction: row; /* Mantener en fila, no columna */
-        align-items: center;
-        justify-content: space-between; /* Logo izquierda, controles derecha */
-        gap: 10px;
-        padding: 10px 15px;
-        flex-wrap: nowrap; /* Evita que se envuelvan */
-    }
-    
-    .sa-controls {
-        margin-left: auto; /* Empuja los controles a la derecha */
-        margin-right: 0;
-        margin-top: 0;
-        flex-shrink: 0; /* Evita que se compriman */
-    }
-    
-    .sa-boton {
-        font-size: 14px;
-        padding: 8px 12px;
-        white-space: nowrap; /* Evita que el texto se rompa */
-    }
-}
-
-/* Very small screens */
-@media (max-width: 375px) {
-    .sidebar {
-        font-size: 14px;
-        padding: 8px;
-    }
-    
     .sidebar .nav-links li a {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-    
-    .sidebar .nav-links li .link_name {
-        font-size: 13px;
+        padding: 10px 15px; /* Más compacto en móviles */
+        gap: 15px;
     }
     
     .sidebar .nav-links li i {
-        font-size: 18px;
+        font-size: 18px; /* Iconos más pequeños */
     }
     
-    .sidebar .nav-links li.logout-btn a {
-        padding: 10px 20px;
-        font-size: 13px;
+    .sidebar .nav-links li .link_name {
+        font-size: 13px; /* Texto más pequeño */
     }
     
     .header_2 {
-        padding: 8px 10px;
-        flex-direction: row; /* Mantener en fila */
-        justify-content: space-between;
-        align-items: center;
+        padding: 10px 15px;
     }
     
-    .sa-controls {
-        margin-left: auto;
-        margin-top: 0;
+    .admin-controls {
+        margin-right: 15px;
+        gap: 10px;
     }
     
-    .sa-boton {
-        font-size: 12px;
-        padding: 6px 8px;
+    .admin-boton {
+        font-size: 14px;
+        gap: 15px;
+        padding: 8px 12px;
+    }
+    
+    .theme-toggle-header {
+        padding: 6px 12px;
+        font-size: 13px;
         gap: 6px;
+    }
+    
+    .theme-text {
+        font-size: 13px;
+    }
+    
+    .theme-toggle-header i {
+        font-size: 14px;
     }
     
     .close-avatar {
-        width: 35px;
+        width: 35px; /* Más pequeño en móviles */
         height: 35px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .sidebar {
+        max-width: 300px; /* Más estrecho en móviles pequeños */
+        padding: 10px;
+    }
+    
+    .sidebar .nav-links li a {
+        padding: 8px 12px; /* Más compacto */
+        gap: 12px;
+    }
+    
+    .sidebar .nav-links li i {
+        font-size: 16px; /* Iconos aún más pequeños */
+    }
+    
+    .sidebar .nav-links li .link_name {
+        font-size: 12px; /* Texto más pequeño */
+    }
+    
+    .admin-boton {
+        font-size: 12px;
+        gap: 10px;
+        padding: 6px 10px;
+    }
+    
+    .theme-toggle-header {
+        padding: 5px 10px;
+        font-size: 12px;
+        gap: 5px;
+    }
+    
+    .theme-text {
+        font-size: 12px;
+    }
+    
+    .theme-toggle-header i {
+        font-size: 13px;
+    }
+    
+    .close-avatar {
+        width: 30px; /* Más pequeño */
+        height: 30px;
     }
     
     #close-btn {
-        font-size: 16px;
-        padding: 12px;
+        padding: 12px; /* Menos padding */
+        font-size: 16px; /* Fuente más pequeña */
+    }
+}
+
+/* Para pantallas muy pequeñas, ocultar el texto del botón de tema */
+@media (max-width: 360px) {
+    .theme-text {
+        display: none;
     }
     
-    .vision-clara {
-        max-height: 50px; /* Logo más pequeño en pantallas muy pequeñas */
-    }
-}
-/* ==============================
-   BOTÓN CAMBIO DE TEMA
-============================== */
-
-.theme-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: auto;
-    margin-right: 30px;
-}
-
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
-}
-
-.theme-toggle i {
-    font-size: 16px;
-}
-
-/* ==============================
-   TEMA OSCURO - ADMIN
-============================== */
-
-body.dark-theme {
-    background: #0f172a;
-    color: #e2e8f0;
-}
-
-body.dark-theme header {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-}
-
-body.dark-theme .sidebar {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-theme .sidebar .nav-links li a {
-    color: #cbd5e1;
-}
-
-body.dark-theme .sidebar .nav-links li a:hover,
-body.dark-theme .sidebar .nav-links li a.active {
-    background: #475569;
-    color: #ffffff;
-}
-
-body.dark-theme .sidebar .nav-links li i {
-    color: #94a3b8;
-}
-
-body.dark-theme .sidebar .nav-links li a:hover i,
-body.dark-theme .sidebar .nav-links li a.active i {
-    color: #ffffff;
-}
-
-body.dark-theme .sidebar .nav-links li .link_name {
-    color: #94a3b8;
-}
-
-body.dark-theme .sidebar .nav-links li a:hover .link_name,
-body.dark-theme .sidebar .nav-links li a.active .link_name {
-    color: #ffffff;
-}
-
-body.dark-theme #close-btn {
-    color: #94a3b8;
-}
-
-body.dark-theme #close-btn:hover {
-    color: #ffffff;
-}
-
-body.dark-theme .sidebar .nav-links li.logout-btn a {
-    background: linear-gradient(135deg, #475569, #374151);
-    border: 1px solid #4b5563;
-}
-
-body.dark-theme .sidebar .nav-links li.logout-btn a:hover {
-    background: linear-gradient(135deg, #374151, #1f2937);
-}
-
-/* Tema oscuro para el contenido principal */
-body.dark-theme .contenedor-principal {
-    background: #0f172a;
-}
-
-body.dark-theme .recuadro-sa {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border: 1px solid #475569;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-theme .formato-txt h2 {
-    color: #e2e8f0;
-}
-
-body.dark-theme .formato-txt p {
-    color: #cbd5e1;
-}
-
-body.dark-theme .contenedor-turno {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border: 1px solid #475569;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-theme .columna h3 {
-    color: #e2e8f0;
-}
-
-body.dark-theme .columna p {
-    color: #cbd5e1;
-}
-
-body.dark-theme .separador {
-    background: #475569;
-}
-
-/* ==============================
-   RESPONSIVE BOTÓN TEMA
-============================== */
-
-@media (max-width: 768px) {
-    .theme-controls {
-        margin-right: 15px;
-        gap: 8px;
+    .theme-toggle-header {
+        padding: 8px;
+        border-radius: 50%;
     }
     
-    .theme-toggle {
-        padding: 6px 10px;
-        font-size: 12px;
-        gap: 6px;
-    }
-    
-    .theme-toggle i {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 575px) {
-    .theme-controls {
-        flex-direction: row;
-        gap: 5px;
-        margin-right: 10px;
-    }
-    
-    .theme-toggle {
-        padding: 5px 8px;
-        font-size: 11px;
-        gap: 4px;
-    }
-    
-    .theme-toggle i {
-        font-size: 12px;
-    }
-    
-    .sa-boton {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-}
-
-@media (max-width: 375px) {
-    .theme-controls {
-        gap: 3px;
-    }
-    
-    .theme-toggle {
-        padding: 4px 6px;
-        font-size: 10px;
-    }
-    
-    .theme-toggle span {
-        display: none; /* Oculta el texto en pantallas muy pequeñas */
-    }
-    
-    .theme-toggle i {
-        font-size: 11px;
+    .theme-toggle-header i {
         margin: 0;
+    }
+    
+    .sidebar {
+        max-width: 280px; /* Aún más estrecho */
     }
 }

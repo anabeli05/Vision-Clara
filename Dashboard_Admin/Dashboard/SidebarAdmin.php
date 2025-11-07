@@ -1,34 +1,28 @@
 <?php 
-
 ?> 
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+<link rel="stylesheet" href='SidebarAdmin.css'> 
 
 <header> 
     <div class="header-contenedor"> 
-    <img class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> 
+    <a href='../inicio/InicioAdmin.php'><img  class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> </a> 
         <div class="principal"></div> 
-        <link rel="stylesheet" href="../"> 
     </div> 
 
     <div class="header_2"> 
-        <div class="theme-controls">
-            <!-- Botón Cambio de Tema -->
-            <button class="theme-toggle" id="themeToggle">
+        <div class="admin-controls"> 
+            <!-- Botón para cambiar tema en el header -->
+            <div class="theme-toggle-header" id="themeToggleHeader">
                 <i class="fas fa-moon"></i>
-                <span>Modo Oscuro</span>
-            </button>
-            
-            <!-- Botón Administrador (existente) -->
-            <div class="sa-controls"> 
-                <div class="sa-boton" id="sidebarToggle"> 
-                    <span>Administrador</span> 
-                    <i class="fas fa-chevron-down"></i> 
-                    <img class="close-avatar" src='../../Imagenes/boton_dashboard.png' alt="avatar"> 
-                </div> 
+                <span class="theme-text">Modo Oscuro</span>
             </div>
-        </div>
-    </div> 
+            
+            <div class="admin-boton" id="sidebarToggle"> 
+                <span>Administrador</span> 
+                <i class="fas fa-chevron-down"></i> 
+                <img class="close-avatar" src='../../Imagenes/boton_dashboard.png' alt="avatar"> 
+            </div> 
+        </div> 
 </header> 
 
 
@@ -79,8 +73,9 @@
                 <span class="link_name">Estadisticas</span> 
             </a> 
         </li> 
+        
         <li class="logout-btn">
-      <a href="../../inicio_sesion/logout.php" data-no-translate>
+      <a href="../../Login/logout.php" data-no-translate>
          <i class="fas fa-sign-out-alt" data-no-translate></i>
          <span class="link_name">Cerrar Sesión</span>
       </a>
@@ -91,89 +86,88 @@
 <div class="sidebar-overlay hidden" id="overlay"></div> 
 
 <script> 
+
 document.addEventListener('DOMContentLoaded', ()=> { 
-    // Código existente del sidebar...
 
-    // ==============================
-    // FUNCIONALIDAD CAMBIO DE TEMA
-    // ==============================
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
+//<!--funciones para cerrar, abrir, y oscurecer el resto menos el dashboard en js---> 
 
-    // Verificar preferencia guardada
-    const savedTheme = localStorage.getItem('adminTheme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-theme');
-        updateThemeIcon('dark');
-    }
+const sidebar = document.getElementById('sidebar'); 
+const toggleBtn = document.getElementById('sidebarToggle'); 
+const closeBtn = document.getElementById('close-btn'); 
+const overlay = document.getElementById('overlay'); 
 
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
-        
-        if (body.classList.contains('dark-theme')) {
-            localStorage.setItem('adminTheme', 'dark');
-            updateThemeIcon('dark');
-        } else {
-            localStorage.setItem('adminTheme', 'light');
-            updateThemeIcon('light');
-        }
-    });
+function openSidebar(){
+    sidebar.classList.add('active'); 
+    overlay.classList.remove('hidden'); 
+    sidebar.setAttribute('aria-hidden', 'false') 
+} 
 
-    function updateThemeIcon(theme) {
-        const icon = themeToggle.querySelector('i');
-        const text = themeToggle.querySelector('span');
-        
-        if (theme === 'dark') {
-            icon.className = 'fas fa-sun';
-            text.textContent = 'Modo Claro';
-        } else {
-            icon.className = 'fas fa-moon';
-            text.textContent = 'Modo Oscuro';
-        }
-    }
+function closeSidebar(){
+    sidebar.classList.remove('active'); 
+    overlay.classList.add('hidden'); 
+    sidebar.setAttribute('aria-hidden', 'true'); 
+} 
 
-    // Código existente del sidebar...
-    const sidebar = document.getElementById('sidebar'); 
-    const toggleBtn = document.getElementById('sidebarToggle'); 
-    const closeBtn = document.getElementById('close-btn'); 
-    const overlay = document.getElementById('overlay'); 
+toggleBtn.addEventListener('click', (e) => { 
+    e.stopPropagation();
+    if(sidebar.classList.contains('active')){ 
+        closeSidebar();
+    }else{ 
+        openSidebar();
+        } 
+}); 
 
-    function openSidebar(){
-        sidebar.classList.add('active'); 
-        overlay.classList.remove('hidden'); 
-        sidebar.setAttribute('aria-hidden', 'false') 
-    } 
+closeBtn.addEventListener('click', (e) => { 
+    e.stopPropagation(); 
+    closeSidebar(); 
+}); 
 
-    function closeSidebar(){
-        sidebar.classList.remove('active'); 
-        overlay.classList.add('hidden'); 
-        sidebar.setAttribute('aria-hidden', 'true'); 
-    } 
+overlay.addEventListener('click', (e) => {
+     closeSidebar(); 
+}); 
 
-    toggleBtn.addEventListener('click', (e) => { 
-        e.stopPropagation();
-        if(sidebar.classList.contains('active')){ 
-            closeSidebar();
-        }else{ 
-            openSidebar();
-            } 
-    }); 
-
-    closeBtn.addEventListener('click', (e) => { 
-        e.stopPropagation(); 
-        closeSidebar(); 
-    }); 
-
-    overlay.addEventListener('click', (e) => {
+// cerrar el dashboard dando cliack fuera de este 
+document.addEventListener('click', (event) => { 
+    if(sidebar.classList.contains('active') && 
+    !sidebar.contains(event.target) && 
+    !toggleBtn.contains(event.target)){
          closeSidebar(); 
+        } 
     }); 
 
-    document.addEventListener('click', (event) => { 
-        if(sidebar.classList.contains('active') && 
-        !sidebar.contains(event.target) && 
-        !toggleBtn.contains(event.target)){
-             closeSidebar(); 
-            } 
-        }); 
+// Función para cambiar entre modo claro y oscuro
+const themeToggleHeader = document.getElementById('themeToggleHeader');
+const themeIcon = themeToggleHeader.querySelector('i');
+const themeText = themeToggleHeader.querySelector('.theme-text');
+
+// Verificar si hay una preferencia guardada
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+// Aplicar el tema guardado al cargar la página
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+    themeText.textContent = 'Modo Claro';
+}
+
+// Alternar entre modos
+themeToggleHeader.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    document.body.classList.toggle('dark-theme');
+    
+    if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeText.textContent = 'Modo Claro';
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeText.textContent = 'Modo Oscuro';
+    }
+});
 }); 
 </script>
