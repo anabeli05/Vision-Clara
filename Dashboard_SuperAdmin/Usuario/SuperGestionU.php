@@ -1,12 +1,12 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que sea Super Admin
-//if ($user_rol !== 'Super Admin') {
-//    header('Location: ../../Login/inicioSecion.php');
-//    exit;
-//}
+if ($user_rol !== 'Super Admin') {
+    header('Location: ../../Login/inicioSecion.php');
+    exit;
+}
 
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';
@@ -15,14 +15,14 @@ require_once '../../Base de Datos/conexion.php';
 $usuarios = [];
 $error = '';
 
-//try {
+try {
     // Obtener solo usuarios con rol 'Usuario' (no Super Admin)
-//    $stmt = $conn->prepare("SELECT Usuario_ID as ID_Empleado, Nombre, Correo, Rol FROM usuarios WHERE Rol = 'Usuario' ORDER BY Nombre ASC");
-//    $stmt->execute();
-//    $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//} catch(PDOException $e) {
-//    $error = "Error al cargar los usuarios: " . $e->getMessage();
-//}
+    $stmt = $conn->prepare("SELECT Usuario_ID as ID_Empleado, Nombre, Correo, Rol FROM usuarios WHERE Rol = 'Usuario' ORDER BY Nombre ASC");
+    $stmt->execute();
+    $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    $error = "Error al cargar los usuarios: " . $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ $error = '';
         <?php endif; ?>
         
         <div class="btn-container">
-            <a href="../Registro-Usuario/Registro-Usuario.php" class="btn-add">
+            <a href="../Registro-Usuario/SuperRegistroA.php" class="btn-add">
                 <i class="fas fa-plus"></i> Añadir Usuario
             </a>
         </div>

@@ -72,3 +72,84 @@ function enviarTurno(form, tipo, resultadoDivId){
 // ---------- Activar envíos ----------
 enviarTurno(document.getElementById('form-cliente'),'Cliente','resultado-cliente');
 enviarTurno(document.getElementById('form-visitante'),'Visitante','resultado-visitante');
+
+
+// ------- Carrusel infinito con flechas -------
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".carousel-track");
+    const nextButton = document.querySelector(".carousel-btn.next");
+    const prevButton = document.querySelector(".carousel-btn.prev");
+    const slides = document.querySelectorAll('.carousel-track img');
+    
+    const slideWidth = 300 + 10; // ancho + margin
+    let currentPosition = 0;
+    let autoScrollInterval;
+    let isPaused = false;
+
+    // Función para mover el carrusel
+    function moveCarousel(direction) {
+        if (direction === 'next') {
+            currentPosition -= slideWidth;
+        } else {
+            currentPosition += slideWidth;
+        }
+        
+        // Aplicar la transformación
+        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transform = `translateX(${currentPosition}px)`;
+        
+        // Reiniciar automáticamente después de la transición
+        setTimeout(() => {
+            checkInfiniteLoop();
+        }, 500);
+    }
+
+    // Verificar y corregir el loop infinito
+    function checkInfiniteLoop() {
+        const totalWidth = slideWidth * (slides.length / 2); // Mitad de las slides (las duplicadas)
+        
+        // Si llegamos al final (conjunto duplicado), resetear sin animación
+        if (currentPosition <= -totalWidth) {
+            track.style.transition = 'none';
+            currentPosition = 0;
+            track.style.transform = `translateX(${currentPosition}px)`;
+        }
+        // Si retrocedimos al inicio (conjunto duplicado), resetear sin animación
+        else if (currentPosition >= slideWidth) {
+            track.style.transition = 'none';
+            currentPosition = -totalWidth + slideWidth;
+            track.style.transform = `translateX(${currentPosition}px)`;
+        }
+    }
+
+    // Auto-scroll automático
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+            if (!isPaused) {
+                moveCarousel('next');
+            }
+        }, 3000);
+    }
+
+    // Event Listeners para las flechas
+    nextButton.addEventListener("click", () => {
+        moveCarousel('next');
+    });
+
+    prevButton.addEventListener("click", () => {
+        moveCarousel('prev');
+    });
+
+    // Pausar al hacer hover
+    const carousel = document.querySelector(".carousel");
+    carousel.addEventListener("mouseenter", () => {
+        isPaused = true;
+    });
+    
+    carousel.addEventListener("mouseleave", () => {
+        isPaused = false;
+    });
+
+    // Iniciar auto-scroll
+    startAutoScroll();
+});

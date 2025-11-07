@@ -10,9 +10,9 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     // Redirigir a dashboard específico según rol
     if(isset($_SESSION['user_rol'])) {
         if($_SESSION['user_rol'] === 'Super Admin') {
-            header("location: ../Dashboard_SuperAdmin/inicio/SuperInicio.php");
+            header('Location: ../Dashboard_SuperAdmin/inicio/InicioSA.php');
         } else {
-            header("location: ../Dashboard_Admin/inicio/inicioAdmin.php");
+            header('Location: ../Dashboard_Admin/inicio/InicioSA.php');
         }
     }
     exit;
@@ -38,10 +38,14 @@ unset($_SESSION['temp_email'], $_SESSION['temp_remember']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresar Usuario</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../estilos/translator.css">
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="../js/translator.js"></script>
 </head>
 <body>
     <header>
         <div class="logo"></div>
+        <div id="google_translate_element"></div>
     </header>
     
     <div class="main-container">
@@ -66,7 +70,7 @@ unset($_SESSION['temp_email'], $_SESSION['temp_remember']);
                         <?php echo htmlspecialchars($success); ?>
                     </div>
                 <?php endif; ?>
-                
+            
                 <form method="POST" action="login_var.php" autocomplete="on">
                     <div class="form-group">
                         <label for="email">Correo Electrónico</label>
@@ -95,7 +99,7 @@ unset($_SESSION['temp_email'], $_SESSION['temp_remember']);
                 <div class="divider"></div>
                 
                 <div class="vision-section">
-                    <h3>Visión clara</h3>
+                    <h3>Visión Clara</h3>
                     <p>Nuestra visión es proporcionar soluciones innovadoras que mejoren la experiencia de nuestros usuarios.</p>
                 </div>
             </div>
@@ -105,3 +109,5 @@ unset($_SESSION['temp_email'], $_SESSION['temp_remember']);
     <script src="inicioSecion.js"></script>
 </body>
 </html>
+
+

@@ -1,12 +1,12 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que sea Super Admin
-//if ($user_rol !== 'Super Admin') {
-//    header('Location: ../../Login/inicioSecion.php');
-//    exit;
-//}
+if ($user_rol !== 'Super Admin') {
+    header('Location: ../../Login/inicioSecion.php');
+    exit;
+}
 
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';

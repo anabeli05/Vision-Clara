@@ -1,20 +1,20 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que sea Super Admin
-//if ($user_rol !== 'Super Admin') {
-//    header('Location: ../../Login/inicioSecion.php');
-//    exit;
-//}
+if ($user_rol !== 'Super Admin') {
+    header('Location: ../../Login/inicioSecion.php');
+    exit;
+}
 
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';
 
 // Generar token CSRF si no existe
-//if (!isset($_SESSION['csrf_token'])) {
-//    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-//}
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 
 // Inicializar variables
 $error = '';
@@ -82,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
         <div class="header_1">
             <h1><i class="fas fa-user-edit" data-no-translate></i> Registro de Usuarios</h1>
         </div>
-    </div>
 
         <!-- mensaje de error de la base de datos -->
         <?php if ($error): ?>
@@ -91,13 +90,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
             </div>
         <?php endif; ?>
 
-        <!--
         <?php if ($success): ?>
             <div class="alert alert-success">
                 <?php echo htmlspecialchars($success); ?>
             </div>
         <?php endif; ?>
-        -->
 
         <!-- Formulario de registro -->
         <form method="POST" class="formulario-registro">
@@ -130,12 +127,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
                 <button type="submit" class="btn-submit">
                     <i class="fas fa-user-plus"></i> Registrar 
              </button>
-                <a href='../Usuario/Gestion-Usuarios.php' class="btn-cancel">
+                <a href='../Usuario/SuperGestionU.php' class="btn-cancel">
                     <i class="fas fa-times"></i> Cancelar
                 </a>
             </div>
         </form>
     </div>
-</section>
 </body>
 </html>

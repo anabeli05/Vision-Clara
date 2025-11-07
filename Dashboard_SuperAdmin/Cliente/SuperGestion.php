@@ -1,12 +1,12 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que sea Super Admin
-//if ($user_rol !== 'Super Admin') {
-//    header('Location: ../../Login/inicioSecion.php');
-//    exit;
-//}
+if ($user_rol !== 'Super Admin') {
+   header('Location: ../../Login/inicioSecion.php');
+    exit;
+}
 
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';
@@ -15,14 +15,14 @@ require_once '../../Base de Datos/conexion.php';
 $clientes = [];
 $error = '';
 
-//try {
+try {
     // Obtener todos los clientes
-//    $stmt = $conn->prepare("SELECT No_Afiliado, Nombre, Correo, Telefono FROM clientes ORDER BY Nombre ASC");
-//    $stmt->execute();
-//    $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//} catch(PDOException $e) {
-//    $error = "Error al cargar los clientes: " . $e->getMessage();
-//}
+    $stmt = $conn->prepare("SELECT No_Afiliado, Nombre, Correo, Telefono FROM clientes ORDER BY Nombre ASC");
+    $stmt->execute();
+    $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    $error = "Error al cargar los clientes: " . $e->getMessage();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,7 +49,7 @@ $error = '';
         <?php endif; ?>
         
         <div class="btn-container">
-            <a href="../Registro-Cliente/Registro-Cliente.php" class="btn-add">
+            <a href="../Registro-Cliente/SuperRcliente.php" class="btn-add">
                 <i class="fas fa-plus"></i> Añadir Cliente
             </a>
         </div>
@@ -78,7 +78,7 @@ $error = '';
                                 <td><?php echo htmlspecialchars($cliente['Correo']); ?></td>
                                 <td><?php echo htmlspecialchars($cliente['Telefono']); ?></td>
                                 <td class="actions">
-                                    <a href="editar-cliente.php?id=<?php echo urlencode($cliente['No_Afiliado']); ?>"
+                                    <a href='editar-cliente.php?id=<?php echo urlencode($cliente['No_Afiliado']); ?>'
                                        class="btn-edit" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>

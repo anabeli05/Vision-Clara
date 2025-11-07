@@ -7,11 +7,15 @@ include('./Base de Datos/conexion.php');
     <meta charset="UTF-8">
     <title>Generar Turno - Óptica Vision Clara</title>
     <link rel="stylesheet" href='./estilos/estilos.css'>
+    <link rel="stylesheet" href='./estilos/translator.css'>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="js/translator.js"></script>
 </head>
 <body>
 <header>
     <div class="logo"></div>
     <a href="./index.php"><img src='Imagenes/logo/logo-white.png' alt="Logo"></a>
+    <div id="google_translate_element"></div>
 </header>
 
 <!-- SECCIÓN PRINCIPAL DE TURNO -->
@@ -41,11 +45,29 @@ include('./Base de Datos/conexion.php');
     </div> 
     
     <div class="apartado2">
-        <h1>También puedes adquirir parte de nuestros productos (solamente en tienda física)</h1>
-        <img src="Imagenes/1_lente.png" alt="Lente individual">
-        <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
-        <img src="Imagenes/2_lentes.png" alt="Par de lentes">
-    </div>                   
+    <h1>También puedes adquirir parte de nuestros productos (solamente en tienda física)</h1>
+
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="Imagenes/1_lente.png" alt="Lente individual">
+                <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
+                <img src="Imagenes/2_lentes.png" alt="Par de lentes">
+                <img src="Imagenes/renu.jpg" alt="Limpiador">
+                <img src="Imagenes/estuches.png" alt="Estuche">
+                <!-- Duplicamos las imágenes para el efecto infinito -->
+                <img src="Imagenes/1_lente.png" alt="Lente individual">
+                <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
+                <img src="Imagenes/2_lentes.png" alt="Par de lentes">
+                <img src="Imagenes/renu.jpg" alt="Limpiador">
+                <img src="Imagenes/estuches.png" alt="Estuche">
+            </div>
+        </div>
+        <!-- Flechas de navegación -->
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+    </div>
+</div>            
 </div>
 
 <!-- Modal Cliente -->

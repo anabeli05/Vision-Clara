@@ -1,12 +1,12 @@
 <?php
 // Protección de sesión - Solo usuarios autenticados pueden acceder
-//require_once '../../Login/check_session.php';
+require_once '../../Login/check_session.php';
 
 // Verificar que sea Super Admin
-//if ($user_rol !== 'Super Admin') {
-//    header('Location: ../../Login/inicioSecion.php');
-//    exit;
-//}
+if ($user_rol !== 'Super Admin') {
+    header('Location: ../../Login/inicioSecion.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href='SuperInicio.css'>
     <link rel="stylesheet" href='../Dashboard/SuperSidebar.css'> 
-
+    <link rel="stylesheet" href='../../estilos/translator.css'>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="../../js/translator.js"></script>
+</head>
 </head>
 <body>
 
@@ -38,12 +41,12 @@
     <div class="contenedor-turno">
         <div class="columna">
             <h3>Turno</h3>
-            <p><?php// echo $turno; ?></p>
+            <p>
         </div>
         <div class="separador"></div>
         <div class="columna">
             <h3>Siguiente</h3>
-            <p><?php// echo $siguiente; ?></p>
+            <p>
         </div>
     </div>
      <!-- Imagen decorativa inferior -->
