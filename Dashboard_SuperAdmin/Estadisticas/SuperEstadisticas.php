@@ -64,6 +64,18 @@ try {
     $total_productos = 0;
 }
 
+// Total de usuaios\trabajadores
+try {
+    $query_usuarios = "SELECT COUNT(*) AS total_usuarios FROM usuarios";
+    $result_usuarios = mysqli_query($conexion, $query_usuarios);
+    if ($result_usuarios && mysqli_num_rows($result_usuarios) > 0) {
+        $row_usuarios = mysqli_fetch_assoc($result_usuarios);
+        $total_usuarios = $row_usuarios['total_usuarios'] ?? 0;
+    }
+} catch (Exception $e) {
+    $total_usuarios = 0;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -94,6 +106,10 @@ try {
             <div class="estadistica-card">
                 <h2>Productos en Inventario</h2>
                 <p><?php echo $total_productos; ?></p>
+            </div>
+            <div class="estadistica-card">
+                <h2>Total de trabajadores</h2>
+                <p><?php echo $total_usuarios; ?></p>
             </div>
         </div>
     </div>

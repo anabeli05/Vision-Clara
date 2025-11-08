@@ -1,16 +1,18 @@
 <?php
 session_start();
+require_once '../Base de Datos/conexion.php';
+require_once '../Base de Datos/log_utils.php';
 
 // Verificar si el usuario tiene permiso para cambiar la contraseña
-if (!isset($_SESSION['reset_password'])) {
+if (!isset($_SESSION['codigo_verificado']) || !isset($_SESSION['reset_user_id'])) {
     header('Location: recuperarContra.php');
     exit;
 }
 
 // Procesar el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $new_password = $_POST['new_password'] ?? '';
-    $confirm_password = $_POST['confirm_password'] ?? '';
+    $new_password = trim($_POST['new_password'] ?? '');
+    $confirm_password = trim($_POST['confirm_password'] ?? '');
     
     // Validaciones
     if (empty($new_password) || empty($confirm_password)) {
@@ -20,16 +22,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (strlen($new_password) < 8) {
         $error = "La contraseña debe tener al menos 8 caracteres";
     } else {
-        // Aquí iría la lógica para actualizar la contraseña en la base de datos
-        // Por ahora solo simulamos el cambio exitoso
-        
-        // Limpiar la sesión de reset
-        unset($_SESSION['reset_password']);
-        
-        // Redireccionar al login
-        $_SESSION['success_message'] = "Contraseña cambiada exitosamente";
-        header('Location: inicioSecion.php');
-        exit;
+        try {
+            // Actualizar la contraseña en la base de datos
+            // NOTA: Actualmente las contraseñas se guardan en texto plano (sin hash)
+            // según la lógica en login_var.php
+            $stmt = $conexion->prepare("
+                UPDATE usuarios 
+                SET Contraseña = ? 
+                WHERE Usuario_ID = ?
+            ");
+            $stmt->bind_param("si", $new_password, $_SESSION['reset_user_id']);
+            
+            if ($stmt->execute()) {
+                writeLog("SUCCESS: Contraseña actualizada para usuario ID: " . $_SESSION['reset_user_id'] . " - Email: " . $_SESSION['reset_email']);
+                
+                // Limpiar todas las variables de sesión de recuperación
+                unset($_SESSION['reset_email'], $_SESSION['reset_code'], $_SESSION['reset_expires'], $_SESSION['reset_user_id'], $_SESSION['codigo_verificado']);
+                
+                // Redireccionar al login con mensaje de éxito
+                $_SESSION['login_success'] = "Contraseña cambiada exitosamente. Inicie sesión con su nueva contraseña.";
+                header('Location: inicioSecion.php');
+                exit;
+            } else {
+                $error = "Error al actualizar la contraseña. Intente nuevamente.";
+                writeLog("ERROR: No se pudo actualizar la contraseña para usuario ID: " . $_SESSION['reset_user_id']);
+            }
+            
+            $stmt->close();
+        } catch (Exception $e) {
+            $error = "Error del sistema. Intente más tarde.";
+            writeLog("ERROR: Excepción al actualizar contraseña: " . $e->getMessage());
+        }
     }
 }
 ?>
