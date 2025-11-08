@@ -1,33 +1,80 @@
 <?php
 session_start();
+require_once '../Base de Datos/conexion.php';
+require_once '../Base de Datos/email_utils.php';
+require_once '../Base de Datos/log_utils.php';
 
 // Procesar el formulario de recuperación
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'] ?? '';
+    $email = trim($_POST['email'] ?? '');
     
     // Validar email
     if (empty($email)) {
         $error = "Por favor, ingrese su correo electrónico";
+        writeLog("WARN: Intento de recuperación sin email");
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = "Por favor, ingrese un correo electrónico válido";
+        writeLog("WARN: Email inválido en recuperación: " . $email);
     } else {
-        // Aquí iría la lógica para:
-        // 1. Verificar si el email existe en la base de datos
-        // 2. Generar un código de verificación
-        // 3. Enviar el código por email
-        
-        // Simulamos el envío exitoso
-        $_SESSION['reset_email'] = $email;
-        $_SESSION['reset_code'] = rand(100000, 999999); // Código de 6 dígitos
-        $_SESSION['reset_expires'] = time() + 1800; // Expira en 30 minutos
-        
-        // Redireccionar a la página de verificación
-        header('Location: codigoRecuperacion.php');
-        exit;
+        try {
+            // 1. Verificar si el email existe en la base de datos
+            $stmt = $conexion->prepare("
+                SELECT Usuario_ID, Nombre, Correo, Rol, activo 
+                FROM usuarios 
+                WHERE Correo = ? 
+                LIMIT 1
+            ");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $resultado = $stmt->get_result();
+            
+            if ($resultado->num_rows === 1) {
+                $usuario = $resultado->fetch_assoc();
+                
+                // Verificar que el usuario esté activo
+                if ($usuario['activo'] != 1) {
+                    $error = "Esta cuenta está desactivada. Contacte al administrador.";
+                    writeLog("WARN: Intento de recuperación para cuenta inactiva: " . $email);
+                } else {
+                    // 2. Generar un código de verificación de 6 dígitos
+                    $codigo = generarCodigoVerificacion();
+                    
+                    // 3. Guardar el código en la sesión
+                    $_SESSION['reset_email'] = $email;
+                    $_SESSION['reset_code'] = $codigo;
+                    $_SESSION['reset_expires'] = time() + 1800; // Expira en 30 minutos
+                    $_SESSION['reset_user_id'] = $usuario['Usuario_ID'];
+                    $_SESSION['reset_nombre'] = $usuario['Nombre'];
+                    
+                    // 4. Enviar el código por email usando la función de email_utils.php
+                    $emailEnviado = enviarCodigoRecuperacion($email, $usuario['Nombre'], $codigo);
+                    
+                    if ($emailEnviado) {
+                        writeLog("SUCCESS: Código de recuperación enviado a: " . $email . " (Rol: " . $usuario['Rol'] . ")");
+                        
+                        // Redireccionar a la página de verificación
+                        header('Location: codigoRecuperacion.php');
+                        exit;
+                    } else {
+                        $error = "Error al enviar el correo. Intente nuevamente más tarde.";
+                        writeLog("ERROR: No se pudo enviar el código a: " . $email);
+                    }
+                }
+            } else {
+                // El email no existe en la base de datos
+                // Por seguridad, no revelamos si el email existe o no
+                $error = "Si el correo está registrado, recibirás un código de verificación.";
+                writeLog("WARN: Intento de recuperación para email no registrado: " . $email);
+            }
+            
+            $stmt->close();
+        } catch (Exception $e) {
+            $error = "Error del sistema. Intente más tarde.";
+            writeLog("ERROR: Excepción en recuperación de contraseña: " . $e->getMessage());
+        }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
