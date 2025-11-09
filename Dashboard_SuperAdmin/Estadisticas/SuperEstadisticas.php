@@ -22,33 +22,48 @@ $conexion = $conexion_obj->conexion;
 $total_clientes = 0;
 $total_turnos = 0;
 $total_productos = 0;
+$total_usuarios = 0;
 $hoy = date('Y-m-d');
+
+// Verificar que la conexión esté activa
+if (!$conexion) {
+    die("Error de conexión a la base de datos");
+}
+
 
 // Total de clientes
 try {
     $query_clientes = "SELECT COUNT(*) AS total_clientes FROM clientes";
     $result_clientes = mysqli_query($conexion, $query_clientes);
-    if ($result_clientes && mysqli_num_rows($result_clientes) > 0) {
+    if ($result_clientes) {
         $row_clientes = mysqli_fetch_assoc($result_clientes);
-        $total_clientes = $row_clientes['total_clientes'] ?? 0;
+        $total_clientes = (int)$row_clientes['total_clientes'];
+    } else {
+        error_log("Error en consulta clientes: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
+    error_log("Excepción en clientes: " . $e->getMessage());
     $total_clientes = 0;
 }
 
 // Total de turnos hoy
-
 try {
     $query_turnos = "SELECT COUNT(*) AS total_turnos FROM turnos WHERE DATE(fecha) = ?";
     $stmt_turnos = $conexion->prepare($query_turnos);
-    $stmt_turnos->bind_param("s", $hoy);
-    $stmt_turnos->execute();
-    $result_turnos = $stmt_turnos->get_result();
-    if ($result_turnos && $result_turnos->num_rows > 0) {
-        $row_turnos = $result_turnos->fetch_assoc();
-        $total_turnos = $row_turnos['total_turnos'] ?? 0;
+    if ($stmt_turnos) {
+        $stmt_turnos->bind_param("s", $hoy);
+        $stmt_turnos->execute();
+        $result_turnos = $stmt_turnos->get_result();
+        if ($result_turnos) {
+            $row_turnos = $result_turnos->fetch_assoc();
+            $total_turnos = (int)$row_turnos['total_turnos'];
+        }
+        $stmt_turnos->close();
+    } else {
+        error_log("Error preparando consulta turnos: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
+    error_log("Excepción en turnos: " . $e->getMessage());
     $total_turnos = 0;
 }
 
@@ -56,25 +71,34 @@ try {
 try {
     $query_productos = "SELECT COUNT(*) AS total_productos FROM productos";
     $result_productos = mysqli_query($conexion, $query_productos);
-    if ($result_productos && mysqli_num_rows($result_productos) > 0) {
+    if ($result_productos) {
         $row_productos = mysqli_fetch_assoc($result_productos);
-        $total_productos = $row_productos['total_productos'] ?? 0;
+        $total_productos = (int)$row_productos['total_productos'];
+    } else {
+        error_log("Error en consulta productos: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
+    error_log("Excepción en productos: " . $e->getMessage());
     $total_productos = 0;
 }
 
-// Total de usuaios\trabajadores
+// Total de usuarios/trabajadores
 try {
     $query_usuarios = "SELECT COUNT(*) AS total_usuarios FROM usuarios";
     $result_usuarios = mysqli_query($conexion, $query_usuarios);
-    if ($result_usuarios && mysqli_num_rows($result_usuarios) > 0) {
+    if ($result_usuarios) {
         $row_usuarios = mysqli_fetch_assoc($result_usuarios);
-        $total_usuarios = $row_usuarios['total_usuarios'] ?? 0;
+        $total_usuarios = (int)$row_usuarios['total_usuarios'];
+    } else {
+        error_log("Error en consulta usuarios: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
+    error_log("Excepción en usuarios: " . $e->getMessage());
     $total_usuarios = 0;
 }
+
+// Debug temporal (eliminar después de verificar)
+//echo "Clientes: $total_clientes, Turnos: $total_turnos, Productos: $total_productos, Usuarios: $total_usuarios";
 
 ?>
 <!DOCTYPE html>
@@ -97,19 +121,25 @@ try {
         <div class="estadisticas-grid">
             <div class="estadistica-card">
                 <h2>Total de Clientes Registrados</h2>
-                <p><?php echo $total_clientes; ?></p>
+                <p><?php echo number_format($total_clientes); ?></p>
             </div>
             <div class="estadistica-card">
-                <h2>Turnos del Día<br><small><?php echo $hoy; ?></small></h2>
-                <p><?php echo $total_turnos; ?></p>
-            </div>
+                <h2>Turnos del Día<br><small><?php echo date('d/m/Y', strtotime($hoy)); ?></small></h2>
+                <p><?php echo number_format($total_turnos); ?></p>
+            </div>            
             <div class="estadistica-card">
                 <h2>Productos en Inventario</h2>
-                <p><?php echo $total_productos; ?></p>
+                <p><?php echo number_format($total_productos); ?></p>            
             </div>
             <div class="estadistica-card">
-                <h2>Total de trabajadores</h2>
-                <p><?php echo $total_usuarios; ?></p>
+                <h2>Total de Trabajadores</h2>
+                <p style="font-size: 48px; color: #333; font-weight: bold;">
+                    <?php echo $total_usuarios; 
+                        // Debug
+                    if ($total_usuarios === 0 || empty($total_usuarios)) {
+                        echo " (debug: valor='$total_usuarios')";
+                    }?>
+                </p>            
             </div>
         </div>
     </div>
