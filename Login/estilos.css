@@ -7,9 +7,9 @@
 }
 
 body {
-    background: url('../Imagenes/fondo_login.png') no-repeat center center;
+    background: url('../Imagenes/fondo_login2.png') no-repeat center center;
     background-size: cover;
-    background-color: #9ac5fdd3;
+    background-color:  #2b6cb0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ header {
     left: 0;
     width: 100%;
     height: 80px;
-    background: #aee0fd;
+    background: #2b6cb0;
     box-shadow: 0 4px 25px -22px black;
     z-index: 2;
     display: flex;
@@ -49,7 +49,7 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    background: #9ac5fdd3;
+    background: #3e8ce0b2;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -231,7 +231,7 @@ header {
 }
 
 .login-button, .send-button, .submit-button, .confirm-button {
-    background-color: #7ea8f7;
+    background-color: #4d8afc;
 }
 
 .login-button:hover, .send-button:hover, .submit-button:hover, .confirm-button:hover {
@@ -256,7 +256,7 @@ header {
 }
 
 .forgot-password, .remember-login a, .resend-code a {
-    color: #0066cc;
+    color: #afd5fc;
     text-decoration: none;
     font-weight: 500;
 }
