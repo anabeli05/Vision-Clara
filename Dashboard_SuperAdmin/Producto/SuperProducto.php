@@ -101,11 +101,6 @@ try {
                                 $rutaImagen = !empty($producto['Imagen_URL']) ? '../../' . $producto['Imagen_URL'] : '../../uploads/productos/default-glasses.jpg';
                             ?>
     
-                                <!-- Muestra la ruta para debug -->
-                            <small style="display:block; font-size:10px; color:#666;">
-                                Ruta: <?= htmlspecialchars($rutaImagen) ?>
-                            </small>
-    
                             <img src="<?= htmlspecialchars($rutaImagen) ?>" 
                                 alt="<?= htmlspecialchars($producto['Nombre']) ?>" 
                                 class="product-image"
