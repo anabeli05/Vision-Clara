@@ -1,5 +1,21 @@
 <?php
 include('./Base de Datos/conexion.php');
+
+// Obtener productos (PDO - versión simple)
+$productos = [];
+try {
+    $sql = "SELECT Imagen_URL, Nombre FROM productos WHERE Activo = 1 AND Imagen_URL IS NOT NULL ORDER BY Fecha_Registro DESC LIMIT 10";
+    $resultado = $conn->query($sql);
+    
+    foreach($resultado as $row) {
+        $productos[] = [
+            'imagen' => $row['Imagen_URL'],
+            'nombre' => $row['Nombre']
+        ];
+    }
+} catch(PDOException $e) {
+    $productos = [];
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -50,17 +66,33 @@ include('./Base de Datos/conexion.php');
     <div class="carousel">
         <div class="carousel-container">
             <div class="carousel-track">
-                <img src="Imagenes/1_lente.png" alt="Lente individual">
-                <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
-                <img src="Imagenes/2_lentes.png" alt="Par de lentes">
-                <img src="Imagenes/renu.jpg" alt="Limpiador">
-                <img src="Imagenes/estuches.png" alt="Estuche">
-                <!-- Duplicamos las imágenes para el efecto infinito -->
-                <img src="Imagenes/1_lente.png" alt="Lente individual">
-                <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
-                <img src="Imagenes/2_lentes.png" alt="Par de lentes">
-                <img src="Imagenes/renu.jpg" alt="Limpiador">
-                <img src="Imagenes/estuches.png" alt="Estuche">
+            <?php
+                if (!empty($productos)) {
+                    // Mostrar productos de la base de datos
+                    foreach ($productos as $producto) {
+                        echo '<img src="' . htmlspecialchars($producto['imagen']) . '" alt="' . htmlspecialchars($producto['nombre']) . '">';
+                    }
+                    // Duplicar para efecto infinito
+                    foreach ($productos as $producto) {
+                        echo '<img src="' . htmlspecialchars($producto['imagen']) . '" alt="' . htmlspecialchars($producto['nombre']) . '">';
+                    }
+                } else {
+                    // Imágenes por defecto si no hay productos en la BD
+                    ?>
+                    <img src="Imagenes/1_lente.png" alt="Lente individual">
+                    <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
+                    <img src="Imagenes/2_lentes.png" alt="Par de lentes">
+                    <img src="Imagenes/renu.jpg" alt="Limpiador">
+                    <img src="Imagenes/estuches.png" alt="Estuche">
+                    <!-- Duplicado para efecto infinito -->
+                    <img src="Imagenes/1_lente.png" alt="Lente individual">
+                    <img src="Imagenes/lentes_contacto.png" alt="Lentes de contacto">
+                    <img src="Imagenes/2_lentes.png" alt="Par de lentes">
+                    <img src="Imagenes/renu.jpg" alt="Limpiador">
+                    <img src="Imagenes/estuches.png" alt="Estuche">
+                    <?php
+                }
+                ?>
             </div>
         </div>
         <!-- Flechas de navegación -->
