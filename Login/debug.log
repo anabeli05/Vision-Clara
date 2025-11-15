@@ -1493,3 +1493,3072 @@ DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
 DEBUG: DEBUG: Comparación (===): COINCIDE
 --- Nuevo Log de Sesión: 2025-11-11 08:35:59 ---
 DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5614622812f47-4500253abcdsm8286991b6e.2 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: STARTTLS
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: AUTH LOGIN
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MAIL FROM:<vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.0 OK 5614622812f47-4500253abcdsm8286991b6e.2 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: RCPT TO:<xcobian@ucol.mx>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.5 OK 5614622812f47-4500253abcdsm8286991b6e.2 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: DATA
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 354 Go ahead 5614622812f47-4500253abcdsm8286991b6e.2 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Date: Wed, 12 Nov 2025 15:39:23 +0100
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: To: xcobian@ucol.mx
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: From: Sistema Vision Clara <vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Subject: =?UTF-8?Q?C=C3=B3digo_de_recuperaci=C3=B3n_de_contrase=C3=B1a_-_Vision_Clara?=
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Message-ID: <CPS5G6e3g8AL5Ns7ReMCQEVyz1fm31YupAIT04g@localhost>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:  boundary="b1=_CPS5G6e3g8AL5Ns7ReMCQEVyz1fm31YupAIT04g"
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_CPS5G6e3g8AL5Ns7ReMCQEVyz1fm31YupAIT04g
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     RECUPERACIÓN DE CONTRASEÑA - VISION CLARA
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hola Xiomara Anabeli Cobian Ramirez,
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hemos recibido una solicitud para restablecer la contraseña de tu cuenta.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Tu código de verificación es: 987928
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     IMPORTANTE:
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Este código es válido por 30 minutos
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - No compartas este código con nadie
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Si no solicitaste este cambio, ignora este mensaje
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Para completar el proceso, ingresa este código en la página de recuperación de contraseña.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Saludos,
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Equipo Vision Clara
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     ---
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Este es un correo automático, por favor no respondas a este mensaje.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     © 2025 Vision Clara. Todos los derechos reservados.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_CPS5G6e3g8AL5Ns7ReMCQEVyz1fm31YupAIT04g
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <!DOCTYPE html>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <html lang='es'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <head>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta charset='UTF-8'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <style>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code-box { background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code { font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .footer { text-align: center; color: #6c757d; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </style>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </head>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <body>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <div class='container'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='header'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <h1 style='margin: 0;'>🔐 Recuperación de Contraseña</h1>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='content'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hola <strong>Xiomara Anabeli Cobian Ramirez</strong>,</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>Vision Clara</strong>.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='code-box'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <p style='margin: 0 0 10px 0; color: #666;'>Tu código de verificación es:</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <div class='code'>987928</div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='warning'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <strong>⚠️ Importante:</strong>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <ul style='margin: 10px 0; padding-left: 20px;'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Este código es válido por <strong>30 minutos</strong></li>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>No compartas este código con nadie</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Si no solicitaste este cambio, ignora este mensaje</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     </ul>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Para completar el proceso, ingresa este código en la página de recuperación de contraseña.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='footer'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>&copy; 2025 Vision Clara. Todos los derechos reservados.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </body>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </html>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_CPS5G6e3g8AL5Ns7ReMCQEVyz1fm31YupAIT04g--
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: .
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:25 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.0.0 OK  1762958365 5614622812f47-4500253abcdsm8286991b6e.2 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:25 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: QUIT
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:25 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5614622812f47-4500253abcdsm8286991b6e.2 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:39:25 ---
+DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
+--- Nuevo Log de Sesión: 2025-11-12 15:40:06 ---
+DEBUG: SUCCESS: Código verificado correctamente para: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 15:40:48 ---
+DEBUG: SUCCESS: Contraseña actualizada para usuario ID: 1 - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 15:41:19 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 15:41:19 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 15:41:19 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 15:41:19 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 15:41:20 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 15:41:20 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 15:41:20 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 15:41:20 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 15:43:09 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 15:43:14 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 15:43:14 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 15:43:14 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 15:43:14 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 15:43:15 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 15:43:15 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 15:43:15 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 15:43:15 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-12 15:47:16 ---
+DEBUG: INFO: Logout - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 46e09a7af769-7c6f10f6178sm8590796a34.19 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: STARTTLS
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: AUTH LOGIN
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:28 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MAIL FROM:<vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.0 OK 46e09a7af769-7c6f10f6178sm8590796a34.19 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: RCPT TO:<xcobian@ucol.mx>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.5 OK 46e09a7af769-7c6f10f6178sm8590796a34.19 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:29 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: DATA
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 354 Go ahead 46e09a7af769-7c6f10f6178sm8590796a34.19 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Date: Wed, 12 Nov 2025 15:47:27 +0100
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: To: xcobian@ucol.mx
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: From: Sistema Vision Clara <vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Subject: =?UTF-8?Q?C=C3=B3digo_de_recuperaci=C3=B3n_de_contrase=C3=B1a_-_Vision_Clara?=
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Message-ID: <imSicHhKULzQ02EUYEc9ZQUQ3SKbtuOmnAPGHFmg@localhost>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:  boundary="b1=_imSicHhKULzQ02EUYEc9ZQUQ3SKbtuOmnAPGHFmg"
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_imSicHhKULzQ02EUYEc9ZQUQ3SKbtuOmnAPGHFmg
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     RECUPERACIÓN DE CONTRASEÑA - VISION CLARA
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hola Xiomara Anabeli Cobian Ramirez,
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hemos recibido una solicitud para restablecer la contraseña de tu cuenta.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Tu código de verificación es: 919155
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     IMPORTANTE:
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Este código es válido por 30 minutos
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - No compartas este código con nadie
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Si no solicitaste este cambio, ignora este mensaje
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Para completar el proceso, ingresa este código en la página de recuperación de contraseña.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Saludos,
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Equipo Vision Clara
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     ---
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Este es un correo automático, por favor no respondas a este mensaje.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     © 2025 Vision Clara. Todos los derechos reservados.
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_imSicHhKULzQ02EUYEc9ZQUQ3SKbtuOmnAPGHFmg
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <!DOCTYPE html>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <html lang='es'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <head>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta charset='UTF-8'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <style>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code-box { background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code { font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .footer { text-align: center; color: #6c757d; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; }
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </style>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </head>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <body>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <div class='container'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='header'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <h1 style='margin: 0;'>🔐 Recuperación de Contraseña</h1>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='content'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hola <strong>Xiomara Anabeli Cobian Ramirez</strong>,</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>Vision Clara</strong>.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='code-box'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <p style='margin: 0 0 10px 0; color: #666;'>Tu código de verificación es:</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <div class='code'>919155</div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='warning'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <strong>⚠️ Importante:</strong>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <ul style='margin: 10px 0; padding-left: 20px;'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Este código es válido por <strong>30 minutos</strong></li>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>No compartas este código con nadie</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Si no solicitaste este cambio, ignora este mensaje</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     </ul>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Para completar el proceso, ingresa este código en la página de recuperación de contraseña.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='footer'>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>&copy; 2025 Vision Clara. Todos los derechos reservados.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </body>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </html>
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_imSicHhKULzQ02EUYEc9ZQUQ3SKbtuOmnAPGHFmg--
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:30 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: .
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.0.0 OK  1762958851 46e09a7af769-7c6f10f6178sm8590796a34.19 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: QUIT
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 46e09a7af769-7c6f10f6178sm8590796a34.19 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 15:47:31 ---
+DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
+--- Nuevo Log de Sesión: 2025-11-12 16:22:16 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 16:22:16 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 16:22:16 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 16:22:16 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 16:22:28 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 16:22:28 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 16:22:28 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 16:22:28 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 16:22:29 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 16:22:29 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 16:22:29 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 16:22:29 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 17:50:38 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 46e09a7af769-7c708604bb9sm5627403a34.31 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.138]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: STARTTLS
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.138]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:09 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: AUTH LOGIN
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MAIL FROM:<vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.0 OK 46e09a7af769-7c708604bb9sm5627403a34.31 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: RCPT TO:<xcobian@ucol.mx>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.5 OK 46e09a7af769-7c708604bb9sm5627403a34.31 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: DATA
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 354 Go ahead 46e09a7af769-7c708604bb9sm5627403a34.31 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Date: Wed, 12 Nov 2025 17:51:09 +0100
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: To: xcobian@ucol.mx
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: From: Sistema Vision Clara <vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Subject: =?UTF-8?Q?C=C3=B3digo_de_recuperaci=C3=B3n_de_contrase=C3=B1a_-_Vision_Clara?=
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Message-ID: <5kRLZC4jWO3UAfmURsByiT3PRTxhD2vGwmqfnOe7c@localhost>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:  boundary="b1=_5kRLZC4jWO3UAfmURsByiT3PRTxhD2vGwmqfnOe7c"
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_5kRLZC4jWO3UAfmURsByiT3PRTxhD2vGwmqfnOe7c
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     RECUPERACIÓN DE CONTRASEÑA - VISION CLARA
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hola Xiomara Anabeli Cobian Ramirez,
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hemos recibido una solicitud para restablecer la contraseña de tu cuenta.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Tu código de verificación es: 756313
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     IMPORTANTE:
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Este código es válido por 30 minutos
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - No compartas este código con nadie
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Si no solicitaste este cambio, ignora este mensaje
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Para completar el proceso, ingresa este código en la página de recuperación de contraseña.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Saludos,
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Equipo Vision Clara
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     ---
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Este es un correo automático, por favor no respondas a este mensaje.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     © 2025 Vision Clara. Todos los derechos reservados.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_5kRLZC4jWO3UAfmURsByiT3PRTxhD2vGwmqfnOe7c
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <!DOCTYPE html>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <html lang='es'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <head>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta charset='UTF-8'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <style>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code-box { background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code { font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .footer { text-align: center; color: #6c757d; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </style>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </head>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <body>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <div class='container'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='header'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <h1 style='margin: 0;'>🔐 Recuperación de Contraseña</h1>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='content'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hola <strong>Xiomara Anabeli Cobian Ramirez</strong>,</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>Vision Clara</strong>.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='code-box'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <p style='margin: 0 0 10px 0; color: #666;'>Tu código de verificación es:</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <div class='code'>756313</div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='warning'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <strong>⚠️ Importante:</strong>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <ul style='margin: 10px 0; padding-left: 20px;'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Este código es válido por <strong>30 minutos</strong></li>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>No compartas este código con nadie</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Si no solicitaste este cambio, ignora este mensaje</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     </ul>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Para completar el proceso, ingresa este código en la página de recuperación de contraseña.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='footer'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>&copy; 2025 Vision Clara. Todos los derechos reservados.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </body>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </html>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_5kRLZC4jWO3UAfmURsByiT3PRTxhD2vGwmqfnOe7c--
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:10 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: .
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:11 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.0.0 OK  1762966271 46e09a7af769-7c708604bb9sm5627403a34.31 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:11 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: QUIT
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:11 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 46e09a7af769-7c708604bb9sm5627403a34.31 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:51:11 ---
+DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
+--- Nuevo Log de Sesión: 2025-11-12 17:51:40 ---
+DEBUG: WARN: Código incorrecto ingresado para: xcobian@ucol.mx - Esperado: 756313 - Recibido: 657313
+--- Nuevo Log de Sesión: 2025-11-12 17:51:48 ---
+DEBUG: SUCCESS: Código verificado correctamente para: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 17:52:42 ---
+DEBUG: SUCCESS: Contraseña actualizada para usuario ID: 1 - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 17:52:54 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 17:52:54 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Claea123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 17:52:54 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 17:52:54 ---
+DEBUG: DEBUG: Password después de trim: [Claea123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 17:52:55 ---
+DEBUG: DEBUG: Password ingresado: [Claea123.] - Longitud: 9 - Hex: 436c6165613132332e
+--- Nuevo Log de Sesión: 2025-11-12 17:52:55 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 17:52:55 ---
+DEBUG: DEBUG: Comparación (===): NO COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 17:52:55 ---
+DEBUG: WARN: Contraseña incorrecta - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 17:53:08 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 17:53:08 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 17:53:08 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 17:53:08 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 17:53:09 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 17:53:09 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 17:53:09 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 17:53:09 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 17:53:26 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 17:53:31 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 17:53:31 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 17:53:31 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 17:53:31 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 17:53:32 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 17:53:32 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 17:53:32 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 17:53:32 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-12 17:58:48 ---
+DEBUG: INFO: Logout - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-12 17:59:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 586e51a60fabf-3e41f13d29asm10129000fac.14 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:23 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: STARTTLS
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:23 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: AUTH LOGIN
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MAIL FROM:<vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.0 OK 586e51a60fabf-3e41f13d29asm10129000fac.14 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: RCPT TO:<xcobian@ucol.mx>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.5 OK 586e51a60fabf-3e41f13d29asm10129000fac.14 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: DATA
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 354 Go ahead 586e51a60fabf-3e41f13d29asm10129000fac.14 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Date: Wed, 12 Nov 2025 17:59:23 +0100
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: To: xcobian@ucol.mx
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: From: Sistema Vision Clara <vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Subject: =?UTF-8?Q?C=C3=B3digo_de_recuperaci=C3=B3n_de_contrase=C3=B1a_-_Vision_Clara?=
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Message-ID: <RUiAfR8O3Xnl8sFuouCXbuOxJbSwSLbJSkhd2RXVaU@localhost>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:  boundary="b1=_RUiAfR8O3Xnl8sFuouCXbuOxJbSwSLbJSkhd2RXVaU"
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_RUiAfR8O3Xnl8sFuouCXbuOxJbSwSLbJSkhd2RXVaU
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     RECUPERACIÓN DE CONTRASEÑA - VISION CLARA
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hola Xiomara Anabeli Cobian Ramirez,
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hemos recibido una solicitud para restablecer la contraseña de tu cuenta.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Tu código de verificación es: 591026
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     IMPORTANTE:
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Este código es válido por 30 minutos
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - No compartas este código con nadie
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Si no solicitaste este cambio, ignora este mensaje
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Para completar el proceso, ingresa este código en la página de recuperación de contraseña.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Saludos,
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Equipo Vision Clara
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     ---
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Este es un correo automático, por favor no respondas a este mensaje.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     © 2025 Vision Clara. Todos los derechos reservados.
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_RUiAfR8O3Xnl8sFuouCXbuOxJbSwSLbJSkhd2RXVaU
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <!DOCTYPE html>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <html lang='es'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <head>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta charset='UTF-8'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <style>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code-box { background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code { font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .footer { text-align: center; color: #6c757d; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; }
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </style>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </head>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <body>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <div class='container'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='header'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <h1 style='margin: 0;'>🔐 Recuperación de Contraseña</h1>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='content'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hola <strong>Xiomara Anabeli Cobian Ramirez</strong>,</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>Vision Clara</strong>.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='code-box'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <p style='margin: 0 0 10px 0; color: #666;'>Tu código de verificación es:</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <div class='code'>591026</div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='warning'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <strong>⚠️ Importante:</strong>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <ul style='margin: 10px 0; padding-left: 20px;'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Este código es válido por <strong>30 minutos</strong></li>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>No compartas este código con nadie</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Si no solicitaste este cambio, ignora este mensaje</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     </ul>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Para completar el proceso, ingresa este código en la página de recuperación de contraseña.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='footer'>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>&copy; 2025 Vision Clara. Todos los derechos reservados.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </body>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </html>
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_RUiAfR8O3Xnl8sFuouCXbuOxJbSwSLbJSkhd2RXVaU--
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:24 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: .
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:25 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.0.0 OK  1762966766 586e51a60fabf-3e41f13d29asm10129000fac.14 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:25 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: QUIT
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:25 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 586e51a60fabf-3e41f13d29asm10129000fac.14 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 17:59:25 ---
+DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
+--- Nuevo Log de Sesión: 2025-11-12 17:59:42 ---
+DEBUG: WARN: Código incorrecto ingresado para: xcobian@ucol.mx - Esperado: 591026 - Recibido: 591023
+--- Nuevo Log de Sesión: 2025-11-12 17:59:53 ---
+DEBUG: SUCCESS: Código verificado correctamente para: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 18:00:37 ---
+DEBUG: SUCCESS: Contraseña actualizada para usuario ID: 1 - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 18:00:48 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 18:00:48 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clar123.] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 18:00:48 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 18:00:48 ---
+DEBUG: DEBUG: Password después de trim: [Clar123.] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 18:00:49 ---
+DEBUG: DEBUG: Password ingresado: [Clar123.] - Longitud: 8 - Hex: 436c61723132332e
+--- Nuevo Log de Sesión: 2025-11-12 18:00:49 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 18:00:49 ---
+DEBUG: DEBUG: Comparación (===): NO COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 18:00:49 ---
+DEBUG: WARN: Contraseña incorrecta - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 18:00:57 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 18:00:57 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 18:00:57 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 18:00:57 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 18:00:58 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 18:00:58 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 18:00:58 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 18:00:58 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 18:01:27 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 18:01:32 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 18:01:32 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 18:01:32 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 18:01:32 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 18:01:33 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 18:01:33 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 18:01:33 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 18:01:33 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-12 19:42:51 ---
+DEBUG: INFO: Logout - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 586e51a60fabf-3e41ed0aa06sm10404560fac.8 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.138]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: STARTTLS
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.138]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: AUTH LOGIN
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MAIL FROM:<vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.0 OK 586e51a60fabf-3e41ed0aa06sm10404560fac.8 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: RCPT TO:<xcobian@ucol.mx>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.5 OK 586e51a60fabf-3e41ed0aa06sm10404560fac.8 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:31 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: DATA
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 354 Go ahead 586e51a60fabf-3e41ed0aa06sm10404560fac.8 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Date: Wed, 12 Nov 2025 20:17:31 +0100
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: To: xcobian@ucol.mx
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: From: Sistema Vision Clara <vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Subject: =?UTF-8?Q?C=C3=B3digo_de_recuperaci=C3=B3n_de_contrase=C3=B1a_-_Vision_Clara?=
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Message-ID: <tGVVrherZv3FYpmkXunoMPC7bq6tRSiIhKyFsyfcKaU@localhost>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:  boundary="b1=_tGVVrherZv3FYpmkXunoMPC7bq6tRSiIhKyFsyfcKaU"
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_tGVVrherZv3FYpmkXunoMPC7bq6tRSiIhKyFsyfcKaU
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     RECUPERACIÓN DE CONTRASEÑA - VISION CLARA
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hola Xiomara Anabeli Cobian Ramirez,
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hemos recibido una solicitud para restablecer la contraseña de tu cuenta.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Tu código de verificación es: 765826
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     IMPORTANTE:
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Este código es válido por 30 minutos
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - No compartas este código con nadie
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Si no solicitaste este cambio, ignora este mensaje
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Para completar el proceso, ingresa este código en la página de recuperación de contraseña.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Saludos,
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Equipo Vision Clara
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     ---
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Este es un correo automático, por favor no respondas a este mensaje.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     © 2025 Vision Clara. Todos los derechos reservados.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_tGVVrherZv3FYpmkXunoMPC7bq6tRSiIhKyFsyfcKaU
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <!DOCTYPE html>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <html lang='es'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <head>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta charset='UTF-8'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <style>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code-box { background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code { font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .footer { text-align: center; color: #6c757d; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </style>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </head>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <body>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <div class='container'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='header'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <h1 style='margin: 0;'>🔐 Recuperación de Contraseña</h1>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='content'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hola <strong>Xiomara Anabeli Cobian Ramirez</strong>,</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>Vision Clara</strong>.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='code-box'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <p style='margin: 0 0 10px 0; color: #666;'>Tu código de verificación es:</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <div class='code'>765826</div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='warning'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <strong>⚠️ Importante:</strong>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <ul style='margin: 10px 0; padding-left: 20px;'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Este código es válido por <strong>30 minutos</strong></li>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>No compartas este código con nadie</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Si no solicitaste este cambio, ignora este mensaje</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     </ul>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Para completar el proceso, ingresa este código en la página de recuperación de contraseña.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='footer'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>&copy; 2025 Vision Clara. Todos los derechos reservados.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </body>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </html>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_tGVVrherZv3FYpmkXunoMPC7bq6tRSiIhKyFsyfcKaU--
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: .
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.0.0 OK  1762975052 586e51a60fabf-3e41ed0aa06sm10404560fac.8 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: QUIT
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 586e51a60fabf-3e41ed0aa06sm10404560fac.8 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:17:32 ---
+DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5614622812f47-4500257fc6esm8665260b6e.6 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.138]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: STARTTLS
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.138]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: AUTH LOGIN
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MAIL FROM:<vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.0 OK 5614622812f47-4500257fc6esm8665260b6e.6 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: RCPT TO:<xcobian@ucol.mx>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.5 OK 5614622812f47-4500257fc6esm8665260b6e.6 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: DATA
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 354 Go ahead 5614622812f47-4500257fc6esm8665260b6e.6 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Date: Wed, 12 Nov 2025 20:18:13 +0100
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: To: xcobian@ucol.mx
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: From: Sistema Vision Clara <vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Subject: =?UTF-8?Q?C=C3=B3digo_de_recuperaci=C3=B3n_de_contrase=C3=B1a_-_Vision_Clara?=
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Message-ID: <o4DzF3WSOTzfXgc1HkPZsEVJxuABh7Eqhy4jbOB5Y@localhost>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:  boundary="b1=_o4DzF3WSOTzfXgc1HkPZsEVJxuABh7Eqhy4jbOB5Y"
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_o4DzF3WSOTzfXgc1HkPZsEVJxuABh7Eqhy4jbOB5Y
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     RECUPERACIÓN DE CONTRASEÑA - VISION CLARA
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hola Xiomara Anabeli Cobian Ramirez,
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hemos recibido una solicitud para restablecer la contraseña de tu cuenta.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Tu código de verificación es: 457535
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     IMPORTANTE:
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Este código es válido por 30 minutos
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - No compartas este código con nadie
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Si no solicitaste este cambio, ignora este mensaje
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Para completar el proceso, ingresa este código en la página de recuperación de contraseña.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Saludos,
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Equipo Vision Clara
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     ---
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Este es un correo automático, por favor no respondas a este mensaje.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     © 2025 Vision Clara. Todos los derechos reservados.
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_o4DzF3WSOTzfXgc1HkPZsEVJxuABh7Eqhy4jbOB5Y
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <!DOCTYPE html>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <html lang='es'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <head>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta charset='UTF-8'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <style>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code-box { background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code { font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .footer { text-align: center; color: #6c757d; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; }
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </style>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </head>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <body>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <div class='container'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='header'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <h1 style='margin: 0;'>🔐 Recuperación de Contraseña</h1>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='content'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hola <strong>Xiomara Anabeli Cobian Ramirez</strong>,</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>Vision Clara</strong>.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='code-box'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <p style='margin: 0 0 10px 0; color: #666;'>Tu código de verificación es:</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <div class='code'>457535</div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='warning'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <strong>⚠️ Importante:</strong>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <ul style='margin: 10px 0; padding-left: 20px;'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Este código es válido por <strong>30 minutos</strong></li>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>No compartas este código con nadie</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Si no solicitaste este cambio, ignora este mensaje</li>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     </ul>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Para completar el proceso, ingresa este código en la página de recuperación de contraseña.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='footer'>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>&copy; 2025 Vision Clara. Todos los derechos reservados.</p>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </div>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </body>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </html>
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_o4DzF3WSOTzfXgc1HkPZsEVJxuABh7Eqhy4jbOB5Y--
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: .
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:15 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.0.0 OK  1762975095 5614622812f47-4500257fc6esm8665260b6e.6 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: QUIT
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:15 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5614622812f47-4500257fc6esm8665260b6e.6 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-12 20:18:15 ---
+DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
+--- Nuevo Log de Sesión: 2025-11-12 20:18:49 ---
+DEBUG: WARN: Código incorrecto ingresado para: xcobian@ucol.mx - Esperado: 457535 - Recibido: 457566
+--- Nuevo Log de Sesión: 2025-11-12 20:19:02 ---
+DEBUG: SUCCESS: Código verificado correctamente para: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 20:19:44 ---
+DEBUG: SUCCESS: Contraseña actualizada para usuario ID: 1 - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 20:19:54 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 20:19:54 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 20:19:54 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 20:19:54 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-12 20:19:55 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 20:19:55 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-12 20:19:55 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 20:19:55 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 20:23:39 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-12 20:24:11 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-13 16:44:13 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 586e51a60fabf-3e851fff282sm1672792fac.1 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:13 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:13 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:13 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: STARTTLS
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:13 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:13 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: EHLO localhost
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [148.213.116.34]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: AUTH LOGIN
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: [credentials hidden]
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MAIL FROM:<vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.0 OK 586e51a60fabf-3e851fff282sm1672792fac.1 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: RCPT TO:<xcobian@ucol.mx>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.1.5 OK 586e51a60fabf-3e851fff282sm1672792fac.1 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:14 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: DATA
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 354 Go ahead 586e51a60fabf-3e851fff282sm1672792fac.1 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Date: Thu, 13 Nov 2025 16:44:12 +0100
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: To: xcobian@ucol.mx
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: From: Sistema Vision Clara <vision.clara.optica.mzo@gmail.com>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Subject: =?UTF-8?Q?C=C3=B3digo_de_recuperaci=C3=B3n_de_contrase=C3=B1a_-_Vision_Clara?=
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Message-ID: <eJVjRMI5j5RVIRxDSNkLofKLWyyYjMsUxzCnaVEQ@localhost>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:  boundary="b1=_eJVjRMI5j5RVIRxDSNkLofKLWyyYjMsUxzCnaVEQ"
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_eJVjRMI5j5RVIRxDSNkLofKLWyyYjMsUxzCnaVEQ
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     RECUPERACIÓN DE CONTRASEÑA - VISION CLARA
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hola Xiomara Anabeli Cobian Ramirez,
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Hemos recibido una solicitud para restablecer la contraseña de tu cuenta.
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Tu código de verificación es: 726903
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     IMPORTANTE:
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Este código es válido por 30 minutos
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - No compartas este código con nadie
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     - Si no solicitaste este cambio, ignora este mensaje
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Para completar el proceso, ingresa este código en la página de recuperación de contraseña.
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Saludos,
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Equipo Vision Clara
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     ---
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     Este es un correo automático, por favor no respondas a este mensaje.
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     © 2025 Vision Clara. Todos los derechos reservados.
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_eJVjRMI5j5RVIRxDSNkLofKLWyyYjMsUxzCnaVEQ
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <!DOCTYPE html>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <html lang='es'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <head>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta charset='UTF-8'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <style>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code-box { background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .code { font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             .footer { text-align: center; color: #6c757d; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; }
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </style>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </head>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     <body>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         <div class='container'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='header'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <h1 style='margin: 0;'>🔐 Recuperación de Contraseña</h1>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='content'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hola <strong>Xiomara Anabeli Cobian Ramirez</strong>,</p>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>Vision Clara</strong>.</p>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='code-box'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <p style='margin: 0 0 10px 0; color: #666;'>Tu código de verificación es:</p>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <div class='code'>726903</div>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <div class='warning'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <strong>⚠️ Importante:</strong>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     <ul style='margin: 10px 0; padding-left: 20px;'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Este código es válido por <strong>30 minutos</strong></li>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>No compartas este código con nadie</li>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                         <li>Si no solicitaste este cambio, ignora este mensaje</li>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                     </ul>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 </div>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Para completar el proceso, ingresa este código en la página de recuperación de contraseña.</p>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             <div class='footer'>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:                 <p>&copy; 2025 Vision Clara. Todos los derechos reservados.</p>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:             </div>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:         </div>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </body>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     </html>
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER:     
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: --b1=_eJVjRMI5j5RVIRxDSNkLofKLWyyYjMsUxzCnaVEQ--
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: 
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: .
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:15 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 250 2.0.0 OK  1763048656 586e51a60fabf-3e851fff282sm1672792fac.1 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:16 ---
+DEBUG: SMTP[1]: CLIENT -> SERVER: QUIT
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:16 ---
+DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 586e51a60fabf-3e851fff282sm1672792fac.1 - gsmtp
+
+--- Nuevo Log de Sesión: 2025-11-13 16:44:16 ---
+DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
+--- Nuevo Log de Sesión: 2025-11-13 16:45:29 ---
+DEBUG: SUCCESS: Código verificado correctamente para: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:56:40 ---
+DEBUG: SUCCESS: Contraseña actualizada para usuario ID: 1 - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:57:31 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 16:57:31 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:57:31 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:57:31 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:57:55 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 16:57:55 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:57:55 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:57:55 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:58:20 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 16:58:20 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:58:20 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:58:20 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:58:44 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 16:58:44 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:58:44 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:58:44 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:59:09 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 16:59:09 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:59:09 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:59:09 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:59:32 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 16:59:32 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:59:32 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:59:32 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:59:57 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 16:59:57 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 16:59:57 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 16:59:57 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:25 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:00:25 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:25 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:00:25 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:43 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:00:43 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:43 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:00:43 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:45 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:00:45 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:45 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:00:45 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:47 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:00:47 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:47 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:00:47 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:50 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:00:50 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:50 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:00:50 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:52 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:00:52 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:52 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:00:52 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:55 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:00:55 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:00:55 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:00:55 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:01:24 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:01:24 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:01:24 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:01:24 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:01:55 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 17:01:55 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-13 17:01:55 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 17:01:55 ---
+DEBUG: DEBUG: Password después de trim: [gfvchfgvcjh] - Longitud: 11
+--- Nuevo Log de Sesión: 2025-11-15 16:24:12 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-15 16:24:12 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-15 16:24:12 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-15 16:24:12 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-15 16:24:14 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-15 16:24:14 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-15 16:24:14 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-15 16:24:14 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-15 17:54:11 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-15 17:54:16 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-15 17:54:16 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-15 17:54:16 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-15 17:54:16 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-15 17:54:18 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-15 17:54:18 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-15 17:54:18 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-15 17:54:18 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
