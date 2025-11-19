@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Oculi Display Regular Italic';
-    background-color: #f8f9fa;
+    background-color: #88c3fe;
     color: #333;
     line-height: 1.6;
 }
@@ -17,7 +17,7 @@ body {
     width: 100%;
     /*margin: 0 auto; */
     padding: 40px 20px;
-    background-color: #fff;
+    background-color: #8fbefc;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
