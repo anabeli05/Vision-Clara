@@ -32,8 +32,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar'])) {
         $stock = intval($_POST['Stock'] ?? 0);
         $imagen_url = '';
         
-        // Procesar imagen subida
-        if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
+        // Validaciones básicas
+        if (empty($nombre)) {
+            $error = "El nombre del producto es obligatorio";
+        } elseif (empty($descripcion)) {
+            $error = "La descripción del producto es obligatoria";
+        } elseif (empty($precio)) {
+            $error = "El precio del producto es obligatorio";
+        } elseif (!is_numeric($precio) || $precio <= 0) {
+            $error = "El precio debe ser un número mayor a 0";
+        } elseif (empty($stock)) {
+            $error = "El stock es obligatorio";
+        } elseif (!is_numeric($stock) || $stock <= 0) {
+            $error = "El stock debe ser un número mayor a 0";
+        }
+        // VALIDAR QUE SE HAYA SUBIDO UNA IMAGEN
+        elseif (!isset($_FILES['imagen']) || $_FILES['imagen']['error'] === UPLOAD_ERR_NO_FILE) {
+            $error = "La imagen del producto es obligatoria";
+        } 
+        elseif ($_FILES['imagen']['error'] !== UPLOAD_ERR_OK) {
+            $error = "Error al subir la imagen. Por favor, intente nuevamente";
+        } 
+        else {
+            // Procesar imagen subida
             $upload_dir = '../../uploads/productos/';
             
             // Crear directorio si no existe
@@ -44,32 +65,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar'])) {
             $file_extension = strtolower(pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION));
             $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
             
-            if (in_array($file_extension, $allowed_extensions)) {
+            if (!in_array($file_extension, $allowed_extensions)) {
+                $error = "Formato de imagen no permitido. Use: JPG, PNG, GIF o WEBP";
+            } else {
                 $new_filename = uniqid('producto_') . '.' . $file_extension;
                 $upload_path = $upload_dir . $new_filename;
                 
                 if (move_uploaded_file($_FILES['imagen']['tmp_name'], $upload_path)) {
                     $imagen_url = 'uploads/productos/' . $new_filename;
+                    
+                    try {
+                        // Insertar nuevo producto
+                        $stmt = $conn->prepare("INSERT INTO productos (Nombre, Descripcion, Precio, Stock, Imagen_URL, Activo) VALUES (?, ?, ?, ?, ?, 1)");
+                        $stmt->execute([$nombre, $descripcion, $precio, $stock, $imagen_url]);
+                        
+                        $success = "Producto agregado exitosamente";
+                        // Limpiar el formulario
+                        $_POST = [];
+                    } catch(PDOException $e) {
+                        $error = "Error al agregar el producto: " . $e->getMessage();
+                    }
+                } else {
+                    $error = "Error al guardar la imagen en el servidor";
                 }
-            }
-        }
-        
-        // Validaciones básicas
-        if (empty($nombre) || empty($precio)) {
-            $error = "Nombre y precio son obligatorios";
-        } elseif (!is_numeric($precio) || $precio <= 0) {
-            $error = "El precio debe ser un número mayor a 0";
-        } else {
-            try {
-                // Insertar nuevo producto
-                $stmt = $conn->prepare("INSERT INTO productos (Nombre, Descripcion, Precio, Stock, Imagen_URL, Activo) VALUES (?, ?, ?, ?, ?, 1)");
-                $stmt->execute([$nombre, $descripcion, $precio, $stock, $imagen_url]);
-                
-                $success = "Producto agregado exitosamente";
-                // Limpiar el formulario
-                $_POST = [];
-            } catch(PDOException $e) {
-                $error = "Error al agregar el producto: " . $e->getMessage();
             }
         }
     }
