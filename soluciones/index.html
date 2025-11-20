@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Centro de Soluciones - Vision Clara</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .card ul {
+            margin: 15px 0;
+            margin-left: 20px;
+            color: #666;
+        }
+        .card li {
+            margin-bottom: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+        .btn-danger:hover {
+            background: #da190b;
+        }
+        .btn-warning {
+            background: #ff9800;
+            color: white;
+        }
+        .btn-warning:hover {
+            background: #e68900;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: auto;
+        }
+        .badge-info {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .badge-warning {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        .badge-danger {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            color: #856404;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 Centro de Soluciones</h1>
+            <p>Sistema de diagnóstico y reparación automática</p>
+        </header>
+
+        <div class="alert">
+            <strong>ℹ️ Importante:</strong> Ejecuta primero <strong>diagnostico-rapido.php</strong> para identificar el problema exacto.
+        </div>
+
+        <div class="grid">
+            <!-- DIAGNÓSTICO -->
+            <div class="card">
+                <h3>
+                    🔍 Diagnóstico Rápido
+                    <span class="badge badge-info">Ejecutar primero</span>
+                </h3>
+                <p>Verifica el estado completo del sistema y detecta problemas.</p>
+                <ul>
+                    <li>✓ Estado del UNIQUE constraint</li>
+                    <li>✓ Columna Fecha_Solo</li>
+                    <li>✓ Tabla turno_sequences</li>
+                    <li>✓ Duplicados detectados</li>
+                    <li>✓ Estado de la API</li>
+                </ul>
+                <a href="../diagnostico-rapido.php" class="btn btn-primary">Ejecutar Diagnóstico</a>
+            </div>
+
+            <!-- LIMPIAR DUPLICADOS -->
+            <div class="card">
+                <h3>
+                    🧹 Limpiar Duplicados HOY
+                    <span class="badge badge-warning">Urgente</span>
+                </h3>
+                <p>Elimina duplicados encontrados en los turnos de hoy.</p>
+                <ul>
+                    <li>✓ Detecta N001 duplicado, C001 duplicado, etc.</li>
+                    <li>✓ Mantiene el primer registro</li>
+                    <li>✓ Elimina duplicados automáticamente</li>
+                    <li>✓ Operación reversible (backup mental)</li>
+                </ul>
+                <a href="./limpiar-duplicados-hoy.php" class="btn btn-danger">Limpiar Duplicados</a>
+            </div>
+
+            <!-- RESTAURAR UNIQUE -->
+            <div class="card">
+                <h3>
+                    🔐 Restaurar UNIQUE Constraint
+                    <span class="badge badge-info">Prevención</span>
+                </h3>
+                <p>Recrea el UNIQUE constraint si está dañado.</p>
+                <ul>
+                    <li>✓ Verifica estado actual</li>
+                    <li>✓ Elimina constraints antiguos</li>
+                    <li>✓ Crea constraint nuevo: (Numero_Turno, Fecha_Solo)</li>
+                    <li>✓ Permite reutilizar números por día</li>
+                </ul>
+                <a href="./agregar-unique-constraint.php" class="btn btn-primary">Restaurar Constraint</a>
+            </div>
+
+            <!-- RECREAR SECUENCIAS -->
+            <div class="card">
+                <h3>
+                    🔄 Recrear turno_sequences
+                    <span class="badge badge-info">Mantenimiento</span>
+                </h3>
+                <p>Recrear tabla de control de secuencias si está corrupta.</p>
+                <ul>
+                    <li>✓ Verifica existencia de tabla</li>
+                    <li>✓ Elimina tabla corrupta</li>
+                    <li>✓ Crea tabla nueva</li>
+                    <li>✓ Inicializa con turnos de hoy</li>
+                </ul>
+                <a href="./recrear-turno-sequences.php" class="btn btn-primary">Recrear Secuencias</a>
+            </div>
+
+            <!-- RESETEAR COMPLETO -->
+            <div class="card">
+                <h3>
+                    ⚠️ Resetear Sistema Completo
+                    <span class="badge badge-danger">Nuclear</span>
+                </h3>
+                <p>Limpia TODO y resetea el sistema de cero.</p>
+                <ul>
+                    <li>✗ Elimina TODOS los turnos de hoy</li>
+                    <li>✗ Resetea secuencias (próximo: 1)</li>
+                    <li>✓ Conserva histórico (Finalizado/Cancelado)</li>
+                    <li>⚠️ Última opción si nada funciona</li>
+                </ul>
+                <a href="./resetear-sistema-completo.php" class="btn btn-warning">Resetear (Cuidado!)</a>
+            </div>
+
+            <!-- INFORMACIÓN -->
+            <div class="card">
+                <h3>ℹ️ Información</h3>
+                <p><strong>¿Qué significa cada problema?</strong></p>
+                <ul>
+                    <li><strong>Duplicate entry N001</strong>: Falta UNIQUE constraint</li>
+                    <li><strong>Números no incrementan</strong>: turno_sequences corrupta</li>
+                    <li><strong>Todos los turnos hoy iguales</strong>: Fecha_Solo no funciona</li>
+                    <li><strong>API no responde</strong>: Revisar base de datos</li>
+                </ul>
+                <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Acceso rápido:</strong><br>
+                    <a href="../../index.php">🏠 Volver a inicio</a>
+                </p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Sistema de Gestión de Turnos - Vision Clara</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Última actualización: <?php echo date('Y-m-d H:i:s'); ?></p>
+        </footer>
+    </div>
+</body>
+</html>
