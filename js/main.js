@@ -52,20 +52,45 @@ function enviarTurno(form, tipo, resultadoDivId){
 
         formData.append('tipo', tipo);
 
-        fetch('generar_turno.php',{
-            method:'POST',
-            body: formData
+        // reemplaza donde haces fetch(...) con este bloque
+        const relativeUrl = 'Pantalla_Turnos/api-turnos-sequences.php';
+        const absoluteFallback = `${window.location.origin}/Vision-Clara/Pantalla_Turnos/api-turnos-sequences.php`;
+
+        function doFetch(url) {
+          return fetch(url, { method: 'POST', body: formData });
+        }
+
+        doFetch(relativeUrl)
+        .then(res => {
+          if (res.status === 404) {
+            // intentar ruta absoluta si la relativa no existe
+            return doFetch(absoluteFallback);
+          }
+          return res;
         })
-        .then(res => res.json())
-        .then(data => {
+        .then(res => {
+          if (!res) throw new Error('No response received');
+          if (!res.ok) {
             const resultadoDiv = document.getElementById(resultadoDivId);
-            if(data.status === 'ok'){
-                resultadoDiv.innerHTML = `<p>Tu turno es: <strong>${data.turno}</strong></p>`;
-            } else {
-                resultadoDiv.innerHTML = `<p style="color:red;">${data.mensaje}</p>`;
-            }
+            resultadoDiv.innerHTML = `<p style="color:red;">Error HTTP: ${res.status} ${res.statusText}</p>`;
+            throw new Error('HTTP error ' + res.status);
+          }
+          return res.json();
         })
-        .catch(err => console.error(err));
+        .then(data => {
+          const resultadoDiv = document.getElementById(resultadoDivId);
+          if (data && data.success) {
+            resultadoDiv.innerHTML = `<p>Tu turno es: <strong>${data.turno}</strong></p>`;
+          } else {
+            const msg = (data && (data.error || data.message)) || 'Ocurrió un error al solicitar el turno';
+            resultadoDiv.innerHTML = `<p style="color:red;">${msg}</p>`;
+          }
+        })
+        .catch(err => {
+          console.error('Fetch error:', err);
+          const resultadoDiv = document.getElementById(resultadoDivId);
+          resultadoDiv.innerHTML = `<p style="color:red;">Error de red o interno. Revisa la consola y la ruta del endpoint.</p>`;
+        });
     });
 }
 

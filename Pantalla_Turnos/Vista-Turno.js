@@ -131,7 +131,7 @@ class VistaTurno {
 
     async fetchUpdatedData() {
         try {
-            const response = await fetch('api-turnos.php');
+            const response = await fetch('api-turnos-sequences.php');
             const data = await response.json();
             
             if (data.success) {

@@ -1493,3 +1493,123 @@ DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
 DEBUG: DEBUG: Comparación (===): COINCIDE
 --- Nuevo Log de Sesión: 2025-11-11 08:35:59 ---
 DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-13 14:48:52 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 14:48:52 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [123456789] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-13 14:48:52 ---
+DEBUG: INFO: intento de login - Email: jmancilla1@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 14:48:52 ---
+DEBUG: DEBUG: Password después de trim: [123456789] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-13 14:49:02 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 14:49:02 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [123456789] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-13 14:49:02 ---
+DEBUG: INFO: intento de login - Email: jmancilla1@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 14:49:02 ---
+DEBUG: DEBUG: Password después de trim: [123456789] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-13 14:49:03 ---
+DEBUG: DEBUG: Password ingresado: [123456789] - Longitud: 9 - Hex: 313233343536373839
+--- Nuevo Log de Sesión: 2025-11-13 14:49:03 ---
+DEBUG: DEBUG: Password en BD: [$2y$10$OpOm4KqHhqbyZVHIlunmPOVsvtLgZE3250h6/CLPEmBxie3m9Sj/C] - Longitud: 60 - Hex: 243279243130244f704f6d344b7148687162795a5648496c756e6d504f567376744c675a453332353068362f434c50456d42786965336d39536a2f43
+--- Nuevo Log de Sesión: 2025-11-13 14:49:03 ---
+DEBUG: DEBUG: Comparación (===): NO COINCIDE
+--- Nuevo Log de Sesión: 2025-11-13 14:49:03 ---
+DEBUG: WARN: Contraseña incorrecta - Email: jmancilla1@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 14:49:46 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 14:49:46 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 14:49:46 ---
+DEBUG: INFO: intento de login - Email: jmancilla1@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 14:49:46 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 14:49:47 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-13 14:49:47 ---
+DEBUG: DEBUG: Password en BD: [$2y$10$OpOm4KqHhqbyZVHIlunmPOVsvtLgZE3250h6/CLPEmBxie3m9Sj/C] - Longitud: 60 - Hex: 243279243130244f704f6d344b7148687162795a5648496c756e6d504f567376744c675a453332353068362f434c50456d42786965336d39536a2f43
+--- Nuevo Log de Sesión: 2025-11-13 14:49:47 ---
+DEBUG: DEBUG: Comparación (===): NO COINCIDE
+--- Nuevo Log de Sesión: 2025-11-13 14:49:47 ---
+DEBUG: WARN: Contraseña incorrecta - Email: jmancilla1@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 15:05:09 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 15:05:09 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 15:05:09 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 15:05:09 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 15:05:15 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 15:05:15 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 15:05:15 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 15:05:15 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 15:05:16 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 15:05:16 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 15:05:16 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 15:05:16 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 15:05:18 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-13 15:05:18 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-13 15:05:18 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-13 15:05:18 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-13 15:05:18 ---
+DEBUG: INFO: Creando token de recuérdame - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-13 15:05:18 ---
+DEBUG: SUCCESS: Token de recuérdame creado exitosamente
+--- Nuevo Log de Sesión: 2025-11-13 18:09:05 ---
+DEBUG: INFO: Auto-login exitoso vía Remember Token - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-13 18:10:46 ---
+DEBUG: INFO: Logout - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-13 18:10:47 ---
+DEBUG: INFO: Token de recuérdame eliminado - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-13 18:11:42 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-13 18:11:42 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 18:11:42 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-13 18:11:42 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-13 18:11:44 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-13 18:11:44 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-13 18:11:44 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-13 18:11:44 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-15 16:58:35 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-15 16:58:35 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-15 16:58:35 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-15 16:58:35 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-15 16:58:36 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-15 16:58:36 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-15 16:58:36 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-15 16:58:36 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-15 16:58:36 ---
+DEBUG: INFO: Creando token de recuérdame - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-15 16:58:37 ---
+DEBUG: SUCCESS: Token de recuérdame creado exitosamente
+--- Nuevo Log de Sesión: 2025-11-15 18:38:40 ---
+DEBUG: INFO: Auto-login exitoso vía Remember Token - Usuario ID: 2

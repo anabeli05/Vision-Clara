@@ -36,7 +36,7 @@ include('./Base de Datos/conexion.php');
         Nuestro compromiso es ofrecerte una experiencia única en salud visual, garantizando 
         calidad, confianza y comodidad.</p>
     </div>
-
+    
     <div class="apartado2">
         <h1>Cuidamos tu visión y la de tu familia, para que disfruten cada momento con claridad.</h1>
         <img src="Imagenes/mujer_rizada.png" alt="Mujer con lentes">

@@ -20,16 +20,9 @@ function obtenerTurnosEnEspera($conexion) {
                 'fecha' => $row['fecha'] ?? null
             ];
         }
-        return $turnos;
     }
-
-    // Fallback estático
-    return [
-        ['numero' => 'C-800', 'tipo' => 'Cliente'],
-        ['numero' => 'N-564', 'tipo' => 'Visitante'],
-        ['numero' => 'C-959', 'tipo' => 'Cliente'],
-        ['numero' => 'N-645', 'tipo' => 'Visitante']
-    ];
+    
+    return $turnos;
 }
 
 // Obtener ventanillas derivadas de los turnos que están en 'Atendiendo'
@@ -50,15 +43,9 @@ function obtenerVentanillas($conexion) {
             ];
             $index++;
         }
-        return $ventanillas;
     }
-
-    // Fallback si no hay turnos atendiendo
-    return [
-        ['numero' => 1, 'estado' => 'libre', 'turno_actual' => 'C-897'],
-        ['numero' => 2, 'estado' => 'ocupada', 'turno_actual' => 'N-789'],
-        ['numero' => 3, 'estado' => 'libre', 'turno_actual' => 'C-777']
-    ];
+    
+    return $ventanillas;
 }
 
 // Obtener datos

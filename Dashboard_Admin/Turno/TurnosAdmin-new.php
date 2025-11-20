@@ -159,56 +159,16 @@ $turno_atendiendo = !empty($turnos_atendiendo) ? $turnos_atendiendo[0] : null;
                         <button class="btn btn-primary" onclick="llamarProximo()" id="btn-llamar">
                             <i class="fas fa-bell"></i> Llamar Siguiente
                         </button>
+                        <button class="btn btn-secondary" onclick="finalizarActual()" id="btn-finalizar">
+                            <i class="fas fa-check"></i> Finalizar Actual
+                        </button>
                         <button class="btn btn-info" onclick="recargarDatos()">
                             <i class="fas fa-sync-alt"></i> Recargar
                         </button>
                     </div>
                 </div>
 
-                <!-- Sección de Atendiendo -->
-                <div class="queue-section" style="margin-top: 30px;">
-                    <h3 style="margin-bottom: 15px; color: #ff6b35;">Siendo Atendidos (<?php echo count($turnos_atendiendo); ?>)</h3>
-                    <table class="queue-table">
-                        <thead class="queue-header">
-                            <tr>
-                                <th>Número</th>
-                                <th>Tipo</th>
-                                <th>No. Afiliado</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="atendiendo-tbody">
-                            <?php foreach ($turnos_atendiendo as $turno): ?>
-                            <tr class="queue-row" data-numero="<?php echo htmlspecialchars($turno['Numero_Turno']); ?>" style="background-color: rgba(255, 107, 53, 0.1);">
-                                <td class="turn-code"><?php echo htmlspecialchars($turno['Numero_Turno']); ?></td>
-                                <td class="client-type">
-                                    <?php echo $turno['Tipo'] === 'Cliente' ? 'Cliente' : 'Visitante'; ?>
-                                </td>
-                                <td class="affiliate-number">
-                                    <?php echo $turno['No_Afiliado'] ? htmlspecialchars($turno['No_Afiliado']) : '-'; ?>
-                                </td>
-                                <td class="actions-cell">
-                                    <button class="btn-small btn-success" onclick="cambiarEstado('<?php echo htmlspecialchars($turno['Numero_Turno']); ?>', 'Finalizado')" title="Finalizar">
-                                        <i class="fas fa-check"></i> Finalizar
-                                    </button>
-                                    <button class="btn-small btn-danger" onclick="cambiarEstado('<?php echo htmlspecialchars($turno['Numero_Turno']); ?>', 'Cancelado')" title="Cancelar">
-                                        <i class="fas fa-times"></i> Cancelar
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                            <?php if (empty($turnos_atendiendo)): ?>
-                            <tr>
-                                <td colspan="4" style="text-align: center; padding: 20px; color: #999;">
-                                    No hay turnos siendo atendidos
-                                </td>
-                            </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Sección de Estadísticas -->
+                <!-- Sección de Ventanillas -->
                 <div class="windows-section">
                     <div class="windows-header">
                         <div class="windows-title">Estadísticas del Día</div>
@@ -259,24 +219,14 @@ $turno_atendiendo = !empty($turnos_atendiendo) ? $turnos_atendiendo[0] : null;
                 formData.append('numero_turno', numeroTurno);
                 formData.append('nuevo_estado', nuevoEstado);
 
-                // Try new clean API first
-                let response = await fetch('../../Pantalla_Turnos/api-turnos-admin-clean.php', {
+                const response = await fetch('../../Pantalla_Turnos/api-turnos-admin.php', {
                     method: 'POST',
                     body: formData
                 });
 
-                // Fallback to old endpoint
-                if (response.status === 404) {
-                    response = await fetch('../../Pantalla_Turnos/api-turnos-admin.php', {
-                        method: 'POST',
-                        body: formData
-                    });
-                }
-
                 const data = await response.json();
                 if (data.success) {
-                    mostrarNotificacion('Turno ' + numeroTurno + ' actualizado', 'success');
-                    await new Promise(r => setTimeout(r, 300));
+                    mostrarNotificacion('Turno ' + numeroTurno + ' ' + nuevoEstado, 'success');
                     recargarDatos();
                 } else {
                     mostrarNotificacion('Error: ' + (data.error || 'Error desconocido'), 'error');
@@ -292,17 +242,10 @@ $turno_atendiendo = !empty($turnos_atendiendo) ? $turnos_atendiendo[0] : null;
                 const formData = new FormData();
                 formData.append('action', 'llamar');
 
-                let response = await fetch('../../Pantalla_Turnos/api-turnos-admin-clean.php', {
+                const response = await fetch('../../Pantalla_Turnos/api-turnos-admin.php', {
                     method: 'POST',
                     body: formData
                 });
-
-                if (response.status === 404) {
-                    response = await fetch('../../Pantalla_Turnos/api-turnos-admin.php', {
-                        method: 'POST',
-                        body: formData
-                    });
-                }
 
                 const data = await response.json();
                 if (data.success) {
@@ -332,12 +275,7 @@ $turno_atendiendo = !empty($turnos_atendiendo) ? $turnos_atendiendo[0] : null;
 
         async function recargarDatos() {
             try {
-                let response = await fetch('../../Pantalla_Turnos/api-turnos-admin-clean.php');
-                
-                if (response.status === 404) {
-                    response = await fetch('../../Pantalla_Turnos/api-turnos-admin.php');
-                }
-
+                const response = await fetch('../../Pantalla_Turnos/api-turnos-admin.php');
                 const data = await response.json();
 
                 if (data.success && data.data) {
@@ -379,37 +317,6 @@ $turno_atendiendo = !empty($turnos_atendiendo) ? $turnos_atendiendo[0] : null;
                     } else {
                         document.getElementById('turno-actual').innerText = '-';
                         document.getElementById('turn-status').innerText = 'Disponible';
-                    }
-
-                    // Actualizar tabla de atendiendo
-                    const atendiendoBody = document.getElementById('atendiendo-tbody');
-                    atendiendoBody.innerHTML = '';
-
-                    if (data.data.turnos_atendiendo && data.data.turnos_atendiendo.length > 0) {
-                        data.data.turnos_atendiendo.forEach(turno => {
-                            const row = document.createElement('tr');
-                            row.className = 'queue-row';
-                            row.setAttribute('data-numero', turno.Numero_Turno);
-                            row.style.backgroundColor = 'rgba(255, 107, 53, 0.1)';
-                            row.innerHTML = `
-                                <td class="turn-code">${turno.Numero_Turno}</td>
-                                <td class="client-type">${turno.Tipo === 'Cliente' ? 'Cliente' : 'Visitante'}</td>
-                                <td class="affiliate-number">${turno.No_Afiliado || '-'}</td>
-                                <td class="actions-cell">
-                                    <button class="btn-small btn-success" onclick="cambiarEstado('${turno.Numero_Turno}', 'Finalizado')" title="Finalizar">
-                                        <i class="fas fa-check"></i> Finalizar
-                                    </button>
-                                    <button class="btn-small btn-danger" onclick="cambiarEstado('${turno.Numero_Turno}', 'Cancelado')" title="Cancelar">
-                                        <i class="fas fa-times"></i> Cancelar
-                                    </button>
-                                </td>
-                            `;
-                            atendiendoBody.appendChild(row);
-                        });
-                    } else {
-                        const row = document.createElement('tr');
-                        row.innerHTML = '<td colspan="4" style="text-align: center; padding: 20px; color: #999;">No hay turnos siendo atendidos</td>';
-                        atendiendoBody.appendChild(row);
                     }
 
                     // Actualizar estadísticas
