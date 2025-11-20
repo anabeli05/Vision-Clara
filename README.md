@@ -1,73 +1,50 @@
-# Vision-Clara - Sistema de Gestión de Turnos
+# Visión Clara – La forma inteligente de gestionar turnos en tu óptica
 
-## Descripción
-Sistema integral de gestión de turnos para centros de atención, con control de clientes y visitantes.
+Visión Clara es un sistema turnomático diseñado para llevar la atención al cliente de las ópticas al siguiente nivel.
+Automatiza el flujo de turnos, organiza la gestión de clientes y empleados, y ofrece una experiencia moderna, rápida y eficiente tanto para el personal como para los visitantes.
+Con Visión Clara, tu óptica trabaja de forma más ágil, ordenada y profesional.
 
-## Características
-- ✅ Generación de turnos sin duplicados
-- ✅ Gestión de estado de turnos (Espera, Atendiendo, Finalizado, Cancelado)
-- ✅ Diferenciación entre Clientes (con afiliado) y Visitantes
-- ✅ Pantalla de espera en tiempo real
-- ✅ Admin dashboard
-- ✅ Autenticación de usuarios
-- ✅ Estadísticas y reportes
+## 🌟 ¿Qué hace especial a Visión Clara?
+### ⭐ Atención más rápida, clientes más felices
 
-## API de Turnos
+Asignación de turnos con prioridades inteligentes.
 
-### Crear Turno Visitante
-```http
-POST /Vision-Clara/Pantalla_Turnos/api-turnos-sequences.php
-Content-Type: application/x-www-form-urlencoded
+Posibilidad de pasar turnos, retomarlos o finalizarlos fácilmente.
 
-tipo=Visitante
-```
+Flujo claro para reducir tiempos de espera y mejorar la organización.
 
-### Crear Turno Cliente
-```http
-POST /Vision-Clara/Pantalla_Turnos/api-turnos-sequences.php
+### ⭐ Gestión completa del personal y usuarios
 
-tipo=Cliente&afiliado=123456
-```
+Administradores y empleados pueden actualizar su información en segundos.
 
-### Obtener Turnos
-```http
-GET /Vision-Clara/Pantalla_Turnos/api-turnos-sequences.php
-```
+Los clientes pueden modificar sus datos cuando cambian teléfono, correo u otros datos.
 
-## Base de Datos
+### ⭐ Interfaz moderna
 
-### Tablas principales
-- **turnos**: Registro de turnos con estados
-- **turno_sequences**: Control de secuencias por día
-- **clientes**: Datos de clientes afiliados
+Modo claro y oscuro para adaptarse a cualquier ambiente.
 
-## Mantenimiento
+Diseño visual pensado para mostrarse en pantallas de recepción o módulos de atención.
 
-### Limpieza de Turnos Antiguos
-```bash
-php Pantalla_Turnos/limpiar-turnos-diarios-mejorado.php
-```
+### 🚀 Beneficios inmediatos
 
-Elimina turnos finalizados/cancelados más antiguos de 7 días.
+Optimiza el tiempo del personal.
 
-## Características Técnicas
+Mejora la experiencia del cliente.
 
-### Protección contra Duplicados ✅
-- UNIQUE constraint sobre (Numero_Turno, Fecha_Solo)
-- Permite reutilizar números en días diferentes
-- Bloquea duplicados en el mismo día
+Evita confusiones y desorden en la atención.
 
-### Seguridad
-- ✅ Autenticación de usuarios
-- ✅ Control de acceso por roles
-- ✅ Validación de entrada
-- ✅ Prepared statements (SQL injection)
-- ✅ CORS configurado
+Centraliza la información de empleados y clientes.
 
-## Requisitos
-- PHP 7.4+
-- MySQL 5.7+
-- Apache/Nginx
+Aporta una imagen profesional y tecnológica a la óptica.
 
-## Acceso
-http://localhost/Vision-Clara/
+## 📌 Estado Actual del Proyecto
+
+Visión Clara se encuentra en su versión funcional con:
+
+|          |  |
+|----------------|--------|
+| Gestión completa de turnos         | ✔️     |
+| Sistema de clientes y empleados       | ✔️     |
+| Priorización dinámica      | ✔️     |
+| Control de turnos activos, pasados y finalizados    | ✔️     |
+| Interfaz moderna con modo claro/oscuro    | ✔️     |
