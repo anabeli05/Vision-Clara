@@ -4,7 +4,7 @@ require_once '../../Login/check_session.php';
 
 // Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
 if ($user_rol === 'Super Admin') {
-    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioAdmin.php');
     exit;
 }
 

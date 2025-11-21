@@ -123,13 +123,13 @@ html, body{
 }
 
 /* Contenedor de turno */
-.contenedor-turno{
+.contenedor-turno {
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--background-light) 0%, var(--background-lighter) 100%);
     border-radius: 20px;
     padding: 25px 35px;
-    max-width: 350px;
+    max-width: 400px;
     width: 100%;
     gap: 30px;
     margin-right: auto;
@@ -138,6 +138,7 @@ html, body{
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .contenedor-turno::before {
@@ -150,36 +151,91 @@ html, body{
     background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
 }
 
-.columna{
+.columna {
     text-align: center;
     flex: 1;
+    padding: 15px 0;
 }
 
-.columna h3{
+.columna h3 {
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-family: 'Poppins', sans-serif;
     color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
 }
 
-.columna p{
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 0;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+.columna h3::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -5px;
+    left: 25%;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.numero-turno {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin: 10px 0 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 2px solid var(--primary-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tipo-turno {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    padding: 3px 10px;
+    background: rgba(79, 195, 247, 0.2);
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.sin-turno {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    padding: 10px 0;
     background: rgba(255, 255, 255, 0.5);
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--background-lighter);
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
-.separador{
+.separador {
     width: 2px;
-    height: 60px;
+    height: 80px;
     background: linear-gradient(180deg, transparent, var(--primary-light), transparent);
     flex-shrink: 0;
+    position: relative;
+}
+
+/* Animación para el turno actual */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.columna:first-child .numero-turno {
+    animation: pulse 2s infinite;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #0d47a1;
+    border-color: #42a5f5;
 }
 
 /*Imagen decorativa inferior */

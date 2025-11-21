@@ -84,9 +84,9 @@ if(!isset($_SESSION['logged_in']) && isset($_COOKIE['remember_token'])) {
                 
                 // Redirigir según rol
                 if($usuario['Rol'] === 'Super Admin') {
-                    header('Location: ../Dashboard_SuperAdmin/inicio/inicioSA.php');
+                    header('Location: ../Dashboard_SuperAdmin/inicio/SuperInicio.php');
                 } else {
-                    header('Location: ../Dashboard_Admin/inicio/inicioSA.php');
+                    header('Location: ../Dashboard_Admin/inicio/InicioAdmin.php');
                 }
                 exit;
                 

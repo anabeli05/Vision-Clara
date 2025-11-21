@@ -84,7 +84,7 @@ try {
 
 // Total de usuarios/trabajadores
 try {
-    $query_usuarios = "SELECT COUNT(*) AS total_usuarios FROM usuarios";
+    $query_usuarios = "SELECT COUNT(*) AS total_usuarios FROM usuarios WHERE rol = 'Usuario'";
     $result_usuarios = mysqli_query($conexion, $query_usuarios);
     if ($result_usuarios) {
         $row_usuarios = mysqli_fetch_assoc($result_usuarios);

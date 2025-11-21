@@ -7,6 +7,45 @@ if ($user_rol !== 'Super Admin') {
     header('Location: ../../Login/inicioSecion.php');
     exit;
 }
+
+// Obtener fecha actual
+$hoy = date('Y-m-d');
+
+// Conexión BD
+require_once '../../Base de Datos/conexion.php';
+$conexion = new Conexion();
+$conexion->abrir_conexion();
+$mysqli = $conexion->conexion;
+
+/*obtener turno actual */
+$query_actual = $mysqli->prepare("
+    SELECT Numero_Turno, Tipo, Estado, Fecha
+    FROM turnos 
+    WHERE Estado = 'Atendiendo'
+    AND Usuario_ID = ?
+    ORDER BY Fecha DESC 
+    LIMIT 1
+");
+$query_actual->bind_param("i", $user_id);
+$query_actual->execute();
+$turno_actual = $query_actual->get_result()->fetch_assoc();
+
+
+/*obtener turno siguiente*/
+$query_siguiente = $mysqli->prepare("
+    SELECT Numero_Turno, Tipo, Estado, Fecha
+    FROM turnos 
+    WHERE Estado = 'Espera'
+    ORDER BY Fecha ASC 
+    LIMIT 1
+");
+$query_siguiente->execute();
+$siguiente_turno = $query_siguiente->get_result()->fetch_assoc();
+
+
+
+// Cerrar conexión
+$conexion->cerrar_conexion();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -40,15 +79,38 @@ if ($user_rol !== 'Super Admin') {
 
     <div class="contenedor-turno">
         <div class="columna">
-            <h3>Turno</h3>
-            <p>
-        </div>
+            <h3>Turno Actual</h3>
+
+        <?php if ($turno_actual): ?>
+            <div class="numero-turno">
+                <?= htmlspecialchars($turno_actual['Numero_Turno']); ?>
+            </div>
+            <div class="tipo-turno">
+                <?= htmlspecialchars($turno_actual['Tipo']); ?>
+            </div>
+        <?php else: ?>
+            <div class="sin-turno">No hay turno en atención</div>
+        <?php endif; ?>
+    </div>
         <div class="separador"></div>
-        <div class="columna">
-            <h3>Siguiente</h3>
-            <p>
+
+    <!-- SIGUIENTE TURNO -->
+    <div class="columna">
+        <h3>Siguiente</h3>
+
+        <?php if ($siguiente_turno): ?>
+            <div class="numero-turno">
+                <?= htmlspecialchars($siguiente_turno['Numero_Turno']); ?>
+            </div>
+            <div class="tipo-turno">
+                <?= htmlspecialchars($siguiente_turno['Tipo']); ?>
+            </div>
+        <?php else: ?>
+            <div class="sin-turno">No hay turnos en espera</div>
+        <?php endif; ?>
         </div>
     </div>
+    
      <!-- Imagen decorativa inferior -->
     <div class="illustration">
         <div class="character"></div>
