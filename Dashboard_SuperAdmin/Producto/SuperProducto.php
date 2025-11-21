@@ -93,8 +93,8 @@ try {
             <?php if (!empty($productos)): ?>
                 <?php foreach ($productos as $producto): ?>
                     <div class="product-card <?= $producto['Stock'] <= 0 ? 'out-of-stock' : '' ?>" 
-                         data-product-id="<?= htmlspecialchars($producto['ID_Producto']) ?>">
-                        
+                        data-product-id="<?= htmlspecialchars($producto['ID_Producto']) ?>">
+        
                          <div class="product-image-container">
                             <?php 
                                 // Debug temporal - quita esto después de probar
@@ -121,6 +121,27 @@ try {
                                     Stock: <?= intval($producto['Stock']) ?>
                                 </div>
                             </div>
+
+                            <div class="product-actions">
+                            <button class="action-btn-new edit-btn-new" 
+                                    onclick="event.stopPropagation(); editProduct(<?= $producto['ID_Producto'] ?>)" 
+                                    title="Editar producto">
+                                <i class="fas fa-edit"></i>
+                                <span>Editar</span>
+                            </button>
+                            <button class="action-btn-new stock-btn-new" 
+                                    onclick="event.stopPropagation(); showStockModal(<?= $producto['ID_Producto'] ?>, '<?= htmlspecialchars($producto['Nombre']) ?>', <?= $producto['Stock'] ?>)" 
+                                    title="Ajustar stock">
+                                <i class="fas fa-boxes"></i>
+                                <span>Stock</span>
+                            </button>
+                            <button class="action-btn-new delete-btn-new" 
+                                    onclick="event.stopPropagation(); deleteProduct(<?= $producto['ID_Producto'] ?>, '<?= htmlspecialchars($producto['Nombre']) ?>')" 
+                                    title="Eliminar producto">
+                                <i class="fas fa-trash"></i>
+                                <span>Eliminar</span>
+                            </button>
+                        </div>
                             
                             <?php if ($producto['Stock'] > 0): ?>
                                 <button class="add-to-cart-btn" onclick="addToCart(<?= $producto['ID_Producto'] ?>)">
@@ -131,6 +152,36 @@ try {
                                     Sin Stock
                                 </button>
                             <?php endif; ?>
+                        </div>
+                    </div>
+                    <!-- Modal para ajustar stock -->
+                    <div id="stockModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeStockModal()">&times;</span>
+                            <h2><i class="fas fa-boxes"></i> Ajustar Stock</h2>
+                            <p id="productNameStock"></p>
+                            <div class="stock-current">
+                                Stock actual: <strong id="currentStock">0</strong>
+                            </div>
+                            <form id="stockForm" onsubmit="updateStock(event)">
+                                <input type="hidden" id="productIdStock" name="product_id">
+                                <div class="form-group">
+                                    <label for="stockAction">Acción:</label>
+                                    <select id="stockAction" name="action" required>
+                                        <option value="add">Aumentar</option>
+                                        <option value="subtract">Disminuir</option>
+                                        <option value="set">Establecer cantidad exacta</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="stockAmount">Cantidad:</label>
+                                    <input type="number" id="stockAmount" name="amount" min="1" required>
+                                </div>
+                                <div class="modal-buttons">
+                                    <button type="submit" class="btn-confirm">Actualizar Stock</button>
+                                    <button type="button" class="btn-cancel" onclick="closeStockModal()">Cancelar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -149,112 +200,174 @@ try {
     </div>
 
     <script>
-        // Función para añadir al carrito
-        function addToCart(productId) {
-            fetch('add_to_cart.php', {
+    // Función para mostrar mensajes
+    function showMessage(message, type) {
+        // Crear elemento de mensaje
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `alert alert-${type}`;
+        messageDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 10000;
+            animation: slideIn 0.3s ease-out;
+        `;
+        messageDiv.textContent = message;
+        
+        document.body.appendChild(messageDiv);
+        
+        // Eliminar después de 3 segundos
+        setTimeout(() => {
+            messageDiv.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => messageDiv.remove(), 300);
+        }, 3000);
+    }
+
+    // Función para editar producto
+    function editProduct(productId) {
+        window.location.href = `editar-producto.php?id=${productId}`;
+    }
+
+    // Función para eliminar producto
+    function deleteProduct(productId, productName) {
+        if (confirm(`¿Estás seguro de que deseas eliminar "${productName}"?\n\nEsta acción no se puede deshacer.`)) {
+            // Mostrar indicador de carga
+            showMessage('Eliminando producto...', 'info');
+            
+            fetch('eliminar-producto.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    product_id: productId,
-                    quantity: 1
+                    product_id: productId
                 })
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta del servidor');
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.success) {
-                    showMessage('¡Producto añadido al carrito!', 'success');
-                    updateCartCount(data.cart_count);
+                    showMessage('Producto eliminado correctamente', 'success');
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
                 } else {
                     showMessage('Error: ' + data.message, 'error');
                 }
             })
             .catch(error => {
-                showMessage('Error de conexión', 'error');
-                console.error('Error:', error);
+                showMessage('Error de conexión: ' + error.message, 'error');
+                console.error('Error completo:', error);
             });
         }
+    }
 
-        // Función para mostrar mensajes
-        function showMessage(text, type = 'success') {
-            const message = document.createElement('div');
-            message.textContent = text;
-            message.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: ${type === 'success' ? 
-                    'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)' : 
-                    'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'};
-                color: white;
-                padding: 15px 30px;
-                border-radius: 50px;
-                font-weight: 600;
-                z-index: 1000;
-                animation: showMessage 3s ease-in-out;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            `;
-            
-            document.body.appendChild(message);
-            
-            setTimeout(() => {
-                if (document.body.contains(message)) {
-                    document.body.removeChild(message);
-                }
-            }, 3000);
+    // Función para mostrar modal de stock
+    function showStockModal(productId, productName, currentStock) {
+        document.getElementById('stockModal').style.display = 'block';
+        document.getElementById('productIdStock').value = productId;
+        document.getElementById('productNameStock').textContent = productName;
+        document.getElementById('currentStock').textContent = currentStock;
+        document.getElementById('stockAmount').value = '';
+        document.getElementById('stockAction').value = 'add';
+    }
+
+    // Función para cerrar modal
+    function closeStockModal() {
+        document.getElementById('stockModal').style.display = 'none';
+    }
+
+    // Cerrar modal al hacer clic fuera
+    window.onclick = function(event) {
+        const modal = document.getElementById('stockModal');
+        if (event.target == modal) {
+            closeStockModal();
+        }
+    }
+
+    // Función para actualizar stock
+    function updateStock(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = {
+            product_id: formData.get('product_id'),
+            action: formData.get('action'),
+            amount: parseInt(formData.get('amount'))
+        };
+
+        // Validación básica
+        if (!data.amount || data.amount <= 0) {
+            showMessage('Por favor ingresa una cantidad válida', 'error');
+            return;
         }
 
-        // Función para actualizar contador del carrito
-        function updateCartCount(count) {
-            const cartCounter = document.querySelector('.cart-counter');
-            if (cartCounter) {
-                cartCounter.textContent = count;
-                cartCounter.style.animation = 'bounce 0.5s ease';
+        showMessage('Actualizando stock...', 'info');
+
+        fetch('actualizar-stock.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la respuesta del servidor');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                showMessage('Stock actualizado correctamente', 'success');
+                closeStockModal();
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            } else {
+                showMessage('Error: ' + data.message, 'error');
+            }
+        })
+        .catch(error => {
+            showMessage('Error de conexión: ' + error.message, 'error');
+            console.error('Error completo:', error);
+        });
+    }
+
+    // Agregar estilos para animaciones
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
-
-        // Event listeners para las tarjetas
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                // Solo si no se clickeó el botón
-                if (!e.target.classList.contains('add-to-cart-btn')) {
-                    const productId = this.dataset.productId;
-                    // Redirigir a página de detalles del producto
-                    window.location.href = `product_details.php?id=${productId}`;
-                }
-            });
-        });
-
-        // Lazy loading para imágenes
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.classList.remove('skeleton');
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        document.querySelectorAll('.product-image').forEach(img => {
-            img.classList.add('skeleton');
-            imageObserver.observe(img);
-        });
-
-        // CSS para animaciones
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes showMessage {
-                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-                15% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-                85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-                100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
             }
-        `;
-        document.head.appendChild(style);
-    </script>
-
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
 </body>
 </html>

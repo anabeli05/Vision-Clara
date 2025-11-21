@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
             <div class="form-actions">
                 <button type="submit" class="btn-submit">
                     <i class="fas fa-user-plus"></i> Registrar 
-             </button>
+                </button>
                 <a href='../Usuario/SuperGestionU.php' class="btn-cancel">
                     <i class="fas fa-times"></i> Cancelar
                 </a>
