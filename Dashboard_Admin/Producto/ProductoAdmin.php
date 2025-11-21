@@ -4,7 +4,7 @@ require_once '../../Login/check_session.php';
 
 // Verificar que NO sea Super Admin (puede ser Admin, Usuario, etc.)
 if ($user_rol === 'Super Admin') {
-    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioSA.php');
+    header('Location: ../../Dashboard_SuperAdmin/inicio/InicioAdmin.php');
     exit;
 }
 
@@ -138,34 +138,27 @@ try {
     </div>
 
     <script>
-        // Función para añadir al carrito
         function addToCart(productId) {
-            fetch('add_to_cart.php', {
+            fetch('vender.php', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    product_id: productId,
-                    quantity: 1
-                })
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({product_id: productId, quantity: 1})
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    showMessage('¡Producto añadido al carrito!', 'success');
-                    updateCartCount(data.cart_count);
+                    showMessage('Venta realizada', 'success');
+                    setTimeout(() => location.reload(), 1000);
                 } else {
-                    showMessage('Error: ' + data.message, 'error');
+                    showMessage('Sin stock', 'error');
                 }
             })
             .catch(error => {
-                showMessage('Error de conexión', 'error');
                 console.error('Error:', error);
+                showMessage('Error de conexión', 'error');
             });
         }
 
-        // Función para mostrar mensajes
         function showMessage(text, type = 'success') {
             const message = document.createElement('div');
             message.textContent = text;
@@ -185,9 +178,9 @@ try {
                 animation: showMessage 3s ease-in-out;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             `;
-            
+    
             document.body.appendChild(message);
-            
+    
             setTimeout(() => {
                 if (document.body.contains(message)) {
                     document.body.removeChild(message);
@@ -195,44 +188,6 @@ try {
             }, 3000);
         }
 
-        // Función para actualizar contador del carrito
-        function updateCartCount(count) {
-            const cartCounter = document.querySelector('.cart-counter');
-            if (cartCounter) {
-                cartCounter.textContent = count;
-                cartCounter.style.animation = 'bounce 0.5s ease';
-            }
-        }
-
-        // Event listeners para las tarjetas
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                // Solo si no se clickeó el botón
-                if (!e.target.classList.contains('add-to-cart-btn')) {
-                    const productId = this.dataset.productId;
-                    // Redirigir a página de detalles del producto
-                    window.location.href = `product_details.php?id=${productId}`;
-                }
-            });
-        });
-
-        // Lazy loading para imágenes
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.classList.remove('skeleton');
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        document.querySelectorAll('.product-image').forEach(img => {
-            img.classList.add('skeleton');
-            imageObserver.observe(img);
-        });
-
-        // CSS para animaciones
         const style = document.createElement('style');
         style.textContent = `
             @keyframes showMessage {

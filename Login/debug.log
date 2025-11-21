@@ -4987,3 +4987,73 @@ DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332
 DEBUG: DEBUG: Comparación (===): COINCIDE
 --- Nuevo Log de Sesión: 2025-11-21 05:10:02 ---
 DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-21 05:50:15 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-21 05:50:15 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-21 05:50:15 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-21 05:50:15 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-21 05:50:17 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-21 05:50:17 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-21 05:50:17 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-21 05:50:17 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-21 06:04:21 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-21 06:04:26 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-21 06:04:26 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-21 06:04:26 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-21 06:04:26 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-21 06:04:28 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-21 06:04:28 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-21 06:04:28 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-21 06:04:28 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-21 06:59:38 ---
+DEBUG: INFO: Logout - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-21 06:59:44 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-21 06:59:44 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-21 06:59:44 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-21 06:59:44 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-21 06:59:46 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-21 06:59:46 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-21 06:59:46 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-21 06:59:46 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-21 07:09:29 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-21 07:09:33 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-21 07:09:33 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-21 07:09:33 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-21 07:09:33 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-21 07:09:35 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-21 07:09:35 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-21 07:09:35 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-21 07:09:35 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2

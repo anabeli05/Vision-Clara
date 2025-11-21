@@ -10,9 +10,9 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     // Redirigir a dashboard específico según rol
     if(isset($_SESSION['user_rol'])) {
         if($_SESSION['user_rol'] === 'Super Admin') {
-            header('Location: ../Dashboard_SuperAdmin/inicio/InicioSA.php');
+            header('Location: ../Dashboard_SuperAdmin/inicio/SuperInicio.php');
         } else {
-            header('Location: ../Dashboard_Admin/inicio/InicioSA.php');
+            header('Location: ../Dashboard_Admin/inicio/InicioAdmin.php');
         }
     }
     exit;
