@@ -44,10 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
                 $max_intentos = 10;
                 
                 while ($no_afiliado === null && $intentos < $max_intentos) {
-                    // Generar número aleatorio de 6 dígitos
                     $temp_afiliado = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT);
-                    
-                    // Verificar si ya existe
                     $stmt = $conn->prepare("SELECT No_Afiliado FROM clientes WHERE No_Afiliado = ?");
                     $stmt->execute([$temp_afiliado]);
                     
@@ -60,12 +57,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
                 if ($no_afiliado === null) {
                     $error = "No se pudo generar un número de afiliado único. Intente nuevamente.";
                 } else {
-                    // Insertar nuevo cliente
+                    // Insertar nuevo cliente       
                     $stmt = $conn->prepare("INSERT INTO clientes (No_Afiliado, Nombre, Correo, Telefono) VALUES (?, ?, ?, ?)");
                     $stmt->execute([$no_afiliado, $nombre, $correo, $telefono]);
-                    
-                    $success = "Cliente registrado exitosamente. Número de afiliado: " . $no_afiliado;
-                    // Limpiar el formulario
+
+                    // Obtener el ID insertado y verificar el número de afiliado
+                    $id_insertado = $conn->lastInsertId();
+                    $stmt = $conn->prepare("SELECT No_Afiliado FROM clientes WHERE Cliente_ID = ?");
+                    $stmt->execute([$id_insertado]);
+                    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $no_afiliado = $resultado['No_Afiliado']; // Actualizar con el valor real de la BD
+
+                    // Enviar correo
+                    require_once '../../Base de Datos/email_utils.php';
+                    try {
+                        $mail = configurarPHPMailer();
+                        $mail->addAddress($correo);
+                        $mail->Subject = 'Bienvenido a Vision Clara';
+                        $mail->isHTML(true);
+                        $mail->Body = "
+                            <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'>
+                                <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0;'>
+                                    <h1>¡Bienvenido a Vision Clara!</h1>
+                                </div>
+                                <div style='background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;'>
+                                    <p>Hola <strong>$nombre</strong>,</p>
+                                    <p>Te has registrado exitosamente como cliente.</p>
+                                    <p><strong>Tu número de afiliado es:</strong></p>
+                                    <div style='background: white; border: 2px dashed #667eea; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px;'>
+                                        <div style='font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 8px;'>$no_afiliado</div>
+                                    </div>
+                                    <p style='color: #f57c00; font-weight: bold;'>⚠️ Guarda este número, lo necesitarás para poder generar tu cita.</p>
+                                    <p style='margin-top: 30px;'>Saludos,<br><strong>Equipo Vision Clara</strong></p>
+                                </div>
+                            </div>
+                        ";
+                        $mail->send();
+                        $success = "Cliente registrado. Número de afiliado: $no_afiliado. Se ha enviado un correo.";
+                    } catch (Exception $e) {
+                        $success = "Cliente registrado. Número de afiliado: $no_afiliado";
+                    }
                     $_POST = [];
                 }
             } catch(PDOException $e) {
@@ -76,7 +107,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registro'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>

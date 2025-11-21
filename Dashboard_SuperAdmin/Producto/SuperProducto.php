@@ -367,7 +367,67 @@ try {
             }
         }
     `;
-    document.head.appendChild(style);
+    
+    function addToCart(productId) {
+            fetch('../../Dashboard_Admin/Producto/vender.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({product_id: productId, quantity: 1})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage('Venta realizada', 'success');
+                    setTimeout(() => location.reload(), 1000);
+                } else {
+                    showMessage('Sin stock', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('Error de conexión', 'error');
+            });
+        }
+
+        function showMessage(text, type = 'success') {
+            const message = document.createElement('div');
+            message.textContent = text;
+            message.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: ${type === 'success' ? 
+                    'linear-gradient(135deg, #4FC3F7 0%, #0277BD 100%)' : 
+                    'linear-gradient(135deg, #ef5350 0%, #d32f2f 100%)'};
+                color: white;
+                padding: 15px 30px;
+                border-radius: 50px;
+                font-weight: 600;
+                z-index: 1000;
+                animation: showMessage 3s ease-in-out;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            `;
+    
+            document.body.appendChild(message);
+    
+            setTimeout(() => {
+                if (document.body.contains(message)) {
+                    document.body.removeChild(message);
+                }
+            }, 3000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes showMessage {
+                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+                15% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+                85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+            }
+        `;
+        document.head.appendChild(style);
 </script>
 </body>
 </html>

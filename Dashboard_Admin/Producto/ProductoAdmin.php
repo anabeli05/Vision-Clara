@@ -16,7 +16,11 @@ $productos = [];
 $error = '';
 $error_message = '';
 
-// Funciones auxiliares
+// Debug: mostrar errores
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Función auxiliar para truncar texto
 function truncarDescripcion($texto, $limite = 100) {
     if (strlen($texto) <= $limite) return $texto;
     return substr($texto, 0, $limite) . '...';
@@ -33,7 +37,6 @@ try {
     $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
     $error = "Error al cargar productos";
-    $error_message = $e->getMessage();
 }
 ?>
 <!DOCTYPE html>
