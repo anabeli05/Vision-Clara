@@ -14,14 +14,14 @@ require_once '../../Base de Datos/conexion.php';
 // Verificar que se recibió el ID
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     $_SESSION['error_message'] = 'Número de afiliado no válido';
-    header('Location: Gestion-Cliente.php');
+    header('Location: SuperGestion.php');
     exit;
 }
 
 // Validar CSRF token
 if (!isset($_GET['csrf_token']) || $_GET['csrf_token'] !== $_SESSION['csrf_token']) {
     $_SESSION['error_message'] = 'Token de seguridad inválido';
-    header('Location: Gestion-Cliente.php');
+    header('Location: SuperGestion.php');
     exit;
 }
 
@@ -35,7 +35,7 @@ try {
     
     if (!$cliente) {
         $_SESSION['error_message'] = 'Cliente no encontrado';
-        header('Location: Gestion-Cliente.php');
+        header('Location: SuperGestion.php');
         exit;
     }
     
@@ -50,6 +50,6 @@ try {
 }
 
 // Redirigir de vuelta a la lista
-header('Location: Gestion-Cliente.php');
+header('Location: SuperGestion.php');
 exit;
 ?>
