@@ -6228,3 +6228,19 @@ DEBUG: SMTP[2]: SERVER -> CLIENT: 221 2.0.0 closing connection 586e51a60fabf-3ec
 DEBUG: SUCCESS: Código de recuperación enviado a: xcobian@ucol.mx (Rol: Super Admin)
 --- Nuevo Log de Sesión: 2025-11-23 16:01:10 ---
 DEBUG: SUCCESS: Código verificado correctamente para: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-23 16:06:51 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-23 16:06:51 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-23 16:06:51 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-23 16:06:51 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-23 16:06:53 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-23 16:06:53 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-23 16:06:53 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-23 16:06:53 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
