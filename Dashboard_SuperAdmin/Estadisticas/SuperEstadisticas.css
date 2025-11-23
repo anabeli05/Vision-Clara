@@ -7,7 +7,7 @@
     --border-color: rgba(255, 255, 255, 0.5);
 }
 
-[data-theme="dark"] {
+body.dark-theme {
     --bg-primary: linear-gradient(135deg, #0a1929 0%, #1a237e 100%);
     --text-primary: #E3F2FD;
     --card-bg: linear-gradient(135deg, #1e3a5f 0%, #1565c0 100%);
@@ -15,53 +15,59 @@
     --border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ------------- Estadísticas - Estilos Mejorados ------------- */
-.main-content {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     background: var(--bg-primary);
-    min-height: 100vh;
-    padding: 40px;
     transition: all 0.3s ease;
 }
 
-.main-content h1 {
+/* ------------- Contenedor Principal ------------- */
+.contenedor-principal {
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* ------------- Header ------------- */
+.header_1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header_1 h1 {
     color: var(--text-primary);
     font-size: 2.5em;
     font-weight: 700;
-    margin-bottom: 40px;
-    position: relative;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
-.main-content h1::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 4px;
-    background: linear-gradient(90deg, #3e8bef, #2b6cb0, #0073e6);
-    border-radius: 2px;
-}
-
-[data-theme="dark"] .main-content h1::after {
-    background: linear-gradient(90deg, #1976D2, #1565C0, #0D47A1);
+.header_1 h1 i {
+    font-size: 0.9em;
 }
 
 /* ------------- Grid de Estadísticas ------------- */
 .estadisticas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 /* ------------- Cards de Estadísticas ------------- */
 .estadistica-card {
     background: var(--card-bg);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px var(--shadow-color);
     text-align: center;
     transition: all 0.4s ease;
     border: 1px solid var(--border-color);
@@ -75,33 +81,29 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 6px;
+    height: 4px;
     background: linear-gradient(90deg, var(--card-color-1), var(--card-color-2), var(--card-color-3));
 }
 
 .estadistica-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px var(--shadow-color);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px var(--shadow-color);
 }
 
 .estadistica-card h2 {
     color: var(--text-primary);
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 600;
     margin-bottom: 20px;
     line-height: 1.4;
-    min-height: 3.5em;
+    min-height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-[data-theme="dark"] .estadistica-card h2 {
-    color: #E3F2FD;
-}
-
 .estadistica-card p {
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 700;
     margin: 0;
     background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
@@ -111,7 +113,7 @@
     line-height: 1;
 }
 
-/* ------------- Colores Específicos de Cards ------------- */
+/* ------------- Colores de Cards ------------- */
 .estadistica-card:nth-child(1) {
     --card-color-1: #3e8bef;
     --card-color-2: #2b6cb0;
@@ -133,119 +135,214 @@
 .estadistica-card:nth-child(4) {
     --card-color-1: #E74C3C;
     --card-color-2: #C0392B;
-    --card-color-3: #922B21; 
+    --card-color-3: #922B21;
 }
 
-[data-theme="dark"] .estadistica-card:nth-child(1) {
+body.dark-theme .estadistica-card:nth-child(1) {
     --card-color-1: #64b5f6;
     --card-color-2: #1976d2;
     --card-color-3: #0d47a1;
 }
 
-[data-theme="dark"] .estadistica-card:nth-child(2) {
+body.dark-theme .estadistica-card:nth-child(2) {
     --card-color-1: #4caf50;
     --card-color-2: #2e7d32;
     --card-color-3: #1b5e20;
 }
 
-[data-theme="dark"] .estadistica-card:nth-child(3) {
+body.dark-theme .estadistica-card:nth-child(3) {
     --card-color-1: #ffb74d;
     --card-color-2: #f57c00;
     --card-color-3: #e65100;
 }
 
-[data-theme="dark"] .estadistica-card:nth-child(4) {
+body.dark-theme .estadistica-card:nth-child(4) {
     --card-color-1: #ef5350;
     --card-color-2: #d32f2f;
     --card-color-3: #b71c1c;
 }
 
-/* ------------- Iconos Decorativos ------------- */
-.estadistica-card::after {
+/* ============================================
+   GRÁFICA DE BARRAS - TURNOS DE LA SEMANA
+============================================ */
+
+.grafica-container {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    margin-top: 40px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.grafica-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.grafica-header h2 {
+    color: var(--text-primary);
+    font-size: 1.8em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.semana-selector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-semana {
+    background: linear-gradient(135deg, #3e8bef, #2b6cb0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(62, 139, 239, 0.3);
+}
+
+.btn-semana:hover {
+    background: linear-gradient(135deg, #2b6cb0, #1e4e8c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(62, 139, 239, 0.4);
+}
+
+.btn-semana:active {
+    transform: translateY(0);
+}
+
+.semana-actual {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 8px 16px;
+    background: rgba(62, 139, 239, 0.1);
+    border-radius: 8px;
+}
+
+body.dark-theme .btn-semana {
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+body.dark-theme .btn-semana:hover {
+    background: linear-gradient(135deg, #0d47a1, #01579b);
+    box-shadow: 0 6px 16px rgba(25, 118, 210, 0.4);
+}
+
+body.dark-theme .semana-actual {
+    background: rgba(100, 181, 246, 0.2);
+}
+
+/* ------------- Barras ------------- */
+.grafica-barras {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.barra-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.barra-label {
+    min-width: 120px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.dia-nombre {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+.dia-fecha {
+    color: var(--text-primary);
+    opacity: 0.7;
+    font-size: 0.85em;
+}
+
+.barra-container {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-theme .barra-container {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.barra-fill {
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+    transform: scaleX(0);
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.barra-fill::before {
     content: '';
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    opacity: 0.1;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: all 0.3s ease;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
 }
 
-.estadistica-card:nth-child(1)::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233e8bef'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
-.estadistica-card:nth-child(2)::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'/%3E%3C/svg%3E");
+.barra-valor {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
 }
 
-.estadistica-card:nth-child(3)::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.24 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z'/%3E%3C/svg%3E");
-}
-
-.estadistica-card:nth-child(4)::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E74C3C'%3E%3Cpath d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/%3E%3C/svg%3E");
-}
-
-.estadistica-card:hover::after {
-    transform: scale(1.2);
-    opacity: 0.2;
-}
-
-/* ------------- Responsive ------------- */
-@media (max-width: 768px) {
-    .main-content {
-        padding: 20px;
-    }
-
-    .main-content h1 {
-        font-size: 2em;
-        margin-bottom: 30px;
-    }
-
-    .estadisticas-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .estadistica-card {
-        padding: 30px 20px;
-    }
-
-    .estadistica-card h2 {
-        font-size: 1.2em;
-        min-height: auto;
-    }
-
-    .estadistica-card p {
-        font-size: 3em;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-content {
-        padding: 15px;
-    }
-
-    .main-content h1 {
-        font-size: 1.8em;
-    }
-
-    .estadistica-card {
-        padding: 25px 15px;
-    }
-
-    .estadistica-card h2 {
-        font-size: 1.1em;
-    }
-
-    .estadistica-card p {
-        font-size: 2.5em;
-    }
-}
+/* Colores de las barras por día */
+.barra-color-1 { background: linear-gradient(135deg, #C9D736, #A8B92A); } /* Verde lima */
+.barra-color-2 { background: linear-gradient(135deg, #FFC107, #FF9800); } /* Amarillo-Naranja */
+.barra-color-3 { background: linear-gradient(135deg, #FF7043, #E64A19); } /* Coral */
+.barra-color-4 { background: linear-gradient(135deg, #26C6DA, #00ACC1); } /* Cyan */
+.barra-color-5 { background: linear-gradient(135deg, #2E5090, #1E3A5F); } /* Azul oscuro */
+.barra-color-6 { background: linear-gradient(135deg, #10b981, #059669); } /* Verde */
+.barra-color-7 { background: linear-gradient(135deg, #E74C3C, #C0392B); } /* Rojo */
 
 /* ------------- Animaciones ------------- */
 @keyframes fadeInUp {
@@ -266,32 +363,131 @@
 .estadistica-card:nth-child(1) { animation-delay: 0.1s; }
 .estadistica-card:nth-child(2) { animation-delay: 0.2s; }
 .estadistica-card:nth-child(3) { animation-delay: 0.3s; }
-.estadistica-card:nth-child(4) { animation-delay: 0.4s; } 
+.estadistica-card:nth-child(4) { animation-delay: 0.4s; }
 
-/* ------------- Toggle de Tema ------------- */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 15px var(--shadow-color);
-    transition: all 0.3s ease;
+/* ------------- Responsive ------------- */
+@media (max-width: 1024px) {
+    .grafica-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .semana-selector {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 20px;
+    }
+
+    .header_1 h1 {
+        font-size: 2em;
+        flex-direction: column;
+    }
+
+    .estadisticas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .estadistica-card {
+        padding: 25px 20px;
+    }
+
+    .estadistica-card h2 {
+        font-size: 1.1em;
+        min-height: auto;
+    }
+
+    .estadistica-card p {
+        font-size: 2.8em;
+    }
+    
+    .grafica-container {
+        padding: 25px;
+    }
+    
+    .grafica-header h2 {
+        font-size: 1.4em;
+    }
+    
+    .barra-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .barra-label {
+        min-width: auto;
+        text-align: left;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .btn-semana {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .semana-actual {
+        width: 100%;
+        text-align: center;
+    }
 }
 
-.theme-toggle i {
-    font-size: 1.2em;
-    color: var(--text-primary);
+@media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 15px;
+    }
+
+    .header_1 h1 {
+        font-size: 1.6em;
+    }
+
+    .estadistica-card {
+        padding: 20px 15px;
+    }
+
+    .estadistica-card h2 {
+        font-size: 1em;
+    }
+
+    .estadistica-card p {
+        font-size: 2.2em;
+    }
+    
+    .grafica-container {
+        padding: 20px 15px;
+    }
+    
+    .grafica-header h2 {
+        font-size: 1.2em;
+    }
+    
+    .btn-semana {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+    
+    .semana-actual {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+    
+    .barra-container {
+        height: 40px;
+    }
+    
+    .dia-nombre {
+        font-size: 0.95em;
+    }
+    
+    .barra-valor {
+        font-size: 0.95em;
+    }
 }
