@@ -1,238 +1,541 @@
 /* ------------- Estadísticas - Estilos Mejorados ------------- */
 :root {
-  /* Colores modo claro */
-  --primary-color: #0277BD;
-  --primary-dark: #01579B;
-  --primary-light: #4FC3F7;
-  --background-light: #E3F2FD;
-  --background-lighter: #B3E5FC;
-  --text-light: #01579B;
-  --text-lighter: #0277BD;
-  --white: #FFFFFF;
-  --shadow-color: rgba(2, 119, 189, 0.3);
+    /* Colores modo claro */
+    --primary-color: #0277BD;
+    --primary-dark: #01579B;
+    --primary-light: #4FC3F7;
+    --background-light: #E3F2FD;
+    --background-lighter: #B3E5FC;
+    --text-light: #01579B;
+    --text-lighter: #0277BD;
+    --white: #FFFFFF;
+    --shadow-color: rgba(2, 119, 189, 0.3);
+    
+    /* Colores modo oscuro */
+    --dark-primary: #0A1929;
+    --dark-secondary: #132F4C;
+    --dark-accent: #1E4976;
+    --dark-text: #E3F2FD;
+    --dark-text-secondary: #B3E5FC;
+    --dark-shadow: rgba(0, 0, 0, 0.5);
+  }
   
-  /* Colores modo oscuro */
-  --dark-primary: #0A1929;
-  --dark-secondary: #132F4C;
-  --dark-accent: #1E4976;
-  --dark-text: #E3F2FD;
-  --dark-text-secondary: #B3E5FC;
-  --dark-shadow: rgba(0, 0, 0, 0.5);
-}
-
-.contenedor-principal {
-    background: linear-gradient(135deg, var(--background-light) 0%, var(--white) 50%, var(--background-lighter) 100%);
-    min-height: 100vh;
-    padding: 40px;
-    transition: background 0.3s ease;
-}
-
-.header_1 h1 {
-    color: var(--primary-dark);
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 40px;
-    position: relative;
-    text-align: center;
-}
-
-.header_1 h1::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-light), var(--primary-color), var(--primary-dark));
-    border-radius: 2px;
-}
-
-/* ------------- Grid de Estadísticas ------------- */
-.estadisticas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-/* ------------- Cards de Estadísticas ------------- */
-.estadistica-card {
-    background: linear-gradient(135deg, var(--white) 0%, var(--background-light) 100%);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px var(--shadow-color);
-    text-align: center;
-    transition: all 0.4s ease;
-    border: 1px solid var(--primary-light);
-    position: relative;
-    overflow: hidden;
-}
-
-.estadistica-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--card-color-1), var(--card-color-2), var(--card-color-3));
-}
-
-.estadistica-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px var(--shadow-color);
-}
-
-.estadistica-card h2 {
-    color: var(--primary-dark);
-    font-size: 1.3em;
-    font-weight: 600;
-    margin-bottom: 20px;
-    line-height: 1.4;
-    min-height: 3.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.estadistica-card p {
-    font-size: 4em;
-    font-weight: 700;
-    margin: 0;
-    background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-}
-
-/* ------------- Colores Específicos de Cards ------------- */
-.estadistica-card:nth-child(1) {
-    --card-color-1: var(--primary-light);
-    --card-color-2: var(--primary-color);
-    --card-color-3: var(--primary-dark);
-}
-
-.estadistica-card:nth-child(2) {
-    --card-color-1: #10b981;
-    --card-color-2: #059669;
-    --card-color-3: #047857;
-}
-
-.estadistica-card:nth-child(3) {
-    --card-color-1: #f59e0b;
-    --card-color-2: #d97706;
-    --card-color-3: #b45309;
-}
-
-/* ==============================
-   TEMA OSCURO - ESTADÍSTICAS ADMIN (TONOS AZUL OSCURO)
-============================== */
-
-body.dark-theme .contenedor-principal {
-    background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-secondary) 50%, var(--dark-accent) 100%);
-}
-
-body.dark-theme .header_1 h1 {
-    color: var(--dark-text);
-}
-
-body.dark-theme .header_1 h1::after {
-    background: linear-gradient(90deg, var(--dark-text-secondary), var(--dark-accent), var(--dark-primary));
-}
-
-body.dark-theme .estadistica-card {
-    background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-accent) 100%);
-    border: 1px solid var(--dark-accent);
-    box-shadow: 0 10px 30px var(--dark-shadow);
-}
-
-body.dark-theme .estadistica-card:hover {
-    box-shadow: 0 20px 40px var(--dark-shadow);
-}
-
-body.dark-theme .estadistica-card h2 {
-    color: var(--dark-text);
-}
-
-body.dark-theme .estadistica-card h2 small {
-    color: var(--dark-text-secondary);
-    font-size: 0.7em;
-}
-
-body.dark-theme .estadistica-card:nth-child(1) {
-    --card-color-1: var(--dark-text-secondary);
-    --card-color-2: var(--dark-accent);
-    --card-color-3: var(--dark-primary);
-}
-
-body.dark-theme .estadistica-card:nth-child(2) {
-    --card-color-1: #4ade80;
-    --card-color-2: #22c55e;
-    --card-color-3: #16a34a;
-}
-
-body.dark-theme .estadistica-card:nth-child(3) {
-    --card-color-1: #fbbf24;
-    --card-color-2: #f59e0b;
-    --card-color-3: #d97706;
-}
-
-/* Iconos SVG para tema oscuro */
-body.dark-theme .estadistica-card::after {
-    opacity: 0.2;
-}
-
-/* ------------- Responsive ------------- */
-@media (max-width: 1024px) {
-    .estadisticas-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .contenedor-principal {
-        padding: 30px 20px;
-    }
-    
-    .header_1 h1 {
-        font-size: 2em;
-    }
-    
-    .estadisticas-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .estadistica-card {
-        padding: 35px 25px;
-    }
-    
-    .estadistica-card h2 {
-        font-size: 1.2em;
-        min-height: auto;
-    }
-    
-    .estadistica-card p {
-        font-size: 3.5em;
-    }
-}
-
-@media (max-width: 480px) {
-    .contenedor-principal {
-        padding: 25px 15px;
-    }
-    
-    .header_1 h1 {
-        font-size: 1.8em;
-    }
-    
-    .estadistica-card {
-        padding: 30px 20px;
-    }
-    
-    .estadistica-card p {
-        font-size: 3em;
-    }
-}
+  .contenedor-principal {
+      background: linear-gradient(135deg, var(--background-light) 0%, var(--white) 50%, var(--background-lighter) 100%);
+      min-height: 100vh;
+      padding: 40px;
+      transition: background 0.3s ease;
+  }
+  
+  .header_1 h1 {
+      color: var(--primary-dark);
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 40px;
+      position: relative;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+  }
+  
+  .header_1 h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-light), var(--primary-color), var(--primary-dark));
+      border-radius: 2px;
+  }
+  
+  .header_1 h1 i {
+      font-size: 0.9em;
+  }
+  
+  /* ------------- Grid de Estadísticas ------------- */
+  .estadisticas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      margin-bottom: 50px;
+  }
+  
+  /* ------------- Cards de Estadísticas ------------- */
+  .estadistica-card {
+      background: linear-gradient(135deg, var(--white) 0%, var(--background-light) 100%);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px var(--shadow-color);
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 1px solid var(--primary-light);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .estadistica-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--card-color-1), var(--card-color-2), var(--card-color-3));
+  }
+  
+  .estadistica-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px var(--shadow-color);
+  }
+  
+  .estadistica-card h2 {
+      color: var(--primary-dark);
+      font-size: 1.3em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      min-height: 3.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .estadistica-card h2 small {
+      font-size: 0.7em;
+      color: var(--text-lighter);
+  }
+  
+  .estadistica-card p {
+      font-size: 4em;
+      font-weight: 700;
+      margin: 0;
+      background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+  }
+  
+  /* ------------- Colores Específicos de Cards ------------- */
+  .estadistica-card:nth-child(1) {
+      --card-color-1: var(--primary-light);
+      --card-color-2: var(--primary-color);
+      --card-color-3: var(--primary-dark);
+  }
+  
+  .estadistica-card:nth-child(2) {
+      --card-color-1: #10b981;
+      --card-color-2: #059669;
+      --card-color-3: #047857;
+  }
+  
+  .estadistica-card:nth-child(3) {
+      --card-color-1: #f59e0b;
+      --card-color-2: #d97706;
+      --card-color-3: #b45309;
+  }
+  
+  /* ============================================
+     GRÁFICA DE BARRAS - TURNOS DE LA SEMANA
+  ============================================ */
+  
+  .grafica-container {
+      background: linear-gradient(135deg, var(--white) 0%, var(--background-light) 100%);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px var(--shadow-color);
+      border: 1px solid var(--primary-light);
+      margin-top: 40px;
+      animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .grafica-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+  
+  .grafica-header h2 {
+      color: var(--primary-dark);
+      font-size: 1.8em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+  }
+  
+  .semana-selector {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  }
+  
+  .btn-semana {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px var(--shadow-color);
+  }
+  
+  .btn-semana:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px var(--shadow-color);
+  }
+  
+  .btn-semana:active {
+      transform: translateY(0);
+  }
+  
+  .semana-actual {
+      color: var(--primary-dark);
+      font-weight: 600;
+      font-size: 1.05em;
+      padding: 8px 16px;
+      background: var(--background-light);
+      border-radius: 8px;
+  }
+  
+  /* ------------- Barras ------------- */
+  .grafica-barras {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  
+  .barra-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  }
+  
+  .barra-label {
+      min-width: 120px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  }
+  
+  .dia-nombre {
+      color: var(--primary-dark);
+      font-weight: 600;
+      font-size: 1.05em;
+  }
+  
+  .dia-fecha {
+      color: var(--text-lighter);
+      opacity: 0.8;
+      font-size: 0.85em;
+  }
+  
+  .barra-container {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      height: 50px;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .barra-fill {
+      height: 100%;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 15px;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: left;
+      transform: scaleX(0);
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .barra-fill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+  }
+  
+  .barra-valor {
+      color: white;
+      font-weight: 700;
+      font-size: 1.1em;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+  }
+  
+  /* Colores de las barras por día */
+  .barra-color-1 { background: linear-gradient(135deg, #C9D736, #A8B92A); }
+  .barra-color-2 { background: linear-gradient(135deg, #FFC107, #FF9800); }
+  .barra-color-3 { background: linear-gradient(135deg, #FF7043, #E64A19); }
+  .barra-color-4 { background: linear-gradient(135deg, #26C6DA, #00ACC1); }
+  .barra-color-5 { background: linear-gradient(135deg, #2E5090, #1E3A5F); }
+  .barra-color-6 { background: linear-gradient(135deg, #10b981, #059669); }
+  .barra-color-7 { background: linear-gradient(135deg, #E74C3C, #C0392B); }
+  
+  /* ------------- Animaciones ------------- */
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  
+  .estadistica-card {
+      animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .estadistica-card:nth-child(1) { animation-delay: 0.1s; }
+  .estadistica-card:nth-child(2) { animation-delay: 0.2s; }
+  .estadistica-card:nth-child(3) { animation-delay: 0.3s; }
+  
+  /* ==============================
+     TEMA OSCURO - ESTADÍSTICAS ADMIN
+  ============================== */
+  
+  body.dark-theme .contenedor-principal {
+      background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-secondary) 50%, var(--dark-accent) 100%);
+  }
+  
+  body.dark-theme .header_1 h1 {
+      color: var(--dark-text);
+  }
+  
+  body.dark-theme .header_1 h1::after {
+      background: linear-gradient(90deg, var(--dark-text-secondary), var(--dark-accent), var(--dark-primary));
+  }
+  
+  body.dark-theme .estadistica-card {
+      background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-accent) 100%);
+      border: 1px solid var(--dark-accent);
+      box-shadow: 0 10px 30px var(--dark-shadow);
+  }
+  
+  body.dark-theme .estadistica-card:hover {
+      box-shadow: 0 20px 40px var(--dark-shadow);
+  }
+  
+  body.dark-theme .estadistica-card h2 {
+      color: var(--dark-text);
+  }
+  
+  body.dark-theme .estadistica-card h2 small {
+      color: var(--dark-text-secondary);
+  }
+  
+  body.dark-theme .estadistica-card:nth-child(1) {
+      --card-color-1: var(--dark-text-secondary);
+      --card-color-2: var(--dark-accent);
+      --card-color-3: var(--dark-primary);
+  }
+  
+  body.dark-theme .estadistica-card:nth-child(2) {
+      --card-color-1: #4ade80;
+      --card-color-2: #22c55e;
+      --card-color-3: #16a34a;
+  }
+  
+  body.dark-theme .estadistica-card:nth-child(3) {
+      --card-color-1: #fbbf24;
+      --card-color-2: #f59e0b;
+      --card-color-3: #d97706;
+  }
+  
+  /* Gráfica en tema oscuro */
+  body.dark-theme .grafica-container {
+      background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-accent) 100%);
+      border: 1px solid var(--dark-accent);
+      box-shadow: 0 10px 30px var(--dark-shadow);
+  }
+  
+  body.dark-theme .grafica-header h2 {
+      color: var(--dark-text);
+  }
+  
+  body.dark-theme .btn-semana {
+      background: linear-gradient(135deg, #1976d2, #0d47a1);
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+  }
+  
+  body.dark-theme .btn-semana:hover {
+      background: linear-gradient(135deg, #0d47a1, #01579b);
+      box-shadow: 0 6px 16px rgba(25, 118, 210, 0.4);
+  }
+  
+  body.dark-theme .semana-actual {
+      background: rgba(100, 181, 246, 0.2);
+      color: var(--dark-text);
+  }
+  
+  body.dark-theme .dia-nombre {
+      color: var(--dark-text);
+  }
+  
+  body.dark-theme .dia-fecha {
+      color: var(--dark-text-secondary);
+  }
+  
+  body.dark-theme .barra-container {
+      background: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* ------------- Responsive ------------- */
+  @media (max-width: 1024px) {
+      .estadisticas-grid {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+  
+      .grafica-header {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+      
+      .semana-selector {
+          width: 100%;
+          justify-content: space-between;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .contenedor-principal {
+          padding: 30px 20px;
+      }
+      
+      .header_1 h1 {
+          font-size: 2em;
+          flex-direction: column;
+      }
+      
+      .estadisticas-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+      }
+      
+      .estadistica-card {
+          padding: 35px 25px;
+      }
+      
+      .estadistica-card h2 {
+          font-size: 1.2em;
+          min-height: auto;
+      }
+      
+      .estadistica-card p {
+          font-size: 3.5em;
+      }
+  
+      .grafica-container {
+          padding: 25px;
+      }
+      
+      .grafica-header h2 {
+          font-size: 1.4em;
+      }
+      
+      .barra-row {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+      }
+      
+      .barra-label {
+          min-width: auto;
+          text-align: left;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+      }
+      
+      .btn-semana {
+          flex: 1;
+          justify-content: center;
+      }
+      
+      .semana-actual {
+          width: 100%;
+          text-align: center;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .contenedor-principal {
+          padding: 25px 15px;
+      }
+      
+      .header_1 h1 {
+          font-size: 1.8em;
+      }
+      
+      .estadistica-card {
+          padding: 30px 20px;
+      }
+      
+      .estadistica-card p {
+          font-size: 3em;
+      }
+  
+      .grafica-container {
+          padding: 20px 15px;
+      }
+      
+      .grafica-header h2 {
+          font-size: 1.2em;
+      }
+      
+      .btn-semana {
+          padding: 8px 12px;
+          font-size: 0.85em;
+      }
+      
+      .semana-actual {
+          font-size: 0.9em;
+          padding: 6px 12px;
+      }
+      
+      .barra-container {
+          height: 40px;
+      }
+      
+      .dia-nombre {
+          font-size: 0.95em;
+      }
+      
+      .barra-valor {
+          font-size: 0.95em;
+      }
+  }

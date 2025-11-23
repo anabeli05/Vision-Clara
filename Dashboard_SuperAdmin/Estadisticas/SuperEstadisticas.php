@@ -12,7 +12,6 @@ if ($user_rol !== 'Super Admin') {
 // Conexión a la base de datos
 require_once '../../Base de Datos/conexion.php';
 
-
 // Crear conexión
 $conexion_obj = new Conexion();
 $conexion_obj->abrir_conexion();
@@ -25,11 +24,21 @@ $total_productos = 0;
 $total_usuarios = 0;
 $hoy = date('Y-m-d');
 
+// Obtener semana seleccionada (por defecto: semana actual)
+$semana_offset = isset($_GET['semana']) ? (int)$_GET['semana'] : 0;
+$fecha_base = new DateTime();
+$fecha_base->modify("$semana_offset week");
+
+// Calcular inicio y fin de la semana (Lunes a Domingo)
+$inicio_semana = clone $fecha_base;
+$inicio_semana->modify('monday this week');
+$fin_semana = clone $inicio_semana;
+$fin_semana->modify('+6 days');
+
 // Verificar que la conexión esté activa
 if (!$conexion) {
     die("Error de conexión a la base de datos");
 }
-
 
 // Total de clientes
 try {
@@ -38,8 +47,6 @@ try {
     if ($result_clientes) {
         $row_clientes = mysqli_fetch_assoc($result_clientes);
         $total_clientes = (int)$row_clientes['total_clientes'];
-    } else {
-        error_log("Error en consulta clientes: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
     error_log("Excepción en clientes: " . $e->getMessage());
@@ -59,8 +66,6 @@ try {
             $total_turnos = (int)$row_turnos['total_turnos'];
         }
         $stmt_turnos->close();
-    } else {
-        error_log("Error preparando consulta turnos: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
     error_log("Excepción en turnos: " . $e->getMessage());
@@ -74,8 +79,6 @@ try {
     if ($result_productos) {
         $row_productos = mysqli_fetch_assoc($result_productos);
         $total_productos = (int)$row_productos['total_productos'];
-    } else {
-        error_log("Error en consulta productos: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
     error_log("Excepción en productos: " . $e->getMessage());
@@ -89,16 +92,52 @@ try {
     if ($result_usuarios) {
         $row_usuarios = mysqli_fetch_assoc($result_usuarios);
         $total_usuarios = (int)$row_usuarios['total_usuarios'];
-    } else {
-        error_log("Error en consulta usuarios: " . mysqli_error($conexion));
     }
 } catch (Exception $e) {
     error_log("Excepción en usuarios: " . $e->getMessage());
     $total_usuarios = 0;
 }
 
-// Debug temporal (eliminar después de verificar)
-//echo "Clientes: $total_clientes, Turnos: $total_turnos, Productos: $total_productos, Usuarios: $total_usuarios";
+// Obtener turnos por día de la semana
+$turnos_semana = [];
+$dias_nombres = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+$max_turnos = 0;
+
+try {
+    $fecha_actual = clone $inicio_semana;
+    for ($i = 0; $i < 7; $i++) {
+        $fecha_str = $fecha_actual->format('Y-m-d');
+        
+        $query_dia = "SELECT COUNT(*) AS total FROM turnos WHERE DATE(fecha) = ?";
+        $stmt_dia = $conexion->prepare($query_dia);
+        if ($stmt_dia) {
+            $stmt_dia->bind_param("s", $fecha_str);
+            $stmt_dia->execute();
+            $result_dia = $stmt_dia->get_result();
+            $row_dia = $result_dia->fetch_assoc();
+            $total_dia = (int)$row_dia['total'];
+            
+            $turnos_semana[] = [
+                'dia' => $dias_nombres[$i],
+                'fecha' => $fecha_actual->format('d/m'),
+                'total' => $total_dia
+            ];
+            
+            if ($total_dia > $max_turnos) {
+                $max_turnos = $total_dia;
+            }
+            
+            $stmt_dia->close();
+        }
+        
+        $fecha_actual->modify('+1 day');
+    }
+} catch (Exception $e) {
+    error_log("Error obteniendo turnos de la semana: " . $e->getMessage());
+}
+
+// Ajustar max_turnos para mejor visualización
+$max_turnos = max($max_turnos, 10); // Mínimo 10 para mejor escala
 
 ?>
 <!DOCTYPE html>
@@ -108,14 +147,14 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas - Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href='../Estadisticas/SuperEstadisticas.css'>
+    <link rel="stylesheet" href='SuperEstadisticas.css'>
     <link rel="stylesheet" href='../Dashboard/SuperSidebar.css'>
 </head>
 <body>
     <?php include '../Dashboard/SuperSidebar.php'; ?>
     <div class="contenedor-principal">
         <div class="header_1">
-            <h1>📊 Estadísticas Generales</h1>
+            <h1><i class="fas fa-chart-bar"></i> Estadísticas Generales</h1>
         </div>
 
         <div class="estadisticas-grid">
@@ -133,15 +172,69 @@ try {
             </div>
             <div class="estadistica-card">
                 <h2>Total de Trabajadores</h2>
-                <p style="font-size: 48px; color: #333; font-weight: bold;">
-                    <?php echo $total_usuarios; 
-                        // Debug
-                    if ($total_usuarios === 0 || empty($total_usuarios)) {
-                        echo " (debug: valor='$total_usuarios')";
-                    }?>
-                </p>            
+                <p><?php echo number_format($total_usuarios); ?></p>            
+            </div>
+        </div>
+
+        <!-- Gráfica de Turnos por Semana -->
+        <div class="grafica-container">
+            <div class="grafica-header">
+                <h2><i class="fas fa-calendar-week"></i> Turnos de la Semana</h2>
+                <div class="semana-selector">
+                    <button onclick="cambiarSemana(-1)" class="btn-semana">
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </button>
+                    <span class="semana-actual">
+                        <?php echo $inicio_semana->format('d/m/Y') . ' - ' . $fin_semana->format('d/m/Y'); ?>
+                    </span>
+                    <button onclick="cambiarSemana(1)" class="btn-semana">
+                        Siguiente <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grafica-barras">
+                <?php foreach ($turnos_semana as $index => $dia): ?>
+                    <?php 
+                        $porcentaje = $max_turnos > 0 ? ($dia['total'] / $max_turnos) * 100 : 0;
+                        $color_class = 'barra-color-' . ($index + 1);
+                    ?>
+                    <div class="barra-row">
+                        <div class="barra-label">
+                            <span class="dia-nombre"><?php echo $dia['dia']; ?></span>
+                            <span class="dia-fecha"><?php echo $dia['fecha']; ?></span>
+                        </div>
+                        <div class="barra-container">
+                            <div class="barra-fill <?php echo $color_class; ?>" 
+                                 style="width: <?php echo $porcentaje; ?>%"
+                                 data-turnos="<?php echo $dia['total']; ?>">
+                                <span class="barra-valor"><?php echo $dia['total']; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
+
+    <script>
+        let semanaActual = <?php echo $semana_offset; ?>;
+        
+        function cambiarSemana(offset) {
+            semanaActual += offset;
+            window.location.href = `?semana=${semanaActual}`;
+        }
+
+        // Animar las barras al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            const barras = document.querySelectorAll('.barra-fill');
+            barras.forEach((barra, index) => {
+                setTimeout(() => {
+                    barra.style.opacity = '1';
+                    barra.style.transform = 'scaleX(1)';
+                }, index * 100);
+            });
+        });
+    </script>
 </body>
 </html>
