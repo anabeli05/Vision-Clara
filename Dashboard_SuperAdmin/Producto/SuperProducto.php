@@ -200,43 +200,45 @@ try {
     </div>
 
     <script>
-    // Función para mostrar mensajes
-    function showMessage(message, type) {
-        // Crear elemento de mensaje
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `alert alert-${type}`;
-        messageDiv.style.cssText = `
+    // Función para mostrar mensajes centrados
+    function showMessage(text, type = 'success') {
+        const message = document.createElement('div');
+        message.textContent = text;
+        message.style.cssText = `
             position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: ${type === 'success' ? 
+                'linear-gradient(135deg, #4FC3F7 0%, #0277BD 100%)' : 
+                'linear-gradient(135deg, #ef5350 0%, #d32f2f 100%)'};
             color: white;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
             z-index: 10000;
-            animation: slideIn 0.3s ease-out;
+            animation: showMessage 3s ease-in-out;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         `;
-        messageDiv.textContent = message;
-        
-        document.body.appendChild(messageDiv);
-        
-        // Eliminar después de 3 segundos
+
+        document.body.appendChild(message);
+
         setTimeout(() => {
-            messageDiv.style.animation = 'slideOut 0.3s ease-out';
-            setTimeout(() => messageDiv.remove(), 300);
+            if (document.body.contains(message)) {
+                document.body.removeChild(message);
+            }
         }, 3000);
     }
 
     // Función para editar producto
     function editProduct(productId) {
+        console.log('Editando producto:', productId);
         window.location.href = `editar-producto.php?id=${productId}`;
     }
 
     // Función para eliminar producto
     function deleteProduct(productId, productName) {
         if (confirm(`¿Estás seguro de que deseas eliminar "${productName}"?\n\nEsta acción no se puede deshacer.`)) {
-            // Mostrar indicador de carga
             showMessage('Eliminando producto...', 'info');
             
             fetch('eliminar-producto.php', {
@@ -305,7 +307,6 @@ try {
             amount: parseInt(formData.get('amount'))
         };
 
-        // Validación básica
         if (!data.amount || data.amount <= 0) {
             showMessage('Por favor ingresa una cantidad válida', 'error');
             return;
@@ -342,92 +343,40 @@ try {
             console.error('Error completo:', error);
         });
     }
+    
+    // Función para vender
+    function addToCart(productId) {
+        fetch('../../Dashboard_Admin/Producto/vender.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({product_id: productId, quantity: 1})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showMessage('Venta realizada', 'success');
+                setTimeout(() => location.reload(), 1000);
+            } else {
+                showMessage('Sin stock', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showMessage('Error de conexión', 'error');
+        });
+    }
 
-    // Agregar estilos para animaciones
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
+    // Estilos para animaciones
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+        @keyframes showMessage {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            15% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+            85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
         }
     `;
-    
-    function addToCart(productId) {
-            fetch('../../Dashboard_Admin/Producto/vender.php', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({product_id: productId, quantity: 1})
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showMessage('Venta realizada', 'success');
-                    setTimeout(() => location.reload(), 1000);
-                } else {
-                    showMessage('Sin stock', 'error');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showMessage('Error de conexión', 'error');
-            });
-        }
-
-        function showMessage(text, type = 'success') {
-            const message = document.createElement('div');
-            message.textContent = text;
-            message.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: ${type === 'success' ? 
-                    'linear-gradient(135deg, #4FC3F7 0%, #0277BD 100%)' : 
-                    'linear-gradient(135deg, #ef5350 0%, #d32f2f 100%)'};
-                color: white;
-                padding: 15px 30px;
-                border-radius: 50px;
-                font-weight: 600;
-                z-index: 1000;
-                animation: showMessage 3s ease-in-out;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            `;
-    
-            document.body.appendChild(message);
-    
-            setTimeout(() => {
-                if (document.body.contains(message)) {
-                    document.body.removeChild(message);
-                }
-            }, 3000);
-        }
-
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes showMessage {
-                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-                15% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-                85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-                100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-            }
-        `;
-        document.head.appendChild(style);
+    document.head.appendChild(styleElement);
 </script>
 </body>
 </html>
