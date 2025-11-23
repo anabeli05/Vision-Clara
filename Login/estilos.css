@@ -9,7 +9,7 @@
 body {
     background: url('../Imagenes/fondo_login2.png') no-repeat center center;
     background-size: cover;
-    background-color:  #2b6cb0;
+    background-color:  #1c63af;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ header {
     left: 0;
     width: 100%;
     height: 80px;
-    background: #2b6cb0;
+    background: #084fa0;
     box-shadow: 0 4px 25px -22px black;
     z-index: 2;
     display: flex;
@@ -49,7 +49,7 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    background: #3e8ce0;
+    background: #2773c5dc;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -63,7 +63,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(87, 186, 252);
+    color: rgb(39, 138, 204);
     font-size: 24px;
     text-align: center;
     padding: 20px;
@@ -96,13 +96,13 @@ header {
 .login-header h1 {
     font-size: 28px;
     font-weight: 600;
-    color: #333;
+    color: black;
 }
 
 /* ===== TEXTOS INFORMATIVOS ===== */
 .info-text, .verification-text, .recovery-text {
     font-size: 16px;
-    color: #555;
+    color: #252525;
     line-height: 1.6;
     margin-bottom: 30px;
     text-align: center;
@@ -136,7 +136,7 @@ header {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #333;
+    color: #1f1f1f;
 }
 
 .form-group input {
@@ -213,7 +213,7 @@ header {
 .password-requirements {
     margin-top: 5px;
     font-size: 12px;
-    color: #777;
+    color: #131313;
 }
 
 /* ===== BOTONES ===== */
@@ -235,7 +235,7 @@ header {
 }
 
 .login-button:hover, .send-button:hover, .submit-button:hover, .confirm-button:hover {
-    background-color: #77a3d1;
+    background-color: #1761af;
 }
 
 /* ===== OPCIONES ADICIONALES ===== */
@@ -243,33 +243,117 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .remember {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
-.remember input {
-    margin-right: 8px;
+.remember input[type="checkbox"] {
+    appearance: none;
+    width: 46px;
+    height: 24px;
+    background: #a6e8ba;
+    border-radius: 24px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
 }
 
-.forgot-password, .remember-login a, .resend-code a {
-    color: #afd5fc;
+/* Círculo del switch */
+.remember input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+
+/* Cuando está activado */
+.remember input[type="checkbox"]:checked {
+    background: #5ed292;
+}
+
+.remember input[type="checkbox"]:checked::before {
+    transform: translateX(22px);
+}
+
+/* Texto "Recuérdame" */
+.remember label {
+    color: white;
+    font-size: 17px;
+}
+
+/* --- Estilo del enlace "¿Olvidaste tu contraseña?" --- */
+.forgot-password {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    font-size: 16px;
+}
+
+.forgot-password::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: white;
+    left: 0;
+    bottom: -3px;
+    transition: 0.3s;
+}
+
+.forgot-password:hover::after {
+    width: 100%;
+}
+
+.forgot-password:hover {
+    color: white;
+}
+
+.forgot-password, .remember-login a {
+    color: #ffffff !important;
     text-decoration: none;
     font-weight: 500;
 }
 
-.forgot-password:hover, .remember-login a:hover, .resend-code a:hover {
-    text-decoration: underline;
-}
-
-.remember-login, .resend-code {
+.resend-code  {
     text-align: center;
     margin-top: 20px;
     font-size: 15px;
-    color: #555;
+    color: #1f2a36 !important; /* color del texto principal */
+}
+
+.resend-code a {
+    color: #ffffff !important; /* enlace más brillante */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resend-code a:hover {
+    text-decoration: underline;
+    color: #fafafa; /* efecto hover más suave */
+}
+
+.forgot-password:hover, .remember-login a:hover {
+    text-decoration: underline;
+}
+
+.remember-login {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #000000 !important;
 }
 
 /* ===== DIVISOR ===== */
@@ -287,7 +371,7 @@ header {
 
 .vision-section h3 {
     font-size: 18px;
-    color: #333;
+    color: #000000;
     margin-bottom: 10px;
 }
 

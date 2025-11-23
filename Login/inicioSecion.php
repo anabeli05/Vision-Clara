@@ -86,12 +86,22 @@ unset($_SESSION['temp_email'], $_SESSION['temp_remember']);
                     </div>
                     
                     <div class="remember-forgot">
-                        <div class="remember">
-                            <input type="checkbox" id="remember" name="remember"  <?php echo $remember_checked ? 'checked' : ''; ?>>
-                            <label for="remember">RECUERDAME</label>
+    
+                    <!-- Recuérdame -->
+                         <div class="remember">
+                            <input type="checkbox" id="remember" name="remember"  <?php echo $remember_checked ? 'checked' : ''; ?> >
+                            <label for="remember">Recuérdame</label>
                         </div>
-                        <a href="recuperarContra.php" class="forgot-password">¿OLVIDASTE TU CONTRASEÑA?</a>
-                    </div>
+
+                    <!-- Olvidaste tu contraseña -->
+                    <a href="recuperarContra.php" class="forgot-password"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke='white' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;">
+                            <path d="M6 8V5a4 4 0 0 1 8 0v3"/>
+                            <rect x="4" y="8" width="12" height="10" rx="2" ry="2"/>
+                        </svg>
+                        ¿Olvidaste tu contraseña? 
+                    </a>
+                </div>
                     
                     <button type="submit" name="btn_login" class="btn login-button">Ingresar</button>
                 </form>
