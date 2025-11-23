@@ -6244,3 +6244,39 @@ DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332
 DEBUG: DEBUG: Comparación (===): COINCIDE
 --- Nuevo Log de Sesión: 2025-11-23 16:06:53 ---
 DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-23 16:29:34 ---
+DEBUG: INFO: Logout - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-23 16:29:38 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-23 16:29:38 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-23 16:29:38 ---
+DEBUG: INFO: intento de login - Email: fbenitez2@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-23 16:29:38 ---
+DEBUG: DEBUG: Password después de trim: [clara789] - Longitud: 8
+--- Nuevo Log de Sesión: 2025-11-23 16:29:40 ---
+DEBUG: DEBUG: Password ingresado: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-23 16:29:40 ---
+DEBUG: DEBUG: Password en BD: [clara789] - Longitud: 8 - Hex: 636c617261373839
+--- Nuevo Log de Sesión: 2025-11-23 16:29:40 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-23 16:29:40 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-23 16:31:54 ---
+DEBUG: INFO: Logout - Usuario ID: 2
+--- Nuevo Log de Sesión: 2025-11-23 16:31:59 ---
+DEBUG: INFO: iniciando validacion del login
+--- Nuevo Log de Sesión: 2025-11-23 16:31:59 ---
+DEBUG: DEBUG: Password RAW recibido del POST: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-23 16:31:59 ---
+DEBUG: INFO: intento de login - Email: xcobian@ucol.mx
+--- Nuevo Log de Sesión: 2025-11-23 16:31:59 ---
+DEBUG: DEBUG: Password después de trim: [Clara123.] - Longitud: 9
+--- Nuevo Log de Sesión: 2025-11-23 16:32:01 ---
+DEBUG: DEBUG: Password ingresado: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-23 16:32:01 ---
+DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332e
+--- Nuevo Log de Sesión: 2025-11-23 16:32:01 ---
+DEBUG: DEBUG: Comparación (===): COINCIDE
+--- Nuevo Log de Sesión: 2025-11-23 16:32:01 ---
+DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
