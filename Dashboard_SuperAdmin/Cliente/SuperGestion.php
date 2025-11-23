@@ -78,7 +78,7 @@ try {
                                 <td><?php echo htmlspecialchars($cliente['Correo']); ?></td>
                                 <td><?php echo htmlspecialchars($cliente['Telefono']); ?></td>
                                 <td class="actions">
-                                    <a href='editar-cliente.php?id=<?php echo urlencode($cliente['No_Afiliado']); ?>'
+                                    <a href='Supereditar-cliente.php?id=<?php echo urlencode($cliente['No_Afiliado']); ?>'
                                        class="btn-edit" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
