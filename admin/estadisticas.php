@@ -46,6 +46,8 @@ try {
     $total_turnos = 0;
 }
 
+
+
 // Total de productos
 try {
     $query_productos = "SELECT COUNT(*) AS total_productos FROM productos";
