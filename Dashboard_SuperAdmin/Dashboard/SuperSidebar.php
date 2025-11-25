@@ -88,6 +88,13 @@
                 <span class="link_name">Estadisticas</span> 
             </a> 
         </li> 
+
+        <li data-no-translate="true"> 
+            <a href="../Configuracion/ConfiguracionSuper.php" data-no-translate> 
+                <i class="fa-solid fa-gear" data-no-translate></i> 
+                <span class="link_name">Configuracion</span> 
+            </a> 
+        </li> 
         
         <li class="logout-btn">
       <a href="../../Login/logout.php" data-no-translate>

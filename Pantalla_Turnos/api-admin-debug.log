@@ -891,3 +891,246 @@ ACTION=cambiar_estado, NUMERO=N005, ESTADO=Atendiendo
 [2025-11-21 07:10:18] METHOD=GET POST=[]
 
 [2025-11-21 07:10:23] METHOD=GET POST=[]
+
+[2025-11-24 19:32:30] METHOD=GET POST=[]
+
+[2025-11-24 19:32:34] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"C001","nuevo_estado":"Atendiendo"}
+
+[2025-11-24 19:32:35] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=C001, ESTADO=Atendiendo
+SUCCESS: Updated C001 to Atendiendo
+
+[2025-11-24 19:32:36] METHOD=GET POST=[]
+
+[2025-11-24 19:32:40] METHOD=GET POST=[]
+
+[2025-11-24 19:32:42] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"C001","nuevo_estado":"Cancelado"}
+ACTION=cambiar_estado, NUMERO=C001, ESTADO=Cancelado
+
+[2025-11-24 19:32:43] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"C001","nuevo_estado":"Finalizado"}
+SUCCESS: Updated C001 to Cancelado
+
+[2025-11-24 19:32:43] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=C001, ESTADO=Finalizado
+SUCCESS: Updated C001 to Finalizado
+
+[2025-11-24 19:32:45] METHOD=GET POST=[]
+
+[2025-11-24 19:32:45] METHOD=GET POST=[]
+
+[2025-11-24 19:32:49] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N001","nuevo_estado":"Atendiendo"}
+
+[2025-11-24 19:32:50] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=N001, ESTADO=Atendiendo
+SUCCESS: Updated N001 to Atendiendo
+
+[2025-11-24 19:32:51] METHOD=GET POST=[]
+
+[2025-11-24 19:32:55] METHOD=GET POST=[]
+
+[2025-11-24 19:32:55] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N001","nuevo_estado":"Cancelado"}
+ACTION=cambiar_estado, NUMERO=N001, ESTADO=Cancelado
+SUCCESS: Updated N001 to Cancelado
+
+[2025-11-24 19:32:57] METHOD=GET POST=[]
+
+[2025-11-24 19:33:00] METHOD=GET POST=[]
+
+[2025-11-24 19:33:00] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N002","nuevo_estado":"Cancelado"}
+ACTION=cambiar_estado, NUMERO=N002, ESTADO=Cancelado
+SUCCESS: Updated N002 to Cancelado
+
+[2025-11-24 19:33:02] METHOD=GET POST=[]
+
+[2025-11-24 19:33:05] METHOD=GET POST=[]
+
+[2025-11-24 19:33:06] METHOD=GET POST=[]
+
+[2025-11-24 19:33:08] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"C002","nuevo_estado":"Atendiendo"}
+ACTION=cambiar_estado, NUMERO=C002, ESTADO=Atendiendo
+SUCCESS: Updated C002 to Atendiendo
+
+[2025-11-24 19:33:10] METHOD=GET POST=[]
+
+[2025-11-24 19:33:10] METHOD=GET POST=[]
+
+[2025-11-24 19:33:14] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"C002","nuevo_estado":"Finalizado"}
+
+[2025-11-24 19:33:15] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=C002, ESTADO=Finalizado
+SUCCESS: Updated C002 to Finalizado
+
+[2025-11-24 19:33:16] METHOD=GET POST=[]
+
+[2025-11-24 19:33:19] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N003","nuevo_estado":"Atendiendo"}
+
+[2025-11-24 19:33:20] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=N003, ESTADO=Atendiendo
+SUCCESS: Updated N003 to Atendiendo
+
+[2025-11-24 19:33:21] METHOD=GET POST=[]
+
+[2025-11-24 19:33:25] METHOD=GET POST=[]
+
+[2025-11-24 19:33:29] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N003","nuevo_estado":"Finalizado"}
+
+[2025-11-24 19:33:30] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=N003, ESTADO=Finalizado
+SUCCESS: Updated N003 to Finalizado
+
+[2025-11-24 19:33:31] METHOD=GET POST=[]
+
+[2025-11-24 19:33:34] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N004","nuevo_estado":"Atendiendo"}
+
+[2025-11-24 19:33:35] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=N004, ESTADO=Atendiendo
+SUCCESS: Updated N004 to Atendiendo
+
+[2025-11-24 19:33:37] METHOD=GET POST=[]
+
+[2025-11-24 19:33:40] METHOD=GET POST=[]
+
+[2025-11-24 19:33:40] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N004","nuevo_estado":"Finalizado"}
+ACTION=cambiar_estado, NUMERO=N004, ESTADO=Finalizado
+SUCCESS: Updated N004 to Finalizado
+
+[2025-11-24 19:33:42] METHOD=GET POST=[]
+
+[2025-11-24 19:33:44] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N006","nuevo_estado":"Atendiendo"}
+
+[2025-11-24 19:33:45] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=N006, ESTADO=Atendiendo
+SUCCESS: Updated N006 to Atendiendo
+
+[2025-11-24 19:33:46] METHOD=GET POST=[]
+
+[2025-11-24 19:33:47] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N006","nuevo_estado":"Finalizado"}
+ACTION=cambiar_estado, NUMERO=N006, ESTADO=Finalizado
+SUCCESS: Updated N006 to Finalizado
+
+[2025-11-24 19:33:49] METHOD=GET POST=[]
+
+[2025-11-24 19:33:50] METHOD=GET POST=[]
+
+[2025-11-24 19:33:50] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N006","nuevo_estado":"Finalizado"}
+ACTION=cambiar_estado, NUMERO=N006, ESTADO=Finalizado
+
+[2025-11-24 19:33:55] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N005","nuevo_estado":"Atendiendo"}
+
+[2025-11-24 19:33:55] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=N005, ESTADO=Atendiendo
+SUCCESS: Updated N005 to Atendiendo
+
+[2025-11-24 19:33:57] METHOD=GET POST=[]
+
+[2025-11-24 19:33:57] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N007","nuevo_estado":"Atendiendo"}
+ACTION=cambiar_estado, NUMERO=N007, ESTADO=Atendiendo
+SUCCESS: Updated N007 to Atendiendo
+
+[2025-11-24 19:33:58] METHOD=GET POST=[]
+
+[2025-11-24 19:34:00] METHOD=GET POST=[]
+
+[2025-11-24 19:34:02] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N005","nuevo_estado":"Finalizado"}
+ACTION=cambiar_estado, NUMERO=N005, ESTADO=Finalizado
+SUCCESS: Updated N005 to Finalizado
+
+[2025-11-24 19:34:04] METHOD=POST POST={"action":"cambiar_estado","numero_turno":"N010","nuevo_estado":"Atendiendo"}
+
+[2025-11-24 19:34:04] METHOD=GET POST=[]
+
+[2025-11-24 19:34:05] METHOD=GET POST=[]
+ACTION=cambiar_estado, NUMERO=N010, ESTADO=Atendiendo
+SUCCESS: Updated N010 to Atendiendo
+
+[2025-11-24 19:34:06] METHOD=GET POST=[]
+
+[2025-11-24 19:34:10] METHOD=GET POST=[]
+
+[2025-11-24 19:34:15] METHOD=GET POST=[]
+
+[2025-11-24 19:34:20] METHOD=GET POST=[]
+
+[2025-11-24 19:34:25] METHOD=GET POST=[]
+
+[2025-11-24 19:34:30] METHOD=GET POST=[]
+
+[2025-11-24 19:34:35] METHOD=GET POST=[]
+
+[2025-11-24 19:34:40] METHOD=GET POST=[]
+
+[2025-11-24 19:34:46] METHOD=GET POST=[]
+
+[2025-11-24 19:34:51] METHOD=GET POST=[]
+
+[2025-11-24 19:34:56] METHOD=GET POST=[]
+
+[2025-11-24 19:35:01] METHOD=GET POST=[]
+
+[2025-11-24 19:35:06] METHOD=GET POST=[]
+
+[2025-11-24 19:35:11] METHOD=GET POST=[]
+
+[2025-11-24 19:35:16] METHOD=GET POST=[]
+
+[2025-11-24 19:35:21] METHOD=GET POST=[]
+
+[2025-11-24 19:35:27] METHOD=GET POST=[]
+
+[2025-11-24 19:35:32] METHOD=GET POST=[]
+
+[2025-11-24 19:35:37] METHOD=GET POST=[]
+
+[2025-11-24 19:35:42] METHOD=GET POST=[]
+
+[2025-11-24 19:35:47] METHOD=GET POST=[]
+
+[2025-11-24 19:35:52] METHOD=GET POST=[]
+
+[2025-11-24 19:35:57] METHOD=GET POST=[]
+
+[2025-11-24 19:36:03] METHOD=GET POST=[]
+
+[2025-11-24 19:36:07] METHOD=GET POST=[]
+
+[2025-11-24 19:36:13] METHOD=GET POST=[]
+
+[2025-11-24 19:36:18] METHOD=GET POST=[]
+
+[2025-11-24 19:36:23] METHOD=GET POST=[]
+
+[2025-11-24 19:36:28] METHOD=GET POST=[]
+EXCEPTION: MySQL server has gone away
+EXCEPTION: MySQL server has gone away
+
+[2025-11-24 19:38:38] METHOD=GET POST=[]
+
+[2025-11-24 19:38:39] METHOD=GET POST=[]
+
+[2025-11-24 19:38:44] METHOD=GET POST=[]
+
+[2025-11-24 19:38:49] METHOD=GET POST=[]
+
+[2025-11-24 19:38:54] METHOD=GET POST=[]
+
+[2025-11-24 19:38:59] METHOD=GET POST=[]
+
+[2025-11-24 19:39:05] METHOD=GET POST=[]
+
+[2025-11-24 19:39:10] METHOD=GET POST=[]
+
+[2025-11-24 19:39:15] METHOD=GET POST=[]
+
+[2025-11-24 19:43:15] METHOD=GET POST=[]
+
+[2025-11-25 06:10:34] METHOD=GET POST=[]
+
+[2025-11-25 06:10:39] METHOD=GET POST=[]
+
+[2025-11-25 06:10:44] METHOD=GET POST=[]
+
+[2025-11-25 06:10:49] METHOD=GET POST=[]
+
+[2025-11-25 06:10:55] METHOD=GET POST=[]
+
+[2025-11-25 06:11:00] METHOD=GET POST=[]
