@@ -7322,3 +7322,5 @@ DEBUG: DEBUG: Password en BD: [Clara123.] - Longitud: 9 - Hex: 436c6172613132332
 DEBUG: DEBUG: Comparación (===): COINCIDE
 --- Nuevo Log de Sesión: 2025-11-25 20:05:52 ---
 DEBUG: SUCCESS: Login exitoso - Usuario ID: 1
+--- Nuevo Log de Sesión: 2025-11-25 20:33:04 ---
+DEBUG: INFO: Logout - Usuario ID: 1
