@@ -3,29 +3,37 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
 <link rel="stylesheet" href='SuperSidebar.css'> 
 
+
 <header> 
     <div class="header-contenedor"> 
-    <a href='../inicio/SuperInicio.php'><img  class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"> </a> 
-        <div class="principal"></div> 
-                <div id="google_translate_element"></div> 
+        <a href='../inicio/SuperInicio.php'><img class="vision-clara" src='../../Imagenes/logo/logo-white.png' alt="logo"></a> 
     </div> 
 
     <div class="header_2"> 
         <div class="sa-controls"> 
-            <!-- Botón para cambiar tema en el header -->
+            <!-- Traductor de Google -->
+            <div class="translator-wrapper">
+                <div id="google_translate_element"></div>
+            </div>
+            
+            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script type="text/javascript" src="../../js/translator.js"></script>
+            
+            <!-- Botón para cambiar tema -->
             <div class="theme-toggle-header" id="themeToggleHeader">
                 <i class="fas fa-moon"></i>
                 <span class="theme-text">Modo Oscuro</span>
             </div>
             
+            <!-- Botón de usuario -->
             <div class="sa-boton" id="sidebarToggle"> 
                 <span>Super Administrador</span> 
                 <i class="fas fa-chevron-down"></i> 
                 <img class="close-avatar" src='../../Imagenes/boton_dashboard.png' alt="avatar"> 
             </div> 
         </div> 
-</header> 
-
+    </div>
+</header>
 
 <div class="super-sidebar" id="super-sidebar" aria-hidden="true"> 
     <div id="close-btn" style="text-align: left; padding: 30px; cursor: pointer;">

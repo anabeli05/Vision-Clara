@@ -38,10 +38,45 @@ try {
 <div class="seccion-turno">
     <h1 class="titulo-principal">Obten tu turno para tu cita</h1>
     <div class="botones-tipo">
-        <button id="abrir-cliente">Cliente</button>
-        <button id="abrir-visitante">Visitante</button>
+                <button id="btn-cliente">Cliente</button> 
+        <button id="btn-visitante">Visitante</button>
     </div>
 </div>
+
+<!-- secciones de información -->
+
+<div id="modal-cliente" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" id="cerrar-cliente">&times;</span>
+        <h2>Turno Cliente</h2>
+        <form id="form-cliente">             <label>Número de Afiliado (6 dígitos):</label>
+            <div class="afiliado-inputs">
+                                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+                <input type="text" maxlength="1" class="afiliado-digit" required>
+            </div>
+            <button type="submit">Obtener Turno</button>
+        </form>
+        <div id="resultado-cliente"></div>
+    </div>
+</div>
+
+<div id="modal-visitante" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" id="cerrar-visitante">&times;</span>
+        <h2>Turno Visitante</h2>
+        <form id="form-visitante">             <button type="submit">Obtener Turno</button>
+        </form>
+        <div id="resultado-visitante"></div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
 
 <!-- SECCIÓN INFORMACIÓN -->
 <div class="seccion-informacion">

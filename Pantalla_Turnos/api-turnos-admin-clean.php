@@ -1,246 +1,238 @@
 <?php
 /**
  * api-turnos-admin-clean.php
- * Admin API for managing turnos with proper validation and error handling
+ * API limpia para gestionar turnos desde el panel de administración
  */
-header('Content-Type: application/json');
+
+// Configuración de errores
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Headers CORS
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
+header('Content-Type: application/json; charset=utf-8');
 
-$logFile = __DIR__ . '/api-admin-debug.log';
-
-// Log request
-file_put_contents($logFile, "\n[" . date('Y-m-d H:i:s') . "] METHOD=" . $_SERVER['REQUEST_METHOD'] . " POST=" . json_encode($_POST) . "\n", FILE_APPEND);
-
+// Manejar preflight OPTIONS
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
-    exit;
+    exit();
 }
 
+// Incluir conexión a base de datos
 require_once __DIR__ . '/../Base de Datos/conexion.php';
 
+// Configurar zona horaria
+date_default_timezone_set('America/Mexico_City');
+
+/**
+ * Función para obtener todos los datos de turnos
+ */
+function obtenerDatosTurnos($mysqli) {
+    $hoy = date('Y-m-d');
+    $datos = [
+        'turnos_espera' => [],
+        'turnos_atendiendo' => [],
+        'estadisticas' => []
+    ];
+    
+    try {
+        // Obtener turnos en espera
+        $sql_espera = "SELECT ID_Turno, Numero_Turno, Tipo, Estado, Fecha, No_Afiliado 
+                       FROM turnos 
+                       WHERE Estado = 'Espera' AND DATE(Fecha) = ? 
+                       ORDER BY Fecha ASC 
+                       LIMIT 100";
+        $stmt = $mysqli->prepare($sql_espera);
+        $stmt->bind_param('s', $hoy);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $datos['turnos_espera'][] = $row;
+        }
+        $stmt->close();
+        
+        // Obtener turnos atendiendo
+        $sql_atendiendo = "SELECT ID_Turno, Numero_Turno, Tipo, Estado, Fecha, No_Afiliado 
+                           FROM turnos 
+                           WHERE Estado = 'Atendiendo' AND DATE(Fecha) = ? 
+                           ORDER BY Fecha ASC";
+        $stmt = $mysqli->prepare($sql_atendiendo);
+        $stmt->bind_param('s', $hoy);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $datos['turnos_atendiendo'][] = $row;
+        }
+        $stmt->close();
+        
+        // Obtener estadísticas del día
+        $sql_stats = "SELECT 
+                        COUNT(CASE WHEN Estado = 'Espera' THEN 1 END) as turnos_espera,
+                        COUNT(CASE WHEN Estado = 'Atendiendo' THEN 1 END) as turnos_atendiendo,
+                        COUNT(CASE WHEN Estado = 'Finalizado' THEN 1 END) as turnos_finalizados,
+                        COUNT(CASE WHEN Estado = 'Cancelado' THEN 1 END) as turnos_cancelados
+                      FROM turnos 
+                      WHERE DATE(Fecha) = ?";
+        $stmt = $mysqli->prepare($sql_stats);
+        $stmt->bind_param('s', $hoy);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $datos['estadisticas'] = $result->fetch_assoc();
+        $stmt->close();
+        
+        return ['success' => true, 'data' => $datos];
+        
+    } catch (Exception $e) {
+        return ['success' => false, 'error' => $e->getMessage()];
+    }
+}
+
+/**
+ * Función para cambiar el estado de un turno
+ */
+function cambiarEstadoTurno($mysqli, $numero_turno, $nuevo_estado) {
+    try {
+        // Validar estado
+        $estados_validos = ['Espera', 'Atendiendo', 'Finalizado', 'Cancelado'];
+        if (!in_array($nuevo_estado, $estados_validos)) {
+            return ['success' => false, 'error' => 'Estado no válido'];
+        }
+        
+        // Actualizar estado
+        $stmt = $mysqli->prepare("UPDATE turnos SET Estado = ? WHERE Numero_Turno = ?");
+        $stmt->bind_param('ss', $nuevo_estado, $numero_turno);
+        
+        if (!$stmt->execute()) {
+            $stmt->close();
+            return ['success' => false, 'error' => 'Error al actualizar el turno'];
+        }
+        
+        $affected = $stmt->affected_rows;
+        $stmt->close();
+        
+        if ($affected === 0) {
+            return ['success' => false, 'error' => 'Turno no encontrado'];
+        }
+        
+        return ['success' => true, 'message' => 'Estado actualizado correctamente'];
+        
+    } catch (Exception $e) {
+        return ['success' => false, 'error' => $e->getMessage()];
+    }
+}
+
+/**
+ * Función para llamar al siguiente turno en espera
+ */
+function llamarSiguienteTurno($mysqli) {
+    try {
+        $hoy = date('Y-m-d');
+        
+        // Buscar el primer turno en espera del día
+        $stmt = $mysqli->prepare("SELECT Numero_Turno FROM turnos 
+                                  WHERE Estado = 'Espera' AND DATE(Fecha) = ? 
+                                  ORDER BY Fecha ASC 
+                                  LIMIT 1");
+        $stmt->bind_param('s', $hoy);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows === 0) {
+            $stmt->close();
+            return ['success' => false, 'error' => 'No hay turnos en espera'];
+        }
+        
+        $row = $result->fetch_assoc();
+        $numero_turno = $row['Numero_Turno'];
+        $stmt->close();
+        
+        // Cambiar estado a Atendiendo
+        $resultado = cambiarEstadoTurno($mysqli, $numero_turno, 'Atendiendo');
+        
+        if ($resultado['success']) {
+            return [
+                'success' => true, 
+                'turno_llamado' => $numero_turno,
+                'message' => 'Turno llamado correctamente'
+            ];
+        } else {
+            return $resultado;
+        }
+        
+    } catch (Exception $e) {
+        return ['success' => false, 'error' => $e->getMessage()];
+    }
+}
+
+// --- LÓGICA PRINCIPAL ---
+
 try {
+    // Crear conexión
     $conexion = new Conexion();
     $conexion->abrir_conexion();
     $mysqli = $conexion->conexion;
-
-    // HANDLE POST/PUT REQUESTS
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT') {
-        $action = $_POST['action'] ?? null;
-        $numero_turno = $_POST['numero_turno'] ?? null;
-        $nuevo_estado = $_POST['nuevo_estado'] ?? null;
-
-        file_put_contents($logFile, "ACTION={$action}, NUMERO={$numero_turno}, ESTADO={$nuevo_estado}\n", FILE_APPEND);
-
-        if (!$action) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'error' => 'Missing action']);
-            exit;
-        }
-
-        $allowed_states = ['Espera', 'Atendiendo', 'Finalizado', 'Cancelado'];
-
-        // cambiar_estado: update a turn to a new state
-        if ($action === 'cambiar_estado') {
-            if (!$numero_turno || !$nuevo_estado) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'Missing numero_turno or nuevo_estado']);
-                exit;
-            }
-            if (!in_array($nuevo_estado, $allowed_states, true)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'Invalid state: ' . $nuevo_estado]);
-                exit;
-            }
-
-            $stmt = $mysqli->prepare('UPDATE turnos SET Estado = ? WHERE Numero_Turno = ?');
-            if (!$stmt) {
-                file_put_contents($logFile, "PREPARE ERROR: " . $mysqli->error . "\n", FILE_APPEND);
-                http_response_code(500);
-                echo json_encode(['success' => false, 'error' => 'Database error']);
-                exit;
-            }
-            $stmt->bind_param('ss', $nuevo_estado, $numero_turno);
-            if (!$stmt->execute()) {
-                file_put_contents($logFile, "EXECUTE ERROR: " . $stmt->error . "\n", FILE_APPEND);
-                http_response_code(500);
-                echo json_encode(['success' => false, 'error' => 'Update failed: ' . $stmt->error]);
-                $stmt->close();
-                exit;
-            }
-
-            if ($stmt->affected_rows > 0) {
-                file_put_contents($logFile, "SUCCESS: Updated {$numero_turno} to {$nuevo_estado}\n", FILE_APPEND);
-                echo json_encode(['success' => true, 'message' => 'Turno actualizado', 'numero_turno' => $numero_turno]);
-            } else {
-                http_response_code(404);
-                echo json_encode(['success' => false, 'error' => 'Turno not found']);
-            }
-            $stmt->close();
-            $conexion->cerrar_conexion();
-            exit;
-        }
-
-        // llamar: get next 'Espera' and move to 'Atendiendo'
-        if ($action === 'llamar') {
-            $res = $mysqli->query("SELECT Numero_Turno FROM turnos WHERE Estado = 'Espera' ORDER BY Fecha ASC LIMIT 1");
-            if ($res && $row = $res->fetch_assoc()) {
-                $proximo = $row['Numero_Turno'];
-                $stmt = $mysqli->prepare("UPDATE turnos SET Estado = 'Atendiendo' WHERE Numero_Turno = ?");
-                if (!$stmt) {
-                    file_put_contents($logFile, "PREPARE ERROR (llamar): " . $mysqli->error . "\n", FILE_APPEND);
-                    http_response_code(500);
-                    echo json_encode(['success' => false, 'error' => 'Database error']);
-                    $conexion->cerrar_conexion();
-                    exit;
+    
+    // --- MANEJO DE POST: ACCIONES ---
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $action = isset($_POST['action']) ? trim($_POST['action']) : '';
+        
+        switch ($action) {
+            case 'cambiar_estado':
+                // Cambiar estado de un turno específico
+                $numero_turno = isset($_POST['numero_turno']) ? trim($_POST['numero_turno']) : '';
+                $nuevo_estado = isset($_POST['nuevo_estado']) ? trim($_POST['nuevo_estado']) : '';
+                
+                if (empty($numero_turno) || empty($nuevo_estado)) {
+                    echo json_encode([
+                        'success' => false,
+                        'error' => 'Faltan parámetros: numero_turno y nuevo_estado son requeridos'
+                    ]);
+                    break;
                 }
-                $stmt->bind_param('s', $proximo);
-                if ($stmt->execute()) {
-                    file_put_contents($logFile, "SUCCESS: Called {$proximo}\n", FILE_APPEND);
-                    echo json_encode(['success' => true, 'message' => 'Turno called', 'turno_llamado' => $proximo]);
-                } else {
-                    file_put_contents($logFile, "EXECUTE ERROR (llamar): " . $stmt->error . "\n", FILE_APPEND);
-                    http_response_code(500);
-                    echo json_encode(['success' => false, 'error' => 'Update failed']);
-                }
-                $stmt->close();
-                $conexion->cerrar_conexion();
-                exit;
-            }
-            http_response_code(404);
-            echo json_encode(['success' => false, 'error' => 'No turnos en espera']);
-            $conexion->cerrar_conexion();
-            exit;
+                
+                $resultado = cambiarEstadoTurno($mysqli, $numero_turno, $nuevo_estado);
+                echo json_encode($resultado);
+                break;
+                
+            case 'llamar':
+                // Llamar al siguiente turno en espera
+                $resultado = llamarSiguienteTurno($mysqli);
+                echo json_encode($resultado);
+                break;
+                
+            default:
+                echo json_encode([
+                    'success' => false,
+                    'error' => 'Acción no válida. Acciones disponibles: cambiar_estado, llamar'
+                ]);
+                break;
         }
-
-        // finalizar: mark turno as Finalizado
-        if ($action === 'finalizar') {
-            if (!$numero_turno) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'Missing numero_turno']);
-                exit;
-            }
-            $stmt = $mysqli->prepare("UPDATE turnos SET Estado = 'Finalizado' WHERE Numero_Turno = ?");
-            if (!$stmt) {
-                file_put_contents($logFile, "PREPARE ERROR (finalizar): " . $mysqli->error . "\n", FILE_APPEND);
-                http_response_code(500);
-                echo json_encode(['success' => false, 'error' => 'Database error']);
-                exit;
-            }
-            $stmt->bind_param('s', $numero_turno);
-            if (!$stmt->execute()) {
-                file_put_contents($logFile, "EXECUTE ERROR (finalizar): " . $stmt->error . "\n", FILE_APPEND);
-                http_response_code(500);
-                echo json_encode(['success' => false, 'error' => 'Update failed']);
-                $stmt->close();
-                exit;
-            }
-            if ($stmt->affected_rows > 0) {
-                file_put_contents($logFile, "SUCCESS: Finalized {$numero_turno}\n", FILE_APPEND);
-                echo json_encode(['success' => true, 'message' => 'Turno finalizado', 'numero_turno' => $numero_turno]);
-            } else {
-                http_response_code(404);
-                echo json_encode(['success' => false, 'error' => 'Turno not found']);
-            }
-            $stmt->close();
-            $conexion->cerrar_conexion();
-            exit;
-        }
-
-        // cancelar: mark turno as Cancelado
-        if ($action === 'cancelar') {
-            if (!$numero_turno) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'Missing numero_turno']);
-                exit;
-            }
-            $stmt = $mysqli->prepare("UPDATE turnos SET Estado = 'Cancelado' WHERE Numero_Turno = ?");
-            if (!$stmt) {
-                file_put_contents($logFile, "PREPARE ERROR (cancelar): " . $mysqli->error . "\n", FILE_APPEND);
-                http_response_code(500);
-                echo json_encode(['success' => false, 'error' => 'Database error']);
-                exit;
-            }
-            $stmt->bind_param('s', $numero_turno);
-            if (!$stmt->execute()) {
-                file_put_contents($logFile, "EXECUTE ERROR (cancelar): " . $stmt->error . "\n", FILE_APPEND);
-                http_response_code(500);
-                echo json_encode(['success' => false, 'error' => 'Update failed']);
-                $stmt->close();
-                exit;
-            }
-            if ($stmt->affected_rows > 0) {
-                file_put_contents($logFile, "SUCCESS: Cancelled {$numero_turno}\n", FILE_APPEND);
-                echo json_encode(['success' => true, 'message' => 'Turno cancelado', 'numero_turno' => $numero_turno]);
-            } else {
-                http_response_code(404);
-                echo json_encode(['success' => false, 'error' => 'Turno not found']);
-            }
-            $stmt->close();
-            $conexion->cerrar_conexion();
-            exit;
-        }
-
-        // unknown action
-        http_response_code(400);
-        echo json_encode(['success' => false, 'error' => 'Invalid action']);
-        $conexion->cerrar_conexion();
-        exit;
     }
-
-    // HANDLE GET REQUESTS
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $sql_espera = "SELECT ID_Turno, Numero_Turno, Tipo, Estado, Fecha, No_Afiliado FROM turnos WHERE Estado = 'Espera' ORDER BY Fecha ASC LIMIT 100";
-        $sql_atendiendo = "SELECT ID_Turno, Numero_Turno, Tipo, Estado, Fecha, No_Afiliado FROM turnos WHERE Estado = 'Atendiendo' ORDER BY Fecha ASC";
-        $sql_stats = "SELECT 
-            COUNT(CASE WHEN Estado = 'Espera' THEN 1 END) as turnos_espera,
-            COUNT(CASE WHEN Estado = 'Atendiendo' THEN 1 END) as turnos_atendiendo,
-            COUNT(CASE WHEN Estado = 'Finalizado' THEN 1 END) as turnos_finalizados,
-            COUNT(CASE WHEN Estado = 'Cancelado' THEN 1 END) as turnos_cancelados
-        FROM turnos WHERE DATE(Fecha) = CURDATE()";
-
-        $res_espera = $mysqli->query($sql_espera);
-        $res_atendiendo = $mysqli->query($sql_atendiendo);
-        $res_stats = $mysqli->query($sql_stats);
-
-        $turnos_espera = [];
-        if ($res_espera && $res_espera->num_rows > 0) {
-            while ($row = $res_espera->fetch_assoc()) {
-                $turnos_espera[] = $row;
-            }
-        }
-
-        $turnos_atendiendo = [];
-        if ($res_atendiendo && $res_atendiendo->num_rows > 0) {
-            while ($row = $res_atendiendo->fetch_assoc()) {
-                $turnos_atendiendo[] = $row;
-            }
-        }
-
-        $stats = ['turnos_espera' => 0, 'turnos_atendiendo' => 0, 'turnos_finalizados' => 0, 'turnos_cancelados' => 0];
-        if ($res_stats && $res_stats->num_rows > 0) {
-            $stats = $res_stats->fetch_assoc();
-        }
-
+    
+    // --- MANEJO DE GET: CONSULTAR DATOS ---
+    else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        $resultado = obtenerDatosTurnos($mysqli);
+        echo json_encode($resultado);
+    }
+    
+    // Método no permitido
+    else {
+        http_response_code(405);
         echo json_encode([
-            'success' => true,
-            'data' => [
-                'turnos_espera' => $turnos_espera,
-                'turnos_atendiendo' => $turnos_atendiendo,
-                'estadisticas' => $stats
-            ],
-            'timestamp' => time()
-        ], JSON_UNESCAPED_UNICODE);
-        $conexion->cerrar_conexion();
-        exit;
+            'success' => false,
+            'error' => 'Método no permitido. Use GET o POST'
+        ]);
     }
-
+    
     $conexion->cerrar_conexion();
+    
 } catch (Exception $e) {
-    file_put_contents($logFile, "EXCEPTION: " . $e->getMessage() . "\n", FILE_APPEND);
     http_response_code(500);
-    echo json_encode(['success' => false, 'error' => $e->getMessage()], JSON_UNESCAPED_UNICODE);
-    exit;
+    echo json_encode([
+        'success' => false,
+        'error' => 'Error interno del servidor: ' . $e->getMessage()
+    ]);
 }
 ?>

@@ -1,0 +1,348 @@
+[26-Nov-2025 12:03:04 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:03:04 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:03:05 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:03:05 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:03:05 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 12:03:05 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 12:05:42 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:05:42 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:05:43 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:05:43 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:05:43 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:05:43 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:09:34 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:09:34 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:09:34 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:09:34 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:09:35 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:09:35 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:09:47 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:09:47 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:09:48 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:09:48 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:09:48 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:09:48 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:13:13 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:13:14 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:13:14 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:13:14 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:13:14 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:13:15 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:15:59 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:15:59 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:15:59 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:15:59 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:16:00 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:16:00 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:17:31 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:17:31 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:17:31 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:17:31 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:17:32 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:17:32 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:31:56 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:31:56 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:31:56 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:31:56 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:31:57 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:31:57 Europe/Berlin] Validando afiliado: '000001' (longitud: 6)
+[26-Nov-2025 12:31:57 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:31:57 Europe/Berlin] Validando afiliado: '000001' (longitud: 6)
+[26-Nov-2025 12:31:57 Europe/Berlin] Afiliado encontrado: Aldo Rendon Monjez
+[26-Nov-2025 12:31:57 Europe/Berlin] Afiliado encontrado: Aldo Rendon Monjez
+[26-Nov-2025 12:34:14 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:34:14 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:34:14 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:34:14 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:34:15 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:34:15 Europe/Berlin] Validando afiliado: '000001' (longitud: 6)
+[26-Nov-2025 12:34:15 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:34:15 Europe/Berlin] Validando afiliado: '000001' (longitud: 6)
+[26-Nov-2025 12:34:15 Europe/Berlin] Afiliado encontrado: Aldo Rendon Monjez
+[26-Nov-2025 12:34:15 Europe/Berlin] Afiliado encontrado: Aldo Rendon Monjez
+[26-Nov-2025 12:35:47 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:35:47 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:35:48 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:35:48 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:35:48 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:35:48 Europe/Berlin] Validando afiliado: '000001' (longitud: 6)
+[26-Nov-2025 12:35:49 Europe/Berlin] Afiliado encontrado: Aldo Rendon Monjez
+[26-Nov-2025 12:35:49 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:35:49 Europe/Berlin] Validando afiliado: '000001' (longitud: 6)
+[26-Nov-2025 12:35:49 Europe/Berlin] Afiliado encontrado: Aldo Rendon Monjez
+[26-Nov-2025 12:37:53 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:37:53 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:37:54 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:37:54 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:37:54 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:37:54 Europe/Berlin] Validando afiliado: '000005' (longitud: 6)
+[26-Nov-2025 12:37:54 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:37:54 Europe/Berlin] Validando afiliado: '000005' (longitud: 6)
+[26-Nov-2025 12:37:55 Europe/Berlin] Afiliado encontrado: prodcons
+[26-Nov-2025 12:37:55 Europe/Berlin] Afiliado encontrado: prodcons
+[26-Nov-2025 12:40:36 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:40:36 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:40:36 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:40:36 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:40:37 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:40:37 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:40:37 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:40:37 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:40:37 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:40:37 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:44:17 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:44:17 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:44:17 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:44:17 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:44:18 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:44:18 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:44:18 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:44:18 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:44:18 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:44:18 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 05:44:19 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Dompdf\Cpdf::setPageCount() in C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php:232
+Stack trace:
+#0 C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php(435): generarPDF('C024', 'Cliente', '000007')
+#1 {main}
+  thrown in C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php on line 232
+[26-Nov-2025 05:44:20 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Dompdf\Cpdf::setPageCount() in C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php:232
+Stack trace:
+#0 C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php(435): generarPDF('C025', 'Cliente', '000007')
+#1 {main}
+  thrown in C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php on line 232
+[26-Nov-2025 12:44:41 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:44:41 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:44:42 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:44:42 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:44:42 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:44:42 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:44:42 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:44:42 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:44:42 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:44:43 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:48:23 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:48:23 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:48:23 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:48:23 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:48:24 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:48:24 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:48:24 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:48:24 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:48:24 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:48:24 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:53:42 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:53:42 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:53:42 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:53:42 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:53:43 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:53:43 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:53:43 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:53:43 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:53:43 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:53:43 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:55:08 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:55:08 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:55:08 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:55:08 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:55:09 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:55:09 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:55:09 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:55:09 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:55:09 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:55:09 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:58:22 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:58:22 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 12:58:22 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:58:22 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 12:58:23 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:58:23 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:58:23 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 12:58:23 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 12:58:23 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 12:58:23 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 05:58:24 America/Mexico_City] PHP Warning:  Undefined variable $logo_html in C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php on line 203
+[26-Nov-2025 05:58:25 America/Mexico_City] PHP Warning:  Undefined variable $logo_html in C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos\api-turnos-sequences.php on line 203
+[26-Nov-2025 13:08:03 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:08:03 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:08:03 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:08:03 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:08:04 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 13:08:04 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 13:08:04 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 13:08:04 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 13:08:04 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 13:08:04 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 13:12:53 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:12:54 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:12:54 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:12:54 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:12:55 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 13:12:55 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 13:12:55 Europe/Berlin] POST recibido - Tipo: Cliente | Action: generate_pdf
+[26-Nov-2025 13:12:55 Europe/Berlin] Validando afiliado: '000007' (longitud: 6)
+[26-Nov-2025 13:12:55 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 13:12:55 Europe/Berlin] Afiliado encontrado: Daniel Alfonso Verde Romero
+[26-Nov-2025 13:16:23 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:16:23 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:16:23 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:16:23 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:16:24 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:16:24 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:21:14 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:21:14 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:21:14 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:21:14 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:21:15 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:21:15 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:27:56 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:27:56 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:27:56 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:27:56 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:27:57 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:27:57 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:31:04 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:31:04 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:31:04 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:31:04 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:31:05 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:31:05 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:31:06 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:31:06 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 13:32:07 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:32:08 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:32:08 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:32:08 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:32:09 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:32:09 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:32:10 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:32:10 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 13:33:08 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:33:08 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:33:08 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:33:08 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:33:09 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:33:09 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:33:10 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:33:10 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 13:35:34 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:35:34 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:35:34 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:35:34 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:35:35 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:35:35 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:35:36 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:35:36 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:35:36 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black.png
+[26-Nov-2025 06:35:36 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:35:36 America/Mexico_City] ¿Existe el archivo?: SÍ
+[26-Nov-2025 06:35:36 America/Mexico_City] ✓ Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:35:36 America/Mexico_City] ✓ Tamaño de imagen: 1778940 bytes
+[26-Nov-2025 06:35:36 America/Mexico_City] ✓ Tipo MIME: image/png
+[26-Nov-2025 06:35:36 America/Mexico_City] =========================
+[26-Nov-2025 06:35:36 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:35:36 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:35:36 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black.png
+[26-Nov-2025 06:35:36 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:35:36 America/Mexico_City] ¿Existe el archivo?: SÍ
+[26-Nov-2025 06:35:36 America/Mexico_City] ✓ Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:35:36 America/Mexico_City] ✓ Tamaño de imagen: 1778940 bytes
+[26-Nov-2025 06:35:36 America/Mexico_City] ✓ Tipo MIME: image/png
+[26-Nov-2025 06:35:36 America/Mexico_City] =========================
+[26-Nov-2025 13:41:31 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:41:31 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:41:31 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:41:31 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:41:32 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:41:32 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:41:33 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:41:33 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:41:33 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black_r.png
+[26-Nov-2025 06:41:33 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:41:33 America/Mexico_City] ¿Existe el archivo?: SÍ
+[26-Nov-2025 06:41:33 America/Mexico_City] ✓ Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:41:33 America/Mexico_City] ✓ Tamaño de imagen: 64756 bytes
+[26-Nov-2025 06:41:33 America/Mexico_City] ✓ Tipo MIME: image/png
+[26-Nov-2025 06:41:33 America/Mexico_City] =========================
+[26-Nov-2025 06:41:33 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:41:33 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:41:33 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black_r.png
+[26-Nov-2025 06:41:33 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:41:33 America/Mexico_City] ¿Existe el archivo?: SÍ
+[26-Nov-2025 06:41:33 America/Mexico_City] ✓ Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:41:33 America/Mexico_City] ✓ Tamaño de imagen: 64756 bytes
+[26-Nov-2025 06:41:33 America/Mexico_City] ✓ Tipo MIME: image/png
+[26-Nov-2025 06:41:33 America/Mexico_City] =========================
+[26-Nov-2025 13:43:16 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:43:16 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:43:17 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:43:17 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:43:17 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:43:17 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:43:19 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:43:19 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:43:19 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black_r.png
+[26-Nov-2025 06:43:19 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:43:19 America/Mexico_City] ¿Existe el archivo?: SÍ
+[26-Nov-2025 06:43:19 America/Mexico_City] ✓ Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:43:19 America/Mexico_City] ✓ Tamaño de imagen: 64756 bytes
+[26-Nov-2025 06:43:19 America/Mexico_City] ✓ Tipo MIME: image/png
+[26-Nov-2025 06:43:19 America/Mexico_City] =========================
+[26-Nov-2025 06:43:19 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:43:19 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:43:19 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black_r.png
+[26-Nov-2025 06:43:19 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:43:19 America/Mexico_City] ¿Existe el archivo?: SÍ
+[26-Nov-2025 06:43:19 America/Mexico_City] ✓ Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black_r.png
+[26-Nov-2025 06:43:19 America/Mexico_City] ✓ Tamaño de imagen: 64756 bytes
+[26-Nov-2025 06:43:19 America/Mexico_City] ✓ Tipo MIME: image/png
+[26-Nov-2025 06:43:19 America/Mexico_City] =========================
+[26-Nov-2025 13:46:11 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:46:11 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:46:11 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:46:11 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:46:12 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:46:12 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:46:13 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:46:13 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 13:47:18 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:47:18 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:47:18 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:47:18 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:47:18 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:47:19 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:50:12 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:50:12 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:50:13 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:50:13 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:50:14 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:50:14 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:50:15 America/Mexico_City] === INTENTANDO CARGAR LOGO ===
+[26-Nov-2025 06:50:15 America/Mexico_City] Directorio actual: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:50:15 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black.png
+[26-Nov-2025 06:50:15 America/Mexico_City] Ruta absoluta construida: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos/../Imagenes/logo_black.png
+[26-Nov-2025 06:50:15 America/Mexico_City] Ruta real (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:50:15 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:50:15 America/Mexico_City] === INTENTANDO CARGAR LOGO ===
+[26-Nov-2025 06:50:15 America/Mexico_City] Directorio actual: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:50:15 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black.png
+[26-Nov-2025 06:50:15 America/Mexico_City] Ruta absoluta construida: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos/../Imagenes/logo_black.png
+[26-Nov-2025 06:50:15 America/Mexico_City] Ruta real (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:50:15 America/Mexico_City] Logo cargado exitosamente desde: C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 13:54:36 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:54:36 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:54:36 Europe/Berlin] Conexión mysqli global establecida correctamente
+[26-Nov-2025 13:54:37 Europe/Berlin] Conexión PDO global establecida correctamente
+[26-Nov-2025 13:54:37 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 13:54:37 Europe/Berlin] POST recibido - Tipo: Visitante | Action: generate_pdf
+[26-Nov-2025 06:54:38 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:54:38 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:54:38 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black.png
+[26-Nov-2025 06:54:38 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:54:38 America/Mexico_City] ✗ Error al procesar el logo: Extensión GD no disponible
+[26-Nov-2025 06:54:38 America/Mexico_City] =========================
+[26-Nov-2025 06:54:39 America/Mexico_City] === DIAGNÓSTICO DE LOGO ===
+[26-Nov-2025 06:54:39 America/Mexico_City] __DIR__: C:\xampp\htdocs\Vision-Clara-ana\Pantalla_Turnos
+[26-Nov-2025 06:54:39 America/Mexico_City] Ruta relativa: ../Imagenes/logo_black.png
+[26-Nov-2025 06:54:39 America/Mexico_City] Ruta absoluta (realpath): C:\xampp\htdocs\Vision-Clara-ana\Imagenes\logo_black.png
+[26-Nov-2025 06:54:39 America/Mexico_City] ✗ Error al procesar el logo: Extensión GD no disponible
+[26-Nov-2025 06:54:39 America/Mexico_City] =========================

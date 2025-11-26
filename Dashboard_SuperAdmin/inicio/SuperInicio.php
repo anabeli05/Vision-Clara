@@ -56,10 +56,7 @@ $conexion->cerrar_conexion();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href='SuperInicio.css'>
     <link rel="stylesheet" href='../Dashboard/SuperSidebar.css'> 
-    <link rel="stylesheet" href='../../estilos/translator.css'>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script type="text/javascript" src="../../js/translator.js"></script>
-</head>
+
 </head>
 <body>
 

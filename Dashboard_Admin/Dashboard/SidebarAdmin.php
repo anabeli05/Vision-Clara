@@ -11,6 +11,14 @@
 
     <div class="header_2"> 
         <div class="admin-controls"> 
+            
+            <!-- Traductor de Google -->
+            <div class="translator-wrapper">
+                <div id="google_translate_element"></div>
+            </div>
+            
+            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script type="text/javascript" src="../../js/translator.js"></script>
             <!-- Botón para cambiar tema en el header -->
             <div class="theme-toggle-header" id="themeToggleHeader">
                 <i class="fas fa-moon"></i>
